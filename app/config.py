@@ -13,6 +13,8 @@ class Settings(BaseSettings):
     gemini_embedding_model: str = "gemini-embedding-001"
     legal_ai_database: Path = Path("data/legal_index.sqlite3")
     legal_ai_top_k: int = 6
+    legal_ai_embedding_model: str = "BAAI/bge-small-en-v1.5"
+    legal_ai_embedding_cache: Path = Path("data/models")
 
 
 @lru_cache

@@ -1,0 +1,73 @@
+[
+  {
+    "id": "criminal-theft-001",
+    "question": "My phone was taken from my bag on the bus.",
+    "expected_sections": ["366"],
+    "domain": "criminal",
+    "review_status": "draft"
+  },
+  {
+    "id": "criminal-theft-002",
+    "question": "Someone moved my property without permission intending to keep it.",
+    "expected_sections": ["366"],
+    "domain": "criminal",
+    "review_status": "draft"
+  },
+  {
+    "id": "criminal-stolen-property-001",
+    "question": "A person knowingly bought a phone that had been stolen.",
+    "expected_sections": ["393", "394"],
+    "domain": "criminal",
+    "review_status": "draft"
+  },
+  {
+    "id": "criminal-assault-001",
+    "question": "A man raised a stick and made me believe he was about to hit me.",
+    "expected_sections": ["342"],
+    "domain": "criminal",
+    "review_status": "draft"
+  },
+  {
+    "id": "criminal-force-001",
+    "question": "Someone intentionally pushed me without my consent.",
+    "expected_sections": ["341"],
+    "domain": "criminal",
+    "review_status": "draft"
+  },
+  {
+    "id": "criminal-hurt-001",
+    "question": "Someone deliberately hit me and caused bodily pain.",
+    "expected_sections": ["310", "314"],
+    "domain": "criminal",
+    "review_status": "draft"
+  },
+  {
+    "id": "criminal-trespass-001",
+    "question": "A person entered my house intending to intimidate me.",
+    "expected_sections": ["427", "429"],
+    "domain": "criminal",
+    "review_status": "draft"
+  },
+  {
+    "id": "criminal-intimidation-001",
+    "question": "Someone threatened to harm me in order to frighten me.",
+    "expected_sections": ["483"],
+    "domain": "criminal",
+    "review_status": "draft"
+  },
+  {
+    "id": "traffic-mobile-001",
+    "question": "Is it an offence to use a mobile phone while driving?",
+    "expected_sections": ["152A"],
+    "domain": "traffic",
+    "review_status": "draft"
+  },
+  {
+    "id": "procedure-search-001",
+    "question": "Can police search a place in another Magistrate's jurisdiction under a warrant?",
+    "expected_sections": ["71"],
+    "domain": "procedure",
+    "review_status": "draft"
+  }
+]
+

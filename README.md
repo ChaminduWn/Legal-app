@@ -44,6 +44,23 @@ The responsive frontend includes:
 - Privacy reminders, legal disclaimers, keyboard support, and reduced-motion
   support.
 
+## Local semantic search
+
+The app uses `BAAI/bge-small-en-v1.5` locally through FastEmbed. It does not
+consume Gemini quota. Build or refresh the cached semantic index after document
+ingestion:
+
+```powershell
+python -m scripts.build_embeddings
+```
+
+Keyword and semantic rankings are combined with Reciprocal Rank Fusion. If the
+semantic index has not been built, the application safely falls back to keyword
+retrieval.
+
+Open `http://127.0.0.1:8000/evaluation` to run the draft retrieval evaluation.
+The evaluation does not call Gemini.
+
 ## Example
 
 ```json

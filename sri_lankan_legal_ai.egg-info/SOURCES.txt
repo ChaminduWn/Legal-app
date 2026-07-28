@@ -2,6 +2,7 @@ README.md
 pyproject.toml
 app/__init__.py
 app/config.py
+app/evaluation.py
 app/main.py
 app/models.py
 app/rag/__init__.py
@@ -15,5 +16,6 @@ sri_lankan_legal_ai.egg-info/SOURCES.txt
 sri_lankan_legal_ai.egg-info/dependency_links.txt
 sri_lankan_legal_ai.egg-info/requires.txt
 sri_lankan_legal_ai.egg-info/top_level.txt
+tests/test_api.py
 tests/test_extract.py
 tests/test_store.py

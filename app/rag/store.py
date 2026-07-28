@@ -1,7 +1,11 @@
 import re
 import sqlite3
+from functools import lru_cache
 from pathlib import Path
 
+import numpy as np
+
+from app.config import get_settings
 from app.models import LegalSource
 from app.rag.schema import LegalChunk
 
@@ -57,6 +61,13 @@ def initialize(database: Path) -> None:
                 text,
                 tokenize='porter unicode61'
             );
+            CREATE TABLE IF NOT EXISTS legal_embeddings (
+                source_id TEXT PRIMARY KEY,
+                model TEXT NOT NULL,
+                dimensions INTEGER NOT NULL,
+                vector BLOB NOT NULL,
+                FOREIGN KEY(source_id) REFERENCES legal_chunks(source_id)
+            );
             """
         )
 
@@ -66,6 +77,7 @@ def replace_chunks(database: Path, chunks: list[LegalChunk]) -> None:
     with connect(database) as connection:
         connection.execute("DELETE FROM legal_chunks")
         connection.execute("DELETE FROM legal_chunks_fts")
+        connection.execute("DELETE FROM legal_embeddings")
         connection.executemany(
             """
             INSERT INTO legal_chunks VALUES (?, ?, ?, ?, ?, ?, ?, ?)
@@ -93,7 +105,7 @@ def replace_chunks(database: Path, chunks: list[LegalChunk]) -> None:
         )
 
 
-def search(database: Path, query: str, limit: int = 6) -> list[LegalSource]:
+def _keyword_search(database: Path, query: str, limit: int) -> list[LegalSource]:
     if not database.exists():
         return []
     original_terms = [
@@ -136,3 +148,107 @@ def search(database: Path, query: str, limit: int = 6) -> list[LegalSource]:
         )
         for index, row in enumerate(rows)
     ]
+
+
+@lru_cache(maxsize=1)
+def _embedding_model():
+    from fastembed import TextEmbedding
+
+    settings = get_settings()
+    settings.legal_ai_embedding_cache.mkdir(parents=True, exist_ok=True)
+    return TextEmbedding(
+        model_name=settings.legal_ai_embedding_model,
+        cache_dir=str(settings.legal_ai_embedding_cache),
+    )
+
+
+def _semantic_search(database: Path, query: str, limit: int) -> list[LegalSource]:
+    settings = get_settings()
+    with connect(database) as connection:
+        rows = connection.execute(
+            """
+            SELECT c.*, e.vector, e.dimensions
+            FROM legal_embeddings e
+            JOIN legal_chunks c USING (source_id)
+            WHERE e.model = ?
+            """,
+            (settings.legal_ai_embedding_model,),
+        ).fetchall()
+    if not rows:
+        return []
+
+    query_vector = np.asarray(
+        list(_embedding_model().query_embed([query]))[0], dtype=np.float32
+    )
+    query_vector = query_vector / (np.linalg.norm(query_vector) or 1.0)
+    matrix = np.vstack(
+        [
+            np.frombuffer(row["vector"], dtype=np.float32, count=row["dimensions"])
+            for row in rows
+        ]
+    )
+    scores = matrix @ query_vector
+    order = np.argsort(scores)[::-1][:limit]
+    return [
+        LegalSource(
+            source_id=rows[index]["source_id"],
+            law=rows[index]["law"],
+            section=rows[index]["section"],
+            heading=rows[index]["heading"],
+            text=rows[index]["text"],
+            source_file=rows[index]["source_file"],
+            page_start=rows[index]["page_start"],
+            page_end=rows[index]["page_end"],
+            score=round(float(scores[index]), 4),
+        )
+        for index in order
+    ]
+
+
+def reciprocal_rank_fusion(
+    ranked_lists: list[list[LegalSource]], weights: list[float] | None = None
+) -> list[LegalSource]:
+    weights = weights or [1.0] * len(ranked_lists)
+    scores: dict[str, float] = {}
+    sources: dict[str, LegalSource] = {}
+    for ranked, weight in zip(ranked_lists, weights, strict=True):
+        for rank, source in enumerate(ranked, start=1):
+            scores[source.source_id] = scores.get(source.source_id, 0.0) + (
+                weight / (60 + rank)
+            )
+            sources[source.source_id] = source
+    ordered = sorted(scores, key=scores.get, reverse=True)
+    best = scores[ordered[0]] if ordered else 1.0
+    return [
+        sources[source_id].model_copy(
+            update={"score": round(scores[source_id] / best, 4)}
+        )
+        for source_id in ordered
+    ]
+
+
+def has_semantic_index(database: Path) -> bool:
+    if not database.exists():
+        return False
+    initialize(database)
+    with connect(database) as connection:
+        count = connection.execute(
+            "SELECT COUNT(*) FROM legal_embeddings"
+        ).fetchone()[0]
+    return count > 0
+
+
+def retrieval_mode(database: Path) -> str:
+    return "hybrid" if has_semantic_index(database) else "keyword"
+
+
+def search(database: Path, query: str, limit: int = 6) -> list[LegalSource]:
+    keyword_results = _keyword_search(database, query, max(limit * 5, 30))
+    if not has_semantic_index(database):
+        return keyword_results[:limit]
+    semantic_results = _semantic_search(database, query, max(limit * 5, 30))
+    fused = reciprocal_rank_fusion(
+        [keyword_results, semantic_results],
+        weights=[1.3, 1.0],
+    )
+    return fused[:limit]

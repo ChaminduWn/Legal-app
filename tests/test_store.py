@@ -1,7 +1,8 @@
 from pathlib import Path
 
 from app.rag.schema import LegalChunk
-from app.rag.store import replace_chunks, search
+from app.models import LegalSource
+from app.rag.store import reciprocal_rank_fusion, replace_chunks, search
 
 
 def test_search_returns_matching_source(tmp_path: Path) -> None:
@@ -66,3 +67,26 @@ def test_search_expands_plain_language_theft_terms(tmp_path: Path) -> None:
     results = search(database, "My phone was taken from my bag", 5)
     assert results
     assert results[0].section == "366"
+
+
+def test_rank_fusion_rewards_sources_found_by_both_retrievers() -> None:
+    shared = LegalSource(
+        source_id="shared",
+        law="Penal Code",
+        section="366",
+        text="Theft",
+        source_file="penal.pdf",
+        page_start=1,
+        page_end=1,
+        score=1,
+    )
+    keyword_only = shared.model_copy(
+        update={"source_id": "keyword", "section": "393"}
+    )
+    semantic_only = shared.model_copy(
+        update={"source_id": "semantic", "section": "394"}
+    )
+    fused = reciprocal_rank_fusion(
+        [[keyword_only, shared], [semantic_only, shared]], [1.0, 1.0]
+    )
+    assert fused[0].source_id == "shared"

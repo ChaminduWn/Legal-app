@@ -6,8 +6,15 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from app.config import get_settings
-from app.models import ChatRequest, ChatResponse, SearchRequest, SearchResponse
-from app.rag.store import initialize, search
+from app.evaluation import load_cases, run_evaluation
+from app.models import (
+    ChatRequest,
+    ChatResponse,
+    EvaluationSummary,
+    SearchRequest,
+    SearchResponse,
+)
+from app.rag.store import initialize, retrieval_mode, search
 from app.services.legal_answer import answer_question
 
 
@@ -33,6 +40,11 @@ def frontend() -> FileResponse:
     return FileResponse(FRONTEND_DIR / "index.html")
 
 
+@app.get("/evaluation", include_in_schema=False)
+def evaluation_frontend() -> FileResponse:
+    return FileResponse(FRONTEND_DIR / "evaluation.html")
+
+
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
@@ -42,7 +54,21 @@ def health() -> dict[str, str]:
 def legal_search(request: SearchRequest) -> SearchResponse:
     settings = get_settings()
     sources = search(settings.legal_ai_database, request.query, request.limit)
-    return SearchResponse(query=request.query, sources=sources)
+    return SearchResponse(
+        query=request.query,
+        sources=sources,
+        retrieval_mode=retrieval_mode(settings.legal_ai_database),
+    )
+
+
+@app.get("/api/evaluations/cases")
+def evaluation_cases() -> list[dict]:
+    return load_cases()
+
+
+@app.post("/api/evaluations/run", response_model=EvaluationSummary)
+def evaluate_retrieval() -> EvaluationSummary:
+    return run_evaluation(get_settings().legal_ai_database)
 
 
 @app.post("/api/chat", response_model=ChatResponse)

@@ -4,6 +4,7 @@ Version: 0.1.0
 Summary: Source-grounded Sri Lankan legal information API
 Requires-Python: >=3.11
 Requires-Dist: fastapi[standard]>=0.115
+Requires-Dist: fastembed>=0.7
 Requires-Dist: google-genai>=1.0
 Requires-Dist: numpy>=2.0
 Requires-Dist: pydantic-settings>=2.7

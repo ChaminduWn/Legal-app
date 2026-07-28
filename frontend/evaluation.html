@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#102b2d" />
+    <title>Retrieval evaluation — Neethi</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/evaluation.css" />
+    <script src="/static/evaluation.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Neethi home">
+          <span class="brand-mark" aria-hidden="true">නී</span>
+          <span><strong>Neethi</strong><small>Retrieval laboratory</small></span>
+        </a>
+        <a class="lab-back" href="/">← Public assistant</a>
+      </header>
+
+      <main class="lab-main">
+        <section class="lab-hero">
+          <div>
+            <div class="eyebrow"><span aria-hidden="true">✦</span> Internal quality check</div>
+            <h1>Legal retrieval<br /><em>evaluation</em></h1>
+          </div>
+          <div class="lab-intro">
+            <p>
+              Measure whether the correct legal section appears in the first five
+              results. This test does not call Gemini or consume API quota.
+            </p>
+            <button class="primary-button" id="run-evaluation" type="button">
+              Run evaluation <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="metric-grid" aria-label="Evaluation summary">
+          <article><span>Retrieval mode</span><strong id="metric-mode">—</strong><small>Local search stack</small></article>
+          <article><span>Recall at 5</span><strong id="metric-recall">—</strong><small>Correct section found</small></article>
+          <article><span>Mean reciprocal rank</span><strong id="metric-mrr">—</strong><small>Correct answers near the top</small></article>
+          <article><span>Passing scenarios</span><strong id="metric-passed">—</strong><small id="metric-total">Not run yet</small></article>
+        </section>
+
+        <section class="lab-table-section">
+          <div class="section-heading">
+            <h2>Evaluation scenarios</h2>
+            <span id="evaluation-status">Ready to run</span>
+          </div>
+          <div class="evaluation-empty" id="evaluation-empty">
+            <strong>Run the evaluation to inspect retrieval quality.</strong>
+            <p>Draft cases should be reviewed by a Sri Lankan legal professional before they become release gates.</p>
+          </div>
+          <div class="table-wrap" id="table-wrap" hidden>
+            <table>
+              <thead>
+                <tr>
+                  <th>Scenario</th>
+                  <th>Expected</th>
+                  <th>Retrieved top 5</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody id="evaluation-results"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+
