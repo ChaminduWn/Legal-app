@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#102b2d" />
+    <title>Document verification — Neethi</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/documents.css" />
+    <script src="/static/documents.js" defer></script>
+  </head>
+  <body>
+    <div class="review-shell">
+      <header class="review-topbar">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">නී</span>
+          <span><strong>Neethi</strong><small>Document verification</small></span>
+        </a>
+        <div class="review-actions">
+          <a href="/evaluation">Evaluation</a>
+          <button class="primary-button compact" id="import-button" type="button">Import PDF</button>
+        </div>
+      </header>
+
+      <main class="review-layout">
+        <aside class="document-sidebar">
+          <div class="panel-title">
+            <span>Legal collection</span>
+            <strong id="document-count">0 documents</strong>
+          </div>
+          <label class="sidebar-search">
+            <span class="visually-hidden">Filter documents</span>
+            <input id="document-filter" type="search" placeholder="Filter documents…" />
+          </label>
+          <div class="document-list" id="document-list"></div>
+        </aside>
+
+        <section class="review-workspace">
+          <div class="workspace-empty" id="workspace-empty">
+            <span class="dialog-mark" aria-hidden="true">§</span>
+            <h1>Select a legal document</h1>
+            <p>Review extracted sections against the original PDF and record authoritative source details.</p>
+          </div>
+
+          <div id="workspace-content" hidden>
+            <header class="document-header">
+              <div>
+                <span class="eyebrow" id="document-filename"></span>
+                <h1 id="document-title"></h1>
+                <p id="document-progress"></p>
+              </div>
+              <button class="secondary-button" id="metadata-button" type="button">Document details</button>
+            </header>
+
+            <div class="review-columns">
+              <aside class="section-navigator">
+                <div class="panel-title">
+                  <span>Extracted sections</span>
+                  <strong id="section-count">0 sections</strong>
+                </div>
+                <label class="sidebar-search">
+                  <span class="visually-hidden">Filter sections</span>
+                  <input id="section-filter" type="search" placeholder="Find a section…" />
+                </label>
+                <div class="section-list" id="section-list"></div>
+              </aside>
+
+              <section class="section-editor">
+                <div class="editor-empty" id="editor-empty">
+                  Select a section to begin verification.
+                </div>
+                <form id="section-form" hidden>
+                  <div class="editor-toolbar">
+                    <div>
+                      <span>Reviewing</span>
+                      <strong id="editing-section">Section</strong>
+                    </div>
+                    <span class="index-state" id="index-state"></span>
+                  </div>
+
+                  <label>
+                    Heading
+                    <input id="section-heading" maxlength="500" />
+                  </label>
+                  <label>
+                    Extracted legal text
+                    <textarea id="section-text" rows="17" minlength="20" required></textarea>
+                  </label>
+                  <div class="editor-row">
+                    <label>
+                      Review status
+                      <select id="section-status">
+                        <option value="unreviewed">Unreviewed</option>
+                        <option value="in_review">In review</option>
+                        <option value="needs_correction">Needs correction</option>
+                        <option value="verified">Verified</option>
+                      </select>
+                    </label>
+                    <label>
+                      Reviewer note
+                      <input id="section-notes" maxlength="2000" placeholder="Optional note" />
+                    </label>
+                  </div>
+                  <div class="editor-footer">
+                    <span id="section-pages"></span>
+                    <button class="primary-button" type="submit">Save review</button>
+                  </div>
+                </form>
+              </section>
+
+              <aside class="pdf-panel">
+                <div class="panel-title">
+                  <span>Original publication</span>
+                  <strong id="pdf-page-label">PDF preview</strong>
+                </div>
+                <iframe id="pdf-frame" title="Original legal PDF"></iframe>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="review-dialog" id="metadata-dialog">
+      <button class="dialog-close" data-close="metadata-dialog" type="button" aria-label="Close">×</button>
+      <span class="eyebrow">Document record</span>
+      <h2>Authority and status</h2>
+      <form id="metadata-form">
+        <label>Official source URL<input id="official-source-url" type="url" placeholder="https://documents.gov.lk/…" /></label>
+        <div class="dialog-grid">
+          <label>Publication date<input id="publication-date" placeholder="YYYY-MM-DD or Gazette date" /></label>
+          <label>Effective date<input id="effective-date" placeholder="YYYY-MM-DD or unknown" /></label>
+        </div>
+        <label>
+          Document status
+          <select id="document-status">
+            <option value="unreviewed">Unreviewed</option>
+            <option value="in_review">In review</option>
+            <option value="verified">Verified</option>
+            <option value="superseded">Superseded</option>
+          </select>
+        </label>
+        <label>Notes<textarea id="document-notes" rows="4" maxlength="4000"></textarea></label>
+        <button class="primary-button" type="submit">Save document record</button>
+      </form>
+    </dialog>
+
+    <dialog class="review-dialog" id="import-dialog">
+      <button class="dialog-close" data-close="import-dialog" type="button" aria-label="Close">×</button>
+      <span class="eyebrow">Add legal source</span>
+      <h2>Import a PDF</h2>
+      <p class="dialog-copy">Use an authoritative English PDF with selectable text and numbered sections. Maximum size: 25 MB.</p>
+      <form id="import-form">
+        <label>Law or publication title<input name="title" minlength="3" required placeholder="Example: Evidence Ordinance" /></label>
+        <label class="file-field">PDF document<input name="document" type="file" accept="application/pdf,.pdf" required /></label>
+        <p class="form-message" id="import-message"></p>
+        <button class="primary-button" type="submit">Import and extract</button>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" hidden></div>
+  </body>
+</html>
+

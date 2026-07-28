@@ -61,6 +61,23 @@ retrieval.
 Open `http://127.0.0.1:8000/evaluation` to run the draft retrieval evaluation.
 The evaluation does not call Gemini.
 
+## Local document verification
+
+Open `http://127.0.0.1:8000/admin/documents` to:
+
+- Review every extracted section beside the original PDF.
+- Correct headings and legal text while preserving the first extracted version
+  for audit.
+- Record official source URLs, publication dates, effective dates, and notes.
+- Mark documents and individual sections with review statuses.
+- Import selectable-text legal PDFs up to 25 MB.
+
+Section corrections invalidate only the affected semantic vector. Run
+`python -m scripts.build_embeddings` after completing a batch of corrections or
+importing a new document. The administration workspace is currently intended
+for local development only and must be protected with authentication before a
+public deployment.
+
 ## Example
 
 ```json

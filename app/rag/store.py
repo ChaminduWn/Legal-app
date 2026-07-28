@@ -105,6 +105,57 @@ def replace_chunks(database: Path, chunks: list[LegalChunk]) -> None:
         )
 
 
+def replace_document_chunks(
+    database: Path, source_file: str, chunks: list[LegalChunk]
+) -> None:
+    initialize(database)
+    with connect(database) as connection:
+        existing_ids = [
+            row[0]
+            for row in connection.execute(
+                "SELECT source_id FROM legal_chunks WHERE source_file = ?",
+                (source_file,),
+            )
+        ]
+        if existing_ids:
+            placeholders = ",".join("?" for _ in existing_ids)
+            connection.execute(
+                f"DELETE FROM legal_embeddings WHERE source_id IN ({placeholders})",
+                existing_ids,
+            )
+            connection.execute(
+                f"DELETE FROM legal_chunks_fts WHERE source_id IN ({placeholders})",
+                existing_ids,
+            )
+            connection.execute(
+                f"DELETE FROM legal_chunks WHERE source_id IN ({placeholders})",
+                existing_ids,
+            )
+        connection.executemany(
+            "INSERT INTO legal_chunks VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            [
+                (
+                    item.source_id,
+                    item.law,
+                    item.section,
+                    item.heading,
+                    item.text,
+                    item.source_file,
+                    item.page_start,
+                    item.page_end,
+                )
+                for item in chunks
+            ],
+        )
+        connection.executemany(
+            "INSERT INTO legal_chunks_fts VALUES (?, ?, ?, ?, ?)",
+            [
+                (item.source_id, item.law, item.section, item.heading, item.text)
+                for item in chunks
+            ],
+        )
+
+
 def _keyword_search(database: Path, query: str, limit: int) -> list[LegalSource]:
     if not database.exists():
         return []
