@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Source-grounded Sri Lankan legal information, explained clearly."
+    />
+    <meta name="theme-color" content="#102b2d" />
+    <title>Neethi — Sri Lankan Legal Guide</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Neethi home">
+          <span class="brand-mark" aria-hidden="true">නී</span>
+          <span>
+            <strong>Neethi</strong>
+            <small>Sri Lankan legal guide</small>
+          </span>
+        </a>
+
+        <div class="topbar-actions">
+          <span class="source-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            Verified sources
+          </span>
+          <button class="icon-button" id="about-button" type="button" aria-label="About Neethi">
+            ?
+          </button>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <section class="hero" id="welcome-view">
+          <div class="eyebrow">
+            <span aria-hidden="true">✦</span>
+            Source-grounded legal information
+          </div>
+          <h1>Understand your situation.<br /><em>Know your next step.</em></h1>
+          <p class="hero-copy">
+            Describe what happened in your own words. Neethi searches verified Sri
+            Lankan legislation and explains potentially relevant sections clearly.
+          </p>
+
+          <form class="question-card" id="question-form">
+            <label for="question-input">What happened?</label>
+            <textarea
+              id="question-input"
+              name="question"
+              rows="4"
+              maxlength="4000"
+              placeholder="For example: My phone was taken from my bag on the bus..."
+              required
+            ></textarea>
+            <div class="composer-footer">
+              <span class="privacy-note">
+                <span aria-hidden="true">●</span>
+                Avoid names, ID numbers, or private details
+              </span>
+              <button class="primary-button" type="submit">
+                Find relevant law
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </form>
+
+          <div class="suggestions" aria-labelledby="suggestions-title">
+            <div class="section-heading">
+              <h2 id="suggestions-title">Try an example</h2>
+              <span>Common situations</span>
+            </div>
+            <div class="suggestion-grid">
+              <button class="suggestion-card" type="button" data-question="Someone hit me with a stick and I was injured. What can I do?">
+                <span class="suggestion-number">01</span>
+                <span>
+                  <strong>Physical harm</strong>
+                  <small>Someone attacked or injured me</small>
+                </span>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="suggestion-card" type="button" data-question="My phone was stolen while I was travelling on a bus.">
+                <span class="suggestion-number">02</span>
+                <span>
+                  <strong>Stolen property</strong>
+                  <small>My phone or belongings were taken</small>
+                </span>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="suggestion-card" type="button" data-question="I was involved in a road accident and the other driver left the scene.">
+                <span class="suggestion-number">03</span>
+                <span>
+                  <strong>Road incident</strong>
+                  <small>An accident or driving offence</small>
+                </span>
+                <span class="card-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="results-view" id="results-view" hidden aria-live="polite">
+          <div class="results-header">
+            <button class="back-button" id="back-button" type="button">
+              <span aria-hidden="true">←</span>
+              New question
+            </button>
+            <span class="case-label">Legal information brief</span>
+          </div>
+
+          <article class="question-summary">
+            <span>Your situation</span>
+            <p id="submitted-question"></p>
+          </article>
+
+          <div class="loading-state" id="loading-state">
+            <div class="loading-seal" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div>
+              <h2>Reviewing the legal sources</h2>
+              <p>Searching the supplied Sri Lankan legislation for relevant sections…</p>
+            </div>
+          </div>
+
+          <div id="answer-content" hidden>
+            <div class="answer-layout">
+              <article class="answer-main">
+                <div class="answer-kicker">
+                  <span aria-hidden="true">✓</span>
+                  Source-grounded overview
+                </div>
+                <h2>What the available law may mean</h2>
+                <p class="answer-summary" id="answer-summary"></p>
+
+                <section class="answer-section" id="references-section">
+                  <div class="answer-section-title">
+                    <span>01</span>
+                    <h3>Potentially relevant law</h3>
+                  </div>
+                  <div class="reference-list" id="reference-list"></div>
+                </section>
+
+                <section class="answer-section">
+                  <div class="answer-section-title">
+                    <span>02</span>
+                    <h3>Practical next steps</h3>
+                  </div>
+                  <ol class="action-list" id="action-list"></ol>
+                </section>
+
+                <section class="uncertainty-box" id="uncertainty-box" hidden>
+                  <strong>Important context</strong>
+                  <ul id="uncertainty-list"></ul>
+                </section>
+              </article>
+
+              <aside class="source-panel">
+                <div class="source-panel-heading">
+                  <span>Evidence used</span>
+                  <strong id="source-count">0 sources</strong>
+                </div>
+                <div id="source-list"></div>
+              </aside>
+            </div>
+
+            <footer class="answer-footer">
+              <p id="answer-disclaimer"></p>
+              <button class="secondary-button" id="ask-another-button" type="button">
+                Ask another question
+              </button>
+            </footer>
+          </div>
+
+          <div class="error-state" id="error-state" hidden>
+            <span aria-hidden="true">!</span>
+            <h2>We couldn’t complete the search</h2>
+            <p id="error-message">Please try again in a moment.</p>
+            <button class="secondary-button" id="retry-button" type="button">Try again</button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>General legal information, not legal advice.</p>
+        <p>Based on supplied Sri Lankan legislation · English</p>
+      </footer>
+    </div>
+
+    <dialog class="about-dialog" id="about-dialog">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Close">×</button>
+      <span class="dialog-mark" aria-hidden="true">නී</span>
+      <h2>About Neethi</h2>
+      <p>
+        Neethi retrieves sections from supplied Sri Lankan legal documents before
+        generating an explanation. It does not decide whether an offence occurred,
+        predict a court outcome, or replace a qualified lawyer.
+      </p>
+      <div class="dialog-rule"></div>
+      <strong>For emergencies</strong>
+      <p>Contact the appropriate local emergency service or public authority directly.</p>
+    </dialog>
+  </body>
+</html>
+
