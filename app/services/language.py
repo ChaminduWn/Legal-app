@@ -14,10 +14,13 @@ SINHALA_LEGAL_GLOSSARY = {
     "සාක්ෂි": "evidence",
     "චූදිත": "accused person",
     "ගෘහස්ථ ප්‍රචණ්ඩත්ව": "domestic violence prevention",
-    "ආරක්ෂණ නියෝග": "application for a protection order application protection order",
+    "ආරක්ෂණ නියෝග": "application for a protection order",
     "අවසරයකින් තොරව": "unauthorised",
+    "අවසර නොමැතිව": "unauthorised",
     "පරිගණක": "computer",
-    "ප්‍රවේශ": "access",
+    "පද්ධති": "system",
+    "පිවිස": "access",
+    "ඇතුළු": "access",
     "වෙළඳසැල": "shop",
     "කාර්යාල": "office",
     "සේවක": "employee",
@@ -48,7 +51,8 @@ def retrieval_query(text: str) -> str:
     if detect_language(text) != "si":
         return text
     equivalents = [
-        english for sinhala, english in SINHALA_LEGAL_GLOSSARY.items()
+        english
+        for sinhala, english in SINHALA_LEGAL_GLOSSARY.items()
         if sinhala in text
     ]
     return f"{text} {' '.join(equivalents)}".strip()
