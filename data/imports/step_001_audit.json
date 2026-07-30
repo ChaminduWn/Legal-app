@@ -1,0 +1,110 @@
+[
+  {
+    "file": "11_Wages-Boards-Ordinance-No.27-of-1941.pdf",
+    "status": "imported",
+    "law": "Wages Boards Ordinance",
+    "sections": 110,
+    "notes": "Consolidated compilation; exact publisher URL and currency require review."
+  },
+  {
+    "file": "25-2017_E.pdf",
+    "status": "imported",
+    "law": "Electronic Transactions (Amendment) Act No. 25 of 2017",
+    "sections": 23,
+    "notes": "Government Printing publication; certified 2 November 2017."
+  },
+  {
+    "file": "6242.pdf",
+    "status": "imported",
+    "law": "Personal Data Protection Act No. 9 of 2022",
+    "sections": 71,
+    "notes": "Government Printing publication; certified 19 March 2022."
+  },
+  {
+    "file": "6297.pdf",
+    "status": "imported",
+    "law": "Assistance to and Protection of Victims of Crime and Witnesses Act No. 10 of 2023",
+    "sections": 112,
+    "notes": "Government Printing publication; certified 8 August 2023."
+  },
+  {
+    "file": "6311.pdf",
+    "status": "imported",
+    "law": "Online Safety Act No. 9 of 2024",
+    "sections": 53,
+    "notes": "Government Printing publication; certified 1 February 2024."
+  },
+  {
+    "file": "Bail-Act-Consolidated-2024.pdf",
+    "status": "imported",
+    "law": "Bail Act (Consolidated 2024)",
+    "sections": 24,
+    "notes": "Consolidated text; exact publisher URL and currency require review."
+  },
+  {
+    "file": "CAA_Act_E.pdf",
+    "status": "imported",
+    "law": "Consumer Affairs Authority Act No. 9 of 2003",
+    "sections": 88,
+    "notes": "Government Printing publication; certified 17 March 2003."
+  },
+  {
+    "file": "ComputerCrimesActNo24of2007.pdf",
+    "status": "imported",
+    "law": "Computer Crime Act No. 24 of 2007",
+    "sections": 38,
+    "notes": "Government Printing publication; certified 9 July 2007."
+  },
+  {
+    "file": "ElectronicTransactionActNo19of2006.pdf",
+    "status": "imported",
+    "law": "Electronic Transactions Act No. 19 of 2006",
+    "sections": 26,
+    "notes": "Government Printing publication; certified 19 May 2006."
+  },
+  {
+    "file": "Evidence-Ordinance-Consolidated-2024.pdf",
+    "status": "imported",
+    "law": "Evidence Ordinance (Consolidated 2024)",
+    "sections": 94,
+    "notes": "Consolidated text through Act No. 6 of 2021; publisher URL requires review."
+  },
+  {
+    "file": "Industrial-Disputes-Act-Consolidated-2024.pdf",
+    "status": "imported",
+    "law": "Industrial Disputes Act (Consolidated 2024)",
+    "sections": 69,
+    "notes": "Consolidated text through Act No. 24 of 2022; publisher URL requires review."
+  },
+  {
+    "file": "Minimum_Wages_(Indian_Labour)_Ordinance.pdf",
+    "status": "imported",
+    "law": "Minimum Wages (Indian Labour) Ordinance",
+    "sections": 17,
+    "notes": "Historical consolidated text; current legal status requires verification."
+  },
+  {
+    "file": "Prevention of Domestic Violence Act, No. 34 of 2005 - English.pdf",
+    "status": "imported",
+    "law": "Prevention of Domestic Violence Act No. 34 of 2005",
+    "sections": 27,
+    "notes": "Government Printing publication; certified 3 October 2005."
+  },
+  {
+    "file": "Shop-and-Office-Employees-Consolidated-2024.pdf",
+    "status": "imported",
+    "law": "Shop and Office Employees Act (Consolidated 2024)",
+    "sections": 80,
+    "notes": "Consolidated text through Act No. 28 of 2024; publisher URL requires review."
+  },
+  {
+    "file": "575-2025_E.pdf",
+    "status": "excluded",
+    "reason": "Personal Data Protection amendment bill, not an enacted Act."
+  },
+  {
+    "file": "4c03ba2f2.pdf",
+    "status": "excluded",
+    "reason": "Duplicate Domestic Violence Act copy; retained the Government Printing edition."
+  }
+]

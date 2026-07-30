@@ -26,6 +26,10 @@
         </a>
 
         <div class="topbar-actions">
+          <div class="language-switch" role="group" aria-label="Language">
+            <button type="button" data-language="en" aria-pressed="true">EN</button>
+            <button type="button" data-language="si" aria-pressed="false">සිං</button>
+          </div>
           <span class="source-status">
             <span class="status-dot" aria-hidden="true"></span>
             Verified sources
@@ -118,6 +122,19 @@
             <p id="submitted-question"></p>
           </article>
 
+          <form class="followup-state" id="followup-state" hidden>
+            <div class="followup-heading">
+              <div class="answer-kicker"><span aria-hidden="true">?</span> A little more context</div>
+              <h2>These details may change which law applies.</h2>
+              <p>Choose the closest answer. You can select “I am not sure” where necessary.</p>
+            </div>
+            <div id="followup-list"></div>
+            <div class="followup-footer">
+              <span>At most two questions · Your answers become part of this search only</span>
+              <button class="primary-button" type="submit">Continue legal search <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+
           <div class="loading-state" id="loading-state">
             <div class="loading-seal" aria-hidden="true">
               <span></span><span></span><span></span>
@@ -133,8 +150,9 @@
               <article class="answer-main">
                 <div class="answer-kicker">
                   <span aria-hidden="true">✓</span>
-                  Source-grounded overview
+                  <span id="confidence-label">Source-grounded overview</span>
                 </div>
+                <p class="confidence-reason" id="confidence-reason"></p>
                 <h2>What the available law may mean</h2>
                 <p class="answer-summary" id="answer-summary"></p>
 
@@ -207,4 +225,3 @@
     </dialog>
   </body>
 </html>
-

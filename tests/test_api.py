@@ -25,6 +25,15 @@ def test_health_and_local_search() -> None:
         assert payload["sources"]
         assert all(source["source_id"] for source in payload["sources"])
 
+        preparation = client.post(
+            "/api/prepare",
+            json={"message": "My phone was taken from my bag"},
+        )
+        assert preparation.status_code == 200
+        prepared = preparation.json()
+        assert prepared["detected_domain"] == "property_offence"
+        assert prepared["follow_up_questions"]
+
 
 def test_chat_without_key_returns_retrieved_citations(monkeypatch) -> None:
     settings = Settings(gemini_api_key=None)

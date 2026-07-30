@@ -78,6 +78,22 @@ importing a new document. The administration workspace is currently intended
 for local development only and must be protected with authentication before a
 public deployment.
 
+## Clarification and source support
+
+Before generating an answer, the assistant can ask up to two deterministic
+follow-up questions when missing facts may change the applicable law, such as
+whether force was used during a property offence or whether physical injury
+occurred.
+
+Final answers include a server-controlled source-support state:
+
+- `supported`: leading retrieved laws match the detected legal area.
+- `limited`: potentially relevant material exists but needs more context.
+- `insufficient`: retrieved material does not reliably support the question.
+
+Gemini cannot choose or increase this state. Evaluation and clarification
+preparation use local retrieval and consume no Gemini quota.
+
 ## Example
 
 ```json
@@ -90,7 +106,7 @@ POST /api/search
 
 ## Important limitations
 
-The current search is auditable SQLite full-text retrieval. Semantic embeddings
-and hybrid re-ranking are the next milestone. Extracted sections must be
-reviewed against the page images before this is used by the public. Document
-effective dates and official source URLs also need legal verification.
+The current search combines auditable SQLite full-text retrieval with cached
+local semantic embeddings. Extracted sections must still be reviewed against
+the page images before this is used by the public. Document effective dates and
+official source URLs also need legal verification.

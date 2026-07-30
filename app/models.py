@@ -1,3 +1,5 @@
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 
@@ -42,6 +44,28 @@ class ChatResponse(BaseModel):
     uncertainties: list[str]
     disclaimer: str = "General legal information only, not legal advice."
     grounded: bool
+    confidence_state: Literal["supported", "limited", "insufficient"] = "limited"
+    confidence_reason: str = "The available sources require further review."
+
+
+class PrepareRequest(BaseModel):
+    message: str = Field(min_length=3, max_length=4000)
+
+
+class FollowUpQuestion(BaseModel):
+    question_id: str
+    question: str
+    reason: str
+    options: list[str]
+
+
+class PrepareResponse(BaseModel):
+    confidence_state: Literal["supported", "limited", "insufficient"]
+    confidence_reason: str
+    detected_domain: str
+    detected_language: Literal["en", "si"]
+    follow_up_questions: list[FollowUpQuestion]
+    retrieval_mode: str
 
 
 class EvaluationCaseResult(BaseModel):

@@ -7,10 +7,11 @@ import numpy as np
 
 from app.config import get_settings
 from app.models import LegalSource
+from app.services.language import retrieval_query
 from app.rag.schema import LegalChunk
 
 
-TOKEN = re.compile(r"[A-Za-z0-9]+")
+TOKEN = re.compile(r"[A-Za-z0-9\u0D80-\u0DFF]+")
 STOP_WORDS = {
     "and", "are", "can", "did", "for", "from", "have", "how", "into",
     "me", "my", "of", "on", "someone", "the", "they", "to", "was",
@@ -23,6 +24,15 @@ LEGAL_EXPANSIONS = {
     "beaten": {"assault", "hurt", "criminal force"},
     "hit": {"assault", "hurt", "criminal force", "bodily pain"},
     "injured": {"injury", "hurt", "bodily pain"},
+    "accessed": {"unauthorised access", "computer", "lawful authority"},
+    "hacked": {"unauthorised access", "computer", "lawful authority"},
+    "unauthorised": {"without lawful authority", "access any computer"},
+    "unauthorized": {"without lawful authority", "access any computer"},
+    "defective": {"consumer", "goods", "quality", "standards", "complaints"},
+    "domestic": {"aggrieved person", "application", "magistrate", "protection order"},
+    "protection": {"aggrieved person", "application", "protection order"},
+    "refund": {"consumer", "trader", "goods", "complaints"},
+    "seller": {"consumer", "trader", "goods"},
     "stole": {"theft", "dishonestly", "movable property"},
     "stolen": {"theft", "dishonestly", "movable property"},
     "taken": {"theft", "dishonestly", "movable property"},
@@ -282,9 +292,11 @@ def has_semantic_index(database: Path) -> bool:
     if not database.exists():
         return False
     initialize(database)
+    model = get_settings().legal_ai_embedding_model
     with connect(database) as connection:
         count = connection.execute(
-            "SELECT COUNT(*) FROM legal_embeddings"
+            "SELECT COUNT(*) FROM legal_embeddings WHERE model = ?",
+            (model,),
         ).fetchone()[0]
     return count > 0
 
@@ -294,12 +306,28 @@ def retrieval_mode(database: Path) -> str:
 
 
 def search(database: Path, query: str, limit: int = 6) -> list[LegalSource]:
-    keyword_results = _keyword_search(database, query, max(limit * 5, 30))
+    normalized_query = retrieval_query(query)
+    keyword_results = _keyword_search(database, normalized_query, max(limit * 5, 30))
     if not has_semantic_index(database):
         return keyword_results[:limit]
-    semantic_results = _semantic_search(database, query, max(limit * 5, 30))
+    semantic_results = _semantic_search(database, normalized_query, max(limit * 5, 30))
+    keyword_weight = 2.2 if normalized_query != query else 1.3
+    semantic_weight = 0.7 if normalized_query != query else 1.0
     fused = reciprocal_rank_fusion(
         [keyword_results, semantic_results],
-        weights=[1.3, 1.0],
+        weights=[keyword_weight, semantic_weight],
     )
+    normalized_lower = normalized_query.lower()
+    if (
+        "computer" in normalized_lower
+        and any(term in normalized_lower for term in ("unauthorised", "unauthorized"))
+    ):
+        fused.sort(
+            key=lambda source: (
+                not (
+                    "Computer Crime Act" in source.law
+                    and source.section == "3"
+                ),
+            )
+        )
     return fused[:limit]

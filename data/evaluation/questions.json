@@ -68,6 +68,89 @@
     "expected_sections": ["71"],
     "domain": "procedure",
     "review_status": "draft"
+  },
+  {
+    "id": "evidence-confession-001",
+    "question": "Can a confession made to a police officer be proved against an accused person?",
+    "expected_sections": ["25"],
+    "domain": "evidence",
+    "review_status": "draft"
+  },
+  {
+    "id": "domestic-protection-001",
+    "question": "I am experiencing domestic violence. How can I apply for a protection order?",
+    "expected_sections": ["2", "4"],
+    "domain": "domestic_violence",
+    "review_status": "draft"
+  },
+  {
+    "id": "cyber-unauthorised-access-001",
+    "question": "Someone accessed my computer without permission or lawful authority.",
+    "expected_sections": ["3"],
+    "domain": "cybercrime",
+    "review_status": "draft"
+  },
+  {
+    "id": "consumer-defective-goods-001",
+    "question": "A trader sold me defective goods that do not meet the required quality standards.",
+    "expected_sections": ["12", "13"],
+    "domain": "consumer",
+    "review_status": "draft"
+  },
+  {
+    "id": "privacy-lawful-processing-001",
+    "question": "What conditions must a company meet when processing my personal data?",
+    "expected_sections": ["5"],
+    "domain": "data_protection",
+    "review_status": "draft"
+  },
+  {
+    "id": "employment-hours-001",
+    "question": "What are the legal limits on working hours for an employee in a shop or office?",
+    "expected_sections": ["3"],
+    "domain": "employment",
+    "review_status": "draft"
+  },
+  {
+    "id": "bail-principle-001",
+    "question": "Is granting bail generally the rule and refusing bail the exception?",
+    "expected_sections": ["2"],
+    "domain": "bail",
+    "review_status": "draft"
+  },
+  {
+    "id": "si-criminal-theft-001",
+    "question": "බස් රථයේදී මගේ බෑගයෙන් දුරකථනය සොරකම් කළා.",
+    "expected_sections": ["366"],
+    "domain": "criminal",
+    "review_status": "draft"
+  },
+  {
+    "id": "si-evidence-confession-001",
+    "question": "පොලිස් නිලධාරියෙකුට කළ පාපොච්චාරණයක් චූදිතයෙකුට එරෙහිව සාක්ෂියක් ලෙස භාවිත කළ හැකිද?",
+    "expected_sections": ["25"],
+    "domain": "evidence",
+    "review_status": "draft"
+  },
+  {
+    "id": "si-domestic-protection-001",
+    "question": "මම ගෘහස්ථ ප්‍රචණ්ඩත්වයට ලක්වෙමි. ආරක්ෂණ නියෝගයක් ඉල්ලන්නේ කෙසේද?",
+    "expected_sections": ["2", "4"],
+    "domain": "domestic_violence",
+    "review_status": "draft"
+  },
+  {
+    "id": "si-cyber-access-001",
+    "question": "අවසරයකින් තොරව කෙනෙක් මගේ පරිගණකයට ප්‍රවේශ වී තිබේ.",
+    "expected_sections": ["3"],
+    "domain": "cybercrime",
+    "review_status": "draft"
+  },
+  {
+    "id": "si-employment-hours-001",
+    "question": "වෙළඳසැලක හෝ කාර්යාලයක සේවකයෙකුගේ වැඩ කරන පැය සඳහා නීතිමය සීමාව කුමක්ද?",
+    "expected_sections": ["3"],
+    "domain": "employment",
+    "review_status": "draft"
   }
 ]
-

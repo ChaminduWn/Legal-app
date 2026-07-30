@@ -1,0 +1,5695 @@
+[
+  {
+    "file": "Civil Law/02) අත්අඩංගුවට ගැනීම.pdf",
+    "bytes": 435942,
+    "sha256": "9f47e39a49f265d08572e0c8f932c0d0b2c2fd2a072953b525f65e3798fb4547",
+    "pages": 17,
+    "sample_characters": 4093,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "Civil Law/13) අත්හිටවීමේ සිර දඬුවම්,කොන්දේස සහිත නිදහස් කිරීම.pdf",
+    "bytes": 276793,
+    "sha256": "9fc317c9482c4395bb1311bfbacc519ca71bd9a70b7c6b3aee4889df247a1534",
+    "pages": 8,
+    "sample_characters": 3892,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "Civil Law/රජය විසින් සහ රජයට එරෙහි නඩු පැවරීම.pdf",
+    "bytes": 253725,
+    "sha256": "33bc4f4dff7a5584718c3b41725fa8f83aa41f689132ca5f1e6b8b58813145fe",
+    "pages": 8,
+    "sample_characters": 5491,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "Criminal law/03) ඇප.pdf",
+    "bytes": 359680,
+    "sha256": "dc91c1605f367bb2dc55deb7e379ed46bdf9d4c634c4e15eb40535f67485fd6c",
+    "pages": 12,
+    "sample_characters": 3914,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "Criminal law/04) විමර්ශන.pdf",
+    "bytes": 356937,
+    "sha256": "c72d8a3ae483ec43ac0134f2e4a9852f655170457717a578ac74d1f12fc0fa51",
+    "pages": 14,
+    "sample_characters": 4058,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "Criminal law/05) චෝදනා සහ අධි චෝදනා (1).pdf",
+    "bytes": 298105,
+    "sha256": "1ff223a97a58747766e36f6ec4a4f12d18eb168d9bd0f7134feb9007f7f7eeb5",
+    "pages": 10,
+    "sample_characters": 3934,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "Criminal law/05) චෝදනා සහ අධි චෝදනා.pdf",
+    "bytes": 298105,
+    "sha256": "1ff223a97a58747766e36f6ec4a4f12d18eb168d9bd0f7134feb9007f7f7eeb5",
+    "pages": 10,
+    "sample_characters": 3934,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "Criminal law/05) චෝදනා සහ අධි චෝදනා (1).pdf"
+  },
+  {
+    "file": "Criminal law/07) දේපළ බැහැර කිරීම.pdf",
+    "bytes": 136482,
+    "sha256": "56c1fc8b46c974d5e4e5d4c85f2ddfd8ba4e055fcdb1ce45d3a94eabac80702c",
+    "pages": 8,
+    "sample_characters": 4019,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "Criminal law/09) අභියාචනා.pdf",
+    "bytes": 290001,
+    "sha256": "3a5de48756324c57c9a4b69c2dba6eb59442e50734e03e45905ff5899f8d80a4",
+    "pages": 14,
+    "sample_characters": 3444,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "Criminal law/15) නීති විරෝධී රැස්වීම් විසුරුවා හැරීම.pdf",
+    "bytes": 145373,
+    "sha256": "73c4f140a710310d2604388f60d88a97301ba08db9cae5e954deffda3cb0a696",
+    "pages": 3,
+    "sample_characters": 3275,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "Criminal law/16) නඩු විභාග පවත්වනු ලබන අධිකරණය.pdf",
+    "bytes": 130989,
+    "sha256": "6f9388675071ed7ff9095efa37af763aabda2087d0546ab7087cc566e1a9f1d0",
+    "pages": 6,
+    "sample_characters": 3583,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "Criminal law/U - කරදරය හා පරිසරය .pdf",
+    "bytes": 420762,
+    "sha256": "f50259e98317a91c3f1c6cd38598bc40c5f87605016ff07204aeaef701a18f59",
+    "pages": 13,
+    "sample_characters": 6624,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/00.පටුන - අපරාධ විමර්ශන_/පටුන.pdf",
+    "bytes": 477530,
+    "sha256": "58443a7a26832dbb4601ff6386388c41d153af9373a5c2cf86cd9bd2df83a76f",
+    "pages": 8,
+    "sample_characters": 7836,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/01.ආණ්ඩුක්‍රම ව්‍යවස්ථාව/19 වන ආණ්ඩුක්‍රම ව්‍යවස්ථා සංශෝධනය.pdf",
+    "bytes": 185705,
+    "sha256": "a9e95493d75d335d191d1ec474176d5eff507c5626db96d08f7660c3a7baf66b",
+    "pages": 69,
+    "sample_characters": 3118,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/01.ආණ්ඩුක්‍රම ව්‍යවස්ථාව/20 වන ආණ්ඩුක්‍රම ව්‍යවස්ථා සංශෝධනය.pdf",
+    "bytes": 182403,
+    "sha256": "9b2b6ccaaa663bd16d0a4be72141860f34a7bc6a81a26cf8e84f509efb10282d",
+    "pages": 44,
+    "sample_characters": 2955,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/01.ආණ්ඩුක්‍රම ව්‍යවස්ථාව/21 වන ආණ්ඩුක්‍රම ව්‍යවස්ථා සංශෝධනය.pdf",
+    "bytes": 235486,
+    "sha256": "54fc839f18518b54e8028c1a888feba4974dab58d77aa1b9b0ed129cf7dd6d21",
+    "pages": 51,
+    "sample_characters": 2633,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/01.ආණ්ඩුක්‍රම ව්‍යවස්ථාව/ව්‍යවස්ථාව (21 වන සංශෝධනය දක්වා).pdf",
+    "bytes": 2018023,
+    "sha256": "286f8fde0b00ca4854b1e904baa0fbcd59da7b9b93b9ceced2650bffbaa30bc8",
+    "pages": 289,
+    "sample_characters": 565,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/02.අපරාධ නඩු විධාන සංග්‍රහය/1979 අංක 15 අපරාධ නඩු විධාන සංග්‍රහ පනත.pdf",
+    "bytes": 38422354,
+    "sha256": "c2df980a0288805e980bbc59e365b5342de305ce68f51515f290dc051ca9f652",
+    "pages": 456,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 424
+  },
+  {
+    "file": "පනත්/02.අපරාධ නඩු විධාන සංග්‍රහය/2016 අංක 18 අනවිස (සංශෝධන) පනත.pdf",
+    "bytes": 67288,
+    "sha256": "b90b104434f185f6a57298dbda13fd9a2f44701b985bd6fa35dd8265a944622c",
+    "pages": 4,
+    "sample_characters": 3061,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/02.අපරාධ නඩු විධාන සංග්‍රහය/2018 අංක 11 අනවිස (සංශෝධන) පනත.pdf",
+    "bytes": 78800,
+    "sha256": "f1567f7606734854bdef1c642349dca08516416163ccc7f584ff376f9441fcc9",
+    "pages": 5,
+    "sample_characters": 3018,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/02.අපරාධ නඩු විධාන සංග්‍රහය/2021 අංක 14 අනවිස (සංශෝධන) පනත.pdf",
+    "bytes": 118874,
+    "sha256": "a4c8540a8136ffaddc78f79a7aaff2e1a86e74cad7135fe47857ff27df547aae",
+    "pages": 4,
+    "sample_characters": 2983,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/02.අපරාධ නඩු විධාන සංග්‍රහය/2022 අංක 02 අනවිස (සංශෝධන) පනත.pdf",
+    "bytes": 96264,
+    "sha256": "5c590588178e7ed48b6c1f9d4139a8013100ad2480a0309e72adf08321a4573d",
+    "pages": 9,
+    "sample_characters": 3121,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/02.අපරාධ නඩු විධාන සංග්‍රහය/2022 අංක 18 අනවිස (සංශෝධන) පනත.pdf",
+    "bytes": 81289,
+    "sha256": "41463d7daee2969a55b408325c69697f22c174c7d72ecc231e4c30bd0f324d82",
+    "pages": 4,
+    "sample_characters": 2512,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/02.අපරාධ නඩු විධාන සංග්‍රහය/2022 අංක 38 අනවිස (සංශෝධන) පනත.pdf",
+    "bytes": 83873,
+    "sha256": "d3b5da7baf79feb6a1001c57ba15e560b11e4d5f007d02da30151ad4366269c4",
+    "pages": 4,
+    "sample_characters": 2644,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/02.අපරාධ නඩු විධාන සංග්‍රහය/2024 අංක 25 අනවිස (සංශෝධන) පනත.pdf",
+    "bytes": 112225,
+    "sha256": "acdfc38760d3fec495584247de5ffa850999c7a0f54892820213091e25e2abcb",
+    "pages": 6,
+    "sample_characters": 2949,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/02.අපරාධ නඩු විධාන සංග්‍රහය/අ.න.වි.ස විශේෂ විධිවිධාන පනත/2007 අංක 42 දරණ අ.න.වි.ස. විශේෂ විධි විධාන පනත.pdf",
+    "bytes": 121001,
+    "sha256": "138e605ff68a9441bab0250ff4df4d5bf19c2fc6fb12e5f5a39512c249583ea4",
+    "pages": 12,
+    "sample_characters": 4191,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/02.අපරාධ නඩු විධාන සංග්‍රහය/අ.න.වි.ස විශේෂ විධිවිධාන පනත/2013 අංක 02 දරණ අ.න.වි.ස. විශේෂ විධි විධාන පනත.pdf",
+    "bytes": 91531,
+    "sha256": "e44786dfa1e5ec5e687748a6a2e59969f8364dc88048b92196448ddcc3833584",
+    "pages": 13,
+    "sample_characters": 3743,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/02.අපරාධ නඩු විධාන සංග්‍රහය/අ.න.වි.ස විශේෂ විධිවිධාන පනත/2019.01.016 දිනැති 2106-07 (අති විශෙෂ) ගැසට් පත්‍රය.pdf",
+    "bytes": 46521,
+    "sha256": "1f6f08a0f962a2935a72241a93d5ba2b6aa729f7aee51ea9d8b0219c35831d80",
+    "pages": 1,
+    "sample_characters": 865,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/03.දණ්ඩ නීති සංග්‍රහය/19 වන අධිකාරය දන්ඩ නීති සංග්‍රහ පනත.pdf",
+    "bytes": 92957098,
+    "sha256": "4983257a9fb9abef379a6101f412de951c2d42c29cc279ef77cebb165d691530",
+    "pages": 142,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 141
+  },
+  {
+    "file": "පනත්/03.දණ්ඩ නීති සංග්‍රහය/1995 අංක 22 දරන ල.ද.නි.ස. (සංශෝධන) පනත.pdf",
+    "bytes": 650132,
+    "sha256": "188e91ae8b3f1aaa15046c0984e0e423ba8719787bb66c7cd2cac69bd1e923d6",
+    "pages": 19,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 19
+  },
+  {
+    "file": "පනත්/03.දණ්ඩ නීති සංග්‍රහය/1998 අංක 29 දරන ල.ද.නි.ස. (සංශෝධන) පනත.pdf",
+    "bytes": 99464,
+    "sha256": "18a5f15d85c419e44f1f09386a9f780bcdfa83759cafb2c1dbfa05d1ff30b0ec",
+    "pages": 6,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  },
+  {
+    "file": "පනත්/03.දණ්ඩ නීති සංග්‍රහය/2002 අංක 12 දරන ල.ද.නි.ස. (සංශෝධන) පනත.pdf",
+    "bytes": 793214,
+    "sha256": "29a1b88ff1aaa9df54a187c415032549312e7d3f07d825d15f62ad589a20c3bc",
+    "pages": 3,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 3
+  },
+  {
+    "file": "පනත්/03.දණ්ඩ නීති සංග්‍රහය/2006 අංක 16 දරන ල.ද.නි.ස. (සංශෝධන) පනත.pdf",
+    "bytes": 124083,
+    "sha256": "04404d36d15c80cc771e8707feda783817db0fa680eabd9a168597ed499a3b21",
+    "pages": 15,
+    "sample_characters": 3366,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/03.දණ්ඩ නීති සංග්‍රහය/2018 අංක 10 දරන ල.ද.නි.ස. (සංශෝධන) පනත.pdf",
+    "bytes": 68726,
+    "sha256": "b698e4f73215d59ad69ec399582e729ea5a071af9457d4abac9d81d45ef9247f",
+    "pages": 3,
+    "sample_characters": 1980,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/03.දණ්ඩ නීති සංග්‍රහය/2021 අංක 05 ද.නි.ස (සංශෝධන) පනත.pdf",
+    "bytes": 93599,
+    "sha256": "d9edbf4d69b6fc1614515a476d7df75ef294ab24c1698f5a6b134c8e31f7e4f3",
+    "pages": 10,
+    "sample_characters": 3014,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/03.දණ්ඩ නීති සංග්‍රහය/2021 අංක 25 ද.නි.ස (සංශෝධන) පනත.pdf",
+    "bytes": 115445,
+    "sha256": "c5f5a8c7b98ebc63fa92d8f1eb5851e328fa36ca0f66b73148830f76fcc571e0",
+    "pages": 3,
+    "sample_characters": 1908,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/04.සාක්‍ෂි නීතිය/14 වන අධිකාරය සාක්ෂි අඥා පනත.pdf",
+    "bytes": 2733555,
+    "sha256": "9d35000cc3f3118a0e989c473a67ae25c16dbd1910dba4bc64515a752e02c55d",
+    "pages": 91,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 91
+  },
+  {
+    "file": "පනත්/04.සාක්‍ෂි නීතිය/1998 අංක 33 දරණ සාක්ෂි (සංශෝධන) පනත.pdf",
+    "bytes": 128046,
+    "sha256": "93f154a8ad862ea55ab7eabd68af782253f594a6a59dbc3a874edd4a2affe0b9",
+    "pages": 7,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 7
+  },
+  {
+    "file": "පනත්/04.සාක්‍ෂි නීතිය/2005 අංක 29 දරණ සාක්‍ෂි  (සංශෝධන) පනත.pdf",
+    "bytes": 149036,
+    "sha256": "0873ad038f8f588113844bcb282d20812110d5d69dde49b490c5959944afcd64",
+    "pages": 3,
+    "sample_characters": 2326,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/04.සාක්‍ෂි නීතිය/2021 අංක 06 සාක්ෂි (සංශෝධන) පනත.pdf",
+    "bytes": 92838,
+    "sha256": "80f2fec88a135822ebeff102c3e9bd6ed34e2a0a8dd4f4706de003c3f883a70e",
+    "pages": 9,
+    "sample_characters": 3506,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/04.සාක්‍ෂි නීතිය/සාක්ෂි (විශේෂ විධිවිධාන) පනත/1995 අංක 14 දරණ සාක්‍ෂි (විශේෂ විධි විධාන) පනත.pdf",
+    "bytes": 437633,
+    "sha256": "c1f4f29b1ae2bfe5a9f78b662819da080d4ea0e102c3c8b8803725a436791a8c",
+    "pages": 13,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 13
+  },
+  {
+    "file": "පනත්/04.සාක්‍ෂි නීතිය/සාක්ෂි (විශේෂ විධිවිධාන) පනත/1999 අංක 32 දරණ සාක්‍ෂි ( විශේෂ විධි විධාන) පනත.pdf",
+    "bytes": 128216,
+    "sha256": "c836619672ac76038def5a44f3131076bda4542993f271833ce4f463d6bbeed6",
+    "pages": 5,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 5
+  },
+  {
+    "file": "පනත්/05.ත්‍රස්තවාදය වැලැක්විමේ  පනත/1979 අංක 48 දරන ත්‍රස්තවාදය වැළැක්වීමේ (තාවකාලික විධි විධාන) පනත.pdf",
+    "bytes": 599583,
+    "sha256": "c7187bacf32024c91f442f62d0faa0273fe9ef70667d4fd4a4adee3c07798f95",
+    "pages": 18,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 18
+  },
+  {
+    "file": "පනත්/05.ත්‍රස්තවාදය වැලැක්විමේ  පනත/1982 අංක 10 ත්‍රස්තවාදය වැලැක්විමේ (සංශෝදන) පනත.pdf",
+    "bytes": 4530923,
+    "sha256": "117deba5beced2bd2ce7c6c1278121c9aa30a89db55488cd7924b800813434b5",
+    "pages": 5,
+    "sample_characters": 5000,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/06.මහජන ආරක්‍ෂක පනත/1998 අංක 28 දරණ මහජන ආරක්‍ෂක පනත -E.pdf",
+    "bytes": 49843,
+    "sha256": "ce78aab410561ac8b50124547dafc59d1f5567558b0bf5da3a68a2131460641f",
+    "pages": 7,
+    "sample_characters": 11243,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/06.මහජන ආරක්‍ෂක පනත/2019.04.22 දිනැති අංක 2120-05 දරණ (අති විශේෂ) ගැසට් පත්‍රය.pdf",
+    "bytes": 210831,
+    "sha256": "5f36ca44566dce776daa9ec6969f8f65b5b88decffb572386a79349a2e950f8c",
+    "pages": 35,
+    "sample_characters": 6637,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/07.මෝටර් රථ වාහන අණ පනත්/1916 අංක 04 දරණ වාහන ආඥා පනත.pdf",
+    "bytes": 993900,
+    "sha256": "bedd3c6b07abe54672e19719408cfe1a2fae986a2c8eaa5b7c04c02c8eff79f2",
+    "pages": 23,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 23
+  },
+  {
+    "file": "පනත්/07.මෝටර් රථ වාහන අණ පනත්/1991 අංක 31 ජාතික ප්‍රවාහන කොමිසම් පනත.pdf",
+    "bytes": 80058,
+    "sha256": "45885a1f221d7af5cd243f9a4da934b9478a4e9f27040cf3de36209778e61b93",
+    "pages": 27,
+    "sample_characters": 4181,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/07.මෝටර් රථ වාහන අණ පනත්/1995-01-13 දිනැති 853-14 දරණ රජයේ (අතිවි‍ශේෂ) ගැසට්පත්‍රය.pdf",
+    "bytes": 528396,
+    "sha256": "8132f7d753c5f8b5f176dd18e63939160195eb713b1594f4b4dc13b3628082a8",
+    "pages": 11,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 11
+  },
+  {
+    "file": "පනත්/07.මෝටර් රථ වාහන අණ පනත්/2009 අංක 8 දරණ මෝටර් වාහන (සංශෝධන) පනත.pdf",
+    "bytes": 424765,
+    "sha256": "7892daf78e7b8bd7a175284f00ffefa0ae3b825b429bd6fa624da1861524f426",
+    "pages": 116,
+    "sample_characters": 3225,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/07.මෝටර් රථ වාහන අණ පනත්/2015-11-12 දිනැති 1940 -21 දරණ රජයේ (අතිවි‍ශේෂ) ගැසට්පත්‍රය.pdf",
+    "bytes": 21423267,
+    "sha256": "8009048e9fa21d5430c480e9021df975a781c5f9c265c81d613860238d5ca494",
+    "pages": 111,
+    "sample_characters": 7771,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/07.මෝටර් රථ වාහන අණ පනත්/2017 අංක 18 දරණ මෝටර් වාහන (සංශෝධන) පනත.pdf",
+    "bytes": 116175,
+    "sha256": "269b51a5b629d3ce1ef0c70d454656b8fca2249fe472ac252b0a23622fb1fabe",
+    "pages": 24,
+    "sample_characters": 3183,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/07.මෝටර් රථ වාහන අණ පනත්/2019 අංක 10 දරණ මෝටර් වාහන (සංශෝධන) පනත.pdf",
+    "bytes": 92452,
+    "sha256": "f5e58111d4123717cc6f5ee761f9c46522ba5b4db4a9e24f2b2eb3888077131d",
+    "pages": 11,
+    "sample_characters": 2659,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/07.මෝටර් රථ වාහන අණ පනත්/203 වන අධිකාරය මෝටර් වාහන පනත.pdf",
+    "bytes": 6487560,
+    "sha256": "9f79a97741c2d120cec419e811a1ecbd2940f0579a50f05a51dfdfc2d7f31a23",
+    "pages": 167,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 166
+  },
+  {
+    "file": "පනත්/08.මත්දුව්‍ය සම්බන්ධ අණ පනත්/1980 අංක 27 දරණ සුවද විලවුන් උපකරණ හා ඖෂධ පනත -E.pdf",
+    "bytes": 181713,
+    "sha256": "66a88bd2f65439393c7bc1b89f6be24ce31d53ee14308510d1365ebaa392a6ec",
+    "pages": 7,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 7
+  },
+  {
+    "file": "පනත්/08.මත්දුව්‍ය සම්බන්ධ අණ පනත්/1984 අංක 11 දරණ අන්තරාදායක ඖෂධ පාලනය කිරීමේ ජාතික මණ්ඩල පනත.pdf",
+    "bytes": 32435533,
+    "sha256": "2baa6ea4d95498a98f0407aa390f6fe96fe0273fd6948cee99eaf15b44330e05",
+    "pages": 11,
+    "sample_characters": 5182,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/08.මත්දුව්‍ය සම්බන්ධ අණ පනත්/2007 අංක 54 ඖෂධවලට ඇබ්බැහිවූවන් පිළිබඳ පනත.pdf",
+    "bytes": 124344,
+    "sha256": "7e1745d9debf5789319fe56bb10c22ba86e2add327bc749a8b91a98af86c02c6",
+    "pages": 12,
+    "sample_characters": 3732,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/08.මත්දුව්‍ය සම්බන්ධ අණ පනත්/2008 අංක 01 දරණ මාධක ඖෂධ සහ මනෝවර්ථක පනත.pdf",
+    "bytes": 23677892,
+    "sha256": "c902507dccd74ef66d46d8c6a4c3270d0d2ca5ae8fed279e4e470bdb68ddc90e",
+    "pages": 44,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 44
+  },
+  {
+    "file": "පනත්/08.මත්දුව්‍ය සම්බන්ධ අණ පනත්/ඖෂධ නියාමන අධිකාරි පනත/2015 අංක 5 ඔෟෂධ නියාමන අධිකාරි පනත.pdf",
+    "bytes": 299701,
+    "sha256": "a2d5eb89caf2f29c5ce7a82ebbc909c85362d07a74b3e5ea65135e91aaca977b",
+    "pages": 104,
+    "sample_characters": 3185,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/08.මත්දුව්‍ය සම්බන්ධ අණ පනත්/විෂ, අබිං හා අන්තරායකර ඖෂධ පනත/1929 අංක 17 දරණ විෂ, අබිං හා අන්තරායකර ඖෂධ පනත-E.pdf",
+    "bytes": 263039,
+    "sha256": "8c510c53d0b89b75e33e3e8259050a1f9817a8ee9e73f3e5bf65711cb01181bd",
+    "pages": 27,
+    "sample_characters": 7666,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/08.මත්දුව්‍ය සම්බන්ධ අණ පනත්/විෂ, අබිං හා අන්තරායකර ඖෂධ පනත/1984 අංක 13 දරන විෂ වර්ග, අබිං සහ අන්තරායදායක ඖෂධ වර්ග (සංශෝධන) පනත.pdf",
+    "bytes": 19536259,
+    "sha256": "fa6e160321393196dc99b304c64334aec4dda548a878f58d9fa230a5141d53e9",
+    "pages": 13,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 13
+  },
+  {
+    "file": "පනත්/08.මත්දුව්‍ය සම්බන්ධ අණ පනත්/විෂ, අබිං හා අන්තරායකර ඖෂධ පනත/1986 අංක 26 දරන විෂ වර්ග, අබිං සහ අන්තරායදායක ඖෂධ වර්ග (සංශෝධන) පනත.pdf.pdf",
+    "bytes": 3011864,
+    "sha256": "5e8b5e59545055009bf358cd3e472aad0c5319998692c940b0408da6e83d11f9",
+    "pages": 3,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 3
+  },
+  {
+    "file": "පනත්/08.මත්දුව්‍ය සම්බන්ධ අණ පනත්/විෂ, අබිං හා අන්තරායකර ඖෂධ පනත/2022 අංක 41 දරන විෂ වර්ග, අබිං සහ අන්තරායදායක ඖෂධ වර්ග (සංශෝධන) පනත.pdf",
+    "bytes": 225173,
+    "sha256": "f5487f203d3de950f4fe60c1cbb3406b04e5e448f7df49608d485ef6fe428f69",
+    "pages": 46,
+    "sample_characters": 3118,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/09.සුරාබදු සම්බන්ධ අණ පනත්/1912 අංක 08 දරණ සුරාබදු ආඥා පනත.pdf",
+    "bytes": 26511238,
+    "sha256": "fe7ff4b94acc8dd4b3d2e94031bc60e775c7d03d1453174782ab428c545e55bb",
+    "pages": 42,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 42
+  },
+  {
+    "file": "පනත්/09.සුරාබදු සම්බන්ධ අණ පනත්/2011 අංක 20 දරණ සුරාබදු (සංශෝධන) පනත.pdf",
+    "bytes": 102319,
+    "sha256": "00f4b54f4900a918a67f5f2199db71eb226c32cff7462127ed4bc929e3b3b91f",
+    "pages": 3,
+    "sample_characters": 1828,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/09.සුරාබදු සම්බන්ධ අණ පනත්/2013 අංක 07 දරණ සුරාබදු (සංශෝධන) පනත.pdf",
+    "bytes": 68281,
+    "sha256": "d389cdaf9d5c3d7c74b529625b909d52e2071fb6b5c327377f72ff28514591c2",
+    "pages": 3,
+    "sample_characters": 1811,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/09.සුරාබදු සම්බන්ධ අණ පනත්/2018 අංක 04 දරණ සුරාබදු (සංශෝධන) පනත.pdf",
+    "bytes": 69207,
+    "sha256": "1510f7d588c7726108140e3608db7954c1d2cc0bd45c29c2198abd154f99a903",
+    "pages": 3,
+    "sample_characters": 1638,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/09.සුරාබදු සම්බන්ධ අණ පනත්/2018 අංක 26 දරණ සුරාබදු (සංශෝධන) පනත.pdf",
+    "bytes": 76797,
+    "sha256": "995d11b1a253858f2f44956b396df8b9ea81e732dfa10e55785ce5ee3d5bffe9",
+    "pages": 4,
+    "sample_characters": 2390,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/09.සුරාබදු සම්බන්ධ අණ පනත්/2019 අංක 18 දරණ සුරාබදු (සංශෝධන) පනත.pdf",
+    "bytes": 81456,
+    "sha256": "79627ea6796af3a649c2f553c3d50b90aa592eef0d97131ea56174f4939de885",
+    "pages": 4,
+    "sample_characters": 2627,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/10.දුම්කොල සම්බන්ධ අණ පනත්/2006 අංක 27  දුම්කොල හා මධ්‍යසාර පිළිබඳ ජාතික අධිකාරී පනත.pdf",
+    "bytes": 161547,
+    "sha256": "9fed1b7775cfe7e09d99bc0bfb70f7e867bd4a1d3dbc6a4aacbc2cfbaaf531a0",
+    "pages": 28,
+    "sample_characters": 3349,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/10.දුම්කොල සම්බන්ධ අණ පනත්/2016.9.1 දිනැති අංක 1982-33දරණ (අති විශේෂ) ගැසට් පත්‍රය.pdf",
+    "bytes": 84230,
+    "sha256": "2c54ca6c086b3d4aeda7fad0142f67c1f5e7016134da10999d116060486d6636",
+    "pages": 1,
+    "sample_characters": 1361,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/10.දුම්කොල සම්බන්ධ අණ පනත්/දුම්කොල බදු පනත්/1999 අංක 08 දරණ දුම්කොල බදු පනත.pdf",
+    "bytes": 157147,
+    "sha256": "bc143299fc3bb8df71a0fbffa4e02616075977b3355eff456c6263b2f53d6788",
+    "pages": 18,
+    "sample_characters": 3934,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/10.දුම්කොල සම්බන්ධ අණ පනත්/දුම්කොල බදු පනත්/2004 අංක 09 දරණ දුම්කොල බදු (සංශෝධන) පනත.pdf",
+    "bytes": 165895,
+    "sha256": "341a3e53ebc3ffd0dd79a40ccb7f394288a0e53a00a6d75e8d3b0ba8f80af255",
+    "pages": 8,
+    "sample_characters": 3382,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/10.දුම්කොල සම්බන්ධ අණ පනත්/දුම්කොල බදු පනත්/2009.10.26 දිනැති අංක 1625- 1 දරණ (අති විශේෂ) ගැසට් පත්‍රය.pdf",
+    "bytes": 170681,
+    "sha256": "d1d60f8f7e833ad594f1a73fdf4c67b73da48474e57e3f5c25f064b0e03ba353",
+    "pages": 10,
+    "sample_characters": 9258,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/100.රසායනික අවි සම්මුතිය පිළිබද පනත/2007 අංක 58 දරණ රසායනික අවි සම්මුතිය පිළිබද පනත.pdf",
+    "bytes": 199058,
+    "sha256": "6ace8785cb5ce602af26d039ddeb221d1bc39ba2a9c18f8838f53175c77d9faa",
+    "pages": 37,
+    "sample_characters": 3398,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/100.රසායනික අවි සම්මුතිය පිළිබද පනත/2019 අංක 01 දරණ රසායනික අවි සම්මුතිය පිළිබද (සංශෝධන) පනත.pdf",
+    "bytes": 71524,
+    "sha256": "b5e22721ac6407b033ad59b7e8dc777c3093e629084687169ce112a108b4d3d2",
+    "pages": 3,
+    "sample_characters": 1536,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/101.රාජතාන්ත්‍රික සබඳතා පිළිබඳ  පනත (වියානා)/1972 අංක 43 රාජතාන්ත්‍රික සබඳතා පිළිබඳ  පනත (වියානා) -E.pdf",
+    "bytes": 262809,
+    "sha256": "e22a20ea2968d2a0585c503771f95fca29d69df592b58d5aa991f2d201a24e02",
+    "pages": 7,
+    "sample_characters": 8527,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/102.රාජ්‍ය රහස් පනත/1955 අංක 32 දරණ රාජ්‍ය රහස් පනත - E.pdf",
+    "bytes": 143363,
+    "sha256": "ddd486da7c20f5be13162eb4e645f2001efad56e2f39545edaaeb27f955d11c0",
+    "pages": 11,
+    "sample_characters": 9769,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/103.රිමාන්ඩ් සිරකරුවන් නිදහස් කිරීමේ පනත/1991අංක 8 දරන රිමාන්ඩ් සිරකරුවන් නිදහස් කිරීමේ පනත -E.pdf",
+    "bytes": 208429,
+    "sha256": "1b9f0049e90029e9d8a152e840b21a7648af69d80bd6e42535e9225c6cbca021",
+    "pages": 3,
+    "sample_characters": 5968,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/104.ලේඛණ ආරක්ෂක පනත/1973 අංක 48 ලේඛණ ආරක්ෂක  පනත-E.pdf",
+    "bytes": 161075,
+    "sha256": "f6863c707ce4d6a117883749fcd6bc7d5373ad7b99b32795903c465013b64056",
+    "pages": 9,
+    "sample_characters": 8552,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/104.ලේඛණ ආරක්ෂක පනත/1981 අංක 30 ලේඛණ ආරක්ෂක (සංශෝදන) පනත-E.pdf",
+    "bytes": 142994,
+    "sha256": "afd06f23d57713e4659abb01c6102a3d5b0aabed56b6517125aa31e4a52ae3ee",
+    "pages": 6,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  },
+  {
+    "file": "පනත්/104.ලේඛණ ආරක්ෂක පනත/1984.08.31 දින ඇති අංක 755-762 දරන ගැසට් නිවෙදනය (16 වන වගන්තිය සංශෝධනය).pdf",
+    "bytes": 3745118,
+    "sha256": "7d6e843b7759c088d92723375a3e73f94ee47dc1669a86d59f3024ec562b0088",
+    "pages": 15,
+    "sample_characters": 29,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 11
+  },
+  {
+    "file": "පනත්/105.ලේඛන ලියාපදිංවි කිරිමේ පනත/1990 අංන 05 ලේඛණ ලියාපදිංචි කිරීම (සංශෝධන) පනත.pdf",
+    "bytes": 48436,
+    "sha256": "a01dcfd0e24f993451ef34df61917c9f1daa4e7ad65ab9ce14745012b157e708",
+    "pages": 3,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 3
+  },
+  {
+    "file": "පනත්/105.ලේඛන ලියාපදිංවි කිරිමේ පනත/2011 අංන 48 ලේඛණ ලියාපදිංචි කිරීම (සංශෝධන) පනත.pdf",
+    "bytes": 67757,
+    "sha256": "904ca50863bc6d622ac41ca0cc5b537ddaa4654ab37a5c34d6fc62bb7fd044a0",
+    "pages": 3,
+    "sample_characters": 2376,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/105.ලේඛන ලියාපදිංවි කිරිමේ පනත/2013 අංන 21 ලේඛණ ලියාපදිංචි කිරීම (සංශෝධන) පනත.pdf",
+    "bytes": 71743,
+    "sha256": "0c54a840473ad6b8282d58c42cfabd8c7075567545bc3caa72e56f2af4f2b67e",
+    "pages": 6,
+    "sample_characters": 2907,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/106.වැඩිහිටි තැනැත්තන්ගේ අයිතිවාසිකම් ආරක්ෂා කිරි‍මේ පනත/2000 අංක 09 වැඩිහිටි තැනැත්තන්ගේ අයිතිවාසිකම් ආරක්ෂා කිරිමේ පනත.pdf",
+    "bytes": 15728593,
+    "sha256": "df89ed47994f9df412265021efdda21d83d6e3fd00daf686cf998f0a408709d9",
+    "pages": 28,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 28
+  },
+  {
+    "file": "පනත්/106.වැඩිහිටි තැනැත්තන්ගේ අයිතිවාසිකම් ආරක්ෂා කිරි‍මේ පනත/2011 අංක 5 වැඩිහිටි තැනැත්තන්ගේ අයිතිවාසිිකම් (සංශෝධන) පනත.pdf",
+    "bytes": 104905,
+    "sha256": "39d1d7ac44f5af4e1b57b6d2b66b6c893e2bce523f0a692fb693d27603f8aa95",
+    "pages": 7,
+    "sample_characters": 3688,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/107.වධ දීමට හා අනෙකුත් කෘෘර අමානුෂික... එරෙහි සම්මුති පනත/1994 අංක 22 දරණ වධ දීමට හා අනෙකුත් කෘෘර අමානුෂික... එරෙහි පනත.pdf",
+    "bytes": 192608,
+    "sha256": "db2c5ef041dbc3f652bf0deb426bb946f71dc0157b26e5ebc4a06f40d38d409f",
+    "pages": 7,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 7
+  },
+  {
+    "file": "පනත්/108.වන සත්ව හා වෘක්ෂලතා ආරක්‍ෂන පනත/2009 අංක 22 දරණ වන සත්ව හා වෘක්ෂලතා ආරක්‍ෂන (සංශෝධන) පනත.pdf",
+    "bytes": 397864,
+    "sha256": "14eaf404db72fe7ac0cf72c5555690529f9181b2dd282f2651f0552c9964dc1f",
+    "pages": 89,
+    "sample_characters": 3442,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/108.වන සත්ව හා වෘක්ෂලතා ආරක්‍ෂන පනත/469 වන අධිකාරය වන සත්ව හා වෘක්ෂලතා ආරක්‍ෂක ආඥාපනත.pdf",
+    "bytes": 2208385,
+    "sha256": "4b051f5b79e665761f2d305f7387e3ad2a45457314243a2493ec99ce5503b3ee",
+    "pages": 76,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 76
+  },
+  {
+    "file": "පනත්/109.වානිජ සමතමණ්ඩල පනත/2000 අංක 34 වානිජ සමතමණ්ඩල  පනත.pdf",
+    "bytes": 4930823,
+    "sha256": "d707369f99f37c14b4ed8559530955f7d8f1cb1236f888c38cba8294a0a0e384",
+    "pages": 11,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 11
+  },
+  {
+    "file": "පනත්/109.වානිජ සමතමණ්ඩල පනත/2005 අංක 37 වානිජ සමතමණ්ඩල  (සංශෝධන) පනත.pdf",
+    "bytes": 172267,
+    "sha256": "9bbdb064b3fd9642184b39cfe33bdb1f687d446284f18cc5af87b266382b40e4",
+    "pages": 6,
+    "sample_characters": 3547,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/11.සිවිල් නඩු විධාන සංග්‍රහය/1895 අංක 12 දරණ සිවිල් නඩු විධාන සංග්‍රහය - E.pdf",
+    "bytes": 493282,
+    "sha256": "f5188cdda9ab94d3802738559668591e9d8b83be1a19fa0eb3702d7d02abe4ea",
+    "pages": 143,
+    "sample_characters": 8988,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/11.සිවිල් නඩු විධාන සංග්‍රහය/2010 අංක 11 දරණ සිවිල් නඩු විධාන සංග්‍රහ (සංශෝධන) පනත.pdf",
+    "bytes": 109086,
+    "sha256": "85178df6e33c64bc8b3a4d878c21b4875d0268f80ee7a41d53c25e040b687cdc",
+    "pages": 9,
+    "sample_characters": 3302,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/11.සිවිල් නඩු විධාන සංග්‍රහය/2010 අංක11දරණ සිවිල් නඩු විධාන සංග්‍රහය සංශෝධන පනත.pdf",
+    "bytes": 109086,
+    "sha256": "85178df6e33c64bc8b3a4d878c21b4875d0268f80ee7a41d53c25e040b687cdc",
+    "pages": 9,
+    "sample_characters": 3302,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/11.සිවිල් නඩු විධාන සංග්‍රහය/2010 අංක 11 දරණ සිවිල් නඩු විධාන සංග්‍රහ (සංශෝධන) පනත.pdf"
+  },
+  {
+    "file": "පනත්/11.සිවිල් නඩු විධාන සංග්‍රහය/2017 අංක 8 දරණ සිවිල් නඩු විධාන සංග්‍රහය සංශෝධන පනත.pdf",
+    "bytes": 117493,
+    "sha256": "5d89f582834112887eb933563bd23e720800a8ddfe21b7799e57c16e64b3e633",
+    "pages": 31,
+    "sample_characters": 3508,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/110.වාරිමාර්ග පනත/1955 අංක 40 වාරිමාර්ග  පනත- E.pdf",
+    "bytes": 1548408,
+    "sha256": "0b01d55403db2243644cd88b3ef9fc67120af99ec6fb2ee8e02bfeb439d6fd1e",
+    "pages": 46,
+    "sample_characters": 3158,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/110.වාරිමාර්ග පනත/1983 අංක 23 වාරිමාර්ග (සංශෝධන) පනත.pdf",
+    "bytes": 430757,
+    "sha256": "356e1dcba6ec50b89287a3e264355fc8ab54ac7b18c478e7d05382a0f126c4cb",
+    "pages": 8,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 8
+  },
+  {
+    "file": "පනත්/111.වෙරළ සංරක්ෂණ  පනත/1981 අංක 57 දරණ වෙරළ සංරක්ෂණ  පනත.pdf",
+    "bytes": 854073,
+    "sha256": "4754eeff2664b749a32381b0ae0d3848684625a72dc7ded07f2297b8637b623c",
+    "pages": 23,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 23
+  },
+  {
+    "file": "පනත්/111.වෙරළ සංරක්ෂණ  පනත/1988 අංක 64 දරණ වෙරළ සංරක්ෂණ.pdf",
+    "bytes": 277882,
+    "sha256": "5686d294c0e41dc3839ba9bb4464b665bc146a2595b582e9ef665082879ce30b",
+    "pages": 10,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 10
+  },
+  {
+    "file": "පනත්/111.වෙරළ සංරක්ෂණ  පනත/2011 අංක 49 දරණ වෙරළ සංරක්ෂණ (සංශෝධන) පනත.pdf",
+    "bytes": 154059,
+    "sha256": "f8e5b781db4671e41688e2bb97907759759d4ea054dda56606e4acfcaee24960",
+    "pages": 40,
+    "sample_characters": 3271,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/111.වෙරළ සංරක්ෂණ  පනත/වෙරළ සංරක්ෂණ පනත යටතේ පොලිස් නිලධාරින්ට බලතල පැවරීම පිළිබද සටහනක්.pdf",
+    "bytes": 232255,
+    "sha256": "1df7263f2d777de878b0a970293e0ab545da66b1795dc798c55f64623cfe199c",
+    "pages": 7,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 7
+  },
+  {
+    "file": "පනත්/112.වෛශ්‍යා වෘතිය හා කාන්තාවන් ළමුන් ඡාවාරම් කිරිමේ පනත/2005 අංක 30 වෛශ්‍යා වෘත්තීයට කාන්තාවන් ලමයි සැපයිමේ පනත.pdf",
+    "bytes": 182355,
+    "sha256": "f7592bf4774dac921ff09f74ba3885bc5bab229e77f3276d630b71a44c171380",
+    "pages": 11,
+    "sample_characters": 3482,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/113.වෘතිය සමිති පනත/1970 අංක 24 වෘතිය සමිති පනත-E.pdf",
+    "bytes": 52859,
+    "sha256": "4cf5252d576845a726b25d2fe17fb5c57c17ba4412e22fc1e9af7316025c0d0f",
+    "pages": 18,
+    "sample_characters": 8893,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/114.ශාක ආරක්ෂන පනත/1999 අංක 35 ශාක ආරක්ෂණ පනත.pdf",
+    "bytes": 162186,
+    "sha256": "d08d74515fa12d1f4d2a696e79fc9c7d26c6405e1611a68d60d6d8f4a3d84d0a",
+    "pages": 16,
+    "sample_characters": 3765,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/115.ශාරිරීක දඩුවම් ඉවත් කිරීමේ පනත/2005 අංක 23 දරණ ශාරිරීක දඩුවම් ඉවත් කිරීමේ පනත.pdf",
+    "bytes": 147979,
+    "sha256": "11bb2d26e79c22c4d7b320c9c7e9263fbe663d09e756f706e62932cd060ce6c6",
+    "pages": 3,
+    "sample_characters": 1757,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/116. ව්‍යවසන කළමණාකරන පනත/2005 අංක 13 දරණ ශ්‍රි ලංකා ව්‍යවසන කළමණාකරන පනත.pdf",
+    "bytes": 136386,
+    "sha256": "b41932e49efdcecbbcc3cd03ab1bcf12cb0099611f2afb037cb88f31c35e53bc",
+    "pages": 20,
+    "sample_characters": 2582,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/117.ගමනාගමන මණ්ඩල පනත/2005 අංක 27 දරණ ශ්‍රී ලංකා ගමනාගමන මණ්ඩල පනත.pdf",
+    "bytes": 209619,
+    "sha256": "b8b350a12d0892deca1f1476b96bcff91d6c6d12171a7c406d8ed665c54720da",
+    "pages": 24,
+    "sample_characters": 3978,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/118.විදුලි බල පනත/1984 අංක 15 දරන විදුලි බල (සංශොධන) පනත.pdf",
+    "bytes": 115624,
+    "sha256": "8b4c9883b81c7324b0d87cab2f647e2244cb0504c004e61a67ce72eaf9f48a97",
+    "pages": 5,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 5
+  },
+  {
+    "file": "පනත්/118.විදුලි බල පනත/2009 අංක 20 දරන විදුලි බල පනත.pdf",
+    "bytes": 1849418,
+    "sha256": "789e92d2b1bbed9f3920700557d75eb7d81d1e7073e7c4f78d94b4d0df854d38",
+    "pages": 92,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 92
+  },
+  {
+    "file": "පනත්/118.විදුලි බල පනත/2013 අංක 31 දරන විදුලි බල (සංශෝධන) පනත.pdf",
+    "bytes": 118113,
+    "sha256": "82602214ee58d3f020cee8c46e579d2d2620f8dafb7bb3d505eba61f7bd3341e",
+    "pages": 27,
+    "sample_characters": 3295,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/119.විදුලි සංදේශ පනත්/1991 අංක 25 දරණ ශ්‍රී ලංකා විදුලි  පනත -E.pdf",
+    "bytes": 24413299,
+    "sha256": "bfd210de8adb2e4d2b07afdae4349dfea19a8f555454d31f9e64fe4b82f45236",
+    "pages": 51,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 51
+  },
+  {
+    "file": "පනත්/119.විදුලි සංදේශ පනත්/1996 අංක 27 දරණ ශ්‍රී ලංකා විදුලි සංදේශ (සංශෝධන) පනත -E.pdf",
+    "bytes": 13476477,
+    "sha256": "76e45b7f1b0085bb1b4a15283cb5d6ccf700ee8916912f1b33292288438dfe42",
+    "pages": 34,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 34
+  },
+  {
+    "file": "පනත්/12.නීරෝධායන නීතිය/1952 අංක 12 දරණ නිරෝධායන හා රෝග නිවාරන පනත -E.pdf",
+    "bytes": 58695,
+    "sha256": "bf12c4116fa13b0f71f6b664a47eda62d7b6eab2fe685edc985ce32662d047ff",
+    "pages": 4,
+    "sample_characters": 11508,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/12.නීරෝධායන නීතිය/2020.03.20 දිනැති අංක 2167-18 දරණ අති විශේෂ ගැසට් පත්‍රය.pdf",
+    "bytes": 49209,
+    "sha256": "23229e91791f76ef143e5443e1b149bd5a0dfb4578c4f17920ea949745529580",
+    "pages": 1,
+    "sample_characters": 1205,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/12.නීරෝධායන නීතිය/2020.03.25 දිනැති අංක 2168-06 දරණ අති විශේෂ ගැසට් පත්‍රය.pdf",
+    "bytes": 53331,
+    "sha256": "f89976f0d566897acb23c83fadbb1107308828861dbd0668cd0a67a283322fed",
+    "pages": 2,
+    "sample_characters": 3634,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/12.නීරෝධායන නීතිය/2020.04.11 දිනැති අංක 2170-08 අති විශේෂ ගැසට් පත්‍රය.pdf",
+    "bytes": 58297,
+    "sha256": "a0365d2e776303ea5d5159982f0d2632003b045031a5a8e0f98ac7d58abe1802",
+    "pages": 2,
+    "sample_characters": 2869,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/12.නීරෝධායන නීතිය/2020.07.17 දිනැති අංක 2184-34 අති විශේෂ ගැසට් පත්‍රය.pdf",
+    "bytes": 55921,
+    "sha256": "e8f795e081c373c4d1df1277ac0061c472d24016394a579bdb5629d2bae218d6",
+    "pages": 2,
+    "sample_characters": 4245,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/12.නීරෝධායන නීතිය/2020.10.15 දිනැති අංක 2197-25 අති විශේෂ ගැසට් පත්‍රය.pdf",
+    "bytes": 59266,
+    "sha256": "e2052b298f2ef255df8eef9d5ec841d5745c21a080b64a7905e23f09bdd374ba",
+    "pages": 4,
+    "sample_characters": 6722,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/120.සංචාරක කටයුතු පනත/2005 අංක 38 දරණ සංචාරක කටයුතු පනත.pdf",
+    "bytes": 289694,
+    "sha256": "207cd169d3d417878d91e392eff573b5e4a0dff8ad5c3634e76c2082e3e59e4e",
+    "pages": 52,
+    "sample_characters": 3305,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/121.සත්ව පනත/1907 අංක 13 සත්ව හිංසා ආඥා පනත-E.pdf",
+    "bytes": 49953,
+    "sha256": "48a603aba0d6d6419c93b73e4ffddec0f769d223a84ffd11f38f7bfbfab93170",
+    "pages": 3,
+    "sample_characters": 10085,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/121.සත්ව පනත/1958 අංක 29 දරණ සත්ව පනත -E.pdf",
+    "bytes": 388772,
+    "sha256": "4beca3588e6241ae375c70ec527a4a760909912e7a9856df41ea71b38c40a137",
+    "pages": 10,
+    "sample_characters": 6530,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/121.සත්ව පනත/1958 අංක 29 දරණ සත්ව පනත සාරාංශයකි-E.pdf",
+    "bytes": 86374,
+    "sha256": "43c7f19c4e71ab09b36d3b9e1d6bf30bebcf372f39c6a81b06d4f247c23c75de",
+    "pages": 7,
+    "sample_characters": 10435,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/121.සත්ව පනත/1968 අංක 10 දරණ සත්ව (සංශෝධන) පනත - E.pdf",
+    "bytes": 336955,
+    "sha256": "f6d6f3a7bc761fb01cb592f80083ede3f62baea2b268f2e107b15d02d3699d17",
+    "pages": 4,
+    "sample_characters": 6132,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/121.සත්ව පනත/1988 අංක 46 දරණ සත්ව (සංශෝධන) පනත - E.pdf",
+    "bytes": 276711,
+    "sha256": "356192705ea4c40ec816fc14e6e3bc94ad09da6290f173dec2abe6181757830e",
+    "pages": 6,
+    "sample_characters": 5902,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/121.සත්ව පනත/1992 අංක 59 සත්ව රෝග පනත.pdf",
+    "bytes": 1775279,
+    "sha256": "a30e0502056741f568dbff4a4cf308b81a7c7a68297ab79cbf3e7a3b93b8bc8b",
+    "pages": 26,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 25
+  },
+  {
+    "file": "පනත්/121.සත්ව පනත/2009 අංක 10 දරණ සත්ව (සංශෝධන) පනත.pdf",
+    "bytes": 102537,
+    "sha256": "0a97a282a87ad656d5deafa9f90dab69121c0020f810611816851e2061ccbbcd",
+    "pages": 5,
+    "sample_characters": 2977,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/121.සත්ව පනත/2014.03.21 දිනැති අංක 1854-48 දරන රජයේ අති විශේෂ ගැසට් පත්‍රය - සත්ව රෝග පනත පිළිබදව නියෝග.pdf",
+    "bytes": 221597,
+    "sha256": "5c99aa94179d50acde30ad4cdc1615d7014a0b452c7cb80331d095b317fa25b2",
+    "pages": 5,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 5
+  },
+  {
+    "file": "පනත්/121.සත්ව පනත/2019.11.26 දිනැති අංක 1629-17 දරන රජයේ අති විශේෂ ගැසට් පත්‍රය - සත්ව පනත පිළිබදව අමාත්‍යවරයා විසි.pdf",
+    "bytes": 621075,
+    "sha256": "6f17d57c7533d2da581e83880a02c4a8deb2cd94a682738ff56d3187b5d30b78",
+    "pages": 16,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 16
+  },
+  {
+    "file": "පනත්/122.සමථ මණ්ඩල  පනත/1988 අංක 72 සමථ මණ්ඩල පනත.pdf",
+    "bytes": 1096464,
+    "sha256": "fb22621302d35553865fb0219014d17121e3fdb11287259ca01a132efcdd9340",
+    "pages": 16,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 16
+  },
+  {
+    "file": "පනත්/122.සමථ මණ්ඩල  පනත/2003 අංක 21 සමථ මණ්ඩල (විශේෂ ආරවුල් ) පනත.pdf",
+    "bytes": 447280,
+    "sha256": "c13d489f6798c848e708f36b074afae40c1617f111976df93ce3be239583dfd9",
+    "pages": 18,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 18
+  },
+  {
+    "file": "පනත්/122.සමථ මණ්ඩල  පනත/2011 අංක 04 සමථ මණ්ඩල (සංශෝධන) පනත.pdf",
+    "bytes": 98951,
+    "sha256": "4d62b36cb64942663fc880ac1981aab1116a8f5fc3dd187b22a75ecb2700a131",
+    "pages": 3,
+    "sample_characters": 2032,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/122.සමථ මණ්ඩල  පනත/2016 අංක 09 සමථ මණ්ඩල (සංශෝධන) පනත.pdf",
+    "bytes": 61703,
+    "sha256": "9b429c234aca1c845f6a15332ce32147378b5c3cbefa951485597478742c7d36",
+    "pages": 3,
+    "sample_characters": 1605,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/123.සාප්පු හා කාර්යාල  සේවක පනත/1954 අංක 19 සාප්පු කාර්යාල සේවක පනත.pdf",
+    "bytes": 458022,
+    "sha256": "2fcf3aca0712c301df892ff942c817ac193283c60711d1c5e85da3116e41a8ef",
+    "pages": 52,
+    "sample_characters": 9263,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/123.සාප්පු හා කාර්යාල  සේවක පනත/2018 අංක 14 සාප්පු කාර්යාල සේවක (සංශෝධන) පනත.pdf",
+    "bytes": 77833,
+    "sha256": "5c54d5ade2da3331768f607f0e87f35a153d4c5291d97f5b135b602e49a04ec3",
+    "pages": 4,
+    "sample_characters": 2964,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/123.සාප්පු හා කාර්යාල  සේවක පනත/2021 අංක 01 සාප්පු කාර්යාල සේවක (සංශෝධන) පනත.pdf",
+    "bytes": 74967,
+    "sha256": "3902716e990db844bf7d3992e8b4d4d20a2d5ef6e54a7877e602810fcf3e92ea",
+    "pages": 3,
+    "sample_characters": 1729,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/124.සිවිල් හා දේශපාලන අයිතිවාසිකම් පිළිබද ජාත්‍යයන්තර සම්මුතිය/2007 අංක 56 දරණ සිවිල් හා දේශපාලන අයිතිවාසිකම් පිළිබද පනත.pdf",
+    "bytes": 113152,
+    "sha256": "60a43abc52ce05064179288a8efeb8e293582e98db9d33694437e12a217e16d0",
+    "pages": 8,
+    "sample_characters": 3569,
+    "status": "already_imported",
+    "reason": null
+  },
+  {
+    "file": "පනත්/125.ප්‍රසුතිකාධාර පනත/1939 අංක 32 ප්‍රසුතිකාධාර ආඥා පනත.pdf",
+    "bytes": 161381,
+    "sha256": "a56af3e38bc926f877fcf612479963427ba85cfd00fc82bcdd265cd103bd68d6",
+    "pages": 15,
+    "sample_characters": 11077,
+    "status": "imported",
+    "reason": null,
+    "sections": 24
+  },
+  {
+    "file": "පනත්/125.ප්‍රසුතිකාධාර පනත/2018 අංක 15 ප්‍රසුතිකාධාර (සංශෝධන) පනත.pdf",
+    "bytes": 122056,
+    "sha256": "d0227a34aa573fe46d6d1da7018c275c59dccf414223df39c56f6032ea1b6520",
+    "pages": 7,
+    "sample_characters": 3082,
+    "status": "imported",
+    "reason": null,
+    "sections": 7
+  },
+  {
+    "file": "පනත්/126.සුදු පනත/1889 අංක 17 දරන සුදු පනත-E.pdf",
+    "bytes": 90173,
+    "sha256": "5a381cf3cec870aaea90646986d3fb9ffa6e4eaf5c4b4301f80f176bdd66ac3e",
+    "pages": 7,
+    "sample_characters": 12326,
+    "status": "imported",
+    "reason": null,
+    "sections": 9
+  },
+  {
+    "file": "පනත්/126.සුදු පනත/1946 අංක 03 දරන   සුදු ආඥා (සංශෝධිත) පනත.pdf",
+    "bytes": 390348,
+    "sha256": "33d2c592c9866143aadbb2ca8f67a441f5bc6b82640dfe5b080215d5e02dcd39",
+    "pages": 12,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 12
+  },
+  {
+    "file": "පනත්/127.සුරක්‍ෂිතලත් ගනුදෙනු  පනත/2009 අංක 49 දරණ සුරක්‍ෂිතලත් ගනුදෙනු  පනත.pdf",
+    "bytes": 132075,
+    "sha256": "0cffd4e75bdf0ccb756f175ed5f22704aa6fbdd33da10199c44e9f99eb9c680d",
+    "pages": 22,
+    "sample_characters": 3039,
+    "status": "imported",
+    "reason": null,
+    "sections": 22
+  },
+  {
+    "file": "පනත්/128.පීඩන ක්‍රියා පනත/1946 අංක 57න්  පීඩන ක්‍රියා ආඥා පනත.pdf",
+    "bytes": 272602,
+    "sha256": "bfd09c3b7b93c7929d64cfb3416a5d9c70d3b1405c2706375ef43f93252147ce",
+    "pages": 9,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 9
+  },
+  {
+    "file": "පනත්/129.හිමිකම් ලියාපදිංචි කිරිමේ පනත/1998 අංක 21 දරණ හිමිකම් ලියාපදිංචි කිරිමේ පනත.pdf",
+    "bytes": 9607048,
+    "sha256": "721094fd9de4f5dae57d480a91eb7a0dd5d6383f5c7c3eceba2cbe264d1fd1d8",
+    "pages": 33,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 33
+  },
+  {
+    "file": "පනත්/13.තොරතුරු දැනගැනිමේ පනත/2016 අංක 12 දරණ තොරතුරු දැන ගැනීමේ අයිතිවාසිකම පිළිබඳ පනත.pdf",
+    "bytes": 144427,
+    "sha256": "18bc3c95dc739032ff938003fa09e941dc590f5fce477609d5899d39b46eb74e",
+    "pages": 38,
+    "sample_characters": 3248,
+    "status": "imported",
+    "reason": null,
+    "sections": 38
+  },
+  {
+    "file": "පනත්/13.තොරතුරු දැනගැනිමේ පනත/2017.01.20 දිනැති අංක 2002-42 දරණ අති විශේෂ ගැසට් පත්‍රය.pdf",
+    "bytes": 52982,
+    "sha256": "7429f27103918cd1c91fc1d71c64860ea1c75fc7df4400153470985cdc438455",
+    "pages": 2,
+    "sample_characters": 3065,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/13.තොරතුරු දැනගැනිමේ පනත/2017.02.03 දිනැති 2004-66 දරණ අති විශේෂ ගැසට් පත්‍රයට අදාල (රීති).pdf",
+    "bytes": 1337825,
+    "sha256": "f34e46e0b7d0f83c9a149c7aa9dc8f7495edbaf70b0ca6ee202459f80597fede",
+    "pages": 13,
+    "sample_characters": 31255,
+    "status": "imported",
+    "reason": null,
+    "sections": 44
+  },
+  {
+    "file": "පනත්/13.තොරතුරු දැනගැනිමේ පනත/2017.02.03 දිනැති අංක 2004-66 දරණ අති විශේෂ ගැසට් පත්‍රය.pdf",
+    "bytes": 140159,
+    "sha256": "6b09293c318d0bbfbf6b4bcba531c76e094c6c8195056fccf8358c53b4fbbe2e",
+    "pages": 29,
+    "sample_characters": 8219,
+    "status": "imported",
+    "reason": null,
+    "sections": 29
+  },
+  {
+    "file": "පනත්/130.ප්‍රසිද්ධ ලේඛණ පනත/1864 අංක 12 ප්‍රසිද්ධ ලේඛණ පනත.pdf",
+    "bytes": 21391,
+    "sha256": "c11bb54cb8d9fd5b3a117116be81d7997b033f575a4d69ebe0270fb2f5b69e7e",
+    "pages": 1,
+    "sample_characters": 2022,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/131.ජාතික උරුම වනභූමි පනත/1988 අංක 03 ජාතික උරුම වනභූමි පනත.pdf",
+    "bytes": 221714,
+    "sha256": "0aafda15ed373aac0d9f64ad5b5da5075711d5477d8234dae7028ecb4cf19c43",
+    "pages": 8,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 8
+  },
+  {
+    "file": "පනත්/132.සමුද්‍ර දුෂණ වැලැක්විමේ පනත/2008 අංක 35 සමුද්‍ර දුෂණ වැලැක්විමේ පනත-E.pdf",
+    "bytes": 2900070,
+    "sha256": "bc531ae277b9dda20fd145c133680ad3380e9244fa3fba66366b34ca5dfb58b7",
+    "pages": 31,
+    "sample_characters": 41,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 30
+  },
+  {
+    "file": "පනත්/133.පෞද්ගලික ආරක්ෂක නියෝජිතායතන පනත/1998 අංක 45 පෞද්ගලික ආරක්ෂක නියෝජිතායතන පනත-E.pdf",
+    "bytes": 185986,
+    "sha256": "dda8bf4e75e0ecb1678ae0fa1a41dae1aeb52570a3ce50dc1f32917c8419e9ce",
+    "pages": 10,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 10
+  },
+  {
+    "file": "පනත්/134.පුරවැසි පනත/1948 අංක 18 පුරවැසි පනත-E.pdf",
+    "bytes": 114559,
+    "sha256": "d4880700f08dbbec32c0f75aef8501c9cad5a3cba8e587ff328e0dd6145ee54d",
+    "pages": 8,
+    "sample_characters": 11179,
+    "status": "imported",
+    "reason": null,
+    "sections": 8
+  },
+  {
+    "file": "පනත්/134.පුරවැසි පනත/1986 අංක 05 ආදේශිකයන්ට පරවැසිභාවය ප්‍රදානය කිරීමේ පනත.pdf",
+    "bytes": 163665,
+    "sha256": "5a5e689b01f4e372c684359bab373684c6c7651921d0a208a357d7b34c76f601",
+    "pages": 6,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  },
+  {
+    "file": "පනත්/134.පුරවැසි පනත/1988 අංක 39 ආදේශිකයන්ට පරවැසිභාවය ප්‍රදානය කිරීමේ (විශෙෂ විධිවිධාන) පනත.pdf",
+    "bytes": 201869,
+    "sha256": "ccbde23fdf8072f81a45419369201f3fe044a4d43e818ca9e1b8b9640d4b5459",
+    "pages": 8,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 8
+  },
+  {
+    "file": "පනත්/135.විවාහ ලියා පදිංචි කිරීම පනත/උඩරට විවහ/1951 අංක 17 උඩරට විවහ හා දික්කසාද පනත-E.pdf",
+    "bytes": 165503,
+    "sha256": "f513c806fa152fac77819b8f241f7521d7ff82d940fa674f08037dd83d9693b8",
+    "pages": 36,
+    "sample_characters": 6319,
+    "status": "imported",
+    "reason": null,
+    "sections": 36
+  },
+  {
+    "file": "පනත්/135.විවාහ ලියා පදිංචි කිරීම පනත/උඩරට විවහ/2006 අංක 39 උඩරට විවහ (සංශෝධන) පනත.pdf",
+    "bytes": 169881,
+    "sha256": "df34ed42fb979bf738a40d4f4149cbbd8813deeddae1692864a5d5a68019a655",
+    "pages": 4,
+    "sample_characters": 2194,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/135.විවාහ ලියා පදිංචි කිරීම පනත/උඩරට විවහ/2013 අංක 23 උඩරට විවාහ (සංශෝධන) පනත.pdf",
+    "bytes": 73386,
+    "sha256": "ba7a21eb84de66684646fc54242a2ce72331c0d5fbc85322d56b5b89e25a22bb",
+    "pages": 4,
+    "sample_characters": 3702,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/135.විවාහ ලියා පදිංචි කිරීම පනත/මුස්ලිම් විවහ/1951 අංක 13 මුස්ලිම් විවහ හා දික්කසාද පනත-E.pdf",
+    "bytes": 6476979,
+    "sha256": "a046e2f4e774bdcaeff74b2247e5112652479558ed06994ffe830fc14e6c77a8",
+    "pages": 29,
+    "sample_characters": 11106,
+    "status": "imported",
+    "reason": null,
+    "sections": 30
+  },
+  {
+    "file": "පනත්/135.විවාහ ලියා පදිංචි කිරීම පනත/මුස්ලිම් විවහ/2006 අංක 40 මුස්ලිම් විවහ (සංශෝධන) පනත.pdf",
+    "bytes": 165556,
+    "sha256": "11700a6d1a8baa7b182f6ee9099c023044c93356d1be77e950030ac40c256ec5",
+    "pages": 4,
+    "sample_characters": 2262,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/135.විවාහ ලියා පදිංචි කිරීම පනත/මුස්ලිම් විවහ/2013 අංක 24 මුස්ලිම් විවාහ (සංශෝධන) පනත.pdf",
+    "bytes": 70704,
+    "sha256": "a635c314af5596171e935aef50e0b04aecd0f00fd00ad19d95079e67e52bfd1d",
+    "pages": 4,
+    "sample_characters": 2558,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/135.විවාහ ලියා පදිංචි කිරීම පනත/සාමාන්‍ය විවහ/1907 අංක 19 සාමාන්‍ය විවහ ලියාපදිංචි කිරිමේ ආඥාපනත-E.pdf",
+    "bytes": 126080,
+    "sha256": "7b3141973944b4fff357d3f7d3768f0aef911116511caefc19a8ef3d97a38cb5",
+    "pages": 24,
+    "sample_characters": 7214,
+    "status": "imported",
+    "reason": null,
+    "sections": 24
+  },
+  {
+    "file": "පනත්/135.විවාහ ලියා පදිංචි කිරීම පනත/සාමාන්‍ය විවහ/2001 අංක 11 විවහ ලියාපදිංචි (සංශෝධන) පනත.pdf",
+    "bytes": 41251,
+    "sha256": "68ea47e584245b4069896ae12ebb398d6608edb1e7bbd7571bb5e591e4a3fd8e",
+    "pages": 3,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 3
+  },
+  {
+    "file": "පනත්/135.විවාහ ලියා පදිංචි කිරීම පනත/සාමාන්‍ය විවහ/2006 අංක 36 විවහ ලියාපදිංචි (සංශෝධන) පනත.pdf",
+    "bytes": 182384,
+    "sha256": "92632b2eba64bd6e078d3bf3ba1c6231cccbd7ebf810f5543812a831e07a03a6",
+    "pages": 4,
+    "sample_characters": 3019,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/135.විවාහ ලියා පදිංචි කිරීම පනත/සාමාන්‍ය විවහ/2013 අංක 22 විවාහ ලියා පදිංචි කිරීම සංශෝධන පනත.pdf",
+    "bytes": 83749,
+    "sha256": "e8ddf2e08bb022639daff0bd0e1c138bfb70cbaa86d96838af8fa032fc00b712",
+    "pages": 7,
+    "sample_characters": 3826,
+    "status": "imported",
+    "reason": null,
+    "sections": 7
+  },
+  {
+    "file": "පනත්/136.මුහුදු කොල්ලකෑම් පනත/2001 අංක 09 මුහුදු කොල්ලකෑම් පනත.pdf",
+    "bytes": 569928,
+    "sha256": "f0b6f4258e229ffe96f629b0b43ab5ee551ae7dd05af0dd2b3ad7c818b6ec500",
+    "pages": 16,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 16
+  },
+  {
+    "file": "පනත්/137.සමුද්‍රීය සංතරණයේ ආරක්ෂාවට එරෙහිව සිදුකරනු ලබන වැරදි පනත/2000 අංක 42 සමුද්‍රීය සංතරණයේ ආරක්ෂාවට එරෙහිව සිදුකරනු ලබන වැරදි පනත.pdf",
+    "bytes": 5121929,
+    "sha256": "bc6b523b47557351b9e6ac2802a7063e1af69ddeeb112694a8863da53bd8799c",
+    "pages": 10,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 10
+  },
+  {
+    "file": "පනත්/138.උදර්පන පනත/1977 අංක 08 උදර්පන පනත-E.pdf",
+    "bytes": 47041,
+    "sha256": "1828b65ff9d8d07be0f380e4856069c3c0de3066a1e148e3fc862e46078b9af6",
+    "pages": 2,
+    "sample_characters": 3504,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/139.බද්ද නිවාස අයිතිවාසිකම් පනත/1907 අංක 11 බද්ද නිවාස අයිතිවාසිකම් පනත-E.pdf",
+    "bytes": 531631,
+    "sha256": "dd6fdb334ff914f76bc7c5a17345da16040cf659727040d95cce18848efa4e50",
+    "pages": 54,
+    "sample_characters": 5452,
+    "status": "imported",
+    "reason": null,
+    "sections": 54
+  },
+  {
+    "file": "පනත්/14.මැතිවරන නීතිය/ඡන්ද දායකයන් ලියා පදංචි කිරීමේ පනත/1980 අංක 44 දරණ ඡන්ද දායකයන් ලියා පදංචි කිරීමේ පනත -E.pdf",
+    "bytes": 739814,
+    "sha256": "d61770d7218d386c972af5d969ac8e535d6c4bece63978736f725c96e85a128c",
+    "pages": 26,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 26
+  },
+  {
+    "file": "පනත්/14.මැතිවරන නීතිය/ඡන්ද විමසීම් විශේෂ විධිවිධාන පනත/1988 අංක 35 දරණ ඡන්ද විමසීම් විශේෂ විධිවිධාන පනත.pdf",
+    "bytes": 679971,
+    "sha256": "0cb9cf0c12f8b0e9956bd51cc79cf8ed8526a9c3266ce07bd27ee52a205e02bd",
+    "pages": 21,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 21
+  },
+  {
+    "file": "පනත්/14.මැතිවරන නීතිය/ජනමත විචාරණ පනත/1981 අංක 07 දරණ ජනමත විචාරන පනත - E.pdf",
+    "bytes": 1896435,
+    "sha256": "d0926ff3bc61100e0d7b3e41bdbbdde42f5997ab2b69e55d2c238a2d3765d817",
+    "pages": 61,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 61
+  },
+  {
+    "file": "පනත්/14.මැතිවරන නීතිය/ජනාධිපතිවරයා තෝරා පත්කර ගැනීමේ පනත/1981 අංක 15 දරණ ජනාධිපතිවරයා තෝරා පත්කර ගැනීමේ පනත.pdf",
+    "bytes": 4072778,
+    "sha256": "a6b8c05cbced7d4c426d54d0498224a931aefe47c83bab51ada4a94c94cf15cf",
+    "pages": 104,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 104
+  },
+  {
+    "file": "පනත්/14.මැතිවරන නීතිය/පලාත් පාලන ආයතන විශේෂ විධිවිධාන පනත/1983 අංක 48 දරණ පලාත් පාලන ආයතන විශේෂ විධිවිධාන පනත.pdf",
+    "bytes": 492734,
+    "sha256": "2755e4ec46e4018e8af5c0fac2411eccfb5c82778dcbf36aedcaccfb60550c75",
+    "pages": 15,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 15
+  },
+  {
+    "file": "පනත්/14.මැතිවරන නීතිය/පළාත් සභා ඡන්ද විමසීමේ පනත/1988 අංක 02 දරණ පළාත් සභා ඡන්ද විමසීමේ පනත.pdf",
+    "bytes": 4277420,
+    "sha256": "cd3ae176f75244f31c2565028448adcd7ce926645260a53987580154942ce163",
+    "pages": 109,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 109
+  },
+  {
+    "file": "පනත්/14.මැතිවරන නීතිය/පාර්ලිමේන්තු මැතිවරන පනත/1981 අංක 01 දරණ පාර්ලිමේන්තු මැතිවරන පනත.pdf",
+    "bytes": 4455678,
+    "sha256": "cb502ce25d0e854c3600723d80d37166bcda810cdde379210bda17fd5466fcff",
+    "pages": 112,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 111
+  },
+  {
+    "file": "පනත්/14.මැතිවරන නීතිය/පාර්ලිමේන්තු මැතිවරන පනත/1988 අංක 15 දරණ පාර්ලිමේන්තු මැතිවරණ (සංශෝධන) පනත.pdf",
+    "bytes": 568204,
+    "sha256": "6a9dd87259b9e5c3da52fdfad246ac335000fd59860cd3b6cbcf2aeadae914a8",
+    "pages": 16,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 16
+  },
+  {
+    "file": "පනත්/14.මැතිවරන නීතිය/පාර්ලිමේන්තු මැතිවරන පනත/1988 අංක 29 දරණ පාර්ලිමේන්තු මැතිවරණ (සංශෝධන) පනත.pdf",
+    "bytes": 97763,
+    "sha256": "a68f77e64b6b8661d58317cca978d947e0e111eaa3ab02faf5f1f0bb78457f81",
+    "pages": 4,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 4
+  },
+  {
+    "file": "පනත්/14.මැතිවරන නීතිය/පාර්ලිමේන්තු මැතිවරන පනත/2009 අංක 58 දරණ පාර්ලිමේන්තු මැතිවරණ (සංශෝධන) පනත.pdf",
+    "bytes": 107461,
+    "sha256": "6fb2d0bedc4e1321997ff1924ca29fffbb173187af508c3e5e967978022fd58a",
+    "pages": 10,
+    "sample_characters": 3925,
+    "status": "imported",
+    "reason": null,
+    "sections": 10
+  },
+  {
+    "file": "පනත්/140.කිරුම් මිනුම් ආඥාපනත/1946 අංක 47 කිරුම් මිනුම් ආඥාපනත-E.pdf",
+    "bytes": 284941,
+    "sha256": "3d8576dc9d783e7343d76fae14f48825d1ea72f0c247365aa8d2d0374704bb42",
+    "pages": 25,
+    "sample_characters": 12058,
+    "status": "imported",
+    "reason": null,
+    "sections": 26
+  },
+  {
+    "file": "පනත්/141.දරුකමට හදා ගැනීම ආඥා පනත/1941 අංක 24 දරණ දරුවන් දරුකමට හදා ගැනීම ආඥා පනත-E.pdf",
+    "bytes": 189111,
+    "sha256": "5f374ff88948decade5174631f52ba715739f3081fe2f8c6717f5436186ca5c0",
+    "pages": 21,
+    "sample_characters": 5590,
+    "status": "imported",
+    "reason": null,
+    "sections": 21
+  },
+  {
+    "file": "පනත්/142.විභාග පනත/1968 අංක 25 විභාග පනත-E.pdf",
+    "bytes": 62454,
+    "sha256": "65a1458ff2b7092fd0cb82c369c2c627651cfcceda5b8aa33b4e8beca4185a89",
+    "pages": 7,
+    "sample_characters": 6400,
+    "status": "imported",
+    "reason": null,
+    "sections": 7
+  },
+  {
+    "file": "පනත්/143.රේගු පනත/1869 අංක 17 රේගු අඥා පනත-E.pdf",
+    "bytes": 681532,
+    "sha256": "455c62aab42578e8ca33e471c4e563a142fb1bed80d23f16f160039f220165e9",
+    "pages": 64,
+    "sample_characters": 7033,
+    "status": "imported",
+    "reason": null,
+    "sections": 64
+  },
+  {
+    "file": "පනත්/143.රේගු පනත/1968 අංක 23 රේගු (සංශෝධන) පනත-E.pdf",
+    "bytes": 252415,
+    "sha256": "c0467031327e632b1f42c826978547e6d6463d9be0ff968d6a8d005f805089c6",
+    "pages": 1,
+    "sample_characters": 1607,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/143.රේගු පනත/1974 අංක 35 රේගු (සංශෝධන) පනත-E.pdf",
+    "bytes": 369970,
+    "sha256": "7cc48765cd433796e9811c64f19c987b8ae428a0fcaaffca7a7d7857ebd6f1e5",
+    "pages": 16,
+    "sample_characters": 8241,
+    "status": "imported",
+    "reason": null,
+    "sections": 16
+  },
+  {
+    "file": "පනත්/143.රේගු පනත/1988 අංක 83 රේගු (සංශෝධන) පනත-E.pdf",
+    "bytes": 462250,
+    "sha256": "bd8d93b039da234888d4090556aea8ff47722014045c7a6fff0173f9162ff2db",
+    "pages": 34,
+    "sample_characters": 6449,
+    "status": "imported",
+    "reason": null,
+    "sections": 34
+  },
+  {
+    "file": "පනත්/143.රේගු පනත/1991 අංක 24 රේගු (සංශෝධන) පනත-E.pdf",
+    "bytes": 216780,
+    "sha256": "c69ff861c2e03fa4252bc6bce8bae1b90b2c776c2fcbd0c121b1a27c4d3da4b1",
+    "pages": 3,
+    "sample_characters": 5178,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/143.රේගු පනත/2003 අංක 02 රේගු (සංශෝධන) පනත.pdf",
+    "bytes": 8782757,
+    "sha256": "e39ab973b1049b28cb6fe389fd67c663d74f3728aa487d7e29eee4258c9b6f79",
+    "pages": 18,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 18
+  },
+  {
+    "file": "පනත්/143.රේගු පනත/2003 අංක 36 රේගු (සංශෝධන) පනත-E.pdf",
+    "bytes": 429774,
+    "sha256": "7471b7c40c7eaf6a47e7db9f87d50f2ce9e95fde7dfd6cca6c0affa9730b8b41",
+    "pages": 163,
+    "sample_characters": 3981,
+    "status": "imported",
+    "reason": null,
+    "sections": 163
+  },
+  {
+    "file": "පනත්/143.රේගු පනත/2013 අංක 09 රේගු (සංශෝධන) පනත.pdf",
+    "bytes": 63555,
+    "sha256": "86e0caad68ae80735b9d0d2f4c44e19da13990cda6bbb63b348c95557f6aed42",
+    "pages": 4,
+    "sample_characters": 2585,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/144.ආනයන අපනයන පනත/1969 අංක 01 ආනයන අපනයන පනත.pdf",
+    "bytes": 208170,
+    "sha256": "82a3d091e0b81240cf351830ed548a50876f41de587c053a6217e9116e2acde6",
+    "pages": 6,
+    "sample_characters": 8309,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/144.ආනයන අපනයන පනත/1985 අංක 48 ආනයන අපනයන (සංශෝධන) පනත.pdf",
+    "bytes": 201055,
+    "sha256": "c1f54dc8384c58ceecf956139f9460a70cad09cbb3f576c002baab12a6f9bbdd",
+    "pages": 2,
+    "sample_characters": 2081,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/144.ආනයන අපනයන පනත/1987 අංක 28 ආනයන අපනයන (සංශෝධන)  පනත.pdf",
+    "bytes": 208154,
+    "sha256": "bb80dfdcbc3e844c6b96b4da48a4465a89d27fa5cd255da9cbb721cd232c90c5",
+    "pages": 2,
+    "sample_characters": 3605,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/144.ආනයන අපනයන පනත/2019 .12.06 අංක 2152-63 ර.ගැ.ප (අතිවිශේෂ).pdf",
+    "bytes": 73889,
+    "sha256": "01043c7b04824cf714e9f79deb196843092aacdbd48d6ed9b8b868b051bf2b70",
+    "pages": 7,
+    "sample_characters": 3994,
+    "status": "imported",
+    "reason": null,
+    "sections": 7
+  },
+  {
+    "file": "පනත්/145.මනුෂ්‍ය පටක බද්ධ පනත/1987 අංක 48 මනුෂ්‍ය පටක බද්ධ පනත.pdf",
+    "bytes": 419502,
+    "sha256": "6d33fffd52723e3d6c3189607f918c2a1182cedc95f57b39752cc254e6b74a7e",
+    "pages": 13,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 13
+  },
+  {
+    "file": "පනත්/146.සිවිල් ගුවන්සේවා පනත/2010 අංක 14 සිවිල් ගුවන් සේවා පනත.pdf",
+    "bytes": 411717,
+    "sha256": "866e94e6f2d45bd3f3d84b5b635d57e7742c54062453a4346bb23bc6bab33cbb",
+    "pages": 109,
+    "sample_characters": 3488,
+    "status": "imported",
+    "reason": null,
+    "sections": 109
+  },
+  {
+    "file": "පනත්/146.සිවිල් ගුවන්සේවා පනත/2019.05.13 අංක 2123-10 දරණ ර.ගැ.ප (අතිවිශේෂ).pdf",
+    "bytes": 46563,
+    "sha256": "de006d985658a22410e9e539f064e9e9724515316e022a74a6668f5eb4dd9371",
+    "pages": 1,
+    "sample_characters": 814,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/147.වෛද්‍ය පනත/1927 අංක 26 වෛද්‍ය පනත.pdf",
+    "bytes": 2010111,
+    "sha256": "7d8d8838d12e6fc04f067260b588d9c2111b5ac55a755aa879a0ac2f0e8497e4",
+    "pages": 8,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 8
+  },
+  {
+    "file": "පනත්/147.වෛද්‍ය පනත/2018 අංක 28 වෛද්‍ය (සංශෝධන) පනත.pdf",
+    "bytes": 87657,
+    "sha256": "37c35f439195d46bf2e2bcdcb206395f1c7d8f989a6304a96f5878917bedb39a",
+    "pages": 8,
+    "sample_characters": 3192,
+    "status": "imported",
+    "reason": null,
+    "sections": 8
+  },
+  {
+    "file": "පනත්/148.රාජ්‍ය රහස් පනත/1955 අංක 32 දරණ රාජ්‍ය රහස් පනත - E.pdf",
+    "bytes": 143363,
+    "sha256": "ddd486da7c20f5be13162eb4e645f2001efad56e2f39545edaaeb27f955d11c0",
+    "pages": 11,
+    "sample_characters": 9769,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/102.රාජ්‍ය රහස් පනත/1955 අංක 32 දරණ රාජ්‍ය රහස් පනත - E.pdf"
+  },
+  {
+    "file": "පනත්/149.බල්ලන් ලියාපදිංචි කිරීමේ ආඥා පනත/1938 අංක 26 බල්ලන් ලියාපදිංචි කිරීමේ ආඥා පනත-E.pdf",
+    "bytes": 62205,
+    "sha256": "59d759260a8c64f5eb10c94a77bcd7cfc3f661d0cbe428ecd496881cdc752e42",
+    "pages": 3,
+    "sample_characters": 13283,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/15.කාන්තාවන් හා ළමයින් සම්බන්ධ අණ පනත්/1956 අංක 47 දරණ කාන්තාවන් ළමයින් සෙවයේ යෙදවීමේ පනත-E.pdf",
+    "bytes": 354544,
+    "sha256": "fe36ebbc65ecbece15063217c65e9ccb974b12d40ce703b968d2044136908089",
+    "pages": 18,
+    "sample_characters": 6819,
+    "status": "imported",
+    "reason": null,
+    "sections": 18
+  },
+  {
+    "file": "පනත්/15.කාන්තාවන් හා ළමයින් සම්බන්ධ අණ පනත්/1973 අංක 29 දරණ කාන්තාවන් ළමයින් ස‍ෙවයේ යෙදවීමේ (සංශෝධන) පනත-E.pdf",
+    "bytes": 26303,
+    "sha256": "9c10e046a3e9173e847c4d6e5f9ff1a727be987f1b3a8958b8293778dde8f783",
+    "pages": 1,
+    "sample_characters": 875,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/15.කාන්තාවන් හා ළමයින් සම්බන්ධ අණ පනත්/2003 අංක 8 දරණ කාන්තාවන් ළමයින් සෙවයේ යෙදවීමේ (සංශෝධන) පනත.pdf",
+    "bytes": 8388533,
+    "sha256": "ca764a5c17b73d026f9ac55cc90f01feb3f0b1f4fe6f5075fdee4d4fcceb8502",
+    "pages": 16,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 16
+  },
+  {
+    "file": "පනත්/15.කාන්තාවන් හා ළමයින් සම්බන්ධ අණ පනත්/2006 අංක 24 දරණ කාන්තාවන් ළමයින් සෙවයේ යෙදවීමේ (සංශෝධන) පනත.pdf",
+    "bytes": 111834,
+    "sha256": "4f78da6d93ea56fd2dd8816a1b09a785beac1e46185963260b2938ab8d6631b3",
+    "pages": 4,
+    "sample_characters": 2555,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/15.කාන්තාවන් හා ළමයින් සම්බන්ධ අණ පනත්/2021 අංක 02 කාන්තාවන් ළමයින් සෙවයේ යෙදවීමේ (සංශෝධන) පනත.pdf",
+    "bytes": 84884,
+    "sha256": "fb93ff4e75c8c9aea80e47b44cf748a17f104c9ab6fa6a0b9574b418e12239fb",
+    "pages": 6,
+    "sample_characters": 2906,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/15.කාන්තාවන් හා ළමයින් සම්බන්ධ අණ පනත්/ජාතික ළමා ආරක්ෂක අධිකාරි පනත/1998 අංක 50 දරන ඡාතික ළමා ආරක්ෂක අධිකාරි පනත.pdf",
+    "bytes": 499870,
+    "sha256": "115604d652291d667031252acee673cd3c03faf6d6f9e99556aa974ef7b2a2ea",
+    "pages": 22,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 22
+  },
+  {
+    "file": "පනත්/15.කාන්තාවන් හා ළමයින් සම්බන්ධ අණ පනත්/ළමා හා යෟවන පනත/1939 අංක 48 ළමා හා ‍යෞවන පනත-E.pdf",
+    "bytes": 451971,
+    "sha256": "b2825b22e76c4ee2b9de8f64aac61e2af9c6a6ac7029d258cfcbeabc481cf9f2",
+    "pages": 49,
+    "sample_characters": 5828,
+    "status": "imported",
+    "reason": null,
+    "sections": 49
+  },
+  {
+    "file": "පනත්/150.ජලභීතිකා ආඥා පනත/1941 අංක 13 ජලභීතිකා ආඥා පනත-E.pdf",
+    "bytes": 77391,
+    "sha256": "ac59a987929c3d21e42f0a3f0aea92a80abea20e83df7453539040583dd3bcb8",
+    "pages": 5,
+    "sample_characters": 11973,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/16.බීමත්ව කරන වැරදි පනත/1979 අංක 41 දරන බීමත්ව කරන ලද වැරදි පිළිබද (විශේෂ විධි විධාන) පනත.pdf",
+    "bytes": 228766,
+    "sha256": "d57f012c6a6f34f52fa3c905dbf250e45e2be0aedd21e7500ea15b6ee52ab6a4",
+    "pages": 6,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  },
+  {
+    "file": "පනත්/17.අතුරුදහන් වූ තැනැත්තන් පිළිබඳ කාර්යාලය පිහිටුවීමේ පනත/2016 අංක 14 දරණ අතුරුදහන් වූ තැනැත්තන් පිළිබද කාර්යාලය පිහිටුවීමේ පනත.pdf",
+    "bytes": 117031,
+    "sha256": "f0c04e9e87a227bca7334098aaa4fcb773ab4da96be7b71d17634b83b37d4e7e",
+    "pages": 25,
+    "sample_characters": 3598,
+    "status": "imported",
+    "reason": null,
+    "sections": 25
+  },
+  {
+    "file": "පනත්/17.අතුරුදහන් වූ තැනැත්තන් පිළිබඳ කාර්යාලය පිහිටුවීමේ පනත/2017 අංක 19 දරණ අතුරුදහන් වූ තැනැත්තන් පිළිබද කාර්යාලය පිහිටුවීමේ (සංශෝධන)  පනත.pdf",
+    "bytes": 112240,
+    "sha256": "1a7be7e8842eecb2c7a33822f5d3f5de74e655fe55e55a33779e7ca6a227c4e8",
+    "pages": 17,
+    "sample_characters": 3158,
+    "status": "imported",
+    "reason": null,
+    "sections": 16
+  },
+  {
+    "file": "පනත්/18.අධිකරණ සංවිධාන පනත/1978 අංක 02 දරන අධිකරණ සංවිධාන පනත.pdf",
+    "bytes": 1247041,
+    "sha256": "74892e603dd9909c4be9d9b46b96597db302d6515a74e0109b129f042cd50f60",
+    "pages": 38,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 38
+  },
+  {
+    "file": "පනත්/18.අධිකරණ සංවිධාන පනත/1983 අංක 36 දරණ අධිකණ සංවිධාන (සංශෝධන) පනත.pdf",
+    "bytes": 58710,
+    "sha256": "4f6ae77707acf51f2366ca1ec035454ea7dba84e602a350ef9c4b3703b69a559",
+    "pages": 3,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 3
+  },
+  {
+    "file": "පනත්/18.අධිකරණ සංවිධාන පනත/1999 අංක 27 දරණ අධිකරණ සංවිධාන (සංශෝධන) පනත.pdf",
+    "bytes": 154570,
+    "sha256": "203ef0c6684aadeab4e9c5f815ef8ba51a005f29c7f7bf1cc3d2408ac06d50c1",
+    "pages": 3,
+    "sample_characters": 1896,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/18.අධිකරණ සංවිධාන පනත/2007 අංක 31 දරණ අධිකරණ සංවිධාන (සංශෝධන) පනත.pdf",
+    "bytes": 85188,
+    "sha256": "4388f3186888b591b9e0889213e50bfbb633b1f87ea8748b2fdd59923d445ee3",
+    "pages": 3,
+    "sample_characters": 1672,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/18.අධිකරණ සංවිධාන පනත/2010 අංක 10 දරණ අධිකරණ සංවිධාන(සංශෝධන) පනත.pdf",
+    "bytes": 154510,
+    "sha256": "39e7cd5f37dd841ebf439f3a493d4c9ce497714cf99c541d858f79eae7c765db",
+    "pages": 3,
+    "sample_characters": 1754,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/18.අධිකරණ සංවිධාන පනත/2017 අංක 26 දරණ අධිකරණ සංවිධාන (සංශෝධන) පනත.pdf",
+    "bytes": 73389,
+    "sha256": "6d0e703b580d1f5c1c31dda74718c344960059e79ec19bec63cecf0aac64aef0",
+    "pages": 3,
+    "sample_characters": 1481,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/18.අධිකරණ සංවිධාන පනත/2019 අංක 5 දරණ අධිකරණ සංවිධාන (සංශෝධන) පනත.pdf",
+    "bytes": 77256,
+    "sha256": "b2c9e6004570912bfbfa9b3e57b5e87344284c37fdf9eedd2c425c44bf1ab46c",
+    "pages": 4,
+    "sample_characters": 2300,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/19.අපරාධ වැලැක්වීමේ  පනත/1926 අංක 02 දරන අපරාධ වැළැක්වීමේ ආඥා පනත ( සංශෝධන සහිත).pdf",
+    "bytes": 445732,
+    "sha256": "d01176f6ebebd8c08f9b4c6152c0675a46646dc80ffec51fb3d542d0e93bfdb3",
+    "pages": 14,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 13
+  },
+  {
+    "file": "පනත්/19.අපරාධ වැලැක්වීමේ  පනත/2017 අංක 29 දරණ අපරාධ වැලැක්වීමේ (සංශෝධන) පනත.pdf",
+    "bytes": 101085,
+    "sha256": "c0fcbe84a07d3254e551abe8131da375ef804307158d712a4368e2b50a2c7267",
+    "pages": 14,
+    "sample_characters": 3487,
+    "status": "imported",
+    "reason": null,
+    "sections": 13
+  },
+  {
+    "file": "පනත්/20.අපරාධයක වින්දිතයන් සහ සාක්ෂිකරුවන්හට සහාය දීමේ සහ ආරක්ෂා කිරීමේ පනත/2015 අංක 04 වින්දිතයන් ආරක්ෂා කිරි‍මේ පනත.pdf",
+    "bytes": 189478,
+    "sha256": "5fd5e9ac8f9962d7bdcfeb29f8958063c772b4121399467693dc22ea322b577e",
+    "pages": 58,
+    "sample_characters": 2816,
+    "status": "imported",
+    "reason": null,
+    "sections": 58
+  },
+  {
+    "file": "පනත්/20.අපරාධයක වින්දිතයන් සහ සාක්ෂිකරුවන්හට සහාය දීමේ සහ ආරක්ෂා කිරීමේ පනත/2017 අංක 27 වින්දිතයන් ආරක්ෂා කිරි‍මේ (සංශෝධන) පනත.pdf",
+    "bytes": 75874,
+    "sha256": "633a84a26ee083e16e0baa90674e282f8822992ec64690234194ddc789e34337",
+    "pages": 4,
+    "sample_characters": 2392,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/20.අපරාධයක වින්දිතයන් සහ සාක්ෂිකරුවන්හට සහාය දීමේ සහ ආරක්ෂා කිරීමේ පනත/2023 අංක 10 දරණ අපරාධයක වින්දිතයන් හා සාක්ෂිකරුවන්ට සහාය දීමේ සහ ආරක්ෂා කිරීමේ පනත.pdf",
+    "bytes": 280049,
+    "sha256": "c40a7674ee991f980c3942a68203df8f366b0b85d1e9a082cd5965128ef65d1c",
+    "pages": 108,
+    "sample_characters": 3136,
+    "status": "imported",
+    "reason": null,
+    "sections": 108
+  },
+  {
+    "file": "පනත්/21.අර්ථ නිරූපණ ආඥා පනත/1901 අංක 21 දරණ අර්ථ නිරූපණ ආඥා පනත.pdf",
+    "bytes": 477616,
+    "sha256": "395be38e13e493afb9b681cfad576df0efa406206295e9a00ee843d0f63516b8",
+    "pages": 9,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 9
+  },
+  {
+    "file": "පනත්/22.අල්ලස් පනත/1954 අංක 11 දරන අල්ලස් පනත - E.pdf",
+    "bytes": 101004,
+    "sha256": "cd9a14ecc76304d4518f1fc0d37bcfcaf733aace94efb7790bb619fc684d0594",
+    "pages": 29,
+    "sample_characters": 5691,
+    "status": "imported",
+    "reason": null,
+    "sections": 29
+  },
+  {
+    "file": "පනත්/22.අල්ලස් පනත/1994 අංක 19 දරන අල්ලස් (සංශෝධන) පනත.pdf",
+    "bytes": 54495,
+    "sha256": "9345caf09dc486a6f98f7b72b149ba8e3db3750f9457299fc92a73de14f7755c",
+    "pages": 19,
+    "sample_characters": 5154,
+    "status": "imported",
+    "reason": null,
+    "sections": 18
+  },
+  {
+    "file": "පනත්/22.අල්ලස් පනත/1994 අංක 20 දරන අල්ලස් (සංශෝධන) පනත.PDF",
+    "bytes": 5754604,
+    "sha256": "fa9c0b70302a3822bda747adcfe065ad5640c2cfc27eae4a023516068ed6eda6",
+    "pages": 8,
+    "sample_characters": 4348,
+    "status": "imported",
+    "reason": null,
+    "sections": 8
+  },
+  {
+    "file": "පනත්/22.අල්ලස් පනත/2018 අංක 22 දරන අල්ලස් (සංශෝධන) පනත.pdf",
+    "bytes": 70813,
+    "sha256": "3b6cc945572c3542e9ce1e04428d331473239e7c265963581331caf0201d4147",
+    "pages": 3,
+    "sample_characters": 1545,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/23.අසභ්‍ය ප්‍රකාශන පනත/1927 අංක 04 අසභ්‍ය ප්‍රකාෂන පනත-E.pdf",
+    "bytes": 114337,
+    "sha256": "84ef1d3e034f134d14c33a571afe0eba21ca140bc670cee070292cb56f819518",
+    "pages": 2,
+    "sample_characters": 3742,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/23.අසභ්‍ය ප්‍රකාශන පනත/1983 අංක 22 අසභ්‍ය ප්‍රකාෂන (සංශෝධන) පනත.pdf",
+    "bytes": 159548,
+    "sha256": "4f574a21623137883d332a580be581fd7cbaa66ff19ee9cfce5c7c68aaac44f4",
+    "pages": 4,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 4
+  },
+  {
+    "file": "පනත්/24.ආගාමික හා විගාමික/1948 අංක 20 දරන ආගාමික හා විගාමික පනත.pdf",
+    "bytes": 1388416,
+    "sha256": "3c144a2b5bed55286fd71b9d55eaacbf2f780e297c4c3d009031cf6cbd57c0d7",
+    "pages": 41,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 40
+  },
+  {
+    "file": "පනත්/24.ආගාමික හා විගාමික/1954.02.24 දිනැති අංක 10896 දරණ රජයේ ගැසට් පත්‍රය (ආගමන විගමන රෙගුලාසි) -E.pdf",
+    "bytes": 9462670,
+    "sha256": "1b3e3fccc2a60ecadbcb47fde8e354f137ca0f25f6b65c0b06c1d030cefae6b3",
+    "pages": 46,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 45
+  },
+  {
+    "file": "පනත්/24.ආගාමික හා විගාමික/1993 අංක 16 දරන ආගාමික හා විගාමික (සංශෝධන) පනත E.pdf",
+    "bytes": 785475,
+    "sha256": "c7b0d5cef1e1b82cd2c85ff6d9c7a7c2c102375c63cb75114a77c5b5b4884730",
+    "pages": 5,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 5
+  },
+  {
+    "file": "පනත්/24.ආගාමික හා විගාමික/1993 අංක 16 දරන ආගාමික හා විගාමික (සංශෝධන) පනත.pdf",
+    "bytes": 100512,
+    "sha256": "fef9024d8942b546f6696d24b474b3a7608d922a20533870a83b3d2d540aaba4",
+    "pages": 4,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 4
+  },
+  {
+    "file": "පනත්/24.ආගාමික හා විගාමික/1998 අංක 42 දරන ආගාමික හා විගාමික (සංශෝධන) පනත.pdf",
+    "bytes": 57625,
+    "sha256": "5280064c65440d439faa73df6f649d1f4de6161d02ce9f5084f0661cd53fc3d6",
+    "pages": 4,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 4
+  },
+  {
+    "file": "පනත්/24.ආගාමික හා විගාමික/2006 අංක 31 දරන ආගාමික හා විගාමික (සංශෝධන) පනත.pdf",
+    "bytes": 169461,
+    "sha256": "7df66b026d336076cff8eb243c367d1d55dfd7c8a0dae30cb0878724d11d6a05",
+    "pages": 5,
+    "sample_characters": 2951,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/24.ආගාමික හා විගාමික/2015 අංක 07 දරණ ආගාමික හා විගාමික (සංශෝධන) පනත.pdf",
+    "bytes": 60562,
+    "sha256": "6dc5f2b00498b9623091d0232a7a62c0107e6c261f19b91fede940d06ce1d51b",
+    "pages": 3,
+    "sample_characters": 1840,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/25.ආණ්ඩුවේ රස පරීකෂක (භාණ්ඩ බැහැර කිරීම) පනත්/1988 අංක 69 ආණ්ඩුවේ රස පරිකෂක (භාන්ඩ බැහැර කිරිම) පනත.pdf",
+    "bytes": 196047,
+    "sha256": "772990eb2f0d4ecf05ab61b03b16b9ebf2c5558e12607188cc4e9c59eed2e5eb",
+    "pages": 6,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  },
+  {
+    "file": "පනත්/26.ආයුර්වේද පනත/1961 අංක 31 දරන ආයුර්වේද පනත.pdf",
+    "bytes": 1689711,
+    "sha256": "85eb660ca753c1fa868d47ad463e1bc8f79a6695703c5484705ce8f1aef1be0f",
+    "pages": 36,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 36
+  },
+  {
+    "file": "පනත්/26.ආයුර්වේද පනත/1969 අංක 09 දරණ ආයුර්වේද (සංශෝධන) පනත -E.pdf",
+    "bytes": 335531,
+    "sha256": "623aa6ba99e74e3ca94d724f9a9dcf187fc661c825c4f3efc22c7f403ffbb216",
+    "pages": 2,
+    "sample_characters": 3507,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/26.ආයුර්වේද පනත/1977 අංක 07 දරන ආයුර්වේද (සංශෝධන) පනත.pdf",
+    "bytes": 279387,
+    "sha256": "5496ad3c567f7dde085a956b422c635b56477d25cd26701f5a5c9e475630b78f",
+    "pages": 8,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 7
+  },
+  {
+    "file": "පනත්/27.ආහාර පනත/1980 අංක 26 ආහාර පනත.pdf",
+    "bytes": 793243,
+    "sha256": "f55af7e28923de7bf5fb1741212b9eb16d0bb1a926e2a721c2cabe2602f5d5c0",
+    "pages": 22,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 22
+  },
+  {
+    "file": "පනත්/27.ආහාර පනත/2011 අංක 29 දරණ ආහාර (සංශෝධන) පනත.pdf",
+    "bytes": 167888,
+    "sha256": "65d3115deca87829813b46e75cbda1a6b2f3ee947f814f5c69ff1db2d6932c67",
+    "pages": 6,
+    "sample_characters": 2412,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/28.ඇප පනත/1997 අංක 30 දරණ ඇප පනත.pdf",
+    "bytes": 2712017,
+    "sha256": "fbfaf48007439447e2b8c8983836c56e7e11285d1bfa0d160eebfce02c7f355c",
+    "pages": 16,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 16
+  },
+  {
+    "file": "පනත්/28.ඇප පනත/2021 අංක 07 ඇප (සංශෝධන) පනත.pdf",
+    "bytes": 112737,
+    "sha256": "f380bac68d2345902f9df1bb6156a3fc01007611f23346bea5d88b76ec6d7592",
+    "pages": 3,
+    "sample_characters": 1789,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/29.ඉඩම් සන්තය සීමාකිරීමේ  පනත/2014 අංක 38 ඉඩම් සන්තය සිමාකිරමේ  පනත.pdf",
+    "bytes": 103452,
+    "sha256": "b245f1ef262547735534a86c7e2bc777c78d028b68fca99a96a5c8908f73e5eb",
+    "pages": 21,
+    "sample_characters": 3059,
+    "status": "imported",
+    "reason": null,
+    "sections": 21
+  },
+  {
+    "file": "පනත්/29.ඉඩම් සන්තය සීමාකිරීමේ  පනත/2017 අංක 3 ඉඩම් සන්තය සිමාකිරමේ (සංශෝධන) පනත.pdf",
+    "bytes": 64206,
+    "sha256": "01c981d0a2aea3ea9220f6272e0673b84c897f0cd6d42272fe572265e486026a",
+    "pages": 4,
+    "sample_characters": 2024,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/30.ඉලෙක්ට්‍රොනික ගනුදෙනු පනත/2006 අංක19 දරණ ඉලෙක්ට්‍රොනික ගනුදෙනු පනත.pdf",
+    "bytes": 161241,
+    "sha256": "5db13e482641465d2915c94683037374a92470e00c26b3d319e6371ac27f4170",
+    "pages": 22,
+    "sample_characters": 3552,
+    "status": "imported",
+    "reason": null,
+    "sections": 22
+  },
+  {
+    "file": "පනත්/30.ඉලෙක්ට්‍රොනික ගනුදෙනු පනත/2017 අංක 25 දරණ ඉලෙක්ට්‍රොනික ගනුදෙනු (සංශෝධන) පනත.pdf",
+    "bytes": 113999,
+    "sha256": "377bcc7b042612b3acdd97a2cf1bffdcc7c89b4fcc0a611c3a7fb77399cee44d",
+    "pages": 16,
+    "sample_characters": 3492,
+    "status": "imported",
+    "reason": null,
+    "sections": 15
+  },
+  {
+    "file": "පනත්/31.ඔට්ටු ඇල්ලීමේ හා සුදු බදු පනත/1988 අංක 40 ඔට්ටු ඇල්ලිමේ හා සුදු බදු පනත.pdf",
+    "bytes": 187991,
+    "sha256": "16feafd0161a76c4e828a8b7e48ede725184ffc011608340449ba4209b17a9f2",
+    "pages": 7,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 7
+  },
+  {
+    "file": "පනත්/31.ඔට්ටු ඇල්ලීමේ හා සුදු බදු පනත/2001 අංක 7 ඔට්ටු ඇල්ලිමේ හා සුදු බදු (සංශෝධන) පනත.pdf",
+    "bytes": 86843,
+    "sha256": "dcd871e3a6f7a85a2288368e1fb3c37650809c1ae58fb93e1d968b2b1663ef90",
+    "pages": 5,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 5
+  },
+  {
+    "file": "පනත්/31.ඔට්ටු ඇල්ලීමේ හා සුදු බදු පනත/2006 අංක 14 ඔට්ටු ඇල්ලිමේ හා සුදු බදු (සංශෝධන) පනත.pdf",
+    "bytes": 105659,
+    "sha256": "a1cfcf60fa9a209ff51e3d30375a3de9055b78e30353a97963b8ef2677e2b023",
+    "pages": 5,
+    "sample_characters": 2323,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/31.ඔට්ටු ඇල්ලීමේ හා සුදු බදු පනත/2013 අංක 19 ඔට්ටු ඇල්ලිමේ හා සූදු බදු (සංශෝධන) පනත.pdf",
+    "bytes": 84166,
+    "sha256": "52bb71cdc66e7e695a17f471cb07daa18db9ba206ab564b52b3a5c0a9a9380d5",
+    "pages": 9,
+    "sample_characters": 3514,
+    "status": "imported",
+    "reason": null,
+    "sections": 9
+  },
+  {
+    "file": "පනත්/32.කර්මාන්ත ශාලා පනත/1976 අංක 2 කර්මාන්තශාලා පනත.pdf",
+    "bytes": 664858,
+    "sha256": "2363d40c95b5203fa5134031808270ad3a6210900286a86d89cb861b67055109",
+    "pages": 100,
+    "sample_characters": 11146,
+    "status": "imported",
+    "reason": null,
+    "sections": 204
+  },
+  {
+    "file": "පනත්/32.කර්මාන්ත ශාලා පනත/2021 අංක 04 කර්මාන්තශාලා (සංශෝධන) පනත.pdf",
+    "bytes": 78313,
+    "sha256": "c49d9eb22dfcf9f9e94e90b783380572d832db9dbf95d52eb52ff4c0dd00881c",
+    "pages": 4,
+    "sample_characters": 2753,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/33.කල්බදු මුල්‍යකරණ  පනත/2000 අංක 56 දරණ කල්බදු මුල්‍යකරණ  පනත.pdf",
+    "bytes": 14480980,
+    "sha256": "ee09e61f7a0bcc2e9d0b3d9778fcdfb628cd752ea1f8367363371dab49b0f8b1",
+    "pages": 26,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 26
+  },
+  {
+    "file": "පනත්/33.කල්බදු මුල්‍යකරණ  පනත/2005 අංක 24 දරණ කල්බදු මුල්‍යකරණ (සංශෝධන) පනත.pdf",
+    "bytes": 159761,
+    "sha256": "138bc3fd3122310d1fe3c6eb876c8e0cfa7fc7aa67274c219c54bd03bd12fef8",
+    "pages": 9,
+    "sample_characters": 3264,
+    "status": "imported",
+    "reason": null,
+    "sections": 9
+  },
+  {
+    "file": "පනත්/33.කල්බදු මුල්‍යකරණ  පනත/2007 අංක 33 කල්බදු මූල්‍යකරණ (සංශෝධන)පනත.pdf",
+    "bytes": 98370,
+    "sha256": "1676e18530dfb815be95b371ae41805913cccc43b58a7ef5499127cfc84fff30",
+    "pages": 4,
+    "sample_characters": 2807,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/34.කාර්මික ආරවුල් පනත/1950 අංක 43 කාර්මික ආරවුල් පනත.pdf",
+    "bytes": 407903,
+    "sha256": "9b1348b1eb137aec1b4d6dc2967bd3560d96a620ebcca190dfc3a37c9acd47ad",
+    "pages": 80,
+    "sample_characters": 31182,
+    "status": "imported",
+    "reason": null,
+    "sections": 247
+  },
+  {
+    "file": "පනත්/34.කාර්මික ආරවුල් පනත/1999 අංක 56 කාර්මික ආරවුල් (සංශෝධන)පනත.pdf",
+    "bytes": 107330,
+    "sha256": "5188c8ef41ae6c5cd34fa08c9ab192e0ee6d8f783427b337826d95f067e4ecc8",
+    "pages": 6,
+    "sample_characters": 2454,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/34.කාර්මික ආරවුල් පනත/2011 අංක 39 කාර්මික ආරවුල් (සංශෝධන) පනත.pdf",
+    "bytes": 96514,
+    "sha256": "fb425e0f0a6fdef136383f72ccc2d0930447ea12dc34b83c9faf6d2a99dba374",
+    "pages": 4,
+    "sample_characters": 2209,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/35.කාලාවරෝධ පනත/1871 අංක 22 දරන කාලාවරෝධ ආඥාපනත.pdf",
+    "bytes": 206955,
+    "sha256": "a4f1391a60e955bf07b0eb34ef610072ef7c0eaa084c241a0f3b1506609d703b",
+    "pages": 7,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  },
+  {
+    "file": "පනත්/35.කාලාවරෝධ පනත/2014 අංක 26 කාලවරෝධ (සංශෝධන) පනත.pdf",
+    "bytes": 60120,
+    "sha256": "4a89f0358749ab393cc19976bd890079bdecd5e34b6490c16451262482bda5dd",
+    "pages": 3,
+    "sample_characters": 1957,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/36.කැලෑ ආඥා පනත/1907 අංක  16 දරණ කැලෑ ආඥා පනත - E.pdf",
+    "bytes": 392480,
+    "sha256": "86eaed05d8d537fdcd8d0f19ef808d32297e283197d9be8009a95fa5b0c9f5a0",
+    "pages": 24,
+    "sample_characters": 6074,
+    "status": "imported",
+    "reason": null,
+    "sections": 24
+  },
+  {
+    "file": "පනත්/36.කැලෑ ආඥා පනත/1982 අංක 13 කැලැ (සංශෝධන) පනත.pdf",
+    "bytes": 171260,
+    "sha256": "f8b01478ff475b24ac16eae63d01a84995cdfa47b0c5d738214d0c982a5b3235",
+    "pages": 7,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 7
+  },
+  {
+    "file": "පනත්/36.කැලෑ ආඥා පනත/2009 අංක 65 දරණ කැලෑ (සංශෝධන) පනත.pdf",
+    "bytes": 176927,
+    "sha256": "9d24a7a2aa171c7d0e6cfc012c5e6e2427409bdfe8630f4cdc813994b793299f",
+    "pages": 46,
+    "sample_characters": 3094,
+    "status": "imported",
+    "reason": null,
+    "sections": 46
+  },
+  {
+    "file": "පනත්/36.කැලෑ ආඥා පනත/2012.06.11 දිනැති අංක 1762-1 දරණ රජයේ (අති විශේෂ) ගැසට් පත්‍රය.pdf",
+    "bytes": 136579,
+    "sha256": "0d9b722228fb5a9dad94ccb839e1279d0d4540d56a1a9e90d4dc6f902cd08886",
+    "pages": 3,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 3
+  },
+  {
+    "file": "පනත්/37.කැසිනෝ ව්‍යාපාර නියාමනය කිරීමේ පනත/2010 අංක 17 දරණ කැසිනෝ ව්‍යාපාර නියාමනය කිරීමේ පනත.pdf",
+    "bytes": 104488,
+    "sha256": "750f122b9abad29e302c2567be55d6db1ba4d26b31fe08aa4a4035fc66acf17a",
+    "pages": 5,
+    "sample_characters": 3523,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/38.ගොවිජන රක්ෂණ අරමුදල් පනත/1999 අංක 20 ගොවිජන රක්ෂන පනත.pdf",
+    "bytes": 138969,
+    "sha256": "cce56cca18fd1bced5ea5e246f7887c76734a6eb359fcb03761814130f52986c",
+    "pages": 18,
+    "sample_characters": 3298,
+    "status": "imported",
+    "reason": null,
+    "sections": 18
+  },
+  {
+    "file": "පනත්/39.ක්‍රිඩා වැරදි පනත/2019 අංක 24 දරණ ක්‍රිඩාවලට සම්බන්ධ වැරදි වැලැක්වීමේ පනත.pdf",
+    "bytes": 142936,
+    "sha256": "86ed9fc3f7a9bbed83865f4ed19aaa0badc2df50cd9a58c7c320dc7758dc311a",
+    "pages": 35,
+    "sample_characters": 2823,
+    "status": "imported",
+    "reason": null,
+    "sections": 35
+  },
+  {
+    "file": "පනත්/40.ක්‍රීඩා පනත/2005 අංක 33 ක්‍රිඩා පනත.pdf",
+    "bytes": 149334,
+    "sha256": "97d47d3201ab7c13a5d323953f8bc44f9211635db2888827323935b387dc49c3",
+    "pages": 3,
+    "sample_characters": 2143,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/41.ක්ෂුද්‍රමුල්‍ය පනත/2016 අංක 06 ක්ෂුද්‍ර මුල්ය පනත.pdf",
+    "bytes": 130966,
+    "sha256": "16dc8d933b5ed28b0a8fb948df4ba3006a38baf15ca797f078b8e629f2006137",
+    "pages": 36,
+    "sample_characters": 3191,
+    "status": "imported",
+    "reason": null,
+    "sections": 36
+  },
+  {
+    "file": "පනත්/42.ගණිකා නිවාස ආඥා පනත/1889  අංක 05 දරන ගණිකා නිවාස ආඥා පනත-E.pdf",
+    "bytes": 236358,
+    "sha256": "d9dba51f0061ecb211c7ea10d749ba3eb7d1b304d8e1925cd974ab4b39f636f8",
+    "pages": 2,
+    "sample_characters": 4062,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/42.ගණිකා නිවාස ආඥා පනත/ගණිකා නිවාස ආඥා පණත යටතේ සෝදිසි කිරීම සහ අත් අඩංගුවට ගැනීම පිළිබද සටහනක්.pdf",
+    "bytes": 261975,
+    "sha256": "2077e96b9e73ec7fd33ae7377b1ad9607487486a567d5fb2e02ac92c8c471b84",
+    "pages": 7,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  },
+  {
+    "file": "පනත්/43.ගුවන්යානා වලට එරෙහි වැරදි පනත/1982 අංක 24 ගුවන් යානාවලට එරෙහි වැරදි පනත.pdf",
+    "bytes": 594301,
+    "sha256": "37609a2bff96a0cc21ebe28b5f6e436a2e8a349e42412c33bbde5d41c9e7afc3",
+    "pages": 17,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 17
+  },
+  {
+    "file": "පනත්/44.ගෘහස්ථ ප්‍රචණ්ඩ ක්‍රියා වැලැක්වීමේ පනත/2005 අංක 34 දරණ ගෘහස්ථ ප්‍රචණ්ඩ ක්‍රියා වැලැක්වීමේ පනත.pdf",
+    "bytes": 194371,
+    "sha256": "23e171fc483868ed9529a8a1d6f224d511960226f03e7c9cb42e9ca93c04413a",
+    "pages": 15,
+    "sample_characters": 3605,
+    "status": "imported",
+    "reason": null,
+    "sections": 15
+  },
+  {
+    "file": "පනත්/45.ගෙවීම් උපක්‍රම වංචා පිළිබද පනත/2006 අංක 30 දරණ ගෙවීම් උපක්‍රම වංචා පිළිබද පනත.pdf",
+    "bytes": 242595,
+    "sha256": "823fb821c6c4d74de31844f4c69abbcd56344a727819e76c7662ede870727fe2",
+    "pages": 24,
+    "sample_characters": 3068,
+    "status": "imported",
+    "reason": null,
+    "sections": 24
+  },
+  {
+    "file": "පනත්/46.ගොවිජන සංවර්ධන පනත/2000 අංක 46 දරණ ගොවිජන සංවර්ධන පනත.pdf",
+    "bytes": 56669572,
+    "sha256": "88dd5930404f6ef9939bcee89f5d05b1f2dba810bf9f1418111f7a528e4f4cc0",
+    "pages": 93,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 93
+  },
+  {
+    "file": "පනත්/46.ගොවිජන සංවර්ධන පනත/2011 අංක 46 ගොවිජන සංවර්ධන (සංශෝධන) පනත.pdf",
+    "bytes": 107494,
+    "sha256": "eff6575f0517ec5b3380182828c1ea6bc7da354a9ae577fce0d35e6b96fe7372",
+    "pages": 23,
+    "sample_characters": 3389,
+    "status": "imported",
+    "reason": null,
+    "sections": 23
+  },
+  {
+    "file": "පනත්/47.ගෝඝාතක පනත/1893 අංක 09 දරන ගෝඝාතකයෝ ආඥා පනත.pdf",
+    "bytes": 404558,
+    "sha256": "b5ec0078ef4f63f339f965e0c54685d2fc0043df9085d1bf1cfd7d5fdacd3c82",
+    "pages": 12,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 12
+  },
+  {
+    "file": "පනත්/47.ගෝඝාතක පනත/1981 අංක 60 ඝෝගාතක (සංශෝධන) පනත.pdf",
+    "bytes": 53802,
+    "sha256": "6da3632f05adfab6e4ab464be0022fa3e24d310fcd6a6c892e508a0ee049fa2c",
+    "pages": 3,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 3
+  },
+  {
+    "file": "පනත්/47.ගෝඝාතක පනත/2008 අංක 13 ඝෝගාතක (සංශෝධන) පනත.pdf",
+    "bytes": 126601,
+    "sha256": "8adfcbf1cbba2638070eb2d12e2c32a7738e15fce1d27a976d94bbb445c18de3",
+    "pages": 4,
+    "sample_characters": 2026,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/48.ඡන්ද හිමියන් ලියාපදිංචි කිරීමේ පනත/2013 අංක 27 ඡන්ද හිමි ලියාපදිංචි කිරිමේ (විශේෂ විධිවිධාන)  පනත.pdf",
+    "bytes": 92879,
+    "sha256": "99f5375240a7a9709a63cc0878e8677d9387225c849e72b2e4dfe19d64ca9aea",
+    "pages": 15,
+    "sample_characters": 3352,
+    "status": "imported",
+    "reason": null,
+    "sections": 15
+  },
+  {
+    "file": "පනත්/49.ජාතික පාරිසරික පනත/1980 අංක 47 දරණ ජාතික පාරිසරික පනත.pdf",
+    "bytes": 1112091,
+    "sha256": "23c4674210c85939b68ddcfa0e1bc2306eae6572956e70efcb593514ea940ee0",
+    "pages": 20,
+    "sample_characters": 3726,
+    "status": "imported",
+    "reason": null,
+    "sections": 20
+  },
+  {
+    "file": "පනත්/49.ජාතික පාරිසරික පනත/1988 අංක 56 දරණ ජාතික පාරිසරික (සංශෝධන) පනත.pdf",
+    "bytes": 1523380,
+    "sha256": "d5b40d519f7dd05fecfb7e3365050f7c3845cef47da29c6939396900d78680dd",
+    "pages": 31,
+    "sample_characters": 4178,
+    "status": "imported",
+    "reason": null,
+    "sections": 29
+  },
+  {
+    "file": "පනත්/49.ජාතික පාරිසරික පනත/2000 අංක 53 දරණ ජාතික පාරිසරික (සංශෝධන) පනත.pdf",
+    "bytes": 145797,
+    "sha256": "2b48894ffb020c839c48c0e6f7e49b9c2c9d3758eeabf309af39a964da96bc7d",
+    "pages": 5,
+    "sample_characters": 3080,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/50.ජාතික මංමාවත් පනත/2008 අංක 40 දරණ ජාතික මංමාවත් පනත.pdf",
+    "bytes": 42901042,
+    "sha256": "1ca972c159c2855b5671ced26166316273d84cbc80fada592a9db4713dee7abe",
+    "pages": 76,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 76
+  },
+  {
+    "file": "පනත්/51.ජාතික මැණික් හා ස්වර්ණාභරණ අධිකාරි පනත/1993 අංක 50 දරන ජාතික මැණික් සහ ස්වර්ණාභරණ අධිකාරිය පනත.pdf",
+    "bytes": 894893,
+    "sha256": "83bd1540ff2ed0c49a57d2e23a453cc93abf97a30e8c1e4b8d7ae3ecd82e1f38",
+    "pages": 30,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 30
+  },
+  {
+    "file": "පනත්/52.ණය ආපසු අයකැගැනිමේ පනත/2011 අංක 01 බැංකු ණය ආපසු අයකර ගැනීම පනත.pdf",
+    "bytes": 169700,
+    "sha256": "25dc5a5d122c0962a8eac308d8760d3cb9d8bd7098ae0495af44e145a1ef1ecd",
+    "pages": 4,
+    "sample_characters": 3047,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/52.ණය ආපසු අයකැගැනිමේ පනත/2011 අංක 19 ණය අයකර ගැනීම (සංශෝධන) පනත.pdf",
+    "bytes": 67583,
+    "sha256": "68b71aaf444b6c9b9fc671ace4dc60137e62fb5f70fc738dca2e058275bdfb7c",
+    "pages": 3,
+    "sample_characters": 2008,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/53.තහනම් පිහි ආඥා පනත/1906 අංක 28 දරණ තහනම් පිහි ආඥා පනත -E.pdf",
+    "bytes": 265363,
+    "sha256": "4658256be91bc3c6714048ae86d3241d0c508995f707218d34907cbe9930ae65",
+    "pages": 4,
+    "sample_characters": 7203,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/53.තහනම් පිහි ආඥා පනත/1983 අංක 01 පිහියා (සංශෝධන) පනත.pdf",
+    "bytes": 78087,
+    "sha256": "d16429eb565a1bbe6ce0e370182998de94ac671b2b2149969160664087017ed7",
+    "pages": 4,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 4
+  },
+  {
+    "file": "පනත්/54.තානාපති මුක්තිය හා වරප්‍රසාද පිළිබද පනත/1964 අංක 29 දරණ තානාපති මුක්තිය හා වරප්‍රසාද පිළිබද පනත -E.pdf",
+    "bytes": 1698303,
+    "sha256": "aece5096ab9df524259326c54a38e3d4adab4251b3019a3931a7f8852d19c40c",
+    "pages": 33,
+    "sample_characters": 2493,
+    "status": "imported",
+    "reason": null,
+    "sections": 33
+  },
+  {
+    "file": "පනත්/55.තානාපති වරප්‍රසාද පිළිබද පනත/1996 අංක 09 දරන තානාපති වරප්‍රසාද පිළිබද පනත -E.pdf",
+    "bytes": 93411,
+    "sha256": "8be5a8f5532d0ab1d9266babd21420b8fd52510c117196c7424d532e0fa30a81",
+    "pages": 2,
+    "sample_characters": 3695,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/56.තෑගි ඔප්පු අවලංගු කිරීමේ පනත/2017 අංක 5 තෑගි ඔප්පු අවලංගු කිරිමේ පනත.pdf",
+    "bytes": 71896,
+    "sha256": "8878316d6c5bd7e7321d28c4ee711db22679ba4892f8c639fa468fa2027245b0",
+    "pages": 4,
+    "sample_characters": 3392,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/57.තුවක්කු ආඥා පනත/1916 අංක 33 දරණ තුවක්කු ආඥා පනත - E.pdf",
+    "bytes": 95006,
+    "sha256": "da15e7d8958e50cb716b23beca1b85e38d804be454551c44ca6e0e8de478939c",
+    "pages": 18,
+    "sample_characters": 7208,
+    "status": "imported",
+    "reason": null,
+    "sections": 18
+  },
+  {
+    "file": "පනත්/57.තුවක්කු ආඥා පනත/1981 අංක 50 තුවක්කු (සංශොධන) පනත.pdf",
+    "bytes": 44468,
+    "sha256": "ef70ec70af91c3a7f9ed84998e4c6067306ae090dd77e53c47519c96032091e6",
+    "pages": 3,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 3
+  },
+  {
+    "file": "පනත්/57.තුවක්කු ආඥා පනත/1996 අංක 22 දරන තුවක්කු (සංශෝධන) පනත.pdf",
+    "bytes": 387639,
+    "sha256": "9bbd32280098271b9ba4a351df6dd201b32eab1eeb4e0133a7229657e0251593",
+    "pages": 12,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 12
+  },
+  {
+    "file": "පනත්/58.තේ සහ රබර් වතු (කැබලි කිරීම වැලැක්වීම) පනත/1958 අංක 02 දරන තේ සහ රබර් වතු (කැබලි කිරීම වැලැක්වීම)පනත.pdf",
+    "bytes": 4153596,
+    "sha256": "e5546c3006ecd52cd06b65a96971b108e9124d7782b33d2513b715e9d16b9b2e",
+    "pages": 9,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 9
+  },
+  {
+    "file": "පනත්/58.තේ සහ රබර් වතු (කැබලි කිරීම වැලැක්වීම) පනත/2005 අංක 20 දරණ තේ සහ රබර් වතු (කැබලි කිරීම වැලැක්වීම) (සංශෝධන) පනත.pdf",
+    "bytes": 161270,
+    "sha256": "c0abe5ae70a6a3484cbb0aa87e1e1f89f3eceaf6da340647a8474a2dc66735b4",
+    "pages": 9,
+    "sample_characters": 3572,
+    "status": "imported",
+    "reason": null,
+    "sections": 9
+  },
+  {
+    "file": "පනත්/59.තොරතුරු සංනිවේදන තාක්ෂණ පනත/2003 අංක 27 තොරතුරු සංනිවෙදන පනත.pdf",
+    "bytes": 289201,
+    "sha256": "34c45a0caafe7014b460f9256d12adfeb599492eab4c70b79c95e7a3f9ec9afa",
+    "pages": 9,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 9
+  },
+  {
+    "file": "පනත්/59.තොරතුරු සංනිවේදන තාක්ෂණ පනත/2008 අංක 33 තොර තුරු සංනිවේදන හා තාක්ෂන (සංශෝධන) පනත.pdf",
+    "bytes": 107817,
+    "sha256": "96b75b3a7bb05a9595b621e9fc18782adbeccf4900f1481776e8f878ecde3195",
+    "pages": 7,
+    "sample_characters": 3605,
+    "status": "imported",
+    "reason": null,
+    "sections": 7
+  },
+  {
+    "file": "පනත්/60.ත්‍රස්තවාදී බෝම්බ ප්‍රහාර මැඩ පැවැත්වීමේ පනත/1999 අංක 11 දරණ ත්‍රස්තවාදී බෝම්බ ප්‍රහාර මැඩ පැවැත්වීමේ පනත.pdf",
+    "bytes": 131361,
+    "sha256": "402e2bb05254ca94a48c25d71994762484bd1ddb500298b6476e403a64f2832c",
+    "pages": 10,
+    "sample_characters": 3393,
+    "status": "imported",
+    "reason": null,
+    "sections": 10
+  },
+  {
+    "file": "පනත්/61.පොදු සුසාන සහ පුද්ගලික සුසාන පිළිබඳ ආඥා පනත/1946 අංක 57 දරන පොදු සුසාන සහ පුද්ගලික සුසාන පිළිබද ආඥා පනත.pdf",
+    "bytes": 521709,
+    "sha256": "86f82f038e43e865b1a2c86130261428926b703bd8b0cfd0cf1bdf26de338c28",
+    "pages": 15,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 14
+  },
+  {
+    "file": "පනත්/62.දඩ මුදල් වැඩි කිරීමේ පනත/2005 අංක 12 දරණ දඩ මුදල් වැඩි කිරීමේ පනත.pdf",
+    "bytes": 214698,
+    "sha256": "1aa015a80d9d2ce18b7e360548582d37bd04177fd5a8ccb979d60c1091a65c19",
+    "pages": 31,
+    "sample_characters": 3786,
+    "status": "imported",
+    "reason": null,
+    "sections": 31
+  },
+  {
+    "file": "පනත්/63.ධීවර හා ජලජ සම්පත් පනත/1996 අංක 02 ධීවර හා ජලජ සම්පත් පනත.pdf",
+    "bytes": 1263134,
+    "sha256": "0e4d514cfc949cda438a8cb2487b497d86787c01228af2e0daae9b80ea4c7994",
+    "pages": 37,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 37
+  },
+  {
+    "file": "පනත්/63.ධීවර හා ජලජ සම්පත් පනත/2013 අංක 35 ධීවර සහ ජලජ සමපත්  (සංශෝධන) පනත.pdf",
+    "bytes": 121661,
+    "sha256": "ac61a8f4b3136273118b9b92c4787562ef2d4b7878554e3b7171ff586091a0bb",
+    "pages": 31,
+    "sample_characters": 3055,
+    "status": "imported",
+    "reason": null,
+    "sections": 31
+  },
+  {
+    "file": "පනත්/63.ධීවර හා ජලජ සම්පත් පනත/2016 අංක 2 ධීවර සහ ජලජ සම්පත් (සංහෝධන) පනත.pdf",
+    "bytes": 76841,
+    "sha256": "7a8351bdc0e9da015fecb0f2d627b5c411754321bf86867d128650d4c367dea1",
+    "pages": 9,
+    "sample_characters": 3165,
+    "status": "imported",
+    "reason": null,
+    "sections": 9
+  },
+  {
+    "file": "පනත්/64.ත්‍රස්තවාදීන්ට මුදල් සැපයීම මැඩපැවැත්වීමේ පනත/2005 අංක 25  දරන ත්‍රස්තවාදීන්ට  මුදල් සැපයිම මැඩපැවැත්වීමේ පනත.pdf",
+    "bytes": 174471,
+    "sha256": "66a81d2f0dba7478673ea74bb726bc1f688a4607d0855c3e14062dfe84844711",
+    "pages": 12,
+    "sample_characters": 3549,
+    "status": "imported",
+    "reason": null,
+    "sections": 12
+  },
+  {
+    "file": "පනත්/64.ත්‍රස්තවාදීන්ට මුදල් සැපයීම මැඩපැවැත්වීමේ පනත/2011 අංක 41දරන ත්‍රස්තවාදීන්ට  මුදල් සැපයිම මැඩපැවැත්වීමේ (සංශෝදන)පනත.pdf",
+    "bytes": 131772,
+    "sha256": "4d60bb8158a8a01936183d565a0f7c7a52eb01e15d6103c51eef98e2c83b2ed4",
+    "pages": 20,
+    "sample_characters": 3310,
+    "status": "imported",
+    "reason": null,
+    "sections": 20
+  },
+  {
+    "file": "පනත්/64.ත්‍රස්තවාදීන්ට මුදල් සැපයීම මැඩපැවැත්වීමේ පනත/2013 අංක 03 දරන ත්‍රස්තවාදීන්ට  මුදල් සැපයිම මැඩපැවැත්වීමේ (සංශෝදන)පනත.pdf",
+    "bytes": 74764,
+    "sha256": "0c15418953d27405fb1b32b294644a7da489087edab20c772e7b8b5ca553a7d0",
+    "pages": 6,
+    "sample_characters": 3178,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/65.නවකවධය හා එවැනි ප්‍රචණ්ඩක්‍රියා තහනම් කිරීමේ පනත/1998 අංක 20 දරන අධ්‍යාපන ආයතනවල නවක වදය සහ වෙනත් ස්වරූපයේ සාහසික ක්‍රියා තහනම් කිරීමේ පනත.pdf",
+    "bytes": 285276,
+    "sha256": "fae41f34ebe5453a8d5b5a0d91651e372db5e7c3f5cba1af35dff705f59ca3a9",
+    "pages": 10,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 10
+  },
+  {
+    "file": "පනත්/66.නොතාරිස් පනත/1907 අංක 01 දරන නොතාරිස් පනත-E.pdf",
+    "bytes": 334321,
+    "sha256": "363103b9eef0c6587235d32806496c3b0a04082a90f2346a1176c7302f823fe5",
+    "pages": 22,
+    "sample_characters": 12971,
+    "status": "imported",
+    "reason": null,
+    "sections": 29
+  },
+  {
+    "file": "පනත්/66.නොතාරිස් පනත/2011 අංක 47 නොතාරිස් (සංශෝධන)පනත.pdf",
+    "bytes": 72826,
+    "sha256": "c0831c33d2af339acd238acc835101d603ebf7d13edef170c2388cfb8b1d93e2",
+    "pages": 4,
+    "sample_characters": 3039,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/66.නොතාරිස් පනත/2013 අංක 13 දරණ නොතාරිස් (සංශෝධන) පනත.pdf",
+    "bytes": 65377,
+    "sha256": "d46d0981c6ec40d18ee813750fccaa5549ecfbb49e807653333b35364d2e5c36",
+    "pages": 4,
+    "sample_characters": 2491,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/67.පඩිපාලක සභා පනත/1941 අංක 27 පඩිපාලක සභා පනත.pdf",
+    "bytes": 454469,
+    "sha256": "6005448db31be975e5ff7dcfe4c4b42b2e382d0a2817178fa1ad7f4a33660b1d",
+    "pages": 57,
+    "sample_characters": 7694,
+    "status": "imported",
+    "reason": null,
+    "sections": 90
+  },
+  {
+    "file": "පනත්/68.පතල් හා ඛණිජ ද්‍රව්‍ය පනත/1992 අංක 33 දරණ පනත් හා ඛණිජ ද්‍රව්‍ය පනත.pdf",
+    "bytes": 1427884,
+    "sha256": "1bfe8d6ad3f7a2fdabc1e8d4c3571412b3fb27bd371db2b2355b7cc5c5b0650d",
+    "pages": 37,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 37
+  },
+  {
+    "file": "පනත්/68.පතල් හා ඛණිජ ද්‍රව්‍ය පනත/2009 අංක 66 දරණ පනත් හා ඛණිජ ද්‍රව්‍ය (සංශෝධන) පනත.pdf",
+    "bytes": 129926,
+    "sha256": "6d83dbf0ecdd3fe2b63a67b53c53d7da7f63576013f609dba584464961d44580",
+    "pages": 21,
+    "sample_characters": 3207,
+    "status": "imported",
+    "reason": null,
+    "sections": 21
+  },
+  {
+    "file": "පනත්/69.පරීක්ෂණ කමිෂන්සභා පනත/1948 අංක 17 පරික්ෂන කමිෂන්සභා පනත-E.pdf",
+    "bytes": 73376,
+    "sha256": "48c065142f9ebffd5a9de97a276d5200284155b40aa8ff7db1624a3e1904e1d6",
+    "pages": 4,
+    "sample_characters": 11979,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/69.පරීක්ෂණ කමිෂන්සභා පනත/2008 අංක 16 පරික්ෂන කමිෂන්සභා (සංශෝධන)  පනත.pdf",
+    "bytes": 3965638,
+    "sha256": "c03e3174ae7fca494c52b44c495835f6f355fd2091178c4fde5ac5be8b51d833",
+    "pages": 9,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 9
+  },
+  {
+    "file": "පනත්/69.පරීක්ෂණ කමිෂන්සභා පනත/2019 අංක 3 පරික්ෂන කමිෂන්සභා (සංශෝධන) පනත.pdf",
+    "bytes": 83937,
+    "sha256": "b96c3706c277710b989487381109c253e47e260a278f505bb61f260855e97807",
+    "pages": 6,
+    "sample_characters": 3313,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/70.පරිගණක අපරාධ පිළිබද පනත/2007 අංක 24 දරණ පරිගණක අපරාධ පිළිබද පනත.pdf",
+    "bytes": 160681,
+    "sha256": "4d7373ae2d5f1660a8067d19476adf62fdf2b5534790536d79e44f7b4850efd5",
+    "pages": 22,
+    "sample_characters": 3305,
+    "status": "imported",
+    "reason": null,
+    "sections": 22
+  },
+  {
+    "file": "පනත්/71.පලාත් පාලන ආයතන පනත/1981 අංක 33 මහනගරසභා (සංශෝධන) පනත.pdf",
+    "bytes": 69898,
+    "sha256": "5a6d1032d5547f76639707fe36a67e4078731e7ebe71ce6590b540edbd5100fa",
+    "pages": 4,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 4
+  },
+  {
+    "file": "පනත්/71.පලාත් පාලන ආයතන පනත/2006 අංක 2 පලාත් පාලන (විශේෂ විධිවිධාන) පනත.pdf",
+    "bytes": 160008,
+    "sha256": "02c1ee509475a38d2094dfc71900418843e386890655e35529b4cb9db952e489",
+    "pages": 8,
+    "sample_characters": 4002,
+    "status": "imported",
+    "reason": null,
+    "sections": 8
+  },
+  {
+    "file": "පනත්/71.පලාත් පාලන ආයතන පනත/2007 අංක 30 පලාත් පාලන ආයතන (විශේෂ විධිවිධාන) පනත.pdf",
+    "bytes": 120568,
+    "sha256": "319c615b5ce8464dba07b214bfa2e56a20b2ab55c78542b25c110b15cf80d9b7",
+    "pages": 6,
+    "sample_characters": 3915,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/71.පලාත් පාලන ආයතන පනත/2009 අංක 30 පලාත් පාලන ආයතන (විශේෂ විධිවිධාන) (සංශෝධන) පනත.pdf",
+    "bytes": 95938,
+    "sha256": "c178bbe68178f9a802db0902d345f2b7fff1af29fd9672eee4156889cacf8293",
+    "pages": 3,
+    "sample_characters": 2084,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/71.පලාත් පාලන ආයතන පනත/2012 අංක 21 පලාත් පාලන ආයතන (විශේෂ විධිවිධාන) පනත.pdf",
+    "bytes": 89510,
+    "sha256": "87f0d4ed38f90e5940bccf3ae58beb120b0606d9369b8d80ef3048d44cc79860",
+    "pages": 12,
+    "sample_characters": 3291,
+    "status": "imported",
+    "reason": null,
+    "sections": 12
+  },
+  {
+    "file": "පනත්/72.පලාත්බද මහාධිකරන පනත/1996 අංක 10 දරන පලාත්බද මහාධිකරන (විශේෂ විධි විධාන) පනත.pdf",
+    "bytes": 1953151,
+    "sha256": "980b092722677292ecae0515ad17827c033f019fe9ab6b58dacd8b853f35075a",
+    "pages": 7,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 7
+  },
+  {
+    "file": "පනත්/72.පලාත්බද මහාධිකරන පනත/2006 අංක 54 පලාත්බද මහාධිකරන (සංශෝධන) පනත.pdf",
+    "bytes": 110429,
+    "sha256": "d59ac5726f49d110c6694c5048a5d5d9de1c6eaa3e2456a0d66dce0f1ca5165f",
+    "pages": 6,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  },
+  {
+    "file": "පනත්/73.පලිබෝද නාශක පාලනය කිරිමේ පනත/1980 අංක 33 පලිබෝධ නාශක පාලන  පනත.pdf",
+    "bytes": 359599,
+    "sha256": "17413f0f404075cf3db037f36e94e4e02b042bf5b22d56f94a0d0a2819fd382a",
+    "pages": 13,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 13
+  },
+  {
+    "file": "පනත්/73.පලිබෝද නාශක පාලනය කිරිමේ පනත/2011 අංක 31 පලිබෝධ නාශක පාලන (සංශෝධන) පනත.pdf",
+    "bytes": 111056,
+    "sha256": "4674ed5490919d4da4a72d2528ce0ffec3e69d2a692d9c97eb083ecd67c3e0ea",
+    "pages": 3,
+    "sample_characters": 2024,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/74.පාදඩ ආඥා පනත/1841 අංක 04 දරණ පාදඩ ආඥා පනත.pdf",
+    "bytes": 500970,
+    "sha256": "ae11878290ea5aa61ae802ddeae53a99064637fed1c154453ad58d66f95e45ba",
+    "pages": 18,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 18
+  },
+  {
+    "file": "පනත්/75.පාර්ලිමෙන්තු වරප්‍රසාද පනත පනත/1953 අංක 21 දරන (බලතල හා වරප්‍රසාද) පනත.pdf",
+    "bytes": 23820614,
+    "sha256": "15c3ef6b4d3f7d7be43da8be70e391182712bcaf767ca8548fc296f11b4333b7",
+    "pages": 21,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 21
+  },
+  {
+    "file": "පනත්/76.පැලෑටි පනත/1950 අංක 57 පැලෑටි  පනත-E.pdf",
+    "bytes": 33309,
+    "sha256": "fa42bd8063cd5dce602e2abe328afca62b8f8d48ccfdb10f001472c6db57e680",
+    "pages": 2,
+    "sample_characters": 4174,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/76.පැලෑටි පනත/1986 අංක 20 පැලෑටි (සංශෝධන) පනත.pdf",
+    "bytes": 74734,
+    "sha256": "c4ab641da9e15ff718c20cafa23bc0e18ded615508bb0f87ffc0cfe6072a4579",
+    "pages": 3,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 3
+  },
+  {
+    "file": "පනත්/77.පීඩාකාරී ආයුධ පනත/1966 අංක 18 දරණ පිඩාකාරි ආයුධ පනත-E.pdf",
+    "bytes": 54091,
+    "sha256": "aec3cc0a49903edcd46b925bc12bb065d8ac95194cdd88cbead7b3ab4d5eb1e7",
+    "pages": 4,
+    "sample_characters": 11380,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/77.පීඩාකාරී ආයුධ පනත/2011 අංක 02 දරණ පීඩාකාරී ආයුධ (සංශෝධන) පනත.pdf",
+    "bytes": 162764,
+    "sha256": "6095227a85ba2306776f2de6c4fb3d7bb947c7fa8412a7b67e3580b9099a4939",
+    "pages": 3,
+    "sample_characters": 1840,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/78.පුද්ගලයින් ලියා පදිංචි කිරීමේ පනත/1971 අංක 32 දරණ පුද්ලයන් ලියාපදිංචි කිරිමේ පනත-E.pdf",
+    "bytes": 89637,
+    "sha256": "cddace0d9adf503e46b0c2cdda87dc2d1266e7e20270738ce4fe66a3835f16f1",
+    "pages": 19,
+    "sample_characters": 6139,
+    "status": "imported",
+    "reason": null,
+    "sections": 19
+  },
+  {
+    "file": "පනත්/78.පුද්ගලයින් ලියා පදිංචි කිරීමේ පනත/2016 අංක 08 දරණ පුද්ලයන් ලියාපදිංචි කිරිමේ පනත.pdf",
+    "bytes": 127537,
+    "sha256": "b14564850281caf8f20e6326bb77016cfaf5393f10e915a5b2c2f3dbbbd5b9b4",
+    "pages": 27,
+    "sample_characters": 3409,
+    "status": "imported",
+    "reason": null,
+    "sections": 27
+  },
+  {
+    "file": "පනත්/79.පුපුරණ ද්‍රව්‍ය පනත/1956 අංක 21 දරණ පුපුරණ ද්‍රව්‍ය පනත.pdf",
+    "bytes": 709395,
+    "sha256": "454bcfd313cb66018c6917927881b04eed6989e13130fc797a1aafd1eb6ba507",
+    "pages": 23,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 22
+  },
+  {
+    "file": "පනත්/79.පුපුරණ ද්‍රව්‍ය පනත/2005 අංක 18 පුපුරන ද්‍රව්‍ය  (සංශෝධක) පනත.pdf",
+    "bytes": 152366,
+    "sha256": "c9944ee5b6b3d0a23dc80b8057ea6da767dbac1d0d1194c0461c3831601e22fb",
+    "pages": 4,
+    "sample_characters": 3234,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/80.ගස් හෙලීම (පාලනය කිරීමේ) පනත/1951 අංක 09 ගස් හෙලිම පාලනය කිරිමේ පනත-E.pdf",
+    "bytes": 12461,
+    "sha256": "bd3b5ef8d8bd3cb588cacb48c68097f00f0ffe55b3c10c75ed9ea4a54ffbca02",
+    "pages": 2,
+    "sample_characters": 3562,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/80.ගස් හෙලීම (පාලනය කිරීමේ) පනත/2000 අංක 01 ගස් හෙලිම පාලනය කිරිමේ (සංශෝධන) පනත.pdf",
+    "bytes": 1572663,
+    "sha256": "a5aa256adb0e509dd4563ee4abb8121b001e03454ea400eb677464aba545d4db",
+    "pages": 5,
+    "sample_characters": 270,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/81.පුරාවස්තු ආඥා පනත/1887 අංක 17 නිධන් වස්තු පනත-E.pdf",
+    "bytes": 32828,
+    "sha256": "e98d160dc258030751e690049ba264147beb3ac38c12a694eac19ed0011e065c",
+    "pages": 2,
+    "sample_characters": 6481,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/81.පුරාවස්තු ආඥා පනත/1940 අංක 09 දරණ පුරාවස්තු ආඥා පනත -E.pdf",
+    "bytes": 3234790,
+    "sha256": "5cddfb9d069db4b4538a993cbc698e6c8eda6a66a6d937ec9e4d862938889a56",
+    "pages": 13,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 13
+  },
+  {
+    "file": "පනත්/81.පුරාවස්තු ආඥා පනත/1998 අංක 24 පුරාවස්තු (සංශෝධන) පනත.pdf",
+    "bytes": 279770,
+    "sha256": "3bc8f5a787ddbcf0e1f72e8ef3f2871db3461512feaf874810a6d9caec95459c",
+    "pages": 14,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 14
+  },
+  {
+    "file": "පනත්/81.පුරාවස්තු ආඥා පනත/1998 අංක 73 සංස්කෘතික  දේපල පනත-E.pdf",
+    "bytes": 40487,
+    "sha256": "9dba08e5f3c20c554c69504993acbcf39e6b73f36ae980a9d6c4723a119eabce",
+    "pages": 6,
+    "sample_characters": 10098,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/82.පොදු දේපලවලට එරෙහි වැරදි පිළිබද පනත/1982 අංක 12 දරන පොදු දේපල විෂයෙහි ලා සිදු කරනු ලබන වැරදි පිළිබද පනත.pdf",
+    "bytes": 171455,
+    "sha256": "32f8163e4831554ddbff10f4f820b564fd6a1fe2db6bc720a54f1d4b6f450bed",
+    "pages": 5,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 5
+  },
+  {
+    "file": "පනත්/82.පොදු දේපලවලට එරෙහි වැරදි පිළිබද පනත/1999 අංක 28 පොදු දේපල වැරදි (සංශෝධන)පනත.pdf",
+    "bytes": 78269,
+    "sha256": "df9152dc399e31f66fa4e154544f69144675de2e4564430e657d27e9d0efb58f",
+    "pages": 3,
+    "sample_characters": 1723,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/83.පොලිස් ආඥා පනත/1956 අංක 32 පොලිස් ආඥා පනත.pdf",
+    "bytes": 5358657,
+    "sha256": "ba7832c2eef0c5cd81bce51a2bc78b14ff99148fe25e8f3df2e023edad0dc12d",
+    "pages": 46,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 46
+  },
+  {
+    "file": "පනත්/83.පොලිස් ආඥා පනත/1984 අංක 41 පොලිස් (සංශෝධන) පනත.pdf",
+    "bytes": 60097,
+    "sha256": "867ebe633be3c0af23f614a8c738b41831a6c883febe729fdbc3639c933e8b5a",
+    "pages": 3,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 3
+  },
+  {
+    "file": "පනත්/84.ප්‍රජා පාදක විශෝධන පනත/1999 අංක 46 දරණ ප්‍රජා පාදක විශෝධන පනත.pdf",
+    "bytes": 153459,
+    "sha256": "622668437534a4c56c7de6a7b7d48a9565a0599d0124d36aebe71dd49fc50fe5",
+    "pages": 19,
+    "sample_characters": 3222,
+    "status": "imported",
+    "reason": null,
+    "sections": 19
+  },
+  {
+    "file": "පනත්/85.ප්‍රාථමික අධිකරණ (ක්‍රියාපටිපාටිය) පනත/1979 අංක 44 දරන ප්‍රාථමික අධිකරණ නඩු විධාන පනත.pdf",
+    "bytes": 1011351,
+    "sha256": "c446b46615a7d7f01fe3a0eb14c916e0965c51766fd2fa65fd5f203ff773132c",
+    "pages": 31,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 31
+  },
+  {
+    "file": "පනත්/86.ප්‍රණ ඇපකරුවන් ග්‍රහණයට ගැනීම වැලැක්වීමේ පනත/2000 අංක 41 ප්‍රණ ඇපකරුවන් ග්‍රහණයට ගැනීම වැලැක්වීමේ පනත.pdf",
+    "bytes": 117027,
+    "sha256": "f5175bcae622340ef8f05ae570ac5f66885609f3d834ea59939eb4d39d18eb04",
+    "pages": 6,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  },
+  {
+    "file": "පනත්/87.බන්ධනාගාර පනත/1877 අංක 16 දරන බන්ධනාගාර අඥා පනත-E.pdf",
+    "bytes": 384434,
+    "sha256": "4197a7abc620cffc628bdcea4cb05bc5bbcf21048b615d1c8f9bc3d6d3476074",
+    "pages": 43,
+    "sample_characters": 5892,
+    "status": "imported",
+    "reason": null,
+    "sections": 43
+  },
+  {
+    "file": "පනත්/87.බන්ධනාගාර පනත/2005 අංක 22 බන්ධනාගාර (සංශෝධන) පනත.pdf",
+    "bytes": 139403,
+    "sha256": "349a50a3d045e63990c34689c617fd5b26eee15916b18525c53ad2695f7c1c22",
+    "pages": 3,
+    "sample_characters": 2058,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/88.බලහත්කාරයෙන් අතුරුදහන් කිරීම් වලින් ආරක්ෂා කිරීමේ පනත/2018 අංක 05 දරන බලහත්කාරයෙන් අතුරුදහන් කිරීම් වලින් ආරක්ෂා කිරිමේ පනත.pdf",
+    "bytes": 105392,
+    "sha256": "5766e540c13cd0b8ef1e746044a54a3a85d6e7e41be1b277fca65c650c64464f",
+    "pages": 17,
+    "sample_characters": 3552,
+    "status": "imported",
+    "reason": null,
+    "sections": 17
+  },
+  {
+    "file": "පනත්/89.බුද්ධිමය දේපල පනත්/2003 අංක 36 දරණ බුද්ධිමය දේපල පනත -E.pdf",
+    "bytes": 429774,
+    "sha256": "7471b7c40c7eaf6a47e7db9f87d50f2ce9e95fde7dfd6cca6c0affa9730b8b41",
+    "pages": 163,
+    "sample_characters": 3981,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/143.රේගු පනත/2003 අංක 36 රේගු (සංශෝධන) පනත-E.pdf"
+  },
+  {
+    "file": "පනත්/89.බුද්ධිමය දේපල පනත්/2018 අංක 07 දරණ බුද්ධිමය දේපල (සංශෝධන) පනත.pdf",
+    "bytes": 68088,
+    "sha256": "eb39921d6e27773a7c2c72a65e2719e5fc633226ea1aa1ac922562b682c71f02",
+    "pages": 3,
+    "sample_characters": 1539,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/89.බුද්ධිමය දේපල පනත්/2021 අංක 08 බුද්ධිමය ෙද්පළ (සංශෝධන) පනත.pdf",
+    "bytes": 84719,
+    "sha256": "be98b5c5d8edd42337be898debd91134818349c8f237d086e2f8448b077c701a",
+    "pages": 6,
+    "sample_characters": 3053,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/90.මදුරුවන් බෝවීම වැලැක්වීමේ පනත/2007 අංක 11 දරණ මදුරුවන් බෝවීම වැලැක්වීමේ පනත.pdf",
+    "bytes": 282898,
+    "sha256": "b209d1304654bbe30c6d5f74a25ef58b9cacbe6734be36765d38e0015bfa4cfa",
+    "pages": 16,
+    "sample_characters": 3383,
+    "status": "imported",
+    "reason": null,
+    "sections": 16
+  },
+  {
+    "file": "පනත්/91.මරණ ලියා පදිංචි කිරීමේ තාවකාලික විධිවිධාන පනත/1951 අංක 17 උප්පැන්න මරන ලියාපදිංචි කිරිමේ අඥා පනත-E.pdf",
+    "bytes": 350240,
+    "sha256": "d5bcf4e5cf770a00bd5fec66c3c6bb0d9b2657c45920d14986fca4a666f60466",
+    "pages": 58,
+    "sample_characters": 10319,
+    "status": "imported",
+    "reason": null,
+    "sections": 62
+  },
+  {
+    "file": "පනත්/91.මරණ ලියා පදිංචි කිරීමේ තාවකාලික විධිවිධාන පනත/2010 අංක 19 දරණ මරන ලියා පදිංචි කිරීමේ (තාවකාලික විධිවිධාන) පනත.pdf",
+    "bytes": 122930,
+    "sha256": "2f620313ed8ac4ec4e558d9de4e75c4c87dc913634e491a6c390d6439adda398",
+    "pages": 15,
+    "sample_characters": 3921,
+    "status": "imported",
+    "reason": null,
+    "sections": 15
+  },
+  {
+    "file": "පනත්/91.මරණ ලියා පදිංචි කිරීමේ තාවකාලික විධිවිධාන පනත/2013 අංක 25 උප්පැන්න මරණ (සංශෝධන) පනත.pdf",
+    "bytes": 70921,
+    "sha256": "209a40cea8f918fb3d727d28876bf8274d4ce417d22a6348d34cd6711ecb2d77",
+    "pages": 5,
+    "sample_characters": 4130,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/91.මරණ ලියා පදිංචි කිරීමේ තාවකාලික විධිවිධාන පනත/2015 අංක 17 මරණ ලියාපදිංචි කිරීම (තාවකාලික විධිවිධාන) පනත.pdf",
+    "bytes": 192495,
+    "sha256": "a5f8bb035e24aaa4aec0e57598ba967309efc98236f0899a7c4aae8c713e9487",
+    "pages": 13,
+    "sample_characters": 4417,
+    "status": "imported",
+    "reason": null,
+    "sections": 13
+  },
+  {
+    "file": "පනත්/91.මරණ ලියා පදිංචි කිරීමේ තාවකාලික විධිවිධාන පනත/2016 අංක 16 මරණ ලියාපදිංචි කිරීමේ (තාවකාලිකවිධිවිධාන) පනත.pdf",
+    "bytes": 109242,
+    "sha256": "9bd97df928ad142ae8de9375c05dca4a31457af02ecabc55a293e5ffaf700cab",
+    "pages": 22,
+    "sample_characters": 3549,
+    "status": "imported",
+    "reason": null,
+    "sections": 22
+  },
+  {
+    "file": "පනත්/92.මහජන පීඩා වැලැක්වීම පනත/1946 අංක 57 දරණ මහජන පීඩා වැලැක්වීම පනත -E.pdf",
+    "bytes": 80929,
+    "sha256": "ad869aeb2c405f39eed3cadb848f5eb1d77194d2ca110df600251d01ba83eaa6",
+    "pages": 5,
+    "sample_characters": 12475,
+    "status": "imported",
+    "reason": null,
+    "sections": 7
+  },
+  {
+    "file": "පනත්/93.මානව හිමිකම් කොමිෂන් සභා පනත/1996 අංක 21 දරන ශ්‍රී ලංකා මානව හිමිකම් කොමිෂන් සභාව පනත.pdf",
+    "bytes": 780904,
+    "sha256": "458bd0b851e310d8d4ec1597a741668f0e3499124b97eb98a783243ca6f0faeb",
+    "pages": 26,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 25
+  },
+  {
+    "file": "පනත්/93.මානව හිමිකම් කොමිෂන් සභා පනත/1996 අංක 21-E.pdf",
+    "bytes": 148503,
+    "sha256": "11d7d37dbcbdea7a899cf266b94eb8cbad6489809fa0c0d74f8beaad4ce68886",
+    "pages": 13,
+    "sample_characters": 4912,
+    "status": "imported",
+    "reason": null,
+    "sections": 13
+  },
+  {
+    "file": "පනත්/94.මුදල් ගනුදෙනු වාර්ථා කිරීමේ පනත/2006 අංක 06 දරණ මුදල් ගනුදෙනු වාර්ථා කිරීමේ පනත.pdf",
+    "bytes": 355863,
+    "sha256": "7481fe6e1815a77fe23aa0d0d0332472db50c4f2953a4f5bacf03c6511b00186",
+    "pages": 42,
+    "sample_characters": 3270,
+    "status": "imported",
+    "reason": null,
+    "sections": 42
+  },
+  {
+    "file": "පනත්/95.මුදල් ව්‍යාපාර පනත/2011 අංක 42 මුදල් ව්‍යාපාර පනත.pdf",
+    "bytes": 385660,
+    "sha256": "8c802701452fe3ce9d3971ec6871bceefb1d542626020c84c39ad379d51e3576",
+    "pages": 98,
+    "sample_characters": 3641,
+    "status": "imported",
+    "reason": null,
+    "sections": 98
+  },
+  {
+    "file": "පනත්/96.මුදල් විශුද්ධි කිරීම වැලැක්වීමේ පනත/2006 අංක 05 දරණ මුදල් විශුද්ධි කිරීම වැලැක්වීමේ පනත.pdf",
+    "bytes": 216830,
+    "sha256": "70c4132941fb104794be9e94c4c0a683a1af5ff475be4f5bb71544d45b3b57d7",
+    "pages": 26,
+    "sample_characters": 3318,
+    "status": "imported",
+    "reason": null,
+    "sections": 26
+  },
+  {
+    "file": "පනත්/96.මුදල් විශුද්ධි කිරීම වැලැක්වීමේ පනත/2011 අංක 40 මුදල් විශුද්ධිකරණය (සංශෝධන) පනත.pdf",
+    "bytes": 120278,
+    "sha256": "b37384c367b648e96b7e23fba82bd7c510a5dbd08a4a216b4337b449d93d5ecd",
+    "pages": 16,
+    "sample_characters": 3730,
+    "status": "imported",
+    "reason": null,
+    "sections": 16
+  },
+  {
+    "file": "පනත්/97.රජයේ ඉඩම් නැවත අත්පත් කරගැනිමේ පනත/1979 අංක 07 රජයේ ඉඩම් නැවත අත්පත් කරගැනිමේ පනත-E.pdf",
+    "bytes": 2419613,
+    "sha256": "48892715602c821b6fa1591a87c12d649675f4d78bff16589e73ad91ac796c69",
+    "pages": 5,
+    "sample_characters": 10903,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/97.රජයේ ඉඩම් නැවත අත්පත් කරගැනිමේ පනත/1981 අංක 58 රජයේ ඉඩම් නැවත අත්පත් කරගැනිමේ (සංශෝධන) පනත.pdf",
+    "bytes": 157854,
+    "sha256": "e63d46f635ec071141e44c113296fa1cac92bb88a705a6a7f145d52f5749bb7b",
+    "pages": 6,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  },
+  {
+    "file": "පනත්/97.රජයේ ඉඩම් නැවත අත්පත් කරගැනිමේ පනත/1983 අංක 29 රජයේ ඉඩම් නැවත අත්පත් කරගැනිමේ (සංශෝධන) පනත.pdf",
+    "bytes": 108833,
+    "sha256": "de60c90ed97da3d8f53c55af9e608ddb4224e919998430dd10b4a227f4981ba9",
+    "pages": 5,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 5
+  },
+  {
+    "file": "පනත්/97.රජයේ ඉඩම් නැවත අත්පත් කරගැනිමේ පනත/1997 අංක 29 රජයේ ඉඩම් නැවත අත්පත් කරගැනිමේ (සංශෝධන) පනත.pdf",
+    "bytes": 36605,
+    "sha256": "6c1213c5d84fe1400308e4225460a281deebc8995adf23248e936638fee01453",
+    "pages": 3,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 3
+  },
+  {
+    "file": "පනත්/98.රජයේ නිවාස අත්පත් කරගැනිම  පනත/1969 අංක 07 රජයේ නිවාස (සන්තකය ආපසු ලබා ගැනීමේ) පනත.pdf",
+    "bytes": 193535,
+    "sha256": "c6c0540e5a43306276fba474b466d59ceb272b47a9e86379ba8460e2cb6ef94f",
+    "pages": 7,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 7
+  },
+  {
+    "file": "පනත්/98.රජයේ නිවාස අත්පත් කරගැනිම  පනත/1971 අංක 03 රජයේ නිවාස අත්පත් කරගැනිම  (සංශෝධන) පනත-E.pdf",
+    "bytes": 87297,
+    "sha256": "0a95c013e1e27e598f4ada934d894383930ac1e06f2db207da672cb8310f9e4c",
+    "pages": 1,
+    "sample_characters": 1007,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/98.රජයේ නිවාස අත්පත් කරගැනිම  පනත/1974 අංක 40 රජයේ නිවාස අත්පත් කරගැනිම  (සංශෝධන) පනත-E.pdf",
+    "bytes": 87101,
+    "sha256": "0b157c4151fddd1c55d80347b25d190808a00bed79181da401d6da8c87c438e0",
+    "pages": 1,
+    "sample_characters": 1124,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/99.රස පරික්ෂක භාණ්ඩ බැහැර කිරිමේ පනත/1988 අංක 69 රසපරික්ෂක භාණ්ඩ බැහැර  කිරිමේ  පනත.pdf",
+    "bytes": 196047,
+    "sha256": "772990eb2f0d4ecf05ab61b03b16b9ebf2c5558e12607188cc4e9c59eed2e5eb",
+    "pages": 6,
+    "sample_characters": 2,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/25.ආණ්ඩුවේ රස පරීකෂක (භාණ්ඩ බැහැර කිරීම) පනත්/1988 අංක 69 ආණ්ඩුවේ රස පරිකෂක (භාන්ඩ බැහැර කිරිම) පනත.pdf"
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a01_history_&_organisation.pdf",
+    "bytes": 473624,
+    "sha256": "32379fd4151925d62768281981ba49887b4f97cd48d8698f8ff8545b6e516639",
+    "pages": 3,
+    "sample_characters": 5209,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a02_rectruitment.pdf",
+    "bytes": 823341,
+    "sha256": "b0b76e5fb1c50a79032a07e4630dfa59ee03ff11f535a1fb071b4f4de1a6f43a",
+    "pages": 5,
+    "sample_characters": 2861,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a03_sdo_duty.pdf",
+    "bytes": 878200,
+    "sha256": "28648b355851c32253dbdfe628aff1879a9dff7352c0e157136fe6d58044cfaf",
+    "pages": 5,
+    "sample_characters": 6739,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a04_documents.pdf",
+    "bytes": 119805,
+    "sha256": "f2d42379ecfc4a32cc755ceaec910468a8b0131bb9f0e04e2a583e1f07feebe3",
+    "pages": 1,
+    "sample_characters": 352,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a05_promotion_guide.pdf",
+    "bytes": 500366,
+    "sha256": "bf3c2d55bf32d651fcf527dc802e4e4a5ba28f9717967b4728e834fbd46c7330",
+    "pages": 5,
+    "sample_characters": 911,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a06_promotion (1).pdf",
+    "bytes": 1131836,
+    "sha256": "afb8f5cc7191439550c033e4d67034df35a90d299a2543a7c85ecc398a70e52a",
+    "pages": 6,
+    "sample_characters": 6159,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a06_promotion.pdf",
+    "bytes": 1131836,
+    "sha256": "afb8f5cc7191439550c033e4d67034df35a90d299a2543a7c85ecc398a70e52a",
+    "pages": 6,
+    "sample_characters": 6159,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/පොලිස් නියෝග/A/a06_promotion (1).pdf"
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a07_disciplinary_inquiry.pdf",
+    "bytes": 2476849,
+    "sha256": "3e4fd07fc8597c2fa6ddcc0f3d67513d010c1ea7255edb2f3f12719e952e69c1",
+    "pages": 13,
+    "sample_characters": 7487,
+    "status": "imported",
+    "reason": null,
+    "sections": 13
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a08_punishment.pdf",
+    "bytes": 1544393,
+    "sha256": "4d584c897c5e0b3ddfb7e2ed0bdc250d0dae528c27af40f380e4a564c2c14c61",
+    "pages": 8,
+    "sample_characters": 7025,
+    "status": "imported",
+    "reason": null,
+    "sections": 8
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a09_leave.pdf",
+    "bytes": 948389,
+    "sha256": "f19f270ffa8f9ee7e7e29f8e51c0a0a44499b2c13c4016e7f30957ed3db0fb67",
+    "pages": 5,
+    "sample_characters": 4673,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a10_medical_board.pdf",
+    "bytes": 702940,
+    "sha256": "0eede01359c357c317943091251d47cd25ed9c76f63e1cf815e2582af2a05f1d",
+    "pages": 4,
+    "sample_characters": 5286,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a11_transfer.pdf",
+    "bytes": 543472,
+    "sha256": "83a8f1905a8f580df3f781ad4054afb1f662df7f6f3cd28d0f5b1494e5fa3089",
+    "pages": 3,
+    "sample_characters": 5868,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a12_division_orders.pdf",
+    "bytes": 94570,
+    "sha256": "01b1fe11eaed3d7b82835de797f8429fab50682a1e0ad73de54014fefae921fd",
+    "pages": 1,
+    "sample_characters": 202,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a13_salute.pdf",
+    "bytes": 355674,
+    "sha256": "ab805140e7cedb4d01933833e1650e3f2e058bd73d12e77f593468e0cd33ec5f",
+    "pages": 3,
+    "sample_characters": 89,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a14_gazetted_officer.pdf",
+    "bytes": 886731,
+    "sha256": "080af1fe478388f9bd4768637e20ab09c14b2898dee93af13cc0d85b98ad546b",
+    "pages": 5,
+    "sample_characters": 5524,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a15_inspection_gazzet.pdf",
+    "bytes": 481796,
+    "sha256": "6825d4aaa2d61c2e7ec4a0b22849e889340bd11991b96f5bd8921f0bc4c2e334",
+    "pages": 3,
+    "sample_characters": 4597,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a16_police_note_book (1).pdf",
+    "bytes": 495546,
+    "sha256": "aff5597ad64cb98e624593db957952a6318a06a4a6ee85f4802328a4cf968411",
+    "pages": 3,
+    "sample_characters": 4817,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a16_police_note_book.pdf",
+    "bytes": 495546,
+    "sha256": "aff5597ad64cb98e624593db957952a6318a06a4a6ee85f4802328a4cf968411",
+    "pages": 3,
+    "sample_characters": 4817,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/පොලිස් නියෝග/A/a16_police_note_book (1).pdf"
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a17_rib_rules.pdf",
+    "bytes": 1481649,
+    "sha256": "523dd0afd8cbba3224138c8976443dadd2758d225f2415de5b95176654edf765",
+    "pages": 8,
+    "sample_characters": 7454,
+    "status": "imported",
+    "reason": null,
+    "sections": 8
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a18_anti_riot.pdf",
+    "bytes": 506264,
+    "sha256": "b437f90b56e59c3c1d403f937bae977c2d2e42fe04676736d939af4c3c73555d",
+    "pages": 3,
+    "sample_characters": 3333,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a19_public_meeting_arrest.pdf",
+    "bytes": 1620899,
+    "sha256": "97ec6ade069e03c17db7b812ac58e9c771892ab0148ee0c3a65200f8cdc83a92",
+    "pages": 8,
+    "sample_characters": 7225,
+    "status": "imported",
+    "reason": null,
+    "sections": 8
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a20_police_custody_person.pdf",
+    "bytes": 617933,
+    "sha256": "567dcc91addcc60fd8233949030646d427413f3b6fb03c474da3bec2c79bef6e",
+    "pages": 3,
+    "sample_characters": 7209,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a21_letter.pdf",
+    "bytes": 600109,
+    "sha256": "3166fba53a5901c1677e71bd6c60e649734283361945976840dcb190f0c58681",
+    "pages": 3,
+    "sample_characters": 6896,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a22_reward_&_collect (1).pdf",
+    "bytes": 339383,
+    "sha256": "ec175f22608b37b6242d3c0efa404ddbc4732a40db4dbffb291b7cc2e40856a1",
+    "pages": 2,
+    "sample_characters": 3829,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/A/a22_reward_&_collect.pdf",
+    "bytes": 339383,
+    "sha256": "ec175f22608b37b6242d3c0efa404ddbc4732a40db4dbffb291b7cc2e40856a1",
+    "pages": 2,
+    "sample_characters": 3829,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/පොලිස් නියෝග/A/a22_reward_&_collect (1).pdf"
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b01_uniform_&_badge_belt.pdf",
+    "bytes": 1583715,
+    "sha256": "4617a986b9296d69e533518fd76e1eb82a8f93dc58a683598f8945241c225857",
+    "pages": 9,
+    "sample_characters": 5369,
+    "status": "imported",
+    "reason": null,
+    "sections": 9
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b02_uniform_issueu.pdf",
+    "bytes": 1143548,
+    "sha256": "055d219e8cb1bc9b0f1e247130031c06896709f46b855c1890800f317c5704ba",
+    "pages": 8,
+    "sample_characters": 1438,
+    "status": "imported",
+    "reason": null,
+    "sections": 8
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b03_uniform_set.pdf",
+    "bytes": 506610,
+    "sha256": "c9e376d7d8f24782e59e6ae4ebd74437bcfe7b06ab110f3c9bbf4c897f63bc75",
+    "pages": 4,
+    "sample_characters": 1891,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b04_medals.pdf",
+    "bytes": 665953,
+    "sha256": "a798321904d9eddeda45bd77e735004ea01a71ea3349b84e48966ae1cba362f0",
+    "pages": 4,
+    "sample_characters": 5991,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b05_good_entries.pdf",
+    "bytes": 330827,
+    "sha256": "308e730291fdd8bc46368111160f1de2eae8a895fa98ee5ce5b1bceecf72fa9f",
+    "pages": 3,
+    "sample_characters": 637,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b06_riwolwer.pdf",
+    "bytes": 176383,
+    "sha256": "21af3fa18ac375dd956c0864710c88e73f2da4f071a42324ddbded560ef04946",
+    "pages": 2,
+    "sample_characters": 237,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b07a_remove_explosive.pdf",
+    "bytes": 603071,
+    "sha256": "59c49491b20bad1c201c542510ce174e9a3d2e0068f850c393cdb3fd49c26d5a",
+    "pages": 4,
+    "sample_characters": 5031,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b08_document_store_&_distroy.pdf",
+    "bytes": 1175913,
+    "sha256": "d35359c95cc816c109b322d9e2a562b352668a6127d950c0e693c8bba2c1edeb",
+    "pages": 8,
+    "sample_characters": 4425,
+    "status": "imported",
+    "reason": null,
+    "sections": 8
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b09_new_police_station_open_rules.pdf",
+    "bytes": 396273,
+    "sha256": "0ca97193d444f846f79a95922dfcb548ac8f6106145ad1482bd034d8cad14746",
+    "pages": 3,
+    "sample_characters": 4055,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b10_police_officers_houses.pdf",
+    "bytes": 368026,
+    "sha256": "7ab7e9d53ea7b9c5ca8d827424dadec8226b0ccd04646a4cc524edcdc8fbaf65",
+    "pages": 2,
+    "sample_characters": 4384,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b11_building_rent.pdf",
+    "bytes": 1072653,
+    "sha256": "8efc04036f00a4035230e6d38bad2f04d74c43e75d743948af4e5b2468522787",
+    "pages": 6,
+    "sample_characters": 5390,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b12_gov._property.pdf",
+    "bytes": 401974,
+    "sha256": "45add1a290447ce048f4ee9f5474d3a154a17ca7019547c5d080d9c97f82251d",
+    "pages": 4,
+    "sample_characters": 1285,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b13_electricity.pdf",
+    "bytes": 247159,
+    "sha256": "f9103d98995ba03cfa6c5ba9d1080bdcf6a1017692c3319044da9af2c5050ced",
+    "pages": 3,
+    "sample_characters": 901,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b14_police_bycle.pdf",
+    "bytes": 320720,
+    "sha256": "da38661ef441b3edae473ef111847e2ce4f8ea09c0137845eae3759488ec0b22",
+    "pages": 2,
+    "sample_characters": 2900,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b15_welfare.pdf",
+    "bytes": 1648568,
+    "sha256": "c8b0c1ac5aad8764ce3681a563405798cbc2f0bbb710f4437d75c1fa7f9249fd",
+    "pages": 9,
+    "sample_characters": 6998,
+    "status": "imported",
+    "reason": null,
+    "sections": 9
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b16_automatic_weapon (1).pdf",
+    "bytes": 507087,
+    "sha256": "185456dd9869df944fb551c7cb3c2a99aa81438f34fffc603133daaa80d937a8",
+    "pages": 3,
+    "sample_characters": 4579,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/B/b16_automatic_weapon.pdf",
+    "bytes": 507087,
+    "sha256": "185456dd9869df944fb551c7cb3c2a99aa81438f34fffc603133daaa80d937a8",
+    "pages": 3,
+    "sample_characters": 4579,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/පොලිස් නියෝග/B/b16_automatic_weapon (1).pdf"
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c01_crime_inspection_court.pdf",
+    "bytes": 1299167,
+    "sha256": "cef3c6a89bbbccdc497878376abecb1915c1702e6a3ff10dd042a73664b6cda1",
+    "pages": 7,
+    "sample_characters": 5814,
+    "status": "imported",
+    "reason": null,
+    "sections": 7
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c03_mudliyer_report.pdf",
+    "bytes": 1010166,
+    "sha256": "13225edc206f11e7a8e24491f0cd9b046c5b4b489ece8f5c0ff4a71d5343e3a7",
+    "pages": 5,
+    "sample_characters": 6076,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c04_cid_organisation.pdf",
+    "bytes": 359537,
+    "sha256": "529c4f3c961b6535254aaa2a8c2558e1cfa2b527bc8da48052ee8d47d925e0a8",
+    "pages": 2,
+    "sample_characters": 3915,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c05_funger_print.pdf",
+    "bytes": 1105092,
+    "sha256": "7ca53d476a0fed93921fae43b3af1602d70f28b5bcabd6080ac1a2ec99ae72ac",
+    "pages": 6,
+    "sample_characters": 7006,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c06_crime_record_office.pdf",
+    "bytes": 434011,
+    "sha256": "2c4d85f10c1268da26930e17ca3e4e0d454c4450c6024908c41bde6c16a2aabb",
+    "pages": 3,
+    "sample_characters": 3930,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c07_agian_punishment_&_administration.pdf",
+    "bytes": 545428,
+    "sha256": "ae730e489b49e52d6afacfd3199808e94828570351faeebc990776267b1f7cfd",
+    "pages": 3,
+    "sample_characters": 5721,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c08_suspects_identification.pdf",
+    "bytes": 491876,
+    "sha256": "2cc45b78d4110c29955ecdbbb9e872709240e91625d2022af694452aaeb81cdd",
+    "pages": 3,
+    "sample_characters": 5168,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c09_body_finger_print_&_photo_graphy.pdf",
+    "bytes": 470695,
+    "sha256": "06fd03b9137e1aa399dab7831964129b0fc230a655ffbac879582ae7a8b1b27d",
+    "pages": 3,
+    "sample_characters": 5182,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c10_ha_huwa_police_gazzete_III.pdf",
+    "bytes": 601510,
+    "sha256": "2d8a9fe3fda70d885d162c7afd94cf0665cbf2dd2140d70ac2762cfafc9079f1",
+    "pages": 3,
+    "sample_characters": 7012,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c11_arrested_person.pdf",
+    "bytes": 299394,
+    "sha256": "894cec61da531cf0a5a1e14dd356f04f4a674aebc0224b98f73e5f45c39acef0",
+    "pages": 2,
+    "sample_characters": 2963,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c12_illegal_money.pdf",
+    "bytes": 1193616,
+    "sha256": "76c75ecd46c048caa09d22bb482b3d8a8ef161907cf08cb650538820aeb007dd",
+    "pages": 6,
+    "sample_characters": 8077,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c13_suspect_document_inspection.pdf",
+    "bytes": 332684,
+    "sha256": "4cf02944a0b01f5398e1f58bf1754b0fa2b9c64576b122ba4776cf9943f3015c",
+    "pages": 2,
+    "sample_characters": 3538,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c14_draw_planning.pdf",
+    "bytes": 1389695,
+    "sha256": "ffbf342d0abca41d912c48f8de82bb19c97e3e5fa983ca4ea9c060abc939836f",
+    "pages": 10,
+    "sample_characters": 7996,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c15_kennels_duty.pdf",
+    "bytes": 255303,
+    "sha256": "6f06b56fed4fa6b23f70e9569837b5b278c2489a7ecdf558dcf576343d7214e4",
+    "pages": 2,
+    "sample_characters": 2224,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c16_orders_sithasi.pdf",
+    "bytes": 572748,
+    "sha256": "bb2793d3296e1cda43bbf13db79a1e9114cdc935121ce640e86a2daf50629d4d",
+    "pages": 3,
+    "sample_characters": 5850,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c17_inspection_of_parcle.pdf",
+    "bytes": 1445714,
+    "sha256": "04faf9807359f81a65e685b987282ff1d5297e99092a01a87cba2e1f975a1533",
+    "pages": 8,
+    "sample_characters": 7265,
+    "status": "imported",
+    "reason": null,
+    "sections": 8
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c18_dmo_analyzis.pdf",
+    "bytes": 706101,
+    "sha256": "d352dc221a9148975619e89564546535aade53fc7ecab80fb9e9578252289343",
+    "pages": 4,
+    "sample_characters": 6523,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c19_post_&_telegram.pdf",
+    "bytes": 318325,
+    "sha256": "4b1ad4162af64cd5eaf4a3a64d1e3749732077c97e62de4b953ea7562fe33149",
+    "pages": 2,
+    "sample_characters": 3055,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c20_young_&_child.pdf",
+    "bytes": 623537,
+    "sha256": "00487e8046fecb48e171d35c5346edf5b8b4139daead43fa32485c9870b0efae",
+    "pages": 3,
+    "sample_characters": 7578,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c21_patrol.pdf",
+    "bytes": 760503,
+    "sha256": "c199b245bc825404d9d0f315c4e955c8f5d29905acd8710e35f19bb83108148f",
+    "pages": 4,
+    "sample_characters": 7210,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c22_railway_station_robbery.pdf",
+    "bytes": 189527,
+    "sha256": "03781bca0529d93d5ce2ec4245c5d35edf8ae083747b5b86d0fee47c172fa646",
+    "pages": 1,
+    "sample_characters": 1989,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c23_court_officers_duty.pdf",
+    "bytes": 530186,
+    "sha256": "45e140c40181da4df11b496fa2a9fec41e12c53b111f5c9db03922d69d3bd8b8",
+    "pages": 3,
+    "sample_characters": 6029,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/C/c24_apal_court_case.pdf",
+    "bytes": 435784,
+    "sha256": "da58d007985e0ad2cac294fcf1245a70d4886929cda352f35c85b2a098551eb1",
+    "pages": 2,
+    "sample_characters": 5200,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/D/d01_transport.pdf",
+    "bytes": 1199069,
+    "sha256": "f860d8bd80f386a90858e59e7599dec6a7c2c85103a33b4b5e66105bd1da8676",
+    "pages": 6,
+    "sample_characters": 7154,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/D/d02_police_officers_accident.pdf",
+    "bytes": 381887,
+    "sha256": "da6b48f11f5686bfc573160d7b28c2d7937f99e828e5301702300b2a64246380",
+    "pages": 2,
+    "sample_characters": 4493,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/D/d03_govt._vehicle.pdf",
+    "bytes": 1094355,
+    "sha256": "834547afe0b6baa826711291a3011a1330d1c7abcbe215942decc951efefc37f",
+    "pages": 6,
+    "sample_characters": 6169,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/D/d04_police_radio.pdf",
+    "bytes": 386904,
+    "sha256": "0911715197eef461dfb2d5a9e50f2654f84e3b843fe94adba765f188e4889a3a",
+    "pages": 2,
+    "sample_characters": 3693,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/D/d05_news_radio.pdf",
+    "bytes": 435442,
+    "sha256": "ecabae38c8d81fa6903eaab8acc2aa49f39553415a2b4d6dfa0179905b9e9d69",
+    "pages": 2,
+    "sample_characters": 4935,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/D/d06_railway_accident.pdf",
+    "bytes": 195922,
+    "sha256": "55ef00b6de43de08fa1577787de87f527a1432df2f109b651214b82e91202e71",
+    "pages": 1,
+    "sample_characters": 933,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/D/d07_air_crash.pdf",
+    "bytes": 682879,
+    "sha256": "68f5fe5517de428f8aaecd4f81c702b30410887e7e1dad82306c864b392f1109",
+    "pages": 4,
+    "sample_characters": 6774,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/D/d08_telegram_telephone_headquarters.pdf",
+    "bytes": 495417,
+    "sha256": "045c3a8549b51036e3b7d4860812e2baeeb6d5005b9a56095a8879393940db81",
+    "pages": 3,
+    "sample_characters": 5414,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e01_instruction_class.pdf",
+    "bytes": 314116,
+    "sha256": "ba643920cbc5ec46b1d2970d1b859fa9934ba5137861c7ad7a2bf414d46ea50c",
+    "pages": 2,
+    "sample_characters": 3490,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e02_bereak_rules.pdf",
+    "bytes": 218620,
+    "sha256": "bbf4d5a37750a0d3bf2a97c81f7d9846ae8693fdaddecedd566685dda9db6887",
+    "pages": 2,
+    "sample_characters": 496,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e03_land_registry_petral.pdf",
+    "bytes": 105218,
+    "sha256": "aa105effdfe5d4566844c6f6c4816ca87735cd31c7909aa580da2b30709359be",
+    "pages": 1,
+    "sample_characters": 32,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 1
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e04_loudspeaker_permit.pdf",
+    "bytes": 479135,
+    "sha256": "b52d80095d6253dc12d3083963db85a1fd4d4a1f28339931526cdfd5d424e12b",
+    "pages": 4,
+    "sample_characters": 1414,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e05_public_perahera.pdf",
+    "bytes": 392672,
+    "sha256": "48bdbab28d29b10f3a87fd1792b6a834cd1728f138e9ce45c498aee2ecfec174",
+    "pages": 2,
+    "sample_characters": 4604,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e06_police_custody_remove.pdf",
+    "bytes": 514111,
+    "sha256": "6810420ebd58c9ea148297acd53c64f78b12b7d484c609b2a378fcb4cff6b853",
+    "pages": 3,
+    "sample_characters": 5724,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e07_police-custody_mental.pdf",
+    "bytes": 343350,
+    "sha256": "762287dacfeca258bcce8949f54bea9914ce60252b7dbeb59e21ca4966ce1a00",
+    "pages": 2,
+    "sample_characters": 3680,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e08_ppr.pdf",
+    "bytes": 569761,
+    "sha256": "97307351f19e9606d6cea24ef336f954b09ee7d91a5cab698d6f37aa2bc5523d",
+    "pages": 3,
+    "sample_characters": 6509,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e09_police_officers_medical.pdf",
+    "bytes": 855472,
+    "sha256": "00a5eeba142975f56ba33ecb975ba6d6a8c686a3c714ef6377105feec731d490",
+    "pages": 5,
+    "sample_characters": 6128,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e10_govt_department_duty.pdf",
+    "bytes": 745444,
+    "sha256": "46397219c44583037bfbd8521637bb373913dc7f51424b9fa75926e4d42d0b79",
+    "pages": 4,
+    "sample_characters": 7393,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e11_anugraha_fund (1).pdf",
+    "bytes": 310077,
+    "sha256": "630db528e9bd77f703bdda154d1fc91b006f797b4af64afb5f1e14e91fc29d02",
+    "pages": 2,
+    "sample_characters": 3702,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e11_anugraha_fund.pdf",
+    "bytes": 310077,
+    "sha256": "630db528e9bd77f703bdda154d1fc91b006f797b4af64afb5f1e14e91fc29d02",
+    "pages": 2,
+    "sample_characters": 3702,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/පොලිස් නියෝග/E/e11_anugraha_fund (1).pdf"
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e12_police_reward.pdf",
+    "bytes": 746210,
+    "sha256": "3fb8e336d7c2710e4531d82efc3bbcfb1cb89fe34b67071753169293d818bdf0",
+    "pages": 5,
+    "sample_characters": 4679,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e13_police_officers_loan.pdf",
+    "bytes": 420335,
+    "sha256": "d5d6ce3cf6e3c3bf1e5931898092518b88af785b08ecf4f95d588ed9acd5c72b",
+    "pages": 2,
+    "sample_characters": 5027,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e14_police_officers_duty_paid.pdf",
+    "bytes": 270817,
+    "sha256": "50a33663509e31e9cd235d32d8943ab2555b71985831f3fe6382c3f0f03a0208",
+    "pages": 2,
+    "sample_characters": 2632,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e15_police_station_petty_cash.pdf",
+    "bytes": 353050,
+    "sha256": "a88976d23b38e6272aa4d67f107708a6473c191d6823612354b23bfbcbb62498",
+    "pages": 2,
+    "sample_characters": 3637,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e16_translator_batta.pdf",
+    "bytes": 655123,
+    "sha256": "e0becc1aea6d59581be0f6988f62140f5eeaec0a606fc833213335f4515d8bab",
+    "pages": 3,
+    "sample_characters": 7440,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e17_railway_warrant.pdf",
+    "bytes": 1732554,
+    "sha256": "e4d1fd3274c96279c75c64fb533cf070e454137dd69ee14498d1052927d3ba62",
+    "pages": 10,
+    "sample_characters": 4539,
+    "status": "imported",
+    "reason": null,
+    "sections": 9
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e18_govt_telegram.pdf",
+    "bytes": 416870,
+    "sha256": "e0e9886896540c9bf56ebabf6dcf9812096606726ea6bdf5fd4cc14a5245226f",
+    "pages": 3,
+    "sample_characters": 3840,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e19_police_funeral.pdf",
+    "bytes": 626348,
+    "sha256": "b166ce1a8e14de60600b23590f48776a00e4a68f60405eb5f87bba350f7e050c",
+    "pages": 3,
+    "sample_characters": 7397,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e20_excercise_police.pdf",
+    "bytes": 888536,
+    "sha256": "ef2be07a9ac965e29388cde06316727271349b07f3bc3faad0c90d2a0d453185",
+    "pages": 5,
+    "sample_characters": 7500,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e21_sp_&_asp_report.pdf",
+    "bytes": 207779,
+    "sha256": "a210655e4a240db0a09ecbfd51e8919c121b34429fd9a9a4556adbb836b39e05",
+    "pages": 1,
+    "sample_characters": 2581,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e22_service_remove.pdf",
+    "bytes": 587229,
+    "sha256": "bc54c3d88e295e28cd59d9cd5667f39170e7946d700249c0049a88893664a9da",
+    "pages": 3,
+    "sample_characters": 6574,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e23_police_officers_against_cases.pdf",
+    "bytes": 395702,
+    "sha256": "abf43211085a2779eef90982b3e4cda99d8579a9bbab5c7a44f3bd0ec32a018b",
+    "pages": 2,
+    "sample_characters": 4277,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e24_promotion.pdf",
+    "bytes": 186136,
+    "sha256": "ec2600d56eb42c1b37bf50f7b540c4ac4ba58c87d88490a2ef77d82a19055080",
+    "pages": 1,
+    "sample_characters": 2005,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e25_sri_lanka_civil_law.pdf",
+    "bytes": 284970,
+    "sha256": "74bc5cf58b2c9ef0957d15b2e3c51cb2d6fa7fe5281809d3f7d831108553e188",
+    "pages": 2,
+    "sample_characters": 2944,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e26_sri_lanka_person_tax.pdf",
+    "bytes": 314814,
+    "sha256": "7d8b16692bb898ccd08c68125dddc1ed3e7b3335055d3e9636771ad184f79dfc",
+    "pages": 2,
+    "sample_characters": 3263,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e27_barrack_sacripise.pdf",
+    "bytes": 113143,
+    "sha256": "63361704f1b8a5f555d3ae2aaa92def0a5e2bcb2a7e185e5a0308c922c9e1143",
+    "pages": 1,
+    "sample_characters": 951,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e28_police_pension_force.pdf",
+    "bytes": 425605,
+    "sha256": "93a745ba9d1df0a11ef1e3d5032055cf1853b2c5144c8154af34689c0cb4dd7f",
+    "pages": 2,
+    "sample_characters": 4714,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e29_service_certificate.pdf",
+    "bytes": 190702,
+    "sha256": "090933f99808fab5f086495261574ed2d50d738b9ece391135e36d4a7d244262",
+    "pages": 1,
+    "sample_characters": 2149,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e30_police_reservists.pdf",
+    "bytes": 727988,
+    "sha256": "87bb2e5d96f8fc34cc82b374bc7fff6d3a9cc8e30dfb4d26ea7ff54a46fcbe21",
+    "pages": 4,
+    "sample_characters": 5513,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e31_labours.pdf",
+    "bytes": 314253,
+    "sha256": "e4d25470a32651e1d5dedb158f766524e3267ff7e431eb501d2f3926146db3b8",
+    "pages": 2,
+    "sample_characters": 3068,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e32_rebex.pdf",
+    "bytes": 474387,
+    "sha256": "741bf5a13dca1c416076e734f0cb8acef92fda642e819fa09883809bb656a005",
+    "pages": 3,
+    "sample_characters": 3710,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e33_police_band.pdf",
+    "bytes": 445712,
+    "sha256": "6d90667975dbd71d4d3a9e5ca02db5bb9bb707a0918ccb9a678c74548a3ad4ad",
+    "pages": 2,
+    "sample_characters": 5020,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/E/e34_st_john_ambulance.pdf",
+    "bytes": 1169686,
+    "sha256": "445a19cdac43470c660fac0098b0cbb637b4fa49f79bd8f08d2f20e95557ed2c",
+    "pages": 8,
+    "sample_characters": 6251,
+    "status": "imported",
+    "reason": null,
+    "sections": 6
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/Polic Ordinance - Sinhala.pdf",
+    "bytes": 5358657,
+    "sha256": "ba7832c2eef0c5cd81bce51a2bc78b14ff99148fe25e8f3df2e023edad0dc12d",
+    "pages": 46,
+    "sample_characters": 2,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/83.පොලිස් ආඥා පනත/1956 අංක 32 පොලිස් ආඥා පනත.pdf"
+  },
+  {
+    "file": "පනත්/පොලිස් නියෝග/Road Rules.pdf",
+    "bytes": 1992666,
+    "sha256": "9b122a6dc263ab92d86ad107118722b6fa99326d58d3d769be7cbca7b4d839b0",
+    "pages": 33,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 31
+  },
+  {
+    "file": "පනත්/මාර්ගගත ක්‍රමවල සුරක්ෂිත හාවය පිළිබඳ පනත - 09_2024.pdf",
+    "bytes": 249721,
+    "sha256": "b5f8a85f011a2b1aba1843b6f10bff920ef23e0c26769220d973127c1f91e21b",
+    "pages": 66,
+    "sample_characters": 4892,
+    "status": "imported",
+    "reason": null,
+    "sections": 66
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/00.පටුන (විනය හා කාර්ය කළමණාකරනයට නීතිය)/පටුන.pdf",
+    "bytes": 307808,
+    "sha256": "d6852bc16da97f3501af6c98ed828e3688e44b34d19c1f9b5a20236cced6610a",
+    "pages": 3,
+    "sample_characters": 4358,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/01.ආණ්ඩුක්‍රම ව්‍යවස්ථාව/19 වන ආණ්ඩුක්‍රම ව්‍යවස්ථා සංශෝධනය.pdf",
+    "bytes": 185705,
+    "sha256": "a9e95493d75d335d191d1ec474176d5eff507c5626db96d08f7660c3a7baf66b",
+    "pages": 69,
+    "sample_characters": 3118,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/01.ආණ්ඩුක්‍රම ව්‍යවස්ථාව/19 වන ආණ්ඩුක්‍රම ව්‍යවස්ථා සංශෝධනය.pdf"
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/01.ආණ්ඩුක්‍රම ව්‍යවස්ථාව/1978 ආණ්ඩුක්‍රම ව්‍යවස්ථාව.pdf",
+    "bytes": 2312186,
+    "sha256": "a5ab2162874c218528bb45df40f7bbeeac49e7e6daa325de959b7ef5d78fc310",
+    "pages": 272,
+    "sample_characters": 676,
+    "status": "imported",
+    "reason": null,
+    "sections": 265
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/01.ආණ්ඩුක්‍රම ව්‍යවස්ථාව/20 වන ආණ්ඩුක්‍රම ව්‍යවස්ථා සංශෝධනය.pdf",
+    "bytes": 182403,
+    "sha256": "9b2b6ccaaa663bd16d0a4be72141860f34a7bc6a81a26cf8e84f509efb10282d",
+    "pages": 44,
+    "sample_characters": 2955,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/01.ආණ්ඩුක්‍රම ව්‍යවස්ථාව/20 වන ආණ්ඩුක්‍රම ව්‍යවස්ථා සංශෝධනය.pdf"
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/ආයතන සංග්‍රහය I කාණ්ඩය.pdf",
+    "bytes": 23407872,
+    "sha256": "a3255a2ce417f1bdad6cd3410793e3f5844add6246ed1cc0a53b3b0b9367009a",
+    "pages": 530,
+    "sample_characters": 3349,
+    "status": "imported",
+    "reason": null,
+    "sections": 784
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/01. 09-2010 රා.ප.ච.pdf",
+    "bytes": 78453,
+    "sha256": "bc15512555c79e50d69bb540351d86c4df31afe6503cee261c8f2d0d28d04b9d",
+    "pages": 1,
+    "sample_characters": 884,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/02. 15-2010 රා.ප.ච.pdf",
+    "bytes": 58730,
+    "sha256": "9c296ab4552fade0d964d3dd8170950bb0e7819f2533092431541fff0141325c",
+    "pages": 1,
+    "sample_characters": 719,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/03. 11-2013 රා.ප.ච.pdf",
+    "bytes": 80459,
+    "sha256": "420c742862db6714a36ae16564de5f6a4fa36b597b148cc1ed0f331e3c478402",
+    "pages": 1,
+    "sample_characters": 3950,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/04. 16-2013 රා.ප.ච.pdf",
+    "bytes": 63755,
+    "sha256": "92abc40f171d14e99c28ec727d171397e8a85f5c6479038790449f18e9344efd",
+    "pages": 1,
+    "sample_characters": 4785,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/05. 24-2013 රා.ප.ච.pdf",
+    "bytes": 84025,
+    "sha256": "805aeb168453e69bb017259936a5b1a023e4ef8b8ec87ee44d60c94e9144aff8",
+    "pages": 1,
+    "sample_characters": 4024,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/06. 26-2013 රා.ප.ච.pdf",
+    "bytes": 71169,
+    "sha256": "e6840d97ce33c13c6c1f0339787564582d258658302c99e2f64b7a231cd899e3",
+    "pages": 1,
+    "sample_characters": 4044,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/07. 9-2014 රා.ප.ච.pdf",
+    "bytes": 80593,
+    "sha256": "ac58660d3cf0d29f190881897c74a34bef5999b4398795ec1f9a3d7f8117c90e",
+    "pages": 1,
+    "sample_characters": 4364,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/08. 23-2014 රා.ප.ච.pdf",
+    "bytes": 74654,
+    "sha256": "1e30774cb6efb638f628bd8be783bb06f3254a9248ffd1d6bad87921d786e4bc",
+    "pages": 1,
+    "sample_characters": 4890,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/09. 4-2016 රා.ප.ච.pdf",
+    "bytes": 228919,
+    "sha256": "5e2e7fb6c4cfe9632feaf17177f9757c0325c712a8bf4f0fec8390c70cd765dd",
+    "pages": 1,
+    "sample_characters": 1441,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/10. 18-2016 රා.ප.ච.pdf",
+    "bytes": 309077,
+    "sha256": "c76c2f827d2977e0bf36085bf8ed3b2350474e53d5cf789b9400155f2a65f709",
+    "pages": 2,
+    "sample_characters": 2125,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/11. 21-2016 රා.ප.ච.pdf",
+    "bytes": 210120,
+    "sha256": "8608cb1b5598207b49bc7977390db5ae309ae3b5637c3e73c86c5cd953fa73e2",
+    "pages": 1,
+    "sample_characters": 1524,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/12. 7-2017 රා.ප.ච.pdf",
+    "bytes": 216685,
+    "sha256": "401e155cffc323d13a771a45fe44a5aedfe5155f1cd67fac93d4618bda21d7f8",
+    "pages": 1,
+    "sample_characters": 1178,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/13. 25-2017 රා.ප.ච.pdf",
+    "bytes": 226560,
+    "sha256": "c73464fdbc711c6a4f7e672fbd9fb1b06006016f5812e89634694f13778181c8",
+    "pages": 1,
+    "sample_characters": 943,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/14. 20-2018 රා.ප.ච.pdf",
+    "bytes": 172639,
+    "sha256": "b1c7eddf7b4983c8ffec165d6d3fa818c30dc65bd77414cf82e5e53c149f6000",
+    "pages": 1,
+    "sample_characters": 2223,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/15. 27-2018 රා.ප.ච.pdf",
+    "bytes": 231756,
+    "sha256": "baf1902b84b16f4bb647048ae73a4831dff492972090aab013e44e9dfc99e8a5",
+    "pages": 2,
+    "sample_characters": 2246,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/16. 2-2019 රා.ප.ච.pdf",
+    "bytes": 229193,
+    "sha256": "b98f996ebd344b6aee180995f216b7d5027d4c647e66225f73e0fd3bdc248692",
+    "pages": 1,
+    "sample_characters": 2344,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/17. 6-2019 රා.ප.ච.pdf",
+    "bytes": 411049,
+    "sha256": "114609c34ebe48486360346580b6f4f9b1884c1d18ebdae53a908d7f896a4809",
+    "pages": 2,
+    "sample_characters": 2669,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/18. 22-2019 රා.ප.ච.pdf",
+    "bytes": 239276,
+    "sha256": "403bf1af7fcd4f7a4748eb7b634cdd82fbce9fdd0d22359d760c8d2ecc307cc0",
+    "pages": 2,
+    "sample_characters": 4356,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/19. 23-2019 රා.ප.ච.pdf",
+    "bytes": 301702,
+    "sha256": "d29f848ae45073f9d47dbc12cf20433510abff0fe6e73c9449e7434f125181f5",
+    "pages": 1,
+    "sample_characters": 1397,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/20. 32-2019 රා.ප.ච.pdf",
+    "bytes": 289452,
+    "sha256": "345ad1c58a287657ec6bd380f0a1fad874cf733752bf1f2c166837f6749c5f67",
+    "pages": 1,
+    "sample_characters": 1509,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/ආයතන සංග්‍රහය II කාණ්ඩය.pdf",
+    "bytes": 1052559,
+    "sha256": "cdc5993dc01a64ff5d5605553291528ee0308633dfdb7421021061bf937385d2",
+    "pages": 100,
+    "sample_characters": 3156,
+    "status": "imported",
+    "reason": null,
+    "sections": 100
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/01. 06-2004 (1) රා.ප.ච.pdf",
+    "bytes": 84038,
+    "sha256": "7e664c8c5faf58e5872d64c9ce5173d33531be4244a9201331ca58bd5245f8cd",
+    "pages": 2,
+    "sample_characters": 4939,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/02. 06-2004 රා.ප.ච.pdf",
+    "bytes": 168499,
+    "sha256": "c743d8e25b8c6a7f33f22a8505e41ae153e35ee1d14c5188890f9daab5aa19be",
+    "pages": 2,
+    "sample_characters": 2893,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/03. 29-2011 රා.ප.ච.pdf",
+    "bytes": 87462,
+    "sha256": "6eef9d57e25eeadb7233c0415fb07caae7299d949fafc645b09d7d9851ac612a",
+    "pages": 1,
+    "sample_characters": 3303,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/04. 29-2011 (1) රා.ප.ච.pdf",
+    "bytes": 66554,
+    "sha256": "54dc806fe49e99af5ac0c78bcc1d7e4cf1dd326d836ce5271654a4f623e471a7",
+    "pages": 1,
+    "sample_characters": 3351,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/05. 29-2011 (11)රා.ප.ච.pdf",
+    "bytes": 181877,
+    "sha256": "f3937f560ed1419564e0f896c38d67c844b277e9c18e419dd2e16c421cb89ac4",
+    "pages": 1,
+    "sample_characters": 965,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/06. 07-2010 රා.ප.ච.pdf",
+    "bytes": 60192,
+    "sha256": "f0acfab9e6f16f61d558ded386c10ecd60d41566189c5e2de66c3a453a9a915e",
+    "pages": 1,
+    "sample_characters": 1798,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/07. 18-2013 රා.ප.ච.pdf",
+    "bytes": 88493,
+    "sha256": "4f3da336109644ba08c90a3b8d21ca3ba7cd3ebeb82ed48280f44550fc01eb4f",
+    "pages": 2,
+    "sample_characters": 6323,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/08. 14_2014 රා.ප.ච.pdf",
+    "bytes": 78539,
+    "sha256": "fa56537ec6dab334c7962178e55584720f918f8361d1c04a7d2f74689b3dd085",
+    "pages": 3,
+    "sample_characters": 11065,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/09. 04-2015 රා.ප.ච.pdf",
+    "bytes": 134174,
+    "sha256": "e91b6de2f6a8292ab195cec3a790afcd80e89479e7ca245fbc5289c3f85cac4f",
+    "pages": 1,
+    "sample_characters": 1446,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/10. 05-2017 රා.ප.ච.pdf",
+    "bytes": 153140,
+    "sha256": "2af86bae5709ec8331259d25554c46ccb5e06bdc8171c6e58e6caa76b0bf015d",
+    "pages": 1,
+    "sample_characters": 933,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/11. 10-2017 රා.ප.ච.pdf",
+    "bytes": 157314,
+    "sha256": "94d00788b858e1b165eeda8659b4ea7b9f46142b3711e66902a2491957d0c492",
+    "pages": 1,
+    "sample_characters": 1357,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/12. 28-2017 රා.ප.ච.pdf",
+    "bytes": 225526,
+    "sha256": "304327b78682df1081f75360c84126ee158dd2400f1929e88e487070143d93a5",
+    "pages": 1,
+    "sample_characters": 706,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/13. 08-2019 රා.ප.ච.pdf",
+    "bytes": 241491,
+    "sha256": "247320d76fd1cb41f8edc0b387e50993c88ae18746af4db5f05952eccc10dec0",
+    "pages": 1,
+    "sample_characters": 1112,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/14. 27-2019 රා.ප.ච.pdf",
+    "bytes": 162570,
+    "sha256": "968aaca2f7477c48c38661e2d679b5d76a43fc0f906afa26d1f0e7c3cc36b8f4",
+    "pages": 1,
+    "sample_characters": 2185,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/03.ආයතන සංග්‍රහය II/රා.ප.ච/15. 30-2019 රා.ප.ච.pdf",
+    "bytes": 320687,
+    "sha256": "1f9a395d95d45d0651cfe5911989e8fffa1eefb80d79f0dfd5659f639517493d",
+    "pages": 2,
+    "sample_characters": 3573,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/04.රාජ්‍ය සේවා කාර්ය පටිපාටික රීති/20-2018 රා.ප.ච රාජ්‍ය භාෂා ප්‍රතිපත්තිප  ක්‍රියාත්මක කීරීම.pdf",
+    "bytes": 172639,
+    "sha256": "b1c7eddf7b4983c8ffec165d6d3fa818c30dc65bd77414cf82e5e53c149f6000",
+    "pages": 1,
+    "sample_characters": 2223,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/විනය හා කාර්ය_/02.ආයතන සංග්‍රහය I/රා.ප.ච/14. 20-2018 රා.ප.ච.pdf"
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/04.රාජ්‍ය සේවා කාර්ය පටිපාටික රීති/2009-02-20 දිනැති අංක 158930 ර.ගැ.ප (අතිවිශේෂ).pdf",
+    "bytes": 221258,
+    "sha256": "392c5885eead42463296277381e04e37c68f69c0145ec2cd186761977ccf6d68",
+    "pages": 54,
+    "sample_characters": 7869,
+    "status": "imported",
+    "reason": null,
+    "sections": 55
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/04.රාජ්‍ය සේවා කාර්ය පටිපාටික රීති/2012.09.26 දිනැති අංක 1777-33 ර.ගැ.ප (අතිවිශේෂ).pdf",
+    "bytes": 62856,
+    "sha256": "bd5b56f1e8abc117785bda0e15fb3c6f3133f0dfecea70743712caf6fae1a585",
+    "pages": 2,
+    "sample_characters": 2953,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/05.වෙනත් ලිපි හා ර.ප.ච/01. 06-2006 ර.ප.ච රාජය සේවා වැටුප් ප්‍රතිව්‍යුහගත කීරිම.pdf",
+    "bytes": 932147,
+    "sha256": "98000332e6e9d6257e79ddd631db8bbcfcaad886430c04478950cefe95db955c",
+    "pages": 40,
+    "sample_characters": 6538,
+    "status": "imported",
+    "reason": null,
+    "sections": 41
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/05.වෙනත් ලිපි හා ර.ප.ච/02. 03-2018 රා.ප.ච විශ්‍රාමික රජයේ නිලධරයන් නැවත සේවයේ යෙදවීම.pdf",
+    "bytes": 346217,
+    "sha256": "34e666c86e21242155625b6178ea188c3009782a33b5bd0a64329fdc9360cabb",
+    "pages": 4,
+    "sample_characters": 7359,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/05.වෙනත් ලිපි හා ර.ප.ච/03. 18-2018 ර.ප.ච විනය පර්ක්ෂණ සදහා ගෙවිම්.pdf",
+    "bytes": 189816,
+    "sha256": "204dc01d8294168cda0df1fd54ef29dce5a16dea3d25cf4338a3541d69111013",
+    "pages": 3,
+    "sample_characters": 5576,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/05.වෙනත් ලිපි හා ර.ප.ච/04. 19-2019 ර.ප.ච වැටුප් පියවරයන් තිරනය කිරිම.pdf",
+    "bytes": 252017,
+    "sha256": "fb0378997170f75734ee59d30f15a950e57579e1fdac7244662c4a5e0b662ce7",
+    "pages": 1,
+    "sample_characters": 1886,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/05.වෙනත් ලිපි හා ර.ප.ච/05. 10-2020 ර.ප.ච ආයතන සංග්‍රහයේ 2020 සංශෝධන.pdf",
+    "bytes": 255438,
+    "sha256": "28b155e39bf37ed2e3f99ba36d19316ea77a6103cbed1c38a0b841ad01116567",
+    "pages": 2,
+    "sample_characters": 3207,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/05.වෙනත් ලිපි හා ර.ප.ච/06. 18-2020 ර.ප.ච රා රාජ්‍ය භාෂා ප්‍රතිපත්තිප  ක්‍රියාත්මක කීරීම.pdf",
+    "bytes": 294977,
+    "sha256": "466b50ba54c15fea396f2579bc354ac950b79cd430812249aaa5db050bf92433",
+    "pages": 5,
+    "sample_characters": 9810,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/05.වෙනත් ලිපි හා ර.ප.ච/07. බලය නොපවරනලද නිලධාරියෙකු මුලික විමර්ශනයක් පැවැත්වීම.pdf",
+    "bytes": 72954,
+    "sha256": "ee3f6f7de3166c387aee34edd4e894d4e0adc7b5c71648782154d363f1035979",
+    "pages": 2,
+    "sample_characters": 1,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/06.මුදල් රෙගුලාසි සංග්‍රහය/1992 මුදල් රෙගුලාසි සංග්‍රහය.pdf",
+    "bytes": 3281155,
+    "sha256": "b6b034aa0612409202355c71e56563100f64d8fac175393c5eb347cb52fc4bc2",
+    "pages": 346,
+    "sample_characters": 2304,
+    "status": "imported",
+    "reason": null,
+    "sections": 342
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/07.විශ්‍රාම වැටුප් ව්‍යවස්ථා සංග්‍රහය/1972 විශ්‍රාම වැටුප් ව්‍යවස්ථා සංග්‍රහය.pdf",
+    "bytes": 4387289,
+    "sha256": "5ffd4e4d1c9435bd71513dfb319187aba7f37384578724724cb3079feb3a33c0",
+    "pages": 106,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 105
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/07.විශ්‍රාම වැටුප් ව්‍යවස්ථා සංග්‍රහය/1983 අංක 24 දරන වැන්දඔු පුරැෂ සහ අනත්දරැ-E.pdf",
+    "bytes": 147841,
+    "sha256": "51079382b41b97b1668f70c399670260362c72bdfbb2d6699c9ac319061fe0c4",
+    "pages": 10,
+    "sample_characters": 8037,
+    "status": "imported",
+    "reason": null,
+    "sections": 10
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/07.විශ්‍රාම වැටුප් ව්‍යවස්ථා සංග්‍රහය/2010 අංක 08 වැන්දඔු සහ අනත්දරු විශ්‍රාම වැටුප් අරමුදල් (සංශෝධන) පනත.pdf",
+    "bytes": 218305,
+    "sha256": "6ea19be073ddfbd87f387dbe1f515d1f32f8dfe1fc667f9dcb38647f1d49ddc3",
+    "pages": 11,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 10
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/07.විශ්‍රාම වැටුප් ව්‍යවස්ථා සංග්‍රහය/2010 අංක 09 වැන්දඔු සහ අනත්දරු විශ්‍රාම වැටුප් අරමුදල් (සංශෝධන) පනත.pdf",
+    "bytes": 209791,
+    "sha256": "f7bc78810d8262762a874e3b707735043c7625f1074e4396dc78648bbff20a67",
+    "pages": 11,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 10
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/08.රාජ්‍ය සේවා අරථ සාධක අරමුදල් පනත/1942 අංක 18 රාජ්‍ය සේවා අරථ සාධක අරමුදල් පනත.pdf",
+    "bytes": 625466,
+    "sha256": "2372c0dc282fa1ca3229881936917f8cacfc6ba82af139793deccc9058c79530",
+    "pages": 19,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 19
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/08.රාජ්‍ය සේවා අරථ සාධක අරමුදල් පනත/1958 අංක 15 සේවක අරථ සාාධක අරමුදල් පනත.pdf",
+    "bytes": 252629,
+    "sha256": "a7447e33d415325120f1d6d6e53a7212ce9e138cf958bc4a6550dd3869d6becf",
+    "pages": 36,
+    "sample_characters": 20028,
+    "status": "imported",
+    "reason": null,
+    "sections": 104
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/08.රාජ්‍ය සේවා අරථ සාධක අරමුදල් පනත/1975 අංක 06 සේවක අරථ සාාධක අරමුදල් (විශේෂ විධිවිධාන) පනත-E.pdf",
+    "bytes": 14063,
+    "sha256": "ebd7294bd79c508f2831c569c3dec29b4bb5bfba36c07ea162f11d6a7efa4b90",
+    "pages": 3,
+    "sample_characters": 5450,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/08.රාජ්‍ය සේවා අරථ සාධක අරමුදල් පනත/1999 අංක 45 අර්ථසාධක අරමුදල් (සංශෝධන).pdf",
+    "bytes": 104881,
+    "sha256": "af5f8274ff6b0a02433c970d76b9d5883fa80991017c175c80ccff6441bf99e3",
+    "pages": 4,
+    "sample_characters": 3553,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/08.රාජ්‍ය සේවා අරථ සාධක අරමුදල් පනත/2009 අංක 55 සේවක අර්ථ සාදක අරමුදල් (සංශෝධන) පනත.pdf",
+    "bytes": 164249,
+    "sha256": "ce805f9b4401e752880f563c30cfeccea7aedff041c6aed6c83fc957b3b1433e",
+    "pages": 5,
+    "sample_characters": 3826,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/08.රාජ්‍ය සේවා අරථ සාධක අරමුදල් පනත/2012 අංක 02 සේවක අර්ථසාධක (සංශොධන) පනත.pdf",
+    "bytes": 166923,
+    "sha256": "7981e0f26698576542745a2b6bcd1f31545b404cba8eb878ea0c3d0772b0924c",
+    "pages": 7,
+    "sample_characters": 3236,
+    "status": "imported",
+    "reason": null,
+    "sections": 7
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/09.විශ්‍රාමික භාරකාර අරමුදල් පනත/1999 අංක 40 විශ්_රාමිකයින්ගේ භාර අරමුදල් පනත.pdf",
+    "bytes": 115656,
+    "sha256": "77ec83c8d746ac0085820ebc13754d5c8154c6ee16d7898f955652f5cff88473",
+    "pages": 11,
+    "sample_characters": 3583,
+    "status": "imported",
+    "reason": null,
+    "sections": 11
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/10.පොලිස් කොමිෂන් සභා පනත/1990 අංක 01 දරණ පොලිස් කොමිෂන් සභා පනත.pdf",
+    "bytes": 391811,
+    "sha256": "1d86a8bea07872dbfec50a8f426172fe276d639217ba0f1143f0e198518cf4e2",
+    "pages": 11,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 11
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/10.පොලිස් කොමිෂන් සභා පනත/2011.11.25 දිනැති අංක 1733-52 දරණ (අති විශේෂ )ගැසට් පත්‍රය.pdf",
+    "bytes": 263213,
+    "sha256": "cd9fd90b18c66a9dc35fead71ec0d0c9117c503234efa36469eac5172dc26498",
+    "pages": 11,
+    "sample_characters": 7479,
+    "status": "imported",
+    "reason": null,
+    "sections": 11
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/10.පොලිස් කොමිෂන් සභා පනත/2016.05.06 දිනැති අංක 1965-37 දරණ (අති විශේෂ )ගැසට් පත්‍රය.pdf",
+    "bytes": 56899,
+    "sha256": "271c782055c8d1b12b02c2e7610875fc0903f2c52190b2796e39a474038fb6f1",
+    "pages": 3,
+    "sample_characters": 6926,
+    "status": "imported",
+    "reason": null,
+    "sections": 3
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/10.පොලිස් කොමිෂන් සභා පනත/2017.04.24 දිනැති අංක 2016-6 දරන රජයේ අති විශේෂ ගැසට් පත්‍රය.pdf",
+    "bytes": 100810,
+    "sha256": "4f8b0b808df1c2d23c74bc533ef22d589211f05dcc0c779bc4c3621b27ec3d0a",
+    "pages": 4,
+    "sample_characters": 4327,
+    "status": "imported",
+    "reason": null,
+    "sections": 4
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/10.පොලිස් කොමිෂන් සභා පනත/2017.11.24 දිනැති අංක 2047-22 දරණ (අති විශේෂ )ගැසට් පත්‍රය.pdf",
+    "bytes": 55851,
+    "sha256": "5502a8c5c9d9db622a3e8ef7b69dce8c9f9fd31a0a356160f796a3d5d63549f5",
+    "pages": 2,
+    "sample_characters": 4442,
+    "status": "imported",
+    "reason": null,
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/10.පොලිස් කොමිෂන් සභා පනත/ස.පො.අ. සිට උසස්වීම් ලබා දිමේ කාලය පිළිබද ජාතික පොලිස් කොමිෂන් සභාවේ ලිපිය.pdf",
+    "bytes": 138933,
+    "sha256": "51d90195ec6380fe82a5dc389f27e666c5e3990bf886495bab67432aa11d9391",
+    "pages": 1,
+    "sample_characters": 3047,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/11.රාඡ්‍ය පරිපාලන විනිස්ච අධිකාරිය පනත/2002 අංක 04 රාඡ්‍ය පරිපාලන විනිස්ච අධිකාරිය-E.pdf",
+    "bytes": 27575,
+    "sha256": "3979c0270456cb8e8da8c2c1f108e87ac3ced2bdac753a2efcdd8fa76188205d",
+    "pages": 5,
+    "sample_characters": 4057,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/12.පරික්ෂන කමිෂන්සභා පනත/1948 අංක 17 පරික්ෂන කමිෂන්සභා පනත-E.pdf",
+    "bytes": 73376,
+    "sha256": "48c065142f9ebffd5a9de97a276d5200284155b40aa8ff7db1624a3e1904e1d6",
+    "pages": 4,
+    "sample_characters": 11979,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/69.පරීක්ෂණ කමිෂන්සභා පනත/1948 අංක 17 පරික්ෂන කමිෂන්සභා පනත-E.pdf"
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/12.පරික්ෂන කමිෂන්සභා පනත/2008 අංක 16 පරික්ෂන කමිෂන්සභා (සංශෝධන)  පනත.pdf",
+    "bytes": 3965638,
+    "sha256": "c03e3174ae7fca494c52b44c495835f6f355fd2091178c4fde5ac5be8b51d833",
+    "pages": 9,
+    "sample_characters": 2,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/69.පරීක්ෂණ කමිෂන්සභා පනත/2008 අංක 16 පරික්ෂන කමිෂන්සභා (සංශෝධන)  පනත.pdf"
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/12.පරික්ෂන කමිෂන්සභා පනත/2019 අංක 3 පරික්ෂන කමිෂන්සභා (සංශෝධන) පනත.pdf",
+    "bytes": 83937,
+    "sha256": "b96c3706c277710b989487381109c253e47e260a278f505bb61f260855e97807",
+    "pages": 6,
+    "sample_characters": 3313,
+    "status": "duplicate",
+    "reason": "Exact duplicate PDF.",
+    "duplicate_of": "පනත්/69.පරීක්ෂණ කමිෂන්සභා පනත/2019 අංක 3 පරික්ෂන කමිෂන්සභා (සංශෝධන) පනත.pdf"
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/13.රාජ්‍ය සේවා කොමිෂන් සභාව/රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ/03. 02-2014(1)රාජ්‍ය සේවා කොමිෂන් සභා චක්‍රලේඛ 02-2014(i).pdf",
+    "bytes": 54641,
+    "sha256": "d9a0ed1c06a66d477583e5624a474038e5f0521117c548dc90cd2a28114104b2",
+    "pages": 1,
+    "sample_characters": 1118,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/13.රාජ්‍ය සේවා කොමිෂන් සභාව/රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ/04. 02-2014(11) රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ.pdf",
+    "bytes": 359087,
+    "sha256": "7ab8002b7f76986daa44bb3c8343f74a693a5b6c7e96b403455f46c9466874ac",
+    "pages": 1,
+    "sample_characters": 0,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/13.රාජ්‍ය සේවා කොමිෂන් සභාව/රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ/05. 03-2015 රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ.pdf",
+    "bytes": 465647,
+    "sha256": "0833401399f7d9cef457be289a9ee6ec2c41f483f7af4d001e0e117570f09846",
+    "pages": 2,
+    "sample_characters": 1,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/13.රාජ්‍ය සේවා කොමිෂන් සභාව/රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ/06. 01-2018 රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ.pdf",
+    "bytes": 264573,
+    "sha256": "24b3baea59d5011abc4399c31452c3a978811959ea534ec424b5aa47453a0091",
+    "pages": 6,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/13.රාජ්‍ය සේවා කොමිෂන් සභාව/රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ/07. 03-2018 රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ.pdf",
+    "bytes": 379891,
+    "sha256": "904c2aa37782e2a3eb3479981caf03717b505ee658a8b77b1c1a168a5d65d0e4",
+    "pages": 1,
+    "sample_characters": 1616,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/13.රාජ්‍ය සේවා කොමිෂන් සභාව/රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ/08. 01-2019 රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ.pdf",
+    "bytes": 145790,
+    "sha256": "731505302dd0001fe601a36a6cc4d7b22f9c1df78c0df65eb1d68d063ab4d4ff",
+    "pages": 6,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/13.රාජ්‍ය සේවා කොමිෂන් සභාව/රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ/09. 01-2019(1) රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ.pdf",
+    "bytes": 28197,
+    "sha256": "c6c297f72a09f05b8bf76e64bdf21f5156caeee58ea92ac7dacac759b906ce59",
+    "pages": 1,
+    "sample_characters": 0,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/13.රාජ්‍ය සේවා කොමිෂන් සභාව/රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ/10. 03-2019 රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ.pdf",
+    "bytes": 424797,
+    "sha256": "61293f8b871a53d60169b77bf6bc5f54a9dba9a4079632fe1f54d6da8f44b28f",
+    "pages": 5,
+    "sample_characters": 5086,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/13.රාජ්‍ය සේවා කොමිෂන් සභාව/රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ/11. 05-2020 රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ.pdf",
+    "bytes": 82218,
+    "sha256": "d2058b5909102b7ba91a7306c50f9767d7d9fcb174749c24a792a9edb5e7d6a6",
+    "pages": 2,
+    "sample_characters": 1,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 2
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/13.රාජ්‍ය සේවා කොමිෂන් සභාව/රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ/12. නොකලැල් සේවා කාලය ගණනය කිරීම සම්බන්ධ රා.සේ.කො.ස. ලිපිය.pdf",
+    "bytes": 155440,
+    "sha256": "ca05ce6ff88740daf188ddba58648a2314511011f77caa6aa5e2893f1c4c84f6",
+    "pages": 1,
+    "sample_characters": 2141,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/13.රාජ්‍ය සේවා කොමිෂන් සභාව/රාජ්‍ය සේවා කොමිෂන් චක්‍රෙල්ඛ/13. විනය නියෝග නිකුත් කිරීමේදී සේවය හැරයාමේ නිවේදනවල අභියාචන බලධාරීත්වය සදහන් කිරීම.pdf",
+    "bytes": 99435,
+    "sha256": "0965928f63a7899b704bdd93d032cedd249ff92180cee737becea05d4a374584",
+    "pages": 1,
+    "sample_characters": 714,
+    "status": "imported",
+    "reason": null,
+    "sections": 1
+  },
+  {
+    "file": "පනත්/විනය හා කාර්ය_/14.නිවාඩු පනත/1971 අංක 21 දරණ නිවාඩු පනත-E.pdf",
+    "bytes": 62817,
+    "sha256": "c56f3fb27d8d0ac5634772529c45e11cc554456784e512e18224491dfc84a398",
+    "pages": 5,
+    "sample_characters": 10771,
+    "status": "imported",
+    "reason": null,
+    "sections": 5
+  },
+  {
+    "file": "පනත්/සත්වයින් පිළිබඳ නීති.pdf",
+    "bytes": 1674592,
+    "sha256": "8d5748d49c3b9da460a04474446ff918f0707bbb6e86c04e41570629e0859c68",
+    "pages": 6,
+    "sample_characters": 2,
+    "status": "ocr_imported",
+    "reason": "Recovered with Sinhala and English OCR.",
+    "sections": 6
+  }
+]

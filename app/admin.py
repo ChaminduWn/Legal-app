@@ -178,10 +178,28 @@ def save_section_review(
 
 
 def resolve_pdf(workspace: Path, source_file: str) -> Path | None:
-    if Path(source_file).name != source_file:
+    relative = Path(source_file.replace("\\", "/"))
+    if (
+        relative.is_absolute()
+        or ".." in relative.parts
+        or relative.suffix.lower() != ".pdf"
+    ):
         return None
-    candidates = [workspace / source_file, workspace / "data" / "uploads" / source_file]
+    candidates = [
+        workspace / relative,
+        workspace / "data" / "uploads" / relative,
+        workspace / "step 001 pdf folder" / relative,
+        workspace / "Criminal law" / relative,
+        workspace / "Civil Law" / relative,
+        workspace / "පනත්" / relative,
+    ]
+    workspace_resolved = workspace.resolve()
     for candidate in candidates:
-        if candidate.is_file() and candidate.suffix.lower() == ".pdf":
-            return candidate.resolve()
+        resolved = candidate.resolve()
+        if (
+            resolved.is_relative_to(workspace_resolved)
+            and resolved.is_file()
+            and resolved.suffix.lower() == ".pdf"
+        ):
+            return resolved
     return None

@@ -22,6 +22,8 @@ from app.models import (
     DocumentMetadataUpdate,
     DocumentSummary,
     EvaluationSummary,
+    PrepareRequest,
+    PrepareResponse,
     SearchRequest,
     SearchResponse,
     SectionReviewUpdate,
@@ -34,6 +36,8 @@ from app.rag.store import (
     search,
 )
 from app.services.legal_answer import answer_question
+from app.services.language import detect_language
+from app.services.query_analysis import assess_query
 
 
 @asynccontextmanager
@@ -103,7 +107,7 @@ def admin_documents() -> list[DocumentSummary]:
 
 
 @app.get(
-    "/api/admin/documents/{source_file}/sections",
+    "/api/admin/documents/{source_file:path}/sections",
     response_model=list[AdminSection],
 )
 def admin_document_sections(source_file: str) -> list[AdminSection]:
@@ -113,7 +117,7 @@ def admin_document_sections(source_file: str) -> list[AdminSection]:
     return sections
 
 
-@app.put("/api/admin/documents/{source_file}")
+@app.put("/api/admin/documents/{source_file:path}")
 def update_document_metadata(
     source_file: str, update: DocumentMetadataUpdate
 ) -> dict[str, str]:
@@ -135,7 +139,7 @@ def update_section_review(
     return {"status": "saved", "semantic_index": "refresh_required"}
 
 
-@app.get("/api/admin/documents/{source_file}/pdf")
+@app.get("/api/admin/documents/{source_file:path}/pdf")
 def admin_document_pdf(source_file: str) -> FileResponse:
     known = document_sections(get_settings().legal_ai_database, source_file)
     path = resolve_pdf(WORKSPACE_DIR, source_file)
@@ -211,3 +215,22 @@ def legal_chat(request: ChatRequest) -> ChatResponse:
         raise HTTPException(
             status_code=502, detail="The grounded answer service is temporarily unavailable."
         ) from exc
+
+
+@app.post("/api/prepare", response_model=PrepareResponse)
+def prepare_legal_question(request: PrepareRequest) -> PrepareResponse:
+    settings = get_settings()
+    sources = search(
+        settings.legal_ai_database,
+        request.message,
+        settings.legal_ai_top_k,
+    )
+    assessment = assess_query(request.message, sources)
+    return PrepareResponse(
+        confidence_state=assessment.confidence_state,
+        confidence_reason=assessment.confidence_reason,
+        detected_domain=assessment.detected_domain,
+        detected_language=detect_language(request.message),
+        follow_up_questions=assessment.follow_up_questions,
+        retrieval_mode=retrieval_mode(settings.legal_ai_database),
+    )
