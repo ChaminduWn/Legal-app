@@ -1,6 +1,6 @@
 .review-shell {
   min-height: 100vh;
-  background: #f3f1ea;
+  background: #05070c;
 }
 
 .review-topbar {
@@ -82,7 +82,8 @@
   padding: 0.65rem 0.75rem;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #faf9f4;
+  color: var(--ink);
+  background: #111a28;
   outline: 0;
 }
 
@@ -458,4 +459,3 @@
     display: block;
   }
 }
-
