@@ -18,7 +18,8 @@
         </a>
         <div class="review-actions">
           <a href="/evaluation">Evaluation</a>
-          <button class="primary-button compact" id="import-button" type="button">Import PDF</button>
+          <button class="primary-button compact" id="import-button" type="button">Add document</button>
+          <form method="post" action="/admin/logout"><button class="secondary-button" type="submit">Log out</button></form>
         </div>
       </header>
 
@@ -48,8 +49,10 @@
                 <span class="eyebrow" id="document-filename"></span>
                 <h1 id="document-title"></h1>
                 <p id="document-progress"></p>
+                <p class="analysis-summary" id="analysis-summary"></p>
               </div>
               <button class="secondary-button" id="metadata-button" type="button">Document details</button>
+              <button class="primary-button compact" id="approve-button" type="button">Approve & publish</button>
             </header>
 
             <div class="review-columns">
@@ -136,10 +139,11 @@
           <select id="document-status">
             <option value="unreviewed">Unreviewed</option>
             <option value="in_review">In review</option>
-            <option value="verified">Verified</option>
+            <option value="verified" disabled>Verified (use Approve & publish)</option>
             <option value="superseded">Superseded</option>
           </select>
         </label>
+        <label>Document type<select id="document-type"><option value="act">Act</option><option value="amendment">Amendment</option><option value="regulation">Regulation</option><option value="gazette">Gazette</option><option value="judgment">Judgment</option><option value="book">Book</option><option value="other">Other</option></select></label>
         <label>Notes<textarea id="document-notes" rows="4" maxlength="4000"></textarea></label>
         <button class="primary-button" type="submit">Save document record</button>
       </form>
@@ -148,13 +152,14 @@
     <dialog class="review-dialog" id="import-dialog">
       <button class="dialog-close" data-close="import-dialog" type="button" aria-label="Close">×</button>
       <span class="eyebrow">Add legal source</span>
-      <h2>Import a PDF</h2>
-      <p class="dialog-copy">Use an authoritative English PDF with selectable text and numbered sections. Maximum size: 25 MB.</p>
+      <h2>Add PDF or scanned pages</h2>
+      <p class="dialog-copy">PDF text and camera images are extracted automatically, then held for review before becoming searchable.</p>
       <form id="import-form">
         <label>Law or publication title<input name="title" minlength="3" required placeholder="Example: Evidence Ordinance" /></label>
-        <label class="file-field">PDF document<input name="document" type="file" accept="application/pdf,.pdf" required /></label>
+        <label>Document type<select name="document_type"><option value="act">Act</option><option value="amendment">Amendment</option><option value="regulation">Regulation</option><option value="gazette">Gazette</option><option value="judgment">Judgment</option><option value="book">Book pages</option><option value="other">Other</option></select></label>
+        <label class="file-field">PDF or page photos<input name="files" type="file" accept="application/pdf,.pdf,image/jpeg,image/png,image/webp" capture="environment" multiple required /></label>
         <p class="form-message" id="import-message"></p>
-        <button class="primary-button" type="submit">Import and extract</button>
+        <button class="primary-button" type="submit">Extract for review</button>
       </form>
     </dialog>
 

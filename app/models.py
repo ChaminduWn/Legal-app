@@ -96,6 +96,11 @@ class DocumentSummary(BaseModel):
     publication_date: str | None = None
     effective_date: str | None = None
     notes: str | None = None
+    document_type: str = "other"
+    extraction_method: str = "text"
+    extraction_confidence: float | None = None
+    extraction_warnings: list[str] = Field(default_factory=list)
+    relationship_count: int = 0
 
 
 class DocumentMetadataUpdate(BaseModel):
@@ -104,6 +109,25 @@ class DocumentMetadataUpdate(BaseModel):
     effective_date: str | None = Field(default=None, max_length=50)
     status: str = Field(pattern="^(unreviewed|in_review|verified|superseded)$")
     notes: str | None = Field(default=None, max_length=4000)
+    document_type: str = Field(default="other", pattern="^(act|amendment|regulation|gazette|judgment|book|other)$")
+
+
+class LegalRelationship(BaseModel):
+    id: int
+    source_file: str
+    relation_type: str
+    target_law: str
+    target_section: str | None = None
+    evidence: str
+    status: str
+
+
+class AuditEvent(BaseModel):
+    id: int
+    action: str
+    actor: str
+    details: str | None
+    created_at: str
 
 
 class SectionReviewUpdate(BaseModel):

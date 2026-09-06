@@ -78,6 +78,10 @@ def initialize(database: Path) -> None:
                 vector BLOB NOT NULL,
                 FOREIGN KEY(source_id) REFERENCES legal_chunks(source_id)
             );
+            CREATE TABLE IF NOT EXISTS document_metadata (
+                source_file TEXT PRIMARY KEY,
+                status TEXT NOT NULL DEFAULT 'unreviewed'
+            );
             """
         )
 
@@ -187,7 +191,9 @@ def _keyword_search(database: Path, query: str, limit: int) -> list[LegalSource]
             SELECT c.*, bm25(legal_chunks_fts, 0, 3, 2, 1, 1) AS rank
             FROM legal_chunks_fts
             JOIN legal_chunks c USING (source_id)
+            LEFT JOIN document_metadata m USING (source_file)
             WHERE legal_chunks_fts MATCH ?
+              AND (m.source_file IS NULL OR m.status = 'verified')
             ORDER BY rank
             LIMIT ?
             """,
@@ -231,7 +237,8 @@ def _semantic_search(database: Path, query: str, limit: int) -> list[LegalSource
             SELECT c.*, e.vector, e.dimensions
             FROM legal_embeddings e
             JOIN legal_chunks c USING (source_id)
-            WHERE e.model = ?
+            LEFT JOIN document_metadata m USING (source_file)
+            WHERE e.model = ? AND (m.source_file IS NULL OR m.status = 'verified')
             """,
             (settings.legal_ai_embedding_model,),
         ).fetchall()

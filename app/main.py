@@ -1,8 +1,8 @@
 from contextlib import asynccontextmanager
 from pathlib import Path
 
-from fastapi import FastAPI, File, Form, HTTPException, UploadFile
-from fastapi.responses import FileResponse
+from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
+from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from app.admin import (
@@ -12,6 +12,10 @@ from app.admin import (
     resolve_pdf,
     save_document_metadata,
     save_section_review,
+    register_import,
+    approve_document,
+    relationships,
+    audit_events,
 )
 from app.config import get_settings
 from app.evaluation import load_cases, run_evaluation
@@ -27,8 +31,10 @@ from app.models import (
     SearchRequest,
     SearchResponse,
     SectionReviewUpdate,
+    LegalRelationship,
+    AuditEvent,
 )
-from app.rag.extract import extract_pdf
+from app.rag.extract import extract_pdf, extract_images
 from app.rag.store import (
     initialize,
     replace_document_chunks,
@@ -38,6 +44,7 @@ from app.rag.store import (
 from app.services.legal_answer import answer_question
 from app.services.language import detect_language
 from app.services.query_analysis import assess_query
+from app.auth import COOKIE_NAME, create_session, valid_credentials, valid_session
 
 
 @asynccontextmanager
@@ -60,6 +67,17 @@ WORKSPACE_DIR = Path(__file__).resolve().parent.parent
 app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
 
 
+@app.middleware("http")
+async def protect_admin(request: Request, call_next):
+    path = request.url.path
+    protected = path == "/admin/documents" or path.startswith("/api/admin/")
+    if protected and not valid_session(request.cookies.get(COOKIE_NAME), get_settings()):
+        if path.startswith("/api/"):
+            return JSONResponse({"detail": "Admin sign-in required."}, status_code=401)
+        return RedirectResponse("/admin/login", status_code=303)
+    return await call_next(request)
+
+
 @app.get("/", include_in_schema=False)
 def frontend() -> FileResponse:
     return FileResponse(FRONTEND_DIR / "index.html")
@@ -73,6 +91,28 @@ def evaluation_frontend() -> FileResponse:
 @app.get("/admin/documents", include_in_schema=False)
 def document_admin_frontend() -> FileResponse:
     return FileResponse(FRONTEND_DIR / "documents.html")
+
+
+@app.get("/admin/login", include_in_schema=False)
+def admin_login_frontend() -> FileResponse:
+    return FileResponse(FRONTEND_DIR / "admin-login.html")
+
+
+@app.post("/admin/login", include_in_schema=False)
+def admin_login(username: str = Form(), password: str = Form()):
+    settings = get_settings()
+    if not valid_credentials(username, password, settings):
+        return RedirectResponse("/admin/login?error=1", status_code=303)
+    response = RedirectResponse("/admin/documents", status_code=303)
+    response.set_cookie(COOKIE_NAME, create_session(username, settings), max_age=settings.admin_session_hours * 3600, httponly=True, samesite="strict", secure=False, path="/")
+    return response
+
+
+@app.post("/admin/logout", include_in_schema=False)
+def admin_logout():
+    response = RedirectResponse("/", status_code=303)
+    response.delete_cookie(COOKIE_NAME, path="/")
+    return response
 
 
 @app.get("/health")
@@ -152,9 +192,40 @@ def admin_document_pdf(source_file: str) -> FileResponse:
     )
 
 
+@app.get("/api/admin/documents/{source_file:path}/original")
+def admin_document_original(source_file: str) -> FileResponse:
+    path = (WORKSPACE_DIR / "data" / "uploads" / Path(source_file).name).resolve()
+    upload_root = (WORKSPACE_DIR / "data" / "uploads").resolve()
+    if not path.is_relative_to(upload_root) or not path.is_file():
+        raise HTTPException(status_code=404, detail="Original file not found.")
+    return FileResponse(path)
+
+
+@app.get("/api/admin/documents/{source_file:path}/relationships", response_model=list[LegalRelationship])
+def admin_relationships(source_file: str) -> list[LegalRelationship]:
+    return relationships(get_settings().legal_ai_database, source_file)
+
+
+@app.get("/api/admin/documents/{source_file:path}/audit", response_model=list[AuditEvent])
+def admin_audit(source_file: str) -> list[AuditEvent]:
+    return audit_events(get_settings().legal_ai_database, source_file)
+
+
+@app.post("/api/admin/documents/{source_file:path}/approve")
+def admin_approve(source_file: str) -> dict[str, str]:
+    try:
+        approve_document(get_settings().legal_ai_database, source_file)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail="Document not found.") from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    return {"status": "published"}
+
+
 @app.post("/api/admin/documents/upload", response_model=DocumentSummary)
 async def upload_document(
     title: str = Form(min_length=3, max_length=300),
+    document_type: str = Form(default="other"),
     document: UploadFile = File(),
 ) -> DocumentSummary:
     filename = Path(document.filename or "").name
@@ -189,6 +260,7 @@ async def upload_document(
             filename,
             chunks,
         )
+        register_import(get_settings().legal_ai_database, filename, document_type, "pdf_text", None, [], chunks)
     except ValueError as exc:
         destination.unlink(missing_ok=True)
         raise HTTPException(status_code=400, detail=str(exc)) from exc
@@ -203,6 +275,45 @@ async def upload_document(
 
     documents = list_documents(get_settings().legal_ai_database)
     return next(item for item in documents if item.source_file == filename)
+
+
+@app.post("/api/admin/documents/scan", response_model=DocumentSummary)
+async def scan_document(
+    title: str = Form(min_length=3, max_length=300),
+    document_type: str = Form(default="book"),
+    images: list[UploadFile] = File(),
+) -> DocumentSummary:
+    if not images or len(images) > 30:
+        raise HTTPException(status_code=400, detail="Choose between 1 and 30 page images.")
+    upload_dir = WORKSPACE_DIR / "data" / "uploads"; upload_dir.mkdir(parents=True, exist_ok=True)
+    saved: list[Path] = []
+    allowed = {"image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp"}
+    base = "".join(ch if ch.isalnum() or ch in "-_" else "-" for ch in title).strip("-")[:80] or "scan"
+    try:
+        for index, image in enumerate(images, 1):
+            suffix = allowed.get(image.content_type or "")
+            if not suffix: raise ValueError("Only JPG, PNG, and WebP images are accepted.")
+            path = upload_dir / f"{base}-page-{index:03d}{suffix}"
+            size = 0
+            with path.open("wb") as stream:
+                while chunk := await image.read(1024 * 1024):
+                    size += len(chunk)
+                    if size > 12 * 1024 * 1024: raise ValueError("Each image must be 12 MB or smaller.")
+                    stream.write(chunk)
+            saved.append(path)
+        source_file = saved[0].name
+        chunks, confidence, warnings = extract_images(saved, title.strip(), WORKSPACE_DIR / "data" / "ocr" / "tessdata")
+        if not chunks: raise ValueError("No readable text was found in these images.")
+        # All pages belong to the first image's document record.
+        chunks = [item.__class__(**{**item.__dict__, "source_file": source_file}) for item in chunks]
+        replace_document_chunks(get_settings().legal_ai_database, source_file, chunks)
+        register_import(get_settings().legal_ai_database, source_file, document_type, "ocr", confidence, warnings, chunks)
+    except ValueError as exc:
+        for path in saved: path.unlink(missing_ok=True)
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    finally:
+        for image in images: await image.close()
+    return next(item for item in list_documents(get_settings().legal_ai_database) if item.source_file == source_file)
 
 
 @app.post("/api/chat", response_model=ChatResponse)

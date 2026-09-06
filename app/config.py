@@ -15,6 +15,10 @@ class Settings(BaseSettings):
     legal_ai_top_k: int = 6
     legal_ai_embedding_model: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
     legal_ai_embedding_cache: Path = Path("data/models")
+    admin_username: str = "admin"
+    admin_password: str = "change-this-password"
+    admin_session_secret: str = "change-this-session-secret"
+    admin_session_hours: int = 8
 
 
 @lru_cache

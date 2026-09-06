@@ -130,6 +130,26 @@ button {
   gap: 1rem;
 }
 
+.source-manager-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.8rem;
+  color: #dce9ff;
+  border: 1px solid #31527b;
+  border-radius: 999px;
+  background: #10233d;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.source-manager-link:hover,
+.source-manager-link:focus-visible {
+  border-color: var(--blue);
+  background: #153054;
+}
+
 .language-switch {
   display: inline-flex;
   padding: 3px;
@@ -959,6 +979,15 @@ h1 em {
 }
 
 @media (max-width: 600px) {
+  .source-manager-link {
+    padding: 0.5rem;
+    font-size: 0;
+  }
+
+  .source-manager-link span {
+    font-size: 1rem;
+  }
+
   .topbar,
   .hero,
   .results-view,

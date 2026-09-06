@@ -82,14 +82,28 @@ async function selectDocument(documentRecord) {
   document.querySelector("#document-filename").textContent = documentRecord.source_file;
   document.querySelector("#document-title").textContent = documentRecord.law;
   document.querySelector("#document-progress").textContent =
-    `${documentRecord.verified_sections} of ${documentRecord.section_count} sections verified · ${documentRecord.status.replace("_", " ")}`;
+    `${documentRecord.verified_sections} of ${documentRecord.section_count} sections verified · ${documentRecord.document_type} · ${documentRecord.status.replace("_", " ")}` +
+    (documentRecord.extraction_confidence == null ? "" : ` · OCR ${Math.round(documentRecord.extraction_confidence * 100)}%`);
+  document.querySelector("#approve-button").hidden = documentRecord.status === "verified";
 
   state.sections = await request(
     `/api/admin/documents/${routePart(documentRecord.source_file)}/sections`,
   );
+  const [relations, audit] = await Promise.all([
+    request(`/api/admin/documents/${routePart(documentRecord.source_file)}/relationships`),
+    request(`/api/admin/documents/${routePart(documentRecord.source_file)}/audit`),
+  ]);
+  const warnings = documentRecord.extraction_warnings || [];
+  document.querySelector("#analysis-summary").textContent = [
+    warnings.join(" "),
+    `${relations.length} proposed legal relationship${relations.length === 1 ? "" : "s"}`,
+    audit[0] ? `Latest audit: ${audit[0].action.replaceAll("_", " ")}` : "",
+  ].filter(Boolean).join(" · ");
   document.querySelector("#section-count").textContent = `${state.sections.length} sections`;
   document.querySelector("#pdf-frame").src =
-    `/api/admin/documents/${routePart(documentRecord.source_file)}/pdf`;
+    documentRecord.extraction_method === "ocr"
+      ? `/api/admin/documents/${routePart(documentRecord.source_file)}/original`
+      : `/api/admin/documents/${routePart(documentRecord.source_file)}/pdf`;
   renderSections();
 }
 
@@ -131,7 +145,9 @@ function selectSection(section) {
   document.querySelector("#index-state").textContent =
     section.semantic_indexed ? "Semantic index current" : "Re-index required";
   document.querySelector("#pdf-frame").src =
-    `/api/admin/documents/${routePart(state.activeDocument.source_file)}/pdf#page=${section.page_start}`;
+    state.activeDocument.extraction_method === "ocr"
+      ? `/api/admin/documents/${routePart(state.activeDocument.source_file)}/original`
+      : `/api/admin/documents/${routePart(state.activeDocument.source_file)}/pdf#page=${section.page_start}`;
 }
 
 sectionForm.addEventListener("submit", async (event) => {
@@ -160,6 +176,7 @@ document.querySelector("#metadata-button").addEventListener("click", () => {
   document.querySelector("#publication-date").value = item.publication_date || "";
   document.querySelector("#effective-date").value = item.effective_date || "";
   document.querySelector("#document-status").value = item.status;
+  document.querySelector("#document-type").value = item.document_type || "other";
   document.querySelector("#document-notes").value = item.notes || "";
   metadataDialog.showModal();
 });
@@ -172,6 +189,7 @@ document.querySelector("#metadata-form").addEventListener("submit", async (event
     effective_date: document.querySelector("#effective-date").value.trim() || null,
     status: document.querySelector("#document-status").value,
     notes: document.querySelector("#document-notes").value.trim() || null,
+    document_type: document.querySelector("#document-type").value,
   };
   await request(`/api/admin/documents/${routePart(state.activeDocument.source_file)}`, {
     method: "PUT",
@@ -189,20 +207,35 @@ document.querySelector("#import-form").addEventListener("submit", async (event) 
   event.preventDefault();
   const form = event.currentTarget;
   const message = document.querySelector("#import-message");
-  message.textContent = "Extracting numbered legal sections…";
+  message.textContent = "Extracting text and checking accuracy…";
   try {
-    const imported = await request("/api/admin/documents/upload", {
+    const payload = new FormData(form);
+    const files = payload.getAll("files"); payload.delete("files");
+    const isPdf = files.length === 1 && files[0].type === "application/pdf";
+    if (isPdf) payload.append("document", files[0]);
+    else files.forEach((file) => payload.append("images", file));
+    const imported = await request(isPdf ? "/api/admin/documents/upload" : "/api/admin/documents/scan", {
       method: "POST",
-      body: new FormData(form),
+      body: payload,
     });
     form.reset();
     importDialog.close();
     await loadDocuments();
     await selectDocument(imported);
-    showToast("PDF imported. Review it before marking it verified.");
+    showToast("Document extracted and held for review.");
   } catch (error) {
     message.textContent = error.message;
   }
+});
+
+document.querySelector("#approve-button").addEventListener("click", async () => {
+  try {
+    await request(`/api/admin/documents/${routePart(state.activeDocument.source_file)}/approve`, { method: "POST" });
+    await loadDocuments();
+    state.activeDocument = state.documents.find(item => item.source_file === state.activeDocument.source_file);
+    await selectDocument(state.activeDocument);
+    showToast("Approved and published to legal search.");
+  } catch (error) { showToast(error.message); }
 });
 
 document.querySelectorAll("[data-close]").forEach((button) => {
@@ -222,4 +255,3 @@ function escapeHtml(value) {
 }
 
 loadDocuments().catch((error) => showToast(error.message));
-

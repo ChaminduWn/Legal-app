@@ -202,6 +202,12 @@
   font-size: 0.75rem;
 }
 
+.document-header .analysis-summary {
+  margin-top: 0.55rem;
+  color: #8a5a22;
+  max-width: 760px;
+}
+
 .review-columns {
   height: calc(100vh - 206px);
   display: grid;
