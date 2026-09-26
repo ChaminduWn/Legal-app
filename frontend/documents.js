@@ -18,20 +18,36 @@ function routePart(value) {
   return encodeURIComponent(value);
 }
 
+let toastTimer;
+
+function errorMessage(detail) {
+  if (typeof detail === "string") return detail;
+  if (Array.isArray(detail)) return detail.map(errorMessage).join(" ");
+  if (detail && typeof detail === "object") {
+    if (detail.msg) {
+      const field = (detail.loc || []).filter(part => part !== "body").join(" → ");
+      return `${field ? `${field}: ` : ""}${detail.msg}`;
+    }
+    return errorMessage(detail.message || detail.detail || detail.error);
+  }
+  return "The request could not be completed. Please try again.";
+}
+
 function showToast(message) {
   const toast = document.querySelector("#toast");
-  toast.textContent = message;
+  window.clearTimeout(toastTimer);
+  toast.textContent = errorMessage(message);
   toast.hidden = false;
-  window.setTimeout(() => {
+  toastTimer = window.setTimeout(() => {
     toast.hidden = true;
-  }, 2800);
+  }, 7000);
 }
 
 async function request(url, options) {
   const response = await fetch(url, options);
   if (!response.ok) {
     const payload = await response.json().catch(() => ({}));
-    throw new Error(payload.detail || "The request could not be completed.");
+    throw new Error(errorMessage(payload.detail || payload));
   }
   return response.json();
 }
@@ -62,7 +78,7 @@ function renderDocuments() {
       count.textContent = `${item.verified_sections}/${item.section_count} verified`;
       const status = document.createElement("span");
       status.className = `status-chip ${item.status}`;
-      status.textContent = item.status.replace("_", " ");
+      status.textContent = item.status === "verified" ? "Published" : item.status.replaceAll("_", " ");
       meta.append(count, status);
       button.append(title, file, meta);
       button.addEventListener("click", () => selectDocument(item));
@@ -72,6 +88,14 @@ function renderDocuments() {
 
 async function selectDocument(documentRecord) {
   state.activeDocument = documentRecord;
+  const publicationMessage = document.querySelector("#publication-message");
+  publicationMessage.textContent = documentRecord.status === "verified"
+    ? "Published to legal search. This document remains in the collection for future reference."
+    : `${documentRecord.section_count - documentRecord.verified_sections} section(s) still need verification. Confirm both checks below before publishing. The source URL and dates in Document details are optional.`;
+  publicationMessage.classList.remove("is-error");
+  document.querySelector("#publication-confirmations").hidden = documentRecord.status === "verified";
+  document.querySelector("#extraction-complete").checked = false;
+  document.querySelector("#authority-checked").checked = false;
   state.activeSection = null;
   renderDocuments();
   workspaceEmpty.hidden = true;
@@ -82,7 +106,7 @@ async function selectDocument(documentRecord) {
   document.querySelector("#document-filename").textContent = documentRecord.source_file;
   document.querySelector("#document-title").textContent = documentRecord.law;
   document.querySelector("#document-progress").textContent =
-    `${documentRecord.verified_sections} of ${documentRecord.section_count} sections verified · ${documentRecord.document_type} · ${documentRecord.status.replace("_", " ")}` +
+    `${documentRecord.verified_sections} of ${documentRecord.section_count} sections verified · ${documentRecord.document_type} · ${documentRecord.status === "verified" ? "published" : documentRecord.status.replaceAll("_", " ")}` +
     (documentRecord.extraction_confidence == null ? "" : ` · OCR ${Math.round(documentRecord.extraction_confidence * 100)}%`);
   document.querySelector("#approve-button").hidden = documentRecord.status === "verified";
 
@@ -152,6 +176,7 @@ function selectSection(section) {
 
 sectionForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+  try {
   const update = {
     heading: document.querySelector("#section-heading").value.trim() || null,
     text: document.querySelector("#section-text").value.trim(),
@@ -167,7 +192,11 @@ sectionForm.addEventListener("submit", async (event) => {
   renderSections();
   selectSection(state.activeSection);
   await loadDocuments();
-  showToast("Section review saved. Rebuild the local index when reviews are complete.");
+  const selectedId = state.activeSection.source_id;
+  await selectDocument(state.documents.find(item => item.source_file === state.activeDocument.source_file));
+  selectSection(state.sections.find(item => item.source_id === selectedId));
+  showToast("Review saved. Changed documents require approval again.");
+  } catch (error) { showToast(error.message); }
 });
 
 document.querySelector("#metadata-button").addEventListener("click", () => {
@@ -175,7 +204,7 @@ document.querySelector("#metadata-button").addEventListener("click", () => {
   document.querySelector("#official-source-url").value = item.official_source_url || "";
   document.querySelector("#publication-date").value = item.publication_date || "";
   document.querySelector("#effective-date").value = item.effective_date || "";
-  document.querySelector("#document-status").value = item.status;
+  document.querySelector("#document-status").value = item.status === "verified" ? "in_review" : item.status;
   document.querySelector("#document-type").value = item.document_type || "other";
   document.querySelector("#document-notes").value = item.notes || "";
   metadataDialog.showModal();
@@ -183,6 +212,7 @@ document.querySelector("#metadata-button").addEventListener("click", () => {
 
 document.querySelector("#metadata-form").addEventListener("submit", async (event) => {
   event.preventDefault();
+  try {
   const update = {
     official_source_url: document.querySelector("#official-source-url").value.trim() || null,
     publication_date: document.querySelector("#publication-date").value.trim() || null,
@@ -199,7 +229,9 @@ document.querySelector("#metadata-form").addEventListener("submit", async (event
   Object.assign(state.activeDocument, update);
   metadataDialog.close();
   await loadDocuments();
-  showToast("Document record saved.");
+  await selectDocument(state.documents.find(item => item.source_file === state.activeDocument.source_file));
+  showToast("Document details saved. Approve again when ready.");
+  } catch (error) { showToast(error.message); }
 });
 
 document.querySelector("#import-button").addEventListener("click", () => importDialog.showModal());
@@ -211,7 +243,10 @@ document.querySelector("#import-form").addEventListener("submit", async (event) 
   try {
     const payload = new FormData(form);
     const files = payload.getAll("files"); payload.delete("files");
-    const isPdf = files.length === 1 && files[0].type === "application/pdf";
+    const pdfFiles = files.filter(file => file.type === "application/pdf" || /\.pdf$/i.test(file.name));
+    if (pdfFiles.length && files.length !== 1) throw new Error("Choose one PDF at a time, without other files.");
+    const isPdf = pdfFiles.length === 1;
+    if (isPdf && files[0].size > 25 * 1024 * 1024) throw new Error("PDF must be 25 MB or smaller.");
     if (isPdf) payload.append("document", files[0]);
     else files.forEach((file) => payload.append("images", file));
     const imported = await request(isPdf ? "/api/admin/documents/upload" : "/api/admin/documents/scan", {
@@ -229,13 +264,35 @@ document.querySelector("#import-form").addEventListener("submit", async (event) 
 });
 
 document.querySelector("#approve-button").addEventListener("click", async () => {
+  const button = document.querySelector("#approve-button");
+  const sourceFile = state.activeDocument.source_file;
+  const message = document.querySelector("#publication-message");
+  button.disabled = true;
+  button.textContent = "Publishing…";
   try {
-    await request(`/api/admin/documents/${routePart(state.activeDocument.source_file)}/approve`, { method: "POST" });
+    await request(`/api/admin/documents/${routePart(sourceFile)}/approve`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        extraction_complete: document.querySelector("#extraction-complete").checked,
+        authority_checked: document.querySelector("#authority-checked").checked,
+      }),
+    });
     await loadDocuments();
-    state.activeDocument = state.documents.find(item => item.source_file === state.activeDocument.source_file);
-    await selectDocument(state.activeDocument);
+    if (state.activeDocument.source_file === sourceFile) {
+      await selectDocument(state.documents.find(item => item.source_file === sourceFile));
+    }
     showToast("Approved and published to legal search.");
-  } catch (error) { showToast(error.message); }
+  } catch (error) {
+    if (state.activeDocument.source_file === sourceFile) {
+      message.textContent = `Not published: ${error.message}`;
+      message.classList.add("is-error");
+    }
+    showToast(error.message);
+  } finally {
+    button.disabled = false;
+    button.textContent = "Approve & publish";
+  }
 });
 
 document.querySelectorAll("[data-close]").forEach((button) => {

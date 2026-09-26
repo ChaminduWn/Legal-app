@@ -110,3 +110,26 @@ The current search combines auditable SQLite full-text retrieval with cached
 local semantic embeddings. Extracted sections must still be reviewed against
 the page images before this is used by the public. Document effective dates and
 official source URLs also need legal verification.
+
+
+## Publication review requirements
+
+New imports remain outside public search until every extracted section is reviewed
+and the administrator uses **Approve & publish**. Documents without metadata are
+also excluded. Publication requires an HTTP(S) source URL, a valid publication date,
+and an effective date for Acts, amendments, regulations, and gazettes. Dates must
+use YYYY-MM-DD and must not be in the future. Unknown dates must be resolved before
+publishing these document types; do not invent a date.
+
+The reviewer must confirm that all original pages were compared for extraction
+completeness and that source authority and dates were checked. These are human
+attestations, not automated legal verification. Detected amendment relationships
+remain proposals; publishing does not automatically approve or apply amendments.
+
+Saving section reviews or changing published document details withdraws the source
+until it is approved again. Keyword search updates immediately. Refresh semantic
+search separately with `python -m scripts.build_embeddings`.
+
+Upload one selectable-text PDF (25 MB maximum) at a time. Scanned PDFs need OCR
+before PDF import, or their pages can be uploaded as images. Automatic current-law
+version resolution and automatic semantic-index rebuilding are not implemented.

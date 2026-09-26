@@ -21,6 +21,7 @@ from app.config import get_settings
 from app.evaluation import load_cases, run_evaluation
 from app.models import (
     AdminSection,
+    PublicationApproval,
     ChatRequest,
     ChatResponse,
     DocumentMetadataUpdate,
@@ -75,7 +76,10 @@ async def protect_admin(request: Request, call_next):
         if path.startswith("/api/"):
             return JSONResponse({"detail": "Admin sign-in required."}, status_code=401)
         return RedirectResponse("/admin/login", status_code=303)
-    return await call_next(request)
+    response = await call_next(request)
+    if protected or path in {"/static/documents.js", "/static/documents.css"}:
+        response.headers["Cache-Control"] = "no-store"
+    return response
 
 
 @app.get("/", include_in_schema=False)
@@ -163,6 +167,8 @@ def update_document_metadata(
 ) -> dict[str, str]:
     try:
         save_document_metadata(get_settings().legal_ai_database, source_file, update)
+    except ValueError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
     except KeyError as exc:
         raise HTTPException(status_code=404, detail="Document not found.") from exc
     return {"status": "saved"}
@@ -212,9 +218,9 @@ def admin_audit(source_file: str) -> list[AuditEvent]:
 
 
 @app.post("/api/admin/documents/{source_file:path}/approve")
-def admin_approve(source_file: str) -> dict[str, str]:
+def admin_approve(source_file: str, approval: PublicationApproval) -> dict[str, str]:
     try:
-        approve_document(get_settings().legal_ai_database, source_file)
+        approve_document(get_settings().legal_ai_database, source_file, extraction_complete=approval.extraction_complete, authority_checked=approval.authority_checked)
     except KeyError as exc:
         raise HTTPException(status_code=404, detail="Document not found.") from exc
     except ValueError as exc:
@@ -254,7 +260,7 @@ async def upload_document(
             raise ValueError("The uploaded file is not a valid PDF.")
         chunks = extract_pdf(destination, title.strip())
         if not chunks:
-            raise ValueError("No numbered legal sections could be extracted.")
+            raise ValueError("No numbered legal sections could be extracted. Scanned PDFs need OCR first; upload page photos instead or prepare a searchable PDF.")
         replace_document_chunks(
             get_settings().legal_ai_database,
             filename,

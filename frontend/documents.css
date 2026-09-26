@@ -110,7 +110,7 @@
 .document-item.active,
 .section-item:hover,
 .section-item.active {
-  background: #eef3ef;
+  background: var(--mint);
 }
 
 .document-item.active,
@@ -204,7 +204,7 @@
 
 .document-header .analysis-summary {
   margin-top: 0.55rem;
-  color: #8a5a22;
+  color: #f0bd77;
   max-width: 760px;
 }
 
@@ -256,7 +256,7 @@
   min-width: 0;
   overflow: auto;
   padding: 1.25rem;
-  background: #f8f6ef;
+  background: var(--cream);
 }
 
 .editor-empty {
@@ -296,7 +296,7 @@
 .index-state {
   padding: 0.3rem 0.5rem;
   border-radius: 999px;
-  background: #e7ebe7;
+  background: var(--mint);
 }
 
 .section-editor label,
@@ -403,9 +403,14 @@
   right: 1.2rem;
   bottom: 1.2rem;
   padding: 0.8rem 1rem;
-  color: white;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  max-width: min(560px, calc(100vw - 2.4rem));
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
   border-radius: 8px;
-  background: var(--ink);
+  background: #142b50;
   box-shadow: var(--shadow);
   font-size: 0.78rem;
   z-index: 20;
@@ -465,3 +470,19 @@
     display: block;
   }
 }
+
+.publication-checks { padding: 16px 24px; border-bottom: 1px solid #334155; }
+.publication-checks label { display: block; margin: 10px 0; }
+.publication-checks input { width: auto; margin-right: 8px; }
+
+.publication-checks { color: var(--ink-soft); background: var(--paper); line-height: 1.5; }
+#publication-message { color: var(--ink); }
+#publication-message.is-error { color: var(--danger); }
+.review-shell { color-scheme: dark; }
+.review-shell [hidden] { display: none !important; }
+.document-header > div { min-width: 0; flex: 1; }
+.document-header > button { flex-shrink: 0; }
+.panel-title span, .document-item small, .editor-toolbar span, .editor-footer > span { color: var(--ink-soft); }
+.status-chip { color: var(--ink-soft); background: #243247; }
+.status-chip.verified { color: #a7f3d0; background: #164938; }
+.primary-button:disabled { opacity: 0.65; cursor: wait; }

@@ -1,3 +1,17 @@
+import pytest
+from app.rag.schema import LegalChunk
+from app.rag.store import replace_chunks, connect
+
+@pytest.fixture(autouse=True)
+def isolated_database(tmp_path, monkeypatch):
+    database = tmp_path / "api.sqlite3"
+    settings = Settings(legal_ai_database=database, gemini_api_key=None)
+    replace_chunks(database, [LegalChunk("test-hurt", "Penal Code", "314", "Hurt", "Whoever causes bodily pain, injury or infirmity causes hurt. A person using criminal force commits assault.", "test.pdf", 1, 1)])
+    with connect(database) as connection:
+        connection.execute("INSERT INTO document_metadata(source_file,status) VALUES ('test.pdf','verified')")
+    monkeypatch.setattr("app.main.get_settings", lambda: settings)
+    return settings
+
 from fastapi.testclient import TestClient
 
 from app.config import Settings
@@ -35,8 +49,8 @@ def test_health_and_local_search() -> None:
         assert prepared["follow_up_questions"]
 
 
-def test_chat_without_key_returns_retrieved_citations(monkeypatch) -> None:
-    settings = Settings(gemini_api_key=None)
+def test_chat_without_key_returns_retrieved_citations(monkeypatch, isolated_database) -> None:
+    settings = isolated_database
     monkeypatch.setattr("app.main.get_settings", lambda: settings)
     with TestClient(app) as client:
         response = client.post(
@@ -47,3 +61,55 @@ def test_chat_without_key_returns_retrieved_citations(monkeypatch) -> None:
         payload = response.json()
         assert payload["grounded"] is True
         assert payload["legal_references"]
+
+
+def test_admin_import_review_publish_flow(tmp_path, monkeypatch, isolated_database):
+    monkeypatch.setattr("app.main.WORKSPACE_DIR", tmp_path)
+    monkeypatch.setattr("app.main.extract_pdf", lambda path, title: [
+        LegalChunk("upload-1", title, "1", "Theft", "Whoever dishonestly takes movable property commits theft.", path.name, 1, 1)])
+    approval = {"extraction_complete": True, "authority_checked": True}
+    with TestClient(app) as client:
+        assert client.get("/api/admin/documents").status_code == 401
+        assert client.post("/admin/login", data={"username": isolated_database.admin_username,
+            "password": isolated_database.admin_password}, follow_redirects=False).status_code == 303
+        response = client.post("/api/admin/documents/upload", data={"title": "Test Act", "document_type": "act"},
+            files={"document": ("upload.pdf", b"%PDF-1.4 test fixture", "application/pdf")})
+        assert response.status_code == 200
+        assert response.json()["status"] == "in_review"
+        route = "/api/admin/documents/upload.pdf"
+        assert client.get(route + "/pdf").status_code == 200
+        assert client.post(route + "/approve", json=approval).status_code == 409
+        assert client.put(route, json={"status": "verified"}).status_code == 409
+        review = {"text": "Whoever dishonestly takes movable property commits theft.", "status": "verified"}
+        assert client.put("/api/admin/sections/upload-1", json=review).status_code == 200
+        assert client.post(route + "/approve", json={}).status_code == 409
+        assert client.post(route + "/approve", json=approval).status_code == 200
+        assert client.put(route, json={"status": "in_review", "document_type": "act",
+            "official_source_url": "https://example.gov/act.pdf", "publication_date": "2024-01-01",
+            "effective_date": "2024-02-01"}).status_code == 200
+        assert client.post(route + "/approve", json={}).status_code == 409
+        assert client.post(route + "/approve", json=approval).status_code == 200
+        def uploaded_is_searchable():
+            return any(item["source_id"] == "upload-1" for item in client.post("/api/search",
+                json={"query": "theft"}).json()["sources"])
+        assert uploaded_is_searchable()
+        review["text"] += " Reviewed correction."
+        assert client.put("/api/admin/sections/upload-1", json=review).status_code == 200
+        assert not uploaded_is_searchable()
+
+
+def test_admin_review_page_loads_fresh_assets(isolated_database):
+    with TestClient(app) as client:
+        client.post("/admin/login", data={
+            "username": isolated_database.admin_username,
+            "password": isolated_database.admin_password,
+        }, follow_redirects=False)
+        page = client.get("/admin/documents")
+        assert page.status_code == 200
+        assert page.headers["cache-control"] == "no-store"
+        for filename in ("documents.js", "documents.css"):
+            assert f"/static/{filename}?v=20260921-review3" in page.text
+            asset = client.get(f"/static/{filename}?v=20260921-review3")
+            assert asset.status_code == 200
+            assert asset.headers["cache-control"] == "no-store"
+        assert client.get("/api/admin/documents").headers["cache-control"] == "no-store"

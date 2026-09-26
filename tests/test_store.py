@@ -2,7 +2,13 @@ from pathlib import Path
 
 from app.rag.schema import LegalChunk
 from app.models import LegalSource
-from app.rag.store import reciprocal_rank_fusion, replace_chunks, search
+from app.rag.store import reciprocal_rank_fusion, replace_chunks as _replace_chunks, search, connect
+
+def replace_chunks(database, chunks):
+    _replace_chunks(database, chunks)
+    with connect(database) as connection:
+        connection.executemany("INSERT OR REPLACE INTO document_metadata(source_file,status) VALUES (?, 'verified')", [(item.source_file,) for item in chunks])
+
 
 
 def test_search_returns_matching_source(tmp_path: Path) -> None:

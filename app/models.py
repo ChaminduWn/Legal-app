@@ -112,6 +112,11 @@ class DocumentMetadataUpdate(BaseModel):
     document_type: str = Field(default="other", pattern="^(act|amendment|regulation|gazette|judgment|book|other)$")
 
 
+class PublicationApproval(BaseModel):
+    extraction_complete: bool = False
+    authority_checked: bool = False
+
+
 class LegalRelationship(BaseModel):
     id: int
     source_file: str

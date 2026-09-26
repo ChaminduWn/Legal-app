@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#05070c" />
     <title>Document verification — Neethi</title>
     <link rel="stylesheet" href="/static/styles.css" />
-    <link rel="stylesheet" href="/static/documents.css" />
-    <script src="/static/documents.js" defer></script>
+    <link rel="stylesheet" href="/static/documents.css?v=20260921-review3" />
+    <script src="/static/documents.js?v=20260921-review3" defer></script>
   </head>
   <body>
     <div class="review-shell">
@@ -55,6 +55,15 @@
               <button class="primary-button compact" id="approve-button" type="button">Approve & publish</button>
             </header>
 
+            <div class="publication-checks">
+              <p id="publication-message" role="status" aria-live="polite"></p>
+              <div id="publication-confirmations">
+              <p>Publishing makes this source searchable. It does not automatically verify the current law or apply amendments. Review all original pages, including any text the extractor missed.</p>
+              <label><input type="checkbox" id="extraction-complete" /> I compared all original pages and confirmed the extracted text is complete for this source.</label>
+              <label><input type="checkbox" id="authority-checked" /> I checked the source authority and suitability for publication, including dates where available.</label>
+              </div>
+              <p>Keyword search updates on publication. For semantic search, run <code>python -m scripts.build_embeddings</code> after completing your reviews.</p>
+            </div>
             <div class="review-columns">
               <aside class="section-navigator">
                 <div class="panel-title">
@@ -129,10 +138,10 @@
       <span class="eyebrow">Document record</span>
       <h2>Authority and status</h2>
       <form id="metadata-form">
-        <label>Official source URL<input id="official-source-url" type="url" placeholder="https://documents.gov.lk/…" /></label>
+        <label>Official source URL (optional)<input id="official-source-url" type="url" placeholder="https://documents.gov.lk/…" /></label>
         <div class="dialog-grid">
-          <label>Publication date<input id="publication-date" placeholder="YYYY-MM-DD or Gazette date" /></label>
-          <label>Effective date<input id="effective-date" placeholder="YYYY-MM-DD or unknown" /></label>
+          <label>Publication date (optional)<input id="publication-date" type="date" /></label>
+          <label>Effective date (optional)<input id="effective-date" type="date" /></label>
         </div>
         <label>
           Document status
@@ -153,7 +162,7 @@
       <button class="dialog-close" data-close="import-dialog" type="button" aria-label="Close">×</button>
       <span class="eyebrow">Add legal source</span>
       <h2>Add PDF or scanned pages</h2>
-      <p class="dialog-copy">PDF text and camera images are extracted automatically, then held for review before becoming searchable.</p>
+      <p class="dialog-copy">Choose one selectable-text PDF (up to 25 MB), or up to 30 page photos. Scanned PDFs need OCR first. Extraction is held for review and may miss text.</p>
       <form id="import-form">
         <label>Law or publication title<input name="title" minlength="3" required placeholder="Example: Evidence Ordinance" /></label>
         <label>Document type<select name="document_type"><option value="act">Act</option><option value="amendment">Amendment</option><option value="regulation">Regulation</option><option value="gazette">Gazette</option><option value="judgment">Judgment</option><option value="book">Book pages</option><option value="other">Other</option></select></label>

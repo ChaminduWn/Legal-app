@@ -1,4 +1,5 @@
-from datetime import UTC, datetime
+from datetime import UTC, datetime, date
+from urllib.parse import urlsplit
 from pathlib import Path
 
 from app.models import (
@@ -134,6 +135,8 @@ def save_document_metadata(
     database: Path, source_file: str, update: DocumentMetadataUpdate
 ) -> None:
     initialize_admin(database)
+    if update.status == "verified":
+        raise ValueError("Use Approve & publish after completing the review checks.")
     now = datetime.now(UTC).isoformat()
     with connect(database) as connection:
         exists = connection.execute(
@@ -218,6 +221,7 @@ def save_section_review(
             "DELETE FROM legal_embeddings WHERE source_id = ?",
             (source_id,),
         )
+        connection.execute("UPDATE document_metadata SET status='in_review', updated_at=? WHERE source_file=? AND status='verified'", (now, current["source_file"]))
         _audit(connection, current["source_file"], "section_reviewed", f"{source_id}: {update.status}")
 
 
@@ -234,16 +238,37 @@ def register_import(database: Path, source_file: str, document_type: str, method
         _audit(connection, source_file, "document_imported", f"{method}; {len(chunks)} sections")
 
 
-def approve_document(database: Path, source_file: str) -> None:
+def approve_document(database: Path, source_file: str, *, extraction_complete: bool = False, authority_checked: bool = False) -> None:
+    initialize_admin(database)
     now = datetime.now(UTC).isoformat()
     with connect(database) as connection:
+        connection.execute("BEGIN IMMEDIATE")
         total, verified = connection.execute("""SELECT COUNT(*), SUM(CASE WHEN r.status='verified' THEN 1 ELSE 0 END)
             FROM legal_chunks c LEFT JOIN section_reviews r USING(source_id) WHERE c.source_file=?""", (source_file,)).fetchone()
         if not total: raise KeyError(source_file)
         if verified != total: raise ValueError("Verify every extracted section before publishing.")
+        metadata = connection.execute("SELECT * FROM document_metadata WHERE source_file=?", (source_file,)).fetchone()
+        if not metadata or metadata["status"] == "superseded":
+            raise ValueError("Save document details with In review status before publishing.")
+        url = urlsplit(metadata["official_source_url"] or "")
+        if metadata["official_source_url"] and (url.scheme not in {"https", "http"} or not url.hostname):
+            raise ValueError("Enter a valid official source URL in Document details.")
+        for field in ("publication_date", "effective_date"):
+            value = metadata[field]
+            if not value:
+                continue
+            try:
+                parsed = date.fromisoformat(value)
+                if parsed.isoformat() != value:
+                    raise ValueError()
+            except ValueError:
+                raise ValueError(f"Enter a valid {field.replace('_', ' ')} (YYYY-MM-DD).") from None
+            if parsed > date.today():
+                raise ValueError(f"The {field.replace('_', ' ')} is in the future; keep this document in review.")
+        if not extraction_complete or not authority_checked:
+            raise ValueError("Confirm extraction completeness and source authority before publishing.")
         connection.execute("UPDATE document_metadata SET status='verified', updated_at=? WHERE source_file=?", (now, source_file))
-        connection.execute("UPDATE legal_relationships SET status='approved' WHERE source_file=?", (source_file,))
-        _audit(connection, source_file, "document_published", f"{total} verified sections")
+        _audit(connection, source_file, "document_published", f"{total} verified sections; reviewer confirmed complete extraction and source authority; current-law version not automatically verified")
 
 
 def relationships(database: Path, source_file: str) -> list[LegalRelationship]:
