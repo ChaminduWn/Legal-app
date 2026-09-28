@@ -6,3 +6,5 @@ __pycache__/
 data/processed/
 data/models/
 data/legal_index.sqlite3
+data/backups/
+data/uploads/
