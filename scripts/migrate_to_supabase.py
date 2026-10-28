@@ -13,7 +13,9 @@ except ImportError:
     print("    Run: pip install \"psycopg[binary]>=3.1\" pgvector")
     exit(1)
 
-SQLITE_PATH = Path("data/legal_index.sqlite3")
+from app.config import get_settings
+
+SQLITE_PATH = get_settings().legal_ai_database
 BACKUP_DIR = Path("data/backups")
 
 
@@ -73,6 +75,9 @@ def migrate(database_url: str):
 
     sqlite_conn = sqlite3.connect(SQLITE_PATH)
     sqlite_conn.row_factory = sqlite3.Row
+    if sqlite_conn.execute("SELECT 1 FROM sqlite_master WHERE name='document_versions'").fetchone():
+        sqlite_conn.close()
+        raise SystemExit("This legacy export does not migrate the relational catalog, original assets, or version history. It is disabled for the upgraded database. The running app still uses SQLite; a PostgreSQL runtime adapter and complete migration are required before switching.")
 
     print(f"[+] Connecting to Supabase...")
     with get_connection(database_url) as pg_conn:

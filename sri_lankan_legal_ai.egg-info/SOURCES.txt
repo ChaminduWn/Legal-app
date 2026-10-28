@@ -2,6 +2,7 @@ README.md
 pyproject.toml
 app/__init__.py
 app/admin.py
+app/auth.py
 app/config.py
 app/evaluation.py
 app/main.py

@@ -1,4 +1,5 @@
 import re
+from contextlib import nullcontext
 import sqlite3
 from functools import lru_cache
 from pathlib import Path
@@ -6,6 +7,7 @@ from pathlib import Path
 import numpy as np
 
 from app.config import get_settings
+from app.catalog import initialize_catalog, migrate_chunk_foreign_key
 from app.models import LegalSource
 from app.services.language import retrieval_query
 from app.rag.schema import LegalChunk
@@ -46,11 +48,14 @@ def connect(database: Path) -> sqlite3.Connection:
     database.parent.mkdir(parents=True, exist_ok=True)
     connection = sqlite3.connect(database)
     connection.row_factory = sqlite3.Row
+    connection.execute("PRAGMA foreign_keys=ON")
+    connection.execute("PRAGMA busy_timeout=10000")
     return connection
 
 
 def initialize(database: Path) -> None:
     with connect(database) as connection:
+        initialize_catalog(connection)
         connection.executescript(
             """
             CREATE TABLE IF NOT EXISTS legal_chunks (
@@ -80,18 +85,34 @@ def initialize(database: Path) -> None:
             );
             CREATE TABLE IF NOT EXISTS document_metadata (
                 source_file TEXT PRIMARY KEY,
-                status TEXT NOT NULL DEFAULT 'unreviewed'
+                status TEXT NOT NULL DEFAULT 'unreviewed',
+                publication_date TEXT, effective_date TEXT, official_source_url TEXT
             );
             """
         )
+
+    with connect(database) as connection:
+        columns = {r[1] for r in connection.execute("PRAGMA table_info(document_metadata)")}
+        for name in ("publication_date", "effective_date", "official_source_url"):
+            if name not in columns:
+                connection.execute(f"ALTER TABLE document_metadata ADD COLUMN {name} TEXT")
+    migrate_chunk_foreign_key(database)
+    with connect(database) as connection:
+        connection.execute("CREATE INDEX IF NOT EXISTS chunks_document ON legal_chunks(source_file)")
 
 
 def replace_chunks(database: Path, chunks: list[LegalChunk]) -> None:
     initialize(database)
     with connect(database) as connection:
+        if connection.execute("SELECT 1 FROM legal_chunks LIMIT 1").fetchone():
+            raise ValueError("Refusing to reset a nonempty legal library. Import documents individually to preserve history and reviews.")
+        connection.execute("DELETE FROM legal_embeddings")
+        if connection.execute("SELECT 1 FROM sqlite_master WHERE name='section_reviews'").fetchone():
+            connection.execute("DELETE FROM section_reviews")
         connection.execute("DELETE FROM legal_chunks")
         connection.execute("DELETE FROM legal_chunks_fts")
         connection.execute("DELETE FROM legal_embeddings")
+        connection.executemany("INSERT INTO document_records(source_file,title) VALUES (?,?) ON CONFLICT(source_file) DO UPDATE SET title=excluded.title", [(c.source_file,c.law) for c in chunks])
         connection.executemany(
             """
             INSERT INTO legal_chunks VALUES (?, ?, ?, ?, ?, ?, ?, ?)
@@ -120,10 +141,11 @@ def replace_chunks(database: Path, chunks: list[LegalChunk]) -> None:
 
 
 def replace_document_chunks(
-    database: Path, source_file: str, chunks: list[LegalChunk]
+    database: Path, source_file: str, chunks: list[LegalChunk], *, connection=None
 ) -> None:
-    initialize(database)
-    with connect(database) as connection:
+    if connection is None:
+        initialize(database)
+    with (nullcontext(connection) if connection is not None else connect(database)) as connection:
         existing_ids = [
             row[0]
             for row in connection.execute(
@@ -132,6 +154,9 @@ def replace_document_chunks(
             )
         ]
         if existing_ids:
+            if connection.execute("SELECT 1 FROM sqlite_master WHERE name='section_reviews'").fetchone():
+                connection.execute("DELETE FROM section_reviews WHERE source_id IN (SELECT source_id FROM legal_chunks WHERE source_file=?)", (source_file,))
+            connection.execute("UPDATE document_metadata SET status='in_review' WHERE source_file=?", (source_file,))
             placeholders = ",".join("?" for _ in existing_ids)
             connection.execute(
                 f"DELETE FROM legal_embeddings WHERE source_id IN ({placeholders})",
@@ -145,6 +170,7 @@ def replace_document_chunks(
                 f"DELETE FROM legal_chunks WHERE source_id IN ({placeholders})",
                 existing_ids,
             )
+        connection.executemany("INSERT INTO document_records(source_file,title) VALUES (?,?) ON CONFLICT(source_file) DO UPDATE SET title=excluded.title", [(c.source_file,c.law) for c in chunks])
         connection.executemany(
             "INSERT INTO legal_chunks VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             [
@@ -170,7 +196,7 @@ def replace_document_chunks(
         )
 
 
-def _keyword_search(database: Path, query: str, limit: int) -> list[LegalSource]:
+def _keyword_search(database: Path, query: str, limit: int, as_of: str | None = None) -> list[LegalSource]:
     if not database.exists():
         return []
     original_terms = [
@@ -188,16 +214,22 @@ def _keyword_search(database: Path, query: str, limit: int) -> list[LegalSource]
     with connect(database) as connection:
         rows = connection.execute(
             """
-            SELECT c.*, bm25(legal_chunks_fts, 0, 3, 2, 1, 1) AS rank
+            SELECT c.*, v.edition_year, v.valid_from, v.valid_to, v.instrument_id, m.publication_date, m.effective_date, bm25(legal_chunks_fts, 0, 3, 2, 1, 1) AS rank
             FROM legal_chunks_fts
             JOIN legal_chunks c USING (source_id)
             LEFT JOIN document_metadata m USING (source_file)
+            LEFT JOIN document_versions v USING (source_file)
             WHERE legal_chunks_fts MATCH ?
               AND m.status = 'verified'
+              AND (? = 0 OR (v.source_file IS NOT NULL AND m.official_source_url IS NOT NULL
+                   AND m.publication_date IS NOT NULL AND m.effective_date IS NOT NULL))
+              AND ((v.source_file IS NULL AND ? IS NULL) OR
+                   (v.valid_from <= COALESCE(?, date('now')) AND
+                    (v.valid_to IS NULL OR v.valid_to > COALESCE(?, date('now')))))
             ORDER BY rank
             LIMIT ?
             """,
-            (fts_query, limit),
+            (fts_query, int(get_settings().environment == "production"), as_of, as_of, as_of, limit),
         ).fetchall()
     if not rows:
         return []
@@ -211,6 +243,12 @@ def _keyword_search(database: Path, query: str, limit: int) -> list[LegalSource]
             source_file=row["source_file"],
             page_start=row["page_start"],
             page_end=row["page_end"],
+            edition_year=row["edition_year"],
+            valid_from=row["valid_from"],
+            valid_to=row["valid_to"],
+            instrument_id=row["instrument_id"],
+            publication_date=row["publication_date"],
+            effective_date=row["effective_date"],
             score=round(1.0 / (1.0 + index * 0.15), 4),
         )
         for index, row in enumerate(rows)
@@ -229,18 +267,24 @@ def _embedding_model():
     )
 
 
-def _semantic_search(database: Path, query: str, limit: int) -> list[LegalSource]:
+def _semantic_search(database: Path, query: str, limit: int, as_of: str | None = None) -> list[LegalSource]:
     settings = get_settings()
     with connect(database) as connection:
         rows = connection.execute(
             """
-            SELECT c.*, e.vector, e.dimensions
+            SELECT c.*, v.edition_year, v.valid_from, v.valid_to, v.instrument_id, m.publication_date, m.effective_date, e.vector, e.dimensions
             FROM legal_embeddings e
             JOIN legal_chunks c USING (source_id)
             LEFT JOIN document_metadata m USING (source_file)
+            LEFT JOIN document_versions v USING (source_file)
             WHERE e.model = ? AND m.status = 'verified'
+              AND (? = 0 OR (v.source_file IS NOT NULL AND m.official_source_url IS NOT NULL
+                   AND m.publication_date IS NOT NULL AND m.effective_date IS NOT NULL))
+              AND ((v.source_file IS NULL AND ? IS NULL) OR
+                   (v.valid_from <= COALESCE(?, date('now')) AND
+                    (v.valid_to IS NULL OR v.valid_to > COALESCE(?, date('now')))))
             """,
-            (settings.legal_ai_embedding_model,),
+            (settings.legal_ai_embedding_model, int(settings.environment == "production"), as_of, as_of, as_of),
         ).fetchall()
     if not rows:
         return []
@@ -267,6 +311,12 @@ def _semantic_search(database: Path, query: str, limit: int) -> list[LegalSource
             source_file=rows[index]["source_file"],
             page_start=rows[index]["page_start"],
             page_end=rows[index]["page_end"],
+            edition_year=rows[index]["edition_year"],
+            valid_from=rows[index]["valid_from"],
+            valid_to=rows[index]["valid_to"],
+            instrument_id=rows[index]["instrument_id"],
+            publication_date=rows[index]["publication_date"],
+            effective_date=rows[index]["effective_date"],
             score=round(float(scores[index]), 4),
         )
         for index in order
@@ -312,12 +362,12 @@ def retrieval_mode(database: Path) -> str:
     return "hybrid" if has_semantic_index(database) else "keyword"
 
 
-def search(database: Path, query: str, limit: int = 6) -> list[LegalSource]:
+def search(database: Path, query: str, limit: int = 6, as_of: str | None = None) -> list[LegalSource]:
     normalized_query = retrieval_query(query)
-    keyword_results = _keyword_search(database, normalized_query, max(limit * 5, 30))
+    keyword_results = _keyword_search(database, normalized_query, max(limit * 5, 30), as_of)
     if not has_semantic_index(database):
         return keyword_results[:limit]
-    semantic_results = _semantic_search(database, normalized_query, max(limit * 5, 30))
+    semantic_results = _semantic_search(database, normalized_query, max(limit * 5, 30), as_of)
     keyword_weight = 2.2 if normalized_query != query else 1.3
     semantic_weight = 0.7 if normalized_query != query else 1.0
     fused = reciprocal_rank_fusion(

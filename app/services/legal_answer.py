@@ -11,11 +11,12 @@ Use only the supplied legal source excerpts. Never invent a law, section, penalt
 procedure, source, or factual conclusion. Explain possible relevance rather than
 deciding guilt, liability, or case outcome. If sources are insufficient, say so.
 Every legal reference must use a source_id from the supplied excerpts.
+Labels beginning with Page are PDF page locators, never statutory section numbers.
 Return concise, practical, neutral information in the requested JSON schema."""
 
 
 def answer_question(
-    question: str, sources: list[LegalSource], settings: Settings
+    question: str, sources: list[LegalSource], settings: Settings, as_of: str | None = None
 ) -> ChatResponse:
     assessment = assess_query(question, sources)
     language = detect_language(question)
@@ -35,6 +36,7 @@ def answer_question(
                 LegalReference(
                     source_id=source.source_id,
                     law=source.law,
+                    edition_year=source.edition_year, valid_from=source.valid_from, valid_to=source.valid_to,
                     section=source.section,
                     explanation=pick(language, "Retrieved as potentially relevant; requires review.", "අදාළ විය හැකි බැවින් හමු විය; සමාලෝචනය අවශ්‍යයි."),
                 )
@@ -64,6 +66,9 @@ def answer_question(
             "law": source.law,
             "section": source.section,
             "text": source.text,
+            "edition_year": source.edition_year,
+            "valid_from": source.valid_from,
+            "valid_to": source.valid_to,
         }
         for source in sources
     ]
@@ -73,6 +78,7 @@ def answer_question(
         "For Sinhala answers, retain official Act names, section numbers, and "
         "source identifiers in English where useful. Never present a translation "
         "as an official quotation.\n\n"
+        f"Requested legal date: {as_of or 'today'}. Use only these editions; do not infer later amendments.\n"
         f"Question:\n{question}\n\n"
         f"Legal source excerpts:\n{json.dumps(context, ensure_ascii=False)}"
     )
@@ -95,6 +101,11 @@ def answer_question(
             confidence_reason=assessment.confidence_reason,
             language=language,
         )
+    source_map = {s.source_id: s for s in sources}
+    for ref in result.legal_references:
+        original = source_map[ref.source_id]
+        ref.law, ref.section = original.law, original.section
+        ref.edition_year, ref.valid_from, ref.valid_to = original.edition_year, original.valid_from, original.valid_to
     result.grounded = True
     result.confidence_state = assessment.confidence_state
     result.confidence_reason = assessment.confidence_reason
@@ -113,6 +124,7 @@ def source_only_response(sources, assessment, language: str) -> ChatResponse:
             LegalReference(
                 source_id=source.source_id,
                 law=source.law,
+                    edition_year=source.edition_year, valid_from=source.valid_from, valid_to=source.valid_to,
                 section=source.section,
                 explanation=pick(
                     language,

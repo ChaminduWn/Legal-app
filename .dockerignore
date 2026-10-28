@@ -1,0 +1,15 @@
+.git
+.venv
+.env
+__pycache__
+.pytest*
+tmp
+data
+reports
+*.egg-info
+**/*.pdf
+**/*.sqlite3
+**/*.docx
+Civil Law
+Criminal law
+step 001 pdf folder

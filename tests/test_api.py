@@ -5,7 +5,7 @@ from app.rag.store import replace_chunks, connect
 @pytest.fixture(autouse=True)
 def isolated_database(tmp_path, monkeypatch):
     database = tmp_path / "api.sqlite3"
-    settings = Settings(legal_ai_database=database, gemini_api_key=None)
+    settings = Settings(legal_ai_database=database, legal_ai_storage_root=tmp_path / "storage", gemini_api_key=None)
     replace_chunks(database, [LegalChunk("test-hurt", "Penal Code", "314", "Hurt", "Whoever causes bodily pain, injury or infirmity causes hurt. A person using criminal force commits assault.", "test.pdf", 1, 1)])
     with connect(database) as connection:
         connection.execute("INSERT INTO document_metadata(source_file,status) VALUES ('test.pdf','verified')")
@@ -108,8 +108,37 @@ def test_admin_review_page_loads_fresh_assets(isolated_database):
         assert page.status_code == 200
         assert page.headers["cache-control"] == "no-store"
         for filename in ("documents.js", "documents.css"):
-            assert f"/static/{filename}?v=20260921-review3" in page.text
-            asset = client.get(f"/static/{filename}?v=20260921-review3")
+            assert f"/static/{filename}?v=20261028-guided-review" in page.text
+            asset = client.get(f"/static/{filename}?v=20261028-guided-review")
             assert asset.status_code == 200
             assert asset.headers["cache-control"] == "no-store"
         assert client.get("/api/admin/documents").headers["cache-control"] == "no-store"
+
+
+def test_unicode_pdf_with_pending_extraction_is_visible(isolated_database,tmp_path):
+    from urllib.parse import quote
+    from app.storage import store_file, register_asset
+    source='collection/නීතිය.pdf'
+    original=tmp_path/'original.pdf';original.write_bytes(b'%PDF-original')
+    asset=store_file(isolated_database.legal_ai_storage_root,original)
+    with connect(isolated_database.legal_ai_database) as connection:
+        connection.execute('INSERT INTO document_records VALUES (?,?)',(source,'Pending scan'))
+        register_asset(connection,source,0,asset)
+    with TestClient(app) as client:
+        client.post('/admin/login',data={'username':isolated_database.admin_username,'password':isolated_database.admin_password})
+        base='/api/admin/documents/'+quote(source,safe='')
+        assert client.get(base+'/sections').json()==[]
+        pdf=client.get(base+'/pdf')
+        assert pdf.status_code==200 and pdf.content==b'%PDF-original'
+        assert "filename*=utf-8" in pdf.headers['content-disposition']
+        assert any(d['source_file']==source and d['section_count']==0 for d in client.get('/api/admin/documents').json())
+
+
+def test_admin_library_exposes_publication_requirements_not_credentials(isolated_database):
+    with TestClient(app) as client:
+        client.post('/admin/login',data={'username':isolated_database.admin_username,'password':isolated_database.admin_password})
+        response=client.get('/api/admin/library')
+        assert response.status_code==200
+        assert response.json()['publication_policy']=={'mode':'development','require_source_details':False,'require_edition':False}
+        assert 'admin_password' not in response.text
+        assert 'session_secret' not in response.text

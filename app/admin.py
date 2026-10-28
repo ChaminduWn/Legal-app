@@ -1,3 +1,4 @@
+from contextlib import nullcontext
 from datetime import UTC, datetime, date
 from urllib.parse import urlsplit
 from pathlib import Path
@@ -11,6 +12,7 @@ from app.models import (
     AuditEvent,
 )
 from app.rag.store import connect, initialize
+from app.catalog import save_version
 
 
 def initialize_admin(database: Path) -> None:
@@ -75,31 +77,41 @@ def list_documents(database: Path) -> list[DocumentSummary]:
         rows = connection.execute(
             """
             SELECT
-                c.source_file,
-                MIN(c.law) AS law,
-                COUNT(*) AS section_count,
+                d.source_file,
+                COALESCE(MIN(c.law),d.title) AS law,
+                COUNT(c.source_id) AS section_count,
                 SUM(CASE WHEN r.status = 'verified' THEN 1 ELSE 0 END)
                     AS verified_sections,
                 COALESCE(m.status, 'unreviewed') AS status,
                 m.official_source_url,
                 m.publication_date,
                 m.effective_date,
-                m.notes
+                m.notes, v.instrument_id, i.title AS instrument_title, v.edition_year, v.version_kind,
+                v.valid_from, v.valid_to, v.supersedes_source,
+                vr.target_instrument_id, vr.relation_type, vr.evidence AS relationship_evidence
                 ,COALESCE(m.document_type, 'other') AS document_type
                 ,COALESCE(m.extraction_method, 'text') AS extraction_method
                 ,m.extraction_confidence, COALESCE(m.extraction_warnings, '[]') AS extraction_warnings
-                ,(SELECT COUNT(*) FROM legal_relationships lr WHERE lr.source_file=c.source_file) AS relationship_count
-            FROM legal_chunks c
+                ,(SELECT COUNT(*) FROM legal_relationships lr WHERE lr.source_file=d.source_file) AS relationship_count
+            FROM document_records d
+            LEFT JOIN legal_chunks c USING (source_file)
             LEFT JOIN section_reviews r USING (source_id)
             LEFT JOIN document_metadata m USING (source_file)
-            GROUP BY c.source_file
-            ORDER BY law, c.source_file
+            LEFT JOIN document_versions v USING (source_file)
+            LEFT JOIN legal_instruments i ON i.instrument_id=v.instrument_id
+            LEFT JOIN version_relationships vr USING (source_file)
+            GROUP BY d.source_file
+            ORDER BY law, d.source_file
             """
         ).fetchall()
+        topics = {}
+        for topic in connection.execute("SELECT source_file,topic_id FROM document_topics"):
+            topics.setdefault(topic[0],[]).append(topic[1])
     import json
     result=[]
     for row in rows:
         data=dict(row); data["extraction_warnings"]=json.loads(data["extraction_warnings"])
+        data["topic_ids"] = topics.get(data["source_file"],[])
         result.append(DocumentSummary.model_validate(data))
     return result
 
@@ -171,7 +183,15 @@ def save_document_metadata(
                 update.document_type,
             ),
         )
-        _audit(connection, source_file, "metadata_updated", update.status)
+        if update.version is not None:
+            save_version(connection, source_file, update.version)
+        if update.topic_ids is not None:
+            known = {r[0] for r in connection.execute("SELECT topic_id FROM legal_topics")}
+            if not set(update.topic_ids).issubset(known):
+                raise ValueError("Choose an existing legal topic.")
+            connection.execute("DELETE FROM document_topics WHERE source_file=?", (source_file,))
+            connection.executemany("INSERT INTO document_topics VALUES (?,?)", [(source_file,t) for t in set(update.topic_ids)])
+        _audit(connection, source_file, "metadata_updated", update.model_dump_json())
 
 
 def save_section_review(
@@ -226,13 +246,13 @@ def save_section_review(
 
 
 def register_import(database: Path, source_file: str, document_type: str, method: str,
-                    confidence: float | None, warnings: list[str], chunks: list) -> None:
+                    confidence: float | None, warnings: list[str], chunks: list, *, connection=None) -> None:
     import json
     now = datetime.now(UTC).isoformat()
-    with connect(database) as connection:
-        connection.execute("""INSERT OR REPLACE INTO document_metadata
+    with (nullcontext(connection) if connection is not None else connect(database)) as connection:
+        connection.execute("""INSERT INTO document_metadata
             (source_file,status,updated_at,document_type,extraction_method,extraction_confidence,extraction_warnings)
-            VALUES (?, 'in_review', ?, ?, ?, ?, ?)""",
+            VALUES (?, 'in_review', ?, ?, ?, ?, ?) ON CONFLICT(source_file) DO UPDATE SET status='in_review', updated_at=excluded.updated_at, document_type=excluded.document_type, extraction_method=excluded.extraction_method, extraction_confidence=excluded.extraction_confidence, extraction_warnings=excluded.extraction_warnings""",
             (source_file, now, document_type, method, confidence, json.dumps(warnings)))
         _detect_relationships(connection, source_file, chunks)
         _audit(connection, source_file, "document_imported", f"{method}; {len(chunks)} sections")
@@ -250,6 +270,16 @@ def approve_document(database: Path, source_file: str, *, extraction_complete: b
         metadata = connection.execute("SELECT * FROM document_metadata WHERE source_file=?", (source_file,)).fetchone()
         if not metadata or metadata["status"] == "superseded":
             raise ValueError("Save document details with In review status before publishing.")
+        from app.config import get_settings
+        if get_settings().environment == "production":
+            for field in ("official_source_url", "publication_date", "effective_date"):
+                if not metadata[field]:
+                    raise ValueError(f"Production publication requires {field.replace('_', ' ')}.")
+            version = connection.execute("SELECT * FROM document_versions WHERE source_file=?", (source_file,)).fetchone()
+            if not version:
+                raise ValueError("Production publication requires a verified edition year and effective period.")
+            if metadata['document_type'] == 'amendment' and not connection.execute("SELECT 1 FROM version_relationships WHERE source_file=? AND relation_type IN ('amends','repeals')", (source_file,)).fetchone():
+                raise ValueError("Link this amendment to the affected law before publication.")
         url = urlsplit(metadata["official_source_url"] or "")
         if metadata["official_source_url"] and (url.scheme not in {"https", "http"} or not url.hostname):
             raise ValueError("Enter a valid official source URL in Document details.")

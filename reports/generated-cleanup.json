@@ -1,0 +1,12 @@
+{
+  "removed": [
+    ".pytest-local",
+    "tmp/optional-details-tests-20260921",
+    "tmp/optional-details-tests-20260921b",
+    "tmp/review-cache-tests-20260921",
+    "tmp/review-fix-tests-20260921"
+  ],
+  "retained": [],
+  "errors": [],
+  "mode": "apply"
+}

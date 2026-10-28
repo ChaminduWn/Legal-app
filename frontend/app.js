@@ -175,7 +175,7 @@ async function requestLegalBrief(question) {
     const preparationResponse = await fetch("/api/prepare", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: lastQuestion }),
+      body: JSON.stringify({ message: lastQuestion, as_of: document.querySelector("#as-of").value || null }),
     });
     if (!preparationResponse.ok) {
       throw new Error("The question could not be prepared for legal search.");
@@ -202,12 +202,12 @@ async function submitLegalBrief(questionForSearch) {
       fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: questionForSearch }),
+        body: JSON.stringify({ message: questionForSearch, as_of: document.querySelector("#as-of").value || null }),
       }),
       fetch("/api/search", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: questionForSearch, limit: 6 }),
+        body: JSON.stringify({ query: questionForSearch, limit: 6, as_of: document.querySelector("#as-of").value || null }),
       }),
     ]);
 
@@ -275,11 +275,11 @@ function renderAnswer(answer, sources) {
     const source = sourceById.get(reference.source_id);
     header.append(
       createElement("strong", "", reference.law),
-      createElement("span", "section-pill", `Section ${reference.section}`),
+      createElement("span", "section-pill", formatLegalLocator(reference.section)),
     );
     card.append(header, createElement("p", "", reference.explanation));
     if (source?.heading && source.heading.length < 120) {
-      card.setAttribute("aria-label", `${reference.law}, section ${reference.section}`);
+      card.setAttribute("aria-label", `${reference.law}, ${formatLegalLocator(reference.section)}`);
     }
     referenceList.append(card);
   }
@@ -313,11 +313,11 @@ function renderAnswer(answer, sources) {
     if (index === 0) details.open = true;
     const summary = document.createElement("summary");
     summary.append(
-      createElement("strong", "", `${source.law} · Section ${source.section}`),
+      createElement("strong", "", `${source.law} · ${formatLegalLocator(source.section)}`),
       createElement(
         "small",
         "",
-        `${source.source_file} · ${formatPages(source.page_start, source.page_end)}`,
+        `${source.source_file} · ${source.edition_year || "Year unverified"} · ${formatPages(source.page_start, source.page_end)}${source.valid_from ? ` · Effective ${source.valid_from}${source.valid_to ? ` until ${source.valid_to}` : ""}` : " · Effective period unverified"}`,
       ),
     );
     details.append(summary, createElement("div", "source-text", source.text));
@@ -371,3 +371,9 @@ aboutDialog.addEventListener("click", (event) => {
 });
 
 applyLanguage(currentLanguage);
+
+function formatLegalLocator(value) {
+  return /^page[ -]?\d/i.test(value)
+    ? value.replace(/^page[ -]?/i, "Page ")
+    : `Section ${value}`;
+}

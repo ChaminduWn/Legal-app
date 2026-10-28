@@ -1251,3 +1251,14 @@ h1 em {
 .site-footer {
   border-top-color: var(--line);
 }
+
+.question-card input[type="date"] {
+  width: min(100%, 18rem);
+  display: block;
+  padding: .65rem;
+  margin: .4rem 0;
+  border: 1px solid #c7d0c7;
+  border-radius: .5rem;
+  font: inherit;
+}
+#as-of-help { display: block; margin-bottom: 1rem; }

@@ -8,3 +8,10 @@ data/models/
 data/legal_index.sqlite3
 data/backups/
 data/uploads/
+
+# Runtime originals, archives, and generated test/build output
+data/storage/
+data/archive/
+tmp/
+.pytest-local/
+*.egg-info/

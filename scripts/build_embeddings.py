@@ -11,7 +11,7 @@ from app.rag.store import _embedding_model, connect, initialize
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--database", type=Path, default=Path("data/legal_index.sqlite3"))
+    parser.add_argument("--database", type=Path, default=get_settings().legal_ai_database)
     parser.add_argument("--batch-size", type=int, default=256)
     parser.add_argument(
         "--parallel",

@@ -1,4 +1,5 @@
 from typing import Literal
+from datetime import date
 
 from pydantic import BaseModel, Field
 
@@ -6,6 +7,7 @@ from pydantic import BaseModel, Field
 class SearchRequest(BaseModel):
     query: str = Field(min_length=3, max_length=2000)
     limit: int = Field(default=6, ge=1, le=20)
+    as_of: date | None = None
 
 
 class LegalSource(BaseModel):
@@ -17,6 +19,12 @@ class LegalSource(BaseModel):
     source_file: str
     page_start: int
     page_end: int
+    edition_year: int | None = None
+    instrument_id: str | None = None
+    valid_from: str | None = None
+    valid_to: str | None = None
+    publication_date: str | None = None
+    effective_date: str | None = None
     score: float
 
 
@@ -28,9 +36,13 @@ class SearchResponse(BaseModel):
 
 class ChatRequest(BaseModel):
     message: str = Field(min_length=3, max_length=4000)
+    as_of: date | None = None
 
 
 class LegalReference(BaseModel):
+    edition_year: int | None = None
+    valid_from: str | None = None
+    valid_to: str | None = None
     source_id: str
     law: str
     section: str
@@ -50,6 +62,7 @@ class ChatResponse(BaseModel):
 
 class PrepareRequest(BaseModel):
     message: str = Field(min_length=3, max_length=4000)
+    as_of: date | None = None
 
 
 class FollowUpQuestion(BaseModel):
@@ -86,6 +99,19 @@ class EvaluationSummary(BaseModel):
     cases: list[EvaluationCaseResult]
 
 
+class DocumentVersionUpdate(BaseModel):
+    instrument_id: str = Field(pattern="^[a-z0-9][a-z0-9-]{1,119}$")
+    instrument_title: str = Field(min_length=3, max_length=300)
+    edition_year: int = Field(ge=1500, le=9999)
+    version_kind: Literal["original", "consolidated", "amendment", "reference"]
+    valid_from: str = Field(pattern=r"^\d{4}-\d{2}-\d{2}$")
+    valid_to: str | None = None
+    supersedes_source: str | None = None
+    target_instrument_id: str | None = None
+    relation_type: Literal["amends", "repeals", "references"] = "references"
+    relationship_evidence: str | None = Field(default=None, max_length=4000)
+
+
 class DocumentSummary(BaseModel):
     source_file: str
     law: str
@@ -101,9 +127,22 @@ class DocumentSummary(BaseModel):
     extraction_confidence: float | None = None
     extraction_warnings: list[str] = Field(default_factory=list)
     relationship_count: int = 0
+    instrument_id: str | None = None
+    instrument_title: str | None = None
+    edition_year: int | None = None
+    version_kind: str | None = None
+    valid_from: str | None = None
+    valid_to: str | None = None
+    supersedes_source: str | None = None
+    target_instrument_id: str | None = None
+    relation_type: str | None = None
+    relationship_evidence: str | None = None
+    topic_ids: list[str] = Field(default_factory=list)
 
 
 class DocumentMetadataUpdate(BaseModel):
+    version: DocumentVersionUpdate | None = None
+    topic_ids: list[str] | None = None
     official_source_url: str | None = Field(default=None, max_length=2000)
     publication_date: str | None = Field(default=None, max_length=50)
     effective_date: str | None = Field(default=None, max_length=50)

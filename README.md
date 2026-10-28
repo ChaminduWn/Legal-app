@@ -46,7 +46,7 @@ The responsive frontend includes:
 
 ## Local semantic search
 
-The app uses `BAAI/bge-small-en-v1.5` locally through FastEmbed. It does not
+The app uses `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` locally through FastEmbed. It does not
 consume Gemini quota. Build or refresh the cached semantic index after document
 ingestion:
 
@@ -74,9 +74,7 @@ Open `http://127.0.0.1:8000/admin/documents` to:
 
 Section corrections invalidate only the affected semantic vector. Run
 `python -m scripts.build_embeddings` after completing a batch of corrections or
-importing a new document. The administration workspace is currently intended
-for local development only and must be protected with authentication before a
-public deployment.
+importing a new document. The administration workspace uses a signed admin session. Configure production credentials, HTTPS, and private persistent storage before public deployment.
 
 ## Clarification and source support
 
@@ -116,8 +114,8 @@ official source URLs also need legal verification.
 
 New imports remain outside public search until every extracted section is reviewed
 and the administrator uses **Approve & publish**. Documents without metadata are
-also excluded. Publication requires an HTTP(S) source URL, a valid publication date,
-and an effective date for Acts, amendments, regulations, and gazettes. Dates must
+also excluded. In production mode, publication requires an HTTP(S) source URL, a valid publication date,
+an effective date, and a reviewed edition record. Development retains the legacy optional source fields. Dates must
 use YYYY-MM-DD and must not be in the future. Unknown dates must be resolved before
 publishing these document types; do not invent a date.
 
@@ -133,3 +131,12 @@ search separately with `python -m scripts.build_embeddings`.
 Upload one selectable-text PDF (25 MB maximum) at a time. Scanned PDFs need OCR
 before PDF import, or their pages can be uploaded as images. Automatic current-law
 version resolution and automatic semantic-index rebuilding are not implemented.
+
+
+## Versioned library and external storage
+
+The relational catalog links documents, sections, law editions, reviewed amendment targets, original assets and legal topics. Source citations display edition years and effective periods. The question form supports historical lookup by date. A new amendment remains separate from the complete law; it never silently replaces the entire text.
+
+The database and private original-file storage paths are configured by `LEGAL_AI_DATABASE` and `LEGAL_AI_STORAGE_ROOT`. The ingestion command now preserves existing documents; its JSON chunk export is optional. Audit, backup, archive and relocation commands are documented in [the production data guide](docs/production-data.md).
+
+Set `ENVIRONMENT=production` only after configuring strong admin credentials and absolute private data paths outside the code checkout. This mode excludes legacy undated editions and requires reviewed edition metadata for publication. SQLite remains the runtime database; the legacy Supabase export is disabled for the new catalog pending a complete migration and runtime adapter.

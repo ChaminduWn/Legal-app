@@ -1,0 +1,17 @@
+{
+  "total_files": 0,
+  "pdf_files": 0,
+  "bytes": 0,
+  "unique_pdfs": 0,
+  "archive": "D:\\legal-app-data\\source-collections",
+  "records": [],
+  "mode": "apply",
+  "database_backup": "D:\\legal-app-data\\backups\\before-collection-intake-20261027T155513983728.sqlite3",
+  "states": {
+    "duplicate_indexed": 15,
+    "imported": 408,
+    "ocr_imported": 172
+  },
+  "documents": 589,
+  "chunks": 12912
+}

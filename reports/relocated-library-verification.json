@@ -1,0 +1,18 @@
+{
+  "database": "D:\\legal-app-data\\legal_index.sqlite3",
+  "storage": "D:\\legal-app-data\\originals",
+  "counts": {
+    "document_records": 12,
+    "legal_chunks": 1576,
+    "document_metadata": 12,
+    "archived_metadata": 576,
+    "document_assets": 12,
+    "document_versions": 0,
+    "legal_embeddings": 0
+  },
+  "integrity": "ok",
+  "foreign_key_violations": [],
+  "originals_checksum_verified": 12,
+  "requires_app_restart": true,
+  "existing_versions_require_legal_review": true
+}

@@ -1,177 +1,105 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#05070c" />
-    <title>Document verification — Neethi</title>
-    <link rel="stylesheet" href="/static/styles.css" />
-    <link rel="stylesheet" href="/static/documents.css?v=20260921-review3" />
-    <script src="/static/documents.js?v=20260921-review3" defer></script>
-  </head>
-  <body>
-    <div class="review-shell">
-      <header class="review-topbar">
-        <a class="brand" href="/">
-          <span class="brand-mark" aria-hidden="true">නී</span>
-          <span><strong>Neethi</strong><small>Document verification</small></span>
-        </a>
-        <div class="review-actions">
-          <a href="/evaluation">Evaluation</a>
-          <button class="primary-button compact" id="import-button" type="button">Add document</button>
-          <form method="post" action="/admin/logout"><button class="secondary-button" type="submit">Log out</button></form>
-        </div>
-      </header>
-
-      <main class="review-layout">
-        <aside class="document-sidebar">
-          <div class="panel-title">
-            <span>Legal collection</span>
-            <strong id="document-count">0 documents</strong>
-          </div>
-          <label class="sidebar-search">
-            <span class="visually-hidden">Filter documents</span>
-            <input id="document-filter" type="search" placeholder="Filter documents…" />
-          </label>
-          <div class="document-list" id="document-list"></div>
-        </aside>
-
-        <section class="review-workspace">
-          <div class="workspace-empty" id="workspace-empty">
-            <span class="dialog-mark" aria-hidden="true">§</span>
-            <h1>Select a legal document</h1>
-            <p>Review extracted sections against the original PDF and record authoritative source details.</p>
-          </div>
-
-          <div id="workspace-content" hidden>
-            <header class="document-header">
-              <div>
-                <span class="eyebrow" id="document-filename"></span>
-                <h1 id="document-title"></h1>
-                <p id="document-progress"></p>
-                <p class="analysis-summary" id="analysis-summary"></p>
-              </div>
-              <button class="secondary-button" id="metadata-button" type="button">Document details</button>
-              <button class="primary-button compact" id="approve-button" type="button">Approve & publish</button>
-            </header>
-
-            <div class="publication-checks">
-              <p id="publication-message" role="status" aria-live="polite"></p>
-              <div id="publication-confirmations">
-              <p>Publishing makes this source searchable. It does not automatically verify the current law or apply amendments. Review all original pages, including any text the extractor missed.</p>
-              <label><input type="checkbox" id="extraction-complete" /> I compared all original pages and confirmed the extracted text is complete for this source.</label>
-              <label><input type="checkbox" id="authority-checked" /> I checked the source authority and suitability for publication, including dates where available.</label>
-              </div>
-              <p>Keyword search updates on publication. For semantic search, run <code>python -m scripts.build_embeddings</code> after completing your reviews.</p>
-            </div>
-            <div class="review-columns">
-              <aside class="section-navigator">
-                <div class="panel-title">
-                  <span>Extracted sections</span>
-                  <strong id="section-count">0 sections</strong>
-                </div>
-                <label class="sidebar-search">
-                  <span class="visually-hidden">Filter sections</span>
-                  <input id="section-filter" type="search" placeholder="Find a section…" />
-                </label>
-                <div class="section-list" id="section-list"></div>
-              </aside>
-
-              <section class="section-editor">
-                <div class="editor-empty" id="editor-empty">
-                  Select a section to begin verification.
-                </div>
-                <form id="section-form" hidden>
-                  <div class="editor-toolbar">
-                    <div>
-                      <span>Reviewing</span>
-                      <strong id="editing-section">Section</strong>
-                    </div>
-                    <span class="index-state" id="index-state"></span>
-                  </div>
-
-                  <label>
-                    Heading
-                    <input id="section-heading" maxlength="500" />
-                  </label>
-                  <label>
-                    Extracted legal text
-                    <textarea id="section-text" rows="17" minlength="20" required></textarea>
-                  </label>
-                  <div class="editor-row">
-                    <label>
-                      Review status
-                      <select id="section-status">
-                        <option value="unreviewed">Unreviewed</option>
-                        <option value="in_review">In review</option>
-                        <option value="needs_correction">Needs correction</option>
-                        <option value="verified">Verified</option>
-                      </select>
-                    </label>
-                    <label>
-                      Reviewer note
-                      <input id="section-notes" maxlength="2000" placeholder="Optional note" />
-                    </label>
-                  </div>
-                  <div class="editor-footer">
-                    <span id="section-pages"></span>
-                    <button class="primary-button" type="submit">Save review</button>
-                  </div>
-                </form>
-              </section>
-
-              <aside class="pdf-panel">
-                <div class="panel-title">
-                  <span>Original publication</span>
-                  <strong id="pdf-page-label">PDF preview</strong>
-                </div>
-                <iframe id="pdf-frame" title="Original legal PDF"></iframe>
-              </aside>
-            </div>
-          </div>
-        </section>
-      </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080e18" />
+  <title>Review workspace — Neethi</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="stylesheet" href="/static/documents.css?v=20261028-guided-review" />
+  <script src="/static/documents.js?v=20261028-guided-review" defer></script>
+</head>
+<body class="review-shell">
+  <a class="skip-link" href="#review-workspace">Skip to review</a>
+  <header class="review-topbar">
+    <a class="brand" href="/" data-leave><span class="brand-mark" aria-hidden="true">නී</span><span><strong>Neethi</strong><small>Review workspace</small></span></a>
+    <div class="review-actions">
+      <a href="/evaluation" data-leave>Search evaluation</a>
+      <button class="secondary-button compact" id="refresh-button" type="button" data-lock>Refresh</button>
+      <button class="primary-button compact" id="import-button" type="button" data-lock>Add document</button>
+      <form method="post" action="/admin/logout" data-leave><button class="text-button" type="submit">Log out</button></form>
     </div>
-
-    <dialog class="review-dialog" id="metadata-dialog">
-      <button class="dialog-close" data-close="metadata-dialog" type="button" aria-label="Close">×</button>
-      <span class="eyebrow">Document record</span>
-      <h2>Authority and status</h2>
-      <form id="metadata-form">
-        <label>Official source URL (optional)<input id="official-source-url" type="url" placeholder="https://documents.gov.lk/…" /></label>
-        <div class="dialog-grid">
-          <label>Publication date (optional)<input id="publication-date" type="date" /></label>
-          <label>Effective date (optional)<input id="effective-date" type="date" /></label>
+  </header>
+  <div id="session-warning" class="notice" hidden>Your session expired. <a href="/admin/login" target="_blank" rel="noopener">Sign in in a new tab</a>, then retry here. Your unsaved text is still on this page.</div>
+  <section class="collection-overview" aria-label="Collection overview">
+    <div class="overview-title"><span class="eyebrow">Your legal collection</span><h1>A clearer path to publication.</h1><p>Review the text, check the source, then publish when it is ready.</p></div>
+    <div class="overview-cards">
+      <button class="overview-card" data-queue="pending" type="button"><span>Awaiting review</span><strong id="count-pending">—</strong><small>Continue the review queue →</small></button>
+      <button class="overview-card attention" data-queue="attention" type="button"><span>Extraction attention</span><strong id="count-attention">—</strong><small>Check flagged originals →</small></button>
+      <button class="overview-card" data-queue="text_complete" type="button"><span>Text review complete</span><strong id="count-complete">—</strong><small>Finish source checks →</small></button>
+      <button class="overview-card" data-queue="verified" type="button"><span>Published</span><strong id="count-published">—</strong><small>View searchable sources →</small></button>
+    </div>
+  </section>
+  <main class="review-layout">
+    <aside class="document-sidebar">
+      <details id="queue-details" open>
+        <summary class="queue-heading">Review queue <span id="document-count">Loading…</span></summary>
+        <div class="queue-filters">
+          <label>Find a document<input id="document-filter" type="search" placeholder="Title or original filename" /></label>
+          <div class="filter-pair">
+            <label>Status<select id="status-filter"><option value="pending">Awaiting review</option><option value="text_complete">Text review complete</option><option value="in_review">In review</option><option value="unreviewed">Not started</option><option value="verified">Published</option><option value="superseded">Withdrawn / superseded</option><option value="all">All documents</option></select></label>
+            <label>Attention<select id="attention-filter"><option value="all">Any</option><option value="extraction">Extraction issues</option><option value="dates">Missing source details</option></select></label>
+          </div>
+          <label>Legal topic<select id="topic-filter"><option value="">All topics</option></select></label>
+          <div class="filter-pair"><label>Order<select id="sort-filter"><option value="priority">Needs attention first</option><option value="progress">Closest to text completion</option><option value="title">Title A–Z</option><option value="year">Newest edition first</option></select></label><button class="text-button" id="clear-filters" type="button">Reset filters</button></div>
         </div>
-        <label>
-          Document status
-          <select id="document-status">
-            <option value="unreviewed">Unreviewed</option>
-            <option value="in_review">In review</option>
-            <option value="verified" disabled>Verified (use Approve & publish)</option>
-            <option value="superseded">Superseded</option>
-          </select>
-        </label>
-        <label>Document type<select id="document-type"><option value="act">Act</option><option value="amendment">Amendment</option><option value="regulation">Regulation</option><option value="gazette">Gazette</option><option value="judgment">Judgment</option><option value="book">Book</option><option value="other">Other</option></select></label>
-        <label>Notes<textarea id="document-notes" rows="4" maxlength="4000"></textarea></label>
-        <button class="primary-button" type="submit">Save document record</button>
-      </form>
-    </dialog>
-
-    <dialog class="review-dialog" id="import-dialog">
-      <button class="dialog-close" data-close="import-dialog" type="button" aria-label="Close">×</button>
-      <span class="eyebrow">Add legal source</span>
-      <h2>Add PDF or scanned pages</h2>
-      <p class="dialog-copy">Choose one selectable-text PDF (up to 25 MB), or up to 30 page photos. Scanned PDFs need OCR first. Extraction is held for review and may miss text.</p>
-      <form id="import-form">
-        <label>Law or publication title<input name="title" minlength="3" required placeholder="Example: Evidence Ordinance" /></label>
-        <label>Document type<select name="document_type"><option value="act">Act</option><option value="amendment">Amendment</option><option value="regulation">Regulation</option><option value="gazette">Gazette</option><option value="judgment">Judgment</option><option value="book">Book pages</option><option value="other">Other</option></select></label>
-        <label class="file-field">PDF or page photos<input name="files" type="file" accept="application/pdf,.pdf,image/jpeg,image/png,image/webp" capture="environment" multiple required /></label>
-        <p class="form-message" id="import-message"></p>
-        <button class="primary-button" type="submit">Extract for review</button>
-      </form>
-    </dialog>
-
-    <div class="toast" id="toast" role="status" hidden></div>
-  </body>
+        <div id="queue-message" class="queue-message" role="status">Loading your collection…</div>
+        <div class="document-list" id="document-list" aria-label="Documents"></div>
+        <nav class="queue-pagination" aria-label="Document list pages"><button id="previous-page" type="button" class="text-button">← Previous</button><span id="page-label"></span><button id="next-page" type="button" class="text-button">Next →</button></nav>
+      </details>
+    </aside>
+    <section class="review-workspace" id="review-workspace" tabindex="-1">
+      <div class="workspace-empty" id="workspace-empty">
+        <span class="dialog-mark" aria-hidden="true">§</span><h2>Pick up your next review.</h2>
+        <p>Choose a document from the queue, or continue with the next one awaiting review.</p>
+        <button class="primary-button" id="start-review" type="button" data-lock>Start next review</button>
+        <p class="muted">Checking a passage never publishes it. Publication is a separate, explicit step.</p>
+      </div>
+      <div id="workspace-content" hidden>
+        <header class="document-header">
+          <div><span class="eyebrow" id="document-filename"></span><h2 id="document-title"></h2><p id="document-progress"></p><progress id="document-progress-bar" max="100" value="0" aria-label="Text review progress"></progress></div>
+          <div class="document-actions"><a id="open-original" class="secondary-button compact" target="_blank" rel="noopener">Open original ↗</a><button id="next-document" class="secondary-button compact" type="button" data-lock>Next document →</button></div>
+        </header>
+        <ol class="review-steps" aria-label="Publication steps"><li id="step-text"><span>1</span>Review text <small id="step-text-state"></small></li><li id="step-source"><span>2</span>Check source <small id="step-source-state"></small></li><li id="step-publish"><span>3</span>Publish <small id="step-publish-state"></small></li></ol>
+        <div id="document-load-error" class="notice error" hidden><span id="document-error-text"></span><button class="text-button" id="retry-document" type="button">Retry loading</button></div>
+        <div class="review-help-row"><button class="secondary-button compact" id="metadata-button" type="button" data-lock>Check source details</button><details id="extraction-details"><summary id="extraction-summary">Extraction notes &amp; history</summary><ul id="extraction-warnings"></ul><p id="analysis-summary"></p><div id="flagged-pages" class="flagged-pages" aria-label="Flagged original pages"></div></details></div>
+        <div id="review-complete" class="notice success" hidden>Text review complete. Check the source details and publication checklist before publishing. <button class="text-button" id="complete-details" type="button">Check source details →</button></div>
+        <details class="publication-checks" id="publication-panel"><summary>Publication checklist <span id="publication-readiness"></span></summary>
+          <p id="publication-message" role="status" aria-live="polite"></p><ul id="publication-blockers"></ul>
+          <div id="publication-confirmations"><p>Compare every original page, including pages with no extracted passage. Publishing does not establish that a source is the current law or automatically apply amendments.</p>
+            <label><input type="checkbox" id="extraction-complete" /> I checked all original pages and confirmed that the extracted text is complete for this source.</label>
+            <label><input type="checkbox" id="authority-checked" /> I verified the source authority and the relevant publication and effective dates.</label>
+          </div>
+          <button class="primary-button compact" id="approve-button" type="button">Approve &amp; publish</button>
+        </details>
+        <div class="review-columns">
+          <aside class="section-navigator"><div class="panel-title"><span>Passages to check</span><strong id="section-count">Loading…</strong></div><div class="passage-filters"><label><span class="visually-hidden">Search passages</span><input id="section-filter" type="search" placeholder="Find text or a page…" /></label><label><span class="visually-hidden">Passage status</span><select id="section-status-filter"><option value="pending">Still to review</option><option value="needs_correction">Needs correction</option><option value="verified">Verified</option><option value="all">All passages</option></select></label></div><div class="section-list" id="section-list"></div></aside>
+          <section class="section-editor"><div class="editor-empty" id="editor-empty">Choose a passage to compare with the original.</div>
+            <form id="section-form" hidden><div class="editor-toolbar"><div><span>Reviewing</span><strong id="editing-section" tabindex="-1"></strong></div><span class="save-state" id="save-state" role="status">Saved</span></div>
+              <div class="editor-actions"><button class="secondary-button compact" type="submit" value="save">Save</button><button class="secondary-button compact" type="submit" value="next">Save &amp; next</button><button class="primary-button compact" id="verify-next" type="submit" value="verify">Verify &amp; next →</button></div>
+              <label>Heading<input id="section-heading" maxlength="500" /></label><label>Extracted text<textarea id="section-text" rows="15" minlength="20" maxlength="50000" required spellcheck="false"></textarea></label>
+              <div class="editor-row"><label>Review status<select id="section-status"><option value="unreviewed">Not reviewed</option><option value="in_review">In review</option><option value="needs_correction">Needs correction</option><option value="verified">Verified against original</option></select></label><label>Review note<input id="section-notes" maxlength="2000" placeholder="What needs checking?" /></label></div>
+              <p id="section-pages" class="muted"></p><p class="editor-guidance">Compare the original before verifying. “Verify &amp; next” verifies only this passage.</p>
+            </form>
+          </section>
+          <aside class="pdf-panel"><div class="panel-title"><div><span>Compare with the original</span><strong id="pdf-page-label">PDF preview</strong></div><a id="pdf-open-link" target="_blank" rel="noopener">Open in new tab ↗</a></div><iframe id="pdf-frame" title="Original legal document"></iframe><p class="pdf-help">If the preview is unavailable, open the original in a new tab.</p></aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <dialog class="review-dialog" id="metadata-dialog" aria-labelledby="metadata-title"><button class="dialog-close" data-close="metadata-dialog" type="button" aria-label="Close source details">×</button><span class="eyebrow">Step 2 · Check the source</span><h2 id="metadata-title">Source details</h2><p id="metadata-policy" class="dialog-copy"></p>
+    <form id="metadata-form"><label>Official source link<input id="official-source-url" type="url" maxlength="2000" placeholder="https://…" /><small>Use the publication’s authoritative source, not an AI-generated link.</small></label><div class="dialog-grid"><label>Date published<input id="publication-date" type="date" /></label><label>Law effective from<input id="effective-date" type="date" /></label></div>
+      <div class="dialog-grid"><label>Document type<select id="document-type"><option value="act">Act</option><option value="amendment">Amendment</option><option value="regulation">Regulation</option><option value="gazette">Gazette</option><option value="judgment">Judgment</option><option value="book">Book</option><option value="other">Other / not yet classified</option></select></label><label>Availability<select id="document-status"><option value="unreviewed">Not started</option><option value="in_review">In review</option><option value="superseded">Withdrawn / superseded</option></select></label></div>
+      <details id="edition-details" class="form-disclosure"><summary>Law edition &amp; amendments <span id="edition-policy"></span></summary><p class="dialog-copy">Keep old editions for historical searches. An amendment is separate from a complete edition of the law.</p><label class="check-label"><input type="checkbox" id="has-edition" /> Record an edition with verified dates</label>
+        <fieldset id="edition-fields" disabled><legend class="visually-hidden">Edition details</legend><label>Which law is this?<select id="instrument-choice"><option value="">Choose a law…</option><option value="__new__">Add a law…</option></select></label><label id="new-law-field" hidden>Law name<input id="instrument-title" minlength="3" maxlength="300" placeholder="For example: Penal Code" /></label><input id="instrument-id" type="hidden" />
+          <div class="dialog-grid"><label>Edition year<input id="edition-year" type="number" min="1500" max="9999" /></label><label>Edition type<select id="version-kind"><option value="original">Original</option><option value="consolidated">Complete consolidated edition</option><option value="amendment">Amendment</option><option value="reference">Reference material</option></select></label></div><div class="dialog-grid"><label>This edition applies from<input id="valid-from" type="date" /></label><label>Applies until, if known<input id="valid-to" type="date" /><small>The end date is excluded from this edition’s period.</small></label></div><label>Previous complete edition<select id="supersedes-source"><option value="">None</option></select></label>
+          <details class="form-disclosure"><summary>Link an affected law</summary><label>Affected law<select id="target-instrument-id"><option value="">None</option></select></label><label>How is it affected?<select id="relation-type"><option value="references">References</option><option value="amends">Amends</option><option value="repeals">Repeals</option></select></label><label>Provision supporting this link<textarea id="relationship-evidence" rows="3" maxlength="4000"></textarea></label></details>
+        </fieldset>
+      </details>
+      <label>Legal topics<select id="document-topics" multiple size="5"></select><small>Select the topics that apply; use Ctrl or Command to select more than one.</small></label><label>Reviewer notes<textarea id="document-notes" rows="3" maxlength="4000"></textarea></label><p id="metadata-error" class="form-message error" role="alert" hidden></p><div class="dialog-footer"><button class="secondary-button" type="button" data-close="metadata-dialog">Cancel</button><button class="primary-button" type="submit">Save source details</button></div>
+    </form>
+  </dialog>
+  <dialog class="review-dialog" id="import-dialog" aria-labelledby="import-title"><button class="dialog-close" data-close="import-dialog" type="button" aria-label="Close import">×</button><span class="eyebrow">Add a source</span><h2 id="import-title">PDF or scanned pages</h2><p class="dialog-copy">Upload one selectable-text PDF, up to 25 MB, or up to 30 page photos. Imports stay in review until you approve them.</p><form id="import-form"><label>Document title<input name="title" minlength="3" maxlength="300" required /></label><label>Document type<select name="document_type"><option value="act">Act</option><option value="amendment">Amendment</option><option value="regulation">Regulation</option><option value="gazette">Gazette</option><option value="judgment">Judgment</option><option value="book">Book pages</option><option value="other">Other</option></select></label><label class="file-field">PDF or page photos<input name="files" type="file" accept="application/pdf,.pdf,image/jpeg,image/png,image/webp" multiple required /></label><p class="form-message" id="import-message" role="status"></p><button class="primary-button" type="submit">Extract for review</button></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
 </html>

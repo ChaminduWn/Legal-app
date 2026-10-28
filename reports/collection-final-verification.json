@@ -1,0 +1,20 @@
+{
+  "verified_original_paths": 595,
+  "unique_collection_pdfs": 578,
+  "collection_documents_with_text": 578,
+  "total_library_documents": 589,
+  "total_library_chunks": 12912,
+  "states": {
+    "duplicate_indexed": 15,
+    "imported": 408,
+    "ocr_imported": 172
+  },
+  "documents_with_blank_or_unreadable_pages": 40,
+  "documents_with_ocr_errors": 0,
+  "published_documents": 1,
+  "integrity": "ok",
+  "foreign_key_violations": [],
+  "keyword_index_matches": true,
+  "pre_normalization_backup": "D:\\legal-app-data\\backups\\before-collection-intake-20261027T163150290816.sqlite3",
+  "source_folders_removed": true
+}
