@@ -102,24 +102,99 @@ const languageCopy = {
   },
 };
 
+let dynamicSiteContent = null;
+
+async function fetchDynamicSiteContent() {
+  try {
+    const res = await fetch("/api/site-content");
+    if (res.ok) {
+      dynamicSiteContent = await res.json();
+      applyLanguage(currentLanguage);
+    }
+  } catch (err) {
+    console.warn("Using default site content:", err);
+  }
+}
+
 function applyLanguage(language) {
   currentLanguage = language;
   localStorage.setItem("neethi-language", language);
   document.documentElement.lang = language;
   const t = languageCopy[language];
-  document.querySelector(".brand small").textContent = t.subtitle;
-  document.querySelector(".hero h1").innerHTML = t.headline;
-  document.querySelector(".hero-copy").textContent = t.intro;
-  document.querySelector('label[for="question-input"]').textContent = t.label;
-  input.placeholder = t.placeholder;
-  document.querySelector(".privacy-note").textContent = t.privacy;
-  document.querySelector("#question-form .primary-button").textContent = t.submit;
-  document.querySelector("#suggestions-title").textContent = t.examplesTitle;
-  document.querySelectorAll(".suggestion-card").forEach((card, index) => {
-    card.querySelector("strong").textContent = t.examples[index][0];
-    card.querySelector("small").textContent = t.examples[index][1];
-    card.dataset.question = t.examples[index][2];
-  });
+  const dyn = dynamicSiteContent && dynamicSiteContent[language] ? dynamicSiteContent[language] : null;
+
+  if (dyn?.appName) {
+    const brandStrong = document.querySelector(".brand strong");
+    if (brandStrong) brandStrong.textContent = dyn.appName;
+  }
+  document.querySelector(".brand small").textContent = dyn?.subtitle || t.subtitle;
+  if (dyn?.appName || dyn?.subtitle) {
+    document.title = `${dyn?.appName || "Neethi"} — ${dyn?.subtitle || "Sri Lankan Legal Guide"}`;
+  }
+
+  const eyebrowElem = document.querySelector(".hero .eyebrow");
+  if (eyebrowElem && dyn?.eyebrow) {
+    eyebrowElem.innerHTML = `<span aria-hidden="true">✦</span> ${dyn.eyebrow}`;
+  }
+
+  document.querySelector(".hero h1").innerHTML = dyn?.headline || t.headline;
+  document.querySelector(".hero-copy").textContent = dyn?.intro || t.intro;
+  document.querySelector('label[for="question-input"]').textContent = dyn?.questionLabel || t.label;
+  input.placeholder = dyn?.placeholder || t.placeholder;
+  
+  const privacyNote = document.querySelector(".privacy-note");
+  if (privacyNote) {
+    const privText = dyn?.privacyNotice || (t.privacy ? t.privacy.replace(/^●\s*/, "") : "");
+    privacyNote.innerHTML = `<span aria-hidden="true">●</span> ${privText}`;
+  }
+
+  const submitBtn = document.querySelector("#question-form .primary-button");
+  if (submitBtn) {
+    const subText = dyn?.submitButton || t.submit;
+    submitBtn.innerHTML = `${subText.replace(/→\s*$/, "").trim()} <span aria-hidden="true">→</span>`;
+  }
+
+  document.querySelector("#suggestions-title").textContent = dyn?.examplesTitle || t.examplesTitle;
+  const exSubtitle = document.querySelector("#suggestions-title + span");
+  if (exSubtitle && dyn?.examplesSubtitle) exSubtitle.textContent = dyn.examplesSubtitle;
+
+  const cards = document.querySelectorAll(".suggestion-card");
+  if (dyn?.examples && Array.isArray(dyn.examples) && dyn.examples.length >= cards.length) {
+    cards.forEach((card, index) => {
+      card.querySelector("strong").textContent = dyn.examples[index].title;
+      card.querySelector("small").textContent = dyn.examples[index].desc;
+      card.dataset.question = dyn.examples[index].query;
+    });
+  } else {
+    cards.forEach((card, index) => {
+      card.querySelector("strong").textContent = t.examples[index][0];
+      card.querySelector("small").textContent = t.examples[index][1];
+      card.dataset.question = t.examples[index][2];
+    });
+  }
+
+  if (dyn?.aboutTitle) {
+    const h2 = document.querySelector("#about-dialog h2");
+    if (h2) h2.textContent = dyn.aboutTitle;
+  }
+  if (dyn?.aboutText) {
+    const p = document.querySelector("#about-dialog p");
+    if (p) p.textContent = dyn.aboutText;
+  }
+  if (dyn?.emergencyTitle) {
+    const str = document.querySelector("#about-dialog strong");
+    if (str) str.textContent = dyn.emergencyTitle;
+  }
+  if (dyn?.emergencyText) {
+    const pEmerg = document.querySelector("#about-dialog p:last-of-type");
+    if (pEmerg) pEmerg.textContent = dyn.emergencyText;
+  }
+  if (dyn?.footerDisclaimer) {
+    const footDisc = document.querySelector(".site-footer p:first-child");
+    if (footDisc) footDisc.textContent = dyn.footerDisclaimer;
+  }
+  document.querySelector(".site-footer p:last-child").textContent = dyn?.footerSources || t.footer;
+
   document.querySelector("#back-button").textContent = t.newQuestion;
   document.querySelector(".case-label").textContent = t.brief;
   document.querySelector(".question-summary > span").textContent = t.situation;
@@ -137,11 +212,11 @@ function applyLanguage(language) {
   document.querySelector("#ask-another-button").textContent = t.askAnother;
   document.querySelector(".error-state h2").textContent = t.failed;
   document.querySelector("#retry-button").textContent = t.retry;
-  document.querySelector(".site-footer p:last-child").textContent = t.footer;
   document.querySelectorAll("[data-language]").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.language === language));
   });
 }
+
 
 function setView(name) {
   welcomeView.hidden = name !== "welcome";
@@ -371,6 +446,7 @@ aboutDialog.addEventListener("click", (event) => {
 });
 
 applyLanguage(currentLanguage);
+fetchDynamicSiteContent();
 
 function formatLegalLocator(value) {
   return /^page[ -]?\d/i.test(value)

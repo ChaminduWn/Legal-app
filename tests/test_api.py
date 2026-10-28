@@ -142,3 +142,120 @@ def test_admin_library_exposes_publication_requirements_not_credentials(isolated
         assert response.json()['publication_policy']=={'mode':'development','require_source_details':False,'require_edition':False}
         assert 'admin_password' not in response.text
         assert 'session_secret' not in response.text
+
+
+def test_admin_change_password_flow(isolated_database):
+    with TestClient(app) as client:
+        # Unauthenticated change password fails
+        assert client.post('/api/admin/change-password', json={
+            'current_password': 'test',
+            'new_password': 'newpassword123',
+            'confirm_password': 'newpassword123'
+        }).status_code == 401
+
+        # Sign in
+        login_res = client.post('/admin/login', data={
+            'username': isolated_database.admin_username,
+            'password': isolated_database.admin_password
+        }, follow_redirects=False)
+        assert login_res.status_code == 303
+
+        # Mismatched passwords
+        mismatch_res = client.post('/api/admin/change-password', json={
+            'current_password': isolated_database.admin_password,
+            'new_password': 'newpassword123',
+            'confirm_password': 'differentpassword123'
+        })
+        assert mismatch_res.status_code == 400
+
+        # Wrong current password
+        wrong_res = client.post('/api/admin/change-password', json={
+            'current_password': 'incorrect-current-pass',
+            'new_password': 'newpassword123',
+            'confirm_password': 'newpassword123'
+        })
+        assert wrong_res.status_code == 400
+
+        # Successful change
+        success_res = client.post('/api/admin/change-password', json={
+            'current_password': isolated_database.admin_password,
+            'new_password': 'brand-new-secure-password-2026',
+            'confirm_password': 'brand-new-secure-password-2026'
+        })
+        assert success_res.status_code == 200
+        assert success_res.json()['status'] == 'ok'
+
+        # Logout
+        client.post('/admin/logout')
+
+        # Old password must now fail
+        old_login = client.post('/admin/login', data={
+            'username': isolated_database.admin_username,
+            'password': isolated_database.admin_password
+        }, follow_redirects=False)
+        assert old_login.status_code == 303
+        assert 'error=1' in old_login.headers.get('location', '')
+
+        # New password must succeed
+        new_login = client.post('/admin/login', data={
+            'username': isolated_database.admin_username,
+            'password': 'brand-new-secure-password-2026'
+        }, follow_redirects=False)
+        assert new_login.status_code == 303
+        assert '/admin/documents' in new_login.headers.get('location', '')
+
+
+def test_site_content_dynamic_endpoints(isolated_database):
+    with TestClient(app) as client:
+        # Public endpoint
+        initial = client.get('/api/site-content')
+        assert initial.status_code == 200
+        data = initial.json()
+        assert 'en' in data and 'si' in data
+        assert data['en']['appName'] == 'Neethi'
+
+        # Admin update requires authentication
+        assert client.put('/api/admin/site-content', json={'en': {}, 'si': {}}).status_code == 401
+
+        # Sign in
+        client.post('/admin/login', data={
+            'username': isolated_database.admin_username,
+            'password': isolated_database.admin_password
+        })
+
+        # Update content
+        data['en']['appName'] = 'Custom Sri Lankan Legal AI'
+        data['en']['headline'] = 'New Dynamic Headline'
+        update_res = client.put('/api/admin/site-content', json=data)
+        assert update_res.status_code == 200
+        assert update_res.json()['status'] == 'ok'
+
+        # Verify public endpoint reflects updated content
+        updated = client.get('/api/site-content').json()
+        assert updated['en']['appName'] == 'Custom Sri Lankan Legal AI'
+        assert updated['en']['headline'] == 'New Dynamic Headline'
+
+        # Reset to defaults
+        reset_res = client.post('/api/admin/site-content/reset')
+        assert reset_res.status_code == 200
+        reset_data = client.get('/api/site-content').json()
+        assert reset_data['en']['appName'] == 'Neethi'
+
+
+def test_admin_login_redirect_when_already_authenticated(isolated_database):
+    with TestClient(app) as client:
+        # When not signed in, /admin/login returns login HTML
+        unauthed = client.get('/admin/login')
+        assert unauthed.status_code == 200
+        assert 'Admin sign in' in unauthed.text
+
+        # Sign in
+        client.post('/admin/login', data={
+            'username': isolated_database.admin_username,
+            'password': isolated_database.admin_password
+        })
+
+        # When already signed in, /admin/login redirects to /admin/documents
+        authed = client.get('/admin/login', follow_redirects=False)
+        assert authed.status_code == 303
+        assert authed.headers.get('location') == '/admin/documents'

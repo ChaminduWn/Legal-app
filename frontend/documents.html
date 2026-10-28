@@ -12,9 +12,12 @@
 <body class="review-shell">
   <a class="skip-link" href="#review-workspace">Skip to review</a>
   <header class="review-topbar">
-    <a class="brand" href="/" data-leave><span class="brand-mark" aria-hidden="true">නී</span><span><strong>Neethi</strong><small>Review workspace</small></span></a>
+    <a class="brand" href="/admin/documents" id="admin-brand"><span class="brand-mark" aria-hidden="true">නී</span><span><strong>Neethi</strong><small>Review workspace</small></span></a>
     <div class="review-actions">
+      <a href="/" target="_blank" rel="noopener" class="public-site-link">View public site ↗</a>
       <a href="/evaluation" data-leave>Search evaluation</a>
+      <button class="secondary-button compact" id="site-content-button" type="button" data-lock>Site content</button>
+      <button class="secondary-button compact" id="change-password-button" type="button" data-lock>Change password</button>
       <button class="secondary-button compact" id="refresh-button" type="button" data-lock>Refresh</button>
       <button class="primary-button compact" id="import-button" type="button" data-lock>Add document</button>
       <form method="post" action="/admin/logout" data-leave><button class="text-button" type="submit">Log out</button></form>
@@ -100,6 +103,166 @@
     </form>
   </dialog>
   <dialog class="review-dialog" id="import-dialog" aria-labelledby="import-title"><button class="dialog-close" data-close="import-dialog" type="button" aria-label="Close import">×</button><span class="eyebrow">Add a source</span><h2 id="import-title">PDF or scanned pages</h2><p class="dialog-copy">Upload one selectable-text PDF, up to 25 MB, or up to 30 page photos. Imports stay in review until you approve them.</p><form id="import-form"><label>Document title<input name="title" minlength="3" maxlength="300" required /></label><label>Document type<select name="document_type"><option value="act">Act</option><option value="amendment">Amendment</option><option value="regulation">Regulation</option><option value="gazette">Gazette</option><option value="judgment">Judgment</option><option value="book">Book pages</option><option value="other">Other</option></select></label><label class="file-field">PDF or page photos<input name="files" type="file" accept="application/pdf,.pdf,image/jpeg,image/png,image/webp" multiple required /></label><p class="form-message" id="import-message" role="status"></p><button class="primary-button" type="submit">Extract for review</button></form></dialog>
+
+  <dialog class="review-dialog" id="change-password-dialog" aria-labelledby="change-password-title">
+    <button class="dialog-close" data-close="change-password-dialog" type="button" aria-label="Close change password">×</button>
+    <span class="eyebrow">Admin security</span>
+    <h2 id="change-password-title">Change admin password</h2>
+    <p class="dialog-copy">Update the admin account credentials. Password must be at least 8 characters long.</p>
+    <form id="change-password-form">
+      <label>Current password
+        <input id="current-password" type="password" autocomplete="current-password" required />
+      </label>
+      <div class="dialog-grid">
+        <label>New password
+          <input id="new-password" type="password" minlength="8" autocomplete="new-password" required />
+        </label>
+        <label>Confirm new password
+          <input id="confirm-password" type="password" minlength="8" autocomplete="new-password" required />
+        </label>
+      </div>
+      <p id="password-message" class="form-message" role="alert" hidden></p>
+      <div class="dialog-footer">
+        <button class="secondary-button" type="button" data-close="change-password-dialog">Cancel</button>
+        <button class="primary-button" id="change-password-submit" type="submit">Update password</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="review-dialog site-content-dialog" id="site-content-dialog" aria-labelledby="site-content-title">
+    <button class="dialog-close" data-close="site-content-dialog" type="button" aria-label="Close site content editor">×</button>
+    <span class="eyebrow">Website customization</span>
+    <h2 id="site-content-title">Customize Home &amp; Site Content</h2>
+    <p class="dialog-copy">Modify the public text, headlines, situation examples, and information across the application.</p>
+    
+    <div class="site-content-tabs" role="tablist" aria-label="Content language">
+      <button type="button" class="tab-button active" id="tab-lang-en" role="tab" aria-selected="true" data-tab-lang="en">English (EN)</button>
+      <button type="button" class="tab-button" id="tab-lang-si" role="tab" aria-selected="false" data-tab-lang="si">Sinhala (සිංහල)</button>
+    </div>
+
+    <form id="site-content-form">
+      <fieldset class="content-fieldset">
+        <legend>Branding &amp; Topbar</legend>
+        <div class="dialog-grid">
+          <label>App Name
+            <input id="sc-appName" required />
+          </label>
+          <label>Subtitle / Tagline
+            <input id="sc-subtitle" required />
+          </label>
+        </div>
+        <label>Eyebrow badge text
+          <input id="sc-eyebrow" required />
+        </label>
+      </fieldset>
+
+      <fieldset class="content-fieldset">
+        <legend>Hero Section</legend>
+        <label>Main Headline (supports HTML like &lt;br&gt; and &lt;em&gt;)
+          <input id="sc-headline" required />
+        </label>
+        <label>Introduction paragraph
+          <textarea id="sc-intro" rows="3" required></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset class="content-fieldset">
+        <legend>Question &amp; Search Input</legend>
+        <div class="dialog-grid">
+          <label>Question label
+            <input id="sc-questionLabel" required />
+          </label>
+          <label>Search button text
+            <input id="sc-submitButton" required />
+          </label>
+        </div>
+        <label>Input placeholder
+          <input id="sc-placeholder" required />
+        </label>
+        <label>Privacy notice
+          <input id="sc-privacyNotice" required />
+        </label>
+      </fieldset>
+
+      <fieldset class="content-fieldset">
+        <legend>Example Situations</legend>
+        <div class="dialog-grid">
+          <label>Section Title
+            <input id="sc-examplesTitle" required />
+          </label>
+          <label>Section Subtitle
+            <input id="sc-examplesSubtitle" required />
+          </label>
+        </div>
+        
+        <details class="form-disclosure" open>
+          <summary>Example 1</summary>
+          <div class="dialog-grid">
+            <label>Title<input id="sc-ex1-title" required /></label>
+            <label>Short Description<input id="sc-ex1-desc" required /></label>
+          </div>
+          <label>Search Query<input id="sc-ex1-query" required /></label>
+        </details>
+
+        <details class="form-disclosure" open>
+          <summary>Example 2</summary>
+          <div class="dialog-grid">
+            <label>Title<input id="sc-ex2-title" required /></label>
+            <label>Short Description<input id="sc-ex2-desc" required /></label>
+          </div>
+          <label>Search Query<input id="sc-ex2-query" required /></label>
+        </details>
+
+        <details class="form-disclosure" open>
+          <summary>Example 3</summary>
+          <div class="dialog-grid">
+            <label>Title<input id="sc-ex3-title" required /></label>
+            <label>Short Description<input id="sc-ex3-desc" required /></label>
+          </div>
+          <label>Search Query<input id="sc-ex3-query" required /></label>
+        </details>
+      </fieldset>
+
+      <fieldset class="content-fieldset">
+        <legend>About &amp; Emergency Dialogs</legend>
+        <label>About Modal Title
+          <input id="sc-aboutTitle" required />
+        </label>
+        <label>About Modal Explanation
+          <textarea id="sc-aboutText" rows="3" required></textarea>
+        </label>
+        <div class="dialog-grid">
+          <label>Emergency Section Title
+            <input id="sc-emergencyTitle" required />
+          </label>
+          <label>Emergency Text
+            <input id="sc-emergencyText" required />
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="content-fieldset">
+        <legend>Footer</legend>
+        <div class="dialog-grid">
+          <label>Footer Disclaimer
+            <input id="sc-footerDisclaimer" required />
+          </label>
+          <label>Footer Sources Note
+            <input id="sc-footerSources" required />
+          </label>
+        </div>
+      </fieldset>
+
+      <p id="site-content-message" class="form-message" role="alert" hidden></p>
+      
+      <div class="dialog-footer">
+        <button class="secondary-button" id="site-content-reset" type="button">Reset to defaults</button>
+        <button class="secondary-button" type="button" data-close="site-content-dialog">Cancel</button>
+        <button class="primary-button" id="site-content-save" type="submit">Save site content</button>
+      </div>
+    </form>
+  </dialog>
+
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 </body>
 </html>

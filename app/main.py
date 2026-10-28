@@ -38,6 +38,7 @@ from app.models import (
     SectionReviewUpdate,
     LegalRelationship,
     AuditEvent,
+    ChangePasswordRequest,
 )
 from app.rag.extract import extract_pdf, extract_images
 from app.rag.store import (
@@ -50,7 +51,8 @@ from app.rag.store import (
 from app.services.legal_answer import answer_question
 from app.services.language import detect_language
 from app.services.query_analysis import assess_query
-from app.auth import COOKIE_NAME, create_session, valid_credentials, valid_session
+from app.auth import COOKIE_NAME, create_session, valid_credentials, valid_session, update_admin_password
+from app.site_content import get_site_content, save_site_content, reset_site_content
 
 
 @asynccontextmanager
@@ -103,14 +105,16 @@ def document_admin_frontend() -> FileResponse:
 
 
 @app.get("/admin/login", include_in_schema=False)
-def admin_login_frontend() -> FileResponse:
+def admin_login_frontend(request: Request):
+    if valid_session(request.cookies.get(COOKIE_NAME), get_settings()):
+        return RedirectResponse("/admin/documents", status_code=303)
     return FileResponse(FRONTEND_DIR / "admin-login.html")
 
 
 @app.post("/admin/login", include_in_schema=False)
 def admin_login(username: str = Form(), password: str = Form()):
     settings = get_settings()
-    if not valid_credentials(username, password, settings):
+    if not valid_credentials(username, password, settings, database=settings.legal_ai_database):
         return RedirectResponse("/admin/login?error=1", status_code=303)
     response = RedirectResponse("/admin/documents", status_code=303)
     response.set_cookie(COOKIE_NAME, create_session(username, settings), max_age=settings.admin_session_hours * 3600, httponly=True, samesite="strict", secure=settings.environment == "production", path="/")
@@ -272,6 +276,46 @@ def admin_library_status():
 def admin_topics():
     with connect(get_settings().legal_ai_database) as connection:
         return [dict(row) for row in connection.execute("SELECT * FROM legal_topics ORDER BY name")]
+
+
+@app.get("/api/site-content")
+def read_site_content():
+    return get_site_content(get_settings().legal_ai_database)
+
+
+@app.post("/api/admin/change-password")
+def admin_change_password(request: ChangePasswordRequest, req: Request):
+    settings = get_settings()
+    token = req.cookies.get(COOKIE_NAME)
+    if not valid_session(token, settings):
+        raise HTTPException(status_code=401, detail="Admin sign-in required.")
+    if request.new_password != request.confirm_password:
+        raise HTTPException(status_code=400, detail="New passwords do not match.")
+    try:
+        update_admin_password(
+            settings.legal_ai_database,
+            settings.admin_username,
+            request.current_password,
+            request.new_password,
+            settings,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+    return {"status": "ok", "message": "Password changed successfully."}
+
+
+@app.put("/api/admin/site-content")
+def update_admin_site_content(content: dict):
+    if not isinstance(content, dict) or "en" not in content or "si" not in content:
+        raise HTTPException(status_code=400, detail="Invalid site content format. Both 'en' and 'si' are required.")
+    saved = save_site_content(get_settings().legal_ai_database, content)
+    return {"status": "ok", "content": saved}
+
+
+@app.post("/api/admin/site-content/reset")
+def reset_admin_site_content():
+    saved = reset_site_content(get_settings().legal_ai_database)
+    return {"status": "ok", "content": saved}
 
 
 def commit_import(settings, source_file, chunks, document_type, method, confidence, warnings, assets):

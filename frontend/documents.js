@@ -257,7 +257,7 @@ $("import-form").addEventListener("submit", async event => {
 });
 function closeDialog(dialog) {
   if (state.busy) return;
-  const dirty = dialog.id === "metadata-dialog" ? metadataDirty() : Array.from($("import-form").elements).some(e => e.type === "file" ? e.files.length : e.tagName === "INPUT" && e.value);
+  const dirty = dialog.id === "metadata-dialog" ? metadataDirty() : dialog.id === "import-dialog" ? Array.from($("import-form").elements).some(e => e.type === "file" ? e.files.length : e.tagName === "INPUT" && e.value) : false;
   if (!dirty || window.confirm("Discard the unsaved information in this dialog?")) dialog.close();
 }
 document.querySelectorAll("dialog").forEach(dialog => dialog.addEventListener("cancel", event => { event.preventDefault(); closeDialog(dialog); }));
@@ -279,9 +279,256 @@ $("refresh-button").addEventListener("click", async () => {
   try { await loadCollection(); const d = state.documents.find(d => d.source_file === source); if (d) await selectDocument(d, { skipGuard: true, sectionId }); showToast("Collection refreshed."); }
   catch (error) { showToast(error.message); }
 });
+
+// Change Password functionality
+$("change-password-button").addEventListener("click", () => {
+  if (!allowLeave()) return;
+  $("change-password-form").reset();
+  const msg = $("password-message");
+  msg.hidden = true;
+  msg.textContent = "";
+  msg.className = "form-message";
+  $("change-password-dialog").showModal();
+});
+
+$("change-password-form").addEventListener("submit", async event => {
+  event.preventDefault();
+  if (state.busy) return;
+  const current_password = $("current-password").value;
+  const new_password = $("new-password").value;
+  const confirm_password = $("confirm-password").value;
+  const msg = $("password-message");
+
+  if (new_password !== confirm_password) {
+    msg.textContent = "New passwords do not match.";
+    msg.className = "form-message error";
+    msg.hidden = false;
+    return;
+  }
+  if (new_password.length < 8) {
+    msg.textContent = "New password must be at least 8 characters long.";
+    msg.className = "form-message error";
+    msg.hidden = false;
+    return;
+  }
+
+  try {
+    setBusy(true);
+    $("change-password-submit").textContent = "Updating…";
+    const res = await request("/api/admin/change-password", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ current_password, new_password, confirm_password }),
+    });
+    $("change-password-dialog").close();
+    $("change-password-form").reset();
+    showToast(res.message || "Password changed successfully.");
+  } catch (error) {
+    msg.textContent = error.message;
+    msg.className = "form-message error";
+    msg.hidden = false;
+  } finally {
+    setBusy(false);
+    $("change-password-submit").textContent = "Update password";
+  }
+});
+
+// Site Content customization
+const siteContentState = {
+  data: null,
+  lang: "en",
+};
+
+function readSiteContentFromForm(lang) {
+  if (!siteContentState.data) return;
+  siteContentState.data[lang] = {
+    ...siteContentState.data[lang],
+    appName: $("sc-appName").value.trim(),
+    subtitle: $("sc-subtitle").value.trim(),
+    eyebrow: $("sc-eyebrow").value.trim(),
+    headline: $("sc-headline").value.trim(),
+    intro: $("sc-intro").value.trim(),
+    questionLabel: $("sc-questionLabel").value.trim(),
+    submitButton: $("sc-submitButton").value.trim(),
+    placeholder: $("sc-placeholder").value.trim(),
+    privacyNotice: $("sc-privacyNotice").value.trim(),
+    examplesTitle: $("sc-examplesTitle").value.trim(),
+    examplesSubtitle: $("sc-examplesSubtitle").value.trim(),
+    examples: [
+      {
+        title: $("sc-ex1-title").value.trim(),
+        desc: $("sc-ex1-desc").value.trim(),
+        query: $("sc-ex1-query").value.trim(),
+      },
+      {
+        title: $("sc-ex2-title").value.trim(),
+        desc: $("sc-ex2-desc").value.trim(),
+        query: $("sc-ex2-query").value.trim(),
+      },
+      {
+        title: $("sc-ex3-title").value.trim(),
+        desc: $("sc-ex3-desc").value.trim(),
+        query: $("sc-ex3-query").value.trim(),
+      },
+    ],
+    aboutTitle: $("sc-aboutTitle").value.trim(),
+    aboutText: $("sc-aboutText").value.trim(),
+    emergencyTitle: $("sc-emergencyTitle").value.trim(),
+    emergencyText: $("sc-emergencyText").value.trim(),
+    footerDisclaimer: $("sc-footerDisclaimer").value.trim(),
+    footerSources: $("sc-footerSources").value.trim(),
+  };
+}
+
+function populateSiteContentForm(lang) {
+  if (!siteContentState.data || !siteContentState.data[lang]) return;
+  const c = siteContentState.data[lang];
+  $("sc-appName").value = c.appName || "";
+  $("sc-subtitle").value = c.subtitle || "";
+  $("sc-eyebrow").value = c.eyebrow || "";
+  $("sc-headline").value = c.headline || "";
+  $("sc-intro").value = c.intro || "";
+  $("sc-questionLabel").value = c.questionLabel || "";
+  $("sc-submitButton").value = c.submitButton || "";
+  $("sc-placeholder").value = c.placeholder || "";
+  $("sc-privacyNotice").value = c.privacyNotice || "";
+  $("sc-examplesTitle").value = c.examplesTitle || "";
+  $("sc-examplesSubtitle").value = c.examplesSubtitle || "";
+  
+  const ex = c.examples || [];
+  $("sc-ex1-title").value = ex[0]?.title || "";
+  $("sc-ex1-desc").value = ex[0]?.desc || "";
+  $("sc-ex1-query").value = ex[0]?.query || "";
+
+  $("sc-ex2-title").value = ex[1]?.title || "";
+  $("sc-ex2-desc").value = ex[1]?.desc || "";
+  $("sc-ex2-query").value = ex[1]?.query || "";
+
+  $("sc-ex3-title").value = ex[2]?.title || "";
+  $("sc-ex3-desc").value = ex[2]?.desc || "";
+  $("sc-ex3-query").value = ex[2]?.query || "";
+
+  $("sc-aboutTitle").value = c.aboutTitle || "";
+  $("sc-aboutText").value = c.aboutText || "";
+  $("sc-emergencyTitle").value = c.emergencyTitle || "";
+  $("sc-emergencyText").value = c.emergencyText || "";
+  $("sc-footerDisclaimer").value = c.footerDisclaimer || "";
+  $("sc-footerSources").value = c.footerSources || "";
+
+  document.querySelectorAll(".site-content-tabs .tab-button").forEach(btn => {
+    const active = btn.dataset.tabLang === lang;
+    btn.classList.toggle("active", active);
+    btn.setAttribute("aria-selected", String(active));
+  });
+}
+
+async function openSiteContentDialog() {
+  const msg = $("site-content-message");
+  msg.hidden = true;
+  msg.textContent = "";
+  msg.className = "form-message";
+  try {
+    setBusy(true);
+    const content = await request("/api/site-content");
+    siteContentState.data = content;
+    siteContentState.lang = "en";
+    populateSiteContentForm("en");
+    $("site-content-dialog").showModal();
+  } catch (error) {
+    showToast(error.message);
+  } finally {
+    setBusy(false);
+  }
+}
+
+$("site-content-button").addEventListener("click", () => {
+  if (allowLeave()) openSiteContentDialog();
+});
+
+document.querySelectorAll(".site-content-tabs .tab-button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const targetLang = btn.dataset.tabLang;
+    if (targetLang === siteContentState.lang) return;
+    readSiteContentFromForm(siteContentState.lang);
+    siteContentState.lang = targetLang;
+    populateSiteContentForm(targetLang);
+  });
+});
+
+$("site-content-form").addEventListener("submit", async event => {
+  event.preventDefault();
+  if (state.busy) return;
+  readSiteContentFromForm(siteContentState.lang);
+  const msg = $("site-content-message");
+  msg.hidden = true;
+  try {
+    setBusy(true);
+    $("site-content-save").textContent = "Saving…";
+    const res = await request("/api/admin/site-content", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(siteContentState.data),
+    });
+    siteContentState.data = res.content || siteContentState.data;
+    populateSiteContentForm(siteContentState.lang);
+    msg.textContent = "Site content saved successfully! Changes are live on the user pages.";
+    msg.className = "form-message success";
+    msg.hidden = false;
+    showToast("Site content updated successfully.");
+  } catch (error) {
+    msg.textContent = error.message;
+    msg.className = "form-message error";
+    msg.hidden = false;
+  } finally {
+    setBusy(false);
+    $("site-content-save").textContent = "Save site content";
+  }
+});
+
+$("site-content-reset").addEventListener("click", async () => {
+  if (state.busy) return;
+  if (!window.confirm("Reset all site content back to the system defaults? Your current modifications will be replaced.")) return;
+  const msg = $("site-content-message");
+  msg.hidden = true;
+  try {
+    setBusy(true);
+    const res = await request("/api/admin/site-content/reset", { method: "POST" });
+    siteContentState.data = res.content;
+    populateSiteContentForm(siteContentState.lang);
+    msg.textContent = "Site content reset to default values.";
+    msg.className = "form-message success";
+    msg.hidden = false;
+    showToast("Site content restored to defaults.");
+  } catch (error) {
+    msg.textContent = error.message;
+    msg.className = "form-message error";
+    msg.hidden = false;
+  } finally {
+    setBusy(false);
+  }
+});
+
+$("admin-brand").addEventListener("click", event => {
+  if (!allowLeave()) {
+    event.preventDefault();
+    return;
+  }
+  if (window.location.pathname === "/admin/documents") {
+    event.preventDefault();
+    state.activeDocument = null;
+    state.activeSection = null;
+    state.sectionSnapshot = "";
+    $("workspace-content").hidden = true;
+    $("workspace-empty").hidden = false;
+    resetFilters();
+    renderDocuments();
+  }
+});
+
 loadCollection().catch(error => { $("queue-message").textContent = `Could not load the collection: ${error.message} Use Refresh to retry.`; showToast(error.message); });
 
 const topbar = document.querySelector(".review-topbar");
 if (typeof ResizeObserver !== "undefined") new ResizeObserver(() => {
   document.documentElement.style.setProperty("--review-topbar-height", `${topbar.getBoundingClientRect().height}px`);
 }).observe(topbar);
+

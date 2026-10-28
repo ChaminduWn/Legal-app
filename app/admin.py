@@ -13,11 +13,15 @@ from app.models import (
 )
 from app.rag.store import connect, initialize
 from app.catalog import save_version
+from app.auth import initialize_auth_table
+from app.site_content import initialize_site_content
 
 
 def initialize_admin(database: Path) -> None:
     initialize(database)
     with connect(database) as connection:
+        initialize_auth_table(connection)
+        initialize_site_content(connection)
         connection.executescript(
             """
             CREATE TABLE IF NOT EXISTS document_metadata (

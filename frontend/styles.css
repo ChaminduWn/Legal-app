@@ -322,8 +322,10 @@ h1 em {
 .primary-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 1.1rem;
-  padding: 0.9rem 1.2rem 0.9rem 1.35rem;
+  padding: 0.9rem 1.2rem;
   border: 1px solid var(--ink);
   color: #fff;
   background: var(--ink);
