@@ -1,12 +1,12 @@
 import re
 from contextlib import nullcontext
-import sqlite3
 from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
 
 from app.config import get_settings
+from app.db import connect, is_postgres
 from app.catalog import initialize_catalog, migrate_chunk_foreign_key
 from app.models import LegalSource
 from app.services.language import retrieval_query
@@ -44,17 +44,10 @@ LEGAL_EXPANSIONS = {
 }
 
 
-def connect(database: Path) -> sqlite3.Connection:
-    database.parent.mkdir(parents=True, exist_ok=True)
-    connection = sqlite3.connect(database)
-    connection.row_factory = sqlite3.Row
-    connection.execute("PRAGMA foreign_keys=ON")
-    connection.execute("PRAGMA busy_timeout=10000")
-    return connection
-
-
 def initialize(database: Path) -> None:
     with connect(database) as connection:
+        if is_postgres(connection):
+            return
         initialize_catalog(connection)
         connection.executescript(
             """
@@ -92,13 +85,16 @@ def initialize(database: Path) -> None:
         )
 
     with connect(database) as connection:
+        if is_postgres(connection):
+            return
         columns = {r[1] for r in connection.execute("PRAGMA table_info(document_metadata)")}
         for name in ("publication_date", "effective_date", "official_source_url"):
             if name not in columns:
                 connection.execute(f"ALTER TABLE document_metadata ADD COLUMN {name} TEXT")
     migrate_chunk_foreign_key(database)
     with connect(database) as connection:
-        connection.execute("CREATE INDEX IF NOT EXISTS chunks_document ON legal_chunks(source_file)")
+        if not is_postgres(connection):
+            connection.execute("CREATE INDEX IF NOT EXISTS chunks_document ON legal_chunks(source_file)")
 
 
 def replace_chunks(database: Path, chunks: list[LegalChunk]) -> None:
@@ -107,12 +103,14 @@ def replace_chunks(database: Path, chunks: list[LegalChunk]) -> None:
         if connection.execute("SELECT 1 FROM legal_chunks LIMIT 1").fetchone():
             raise ValueError("Refusing to reset a nonempty legal library. Import documents individually to preserve history and reviews.")
         connection.execute("DELETE FROM legal_embeddings")
-        if connection.execute("SELECT 1 FROM sqlite_master WHERE name='section_reviews'").fetchone():
-            connection.execute("DELETE FROM section_reviews")
+        connection.execute("DELETE FROM section_reviews")
         connection.execute("DELETE FROM legal_chunks")
-        connection.execute("DELETE FROM legal_chunks_fts")
-        connection.execute("DELETE FROM legal_embeddings")
-        connection.executemany("INSERT INTO document_records(source_file,title) VALUES (?,?) ON CONFLICT(source_file) DO UPDATE SET title=excluded.title", [(c.source_file,c.law) for c in chunks])
+        if not is_postgres(connection):
+            connection.execute("DELETE FROM legal_chunks_fts")
+        connection.executemany(
+            "INSERT INTO document_records(source_file,title) VALUES (?,?) ON CONFLICT(source_file) DO UPDATE SET title=excluded.title",
+            [(c.source_file, c.law) for c in chunks]
+        )
         connection.executemany(
             """
             INSERT INTO legal_chunks VALUES (?, ?, ?, ?, ?, ?, ?, ?)
@@ -131,13 +129,14 @@ def replace_chunks(database: Path, chunks: list[LegalChunk]) -> None:
                 for item in chunks
             ],
         )
-        connection.executemany(
-            "INSERT INTO legal_chunks_fts VALUES (?, ?, ?, ?, ?)",
-            [
-                (item.source_id, item.law, item.section, item.heading, item.text)
-                for item in chunks
-            ],
-        )
+        if not is_postgres(connection):
+            connection.executemany(
+                "INSERT INTO legal_chunks_fts VALUES (?, ?, ?, ?, ?)",
+                [
+                    (item.source_id, item.law, item.section, item.heading, item.text)
+                    for item in chunks
+                ],
+            )
 
 
 def replace_document_chunks(
@@ -154,25 +153,33 @@ def replace_document_chunks(
             )
         ]
         if existing_ids:
-            if connection.execute("SELECT 1 FROM sqlite_master WHERE name='section_reviews'").fetchone():
-                connection.execute("DELETE FROM section_reviews WHERE source_id IN (SELECT source_id FROM legal_chunks WHERE source_file=?)", (source_file,))
+            connection.execute(
+                "DELETE FROM section_reviews WHERE source_id IN (SELECT source_id FROM legal_chunks WHERE source_file=?)",
+                (source_file,)
+            )
             connection.execute("UPDATE document_metadata SET status='in_review' WHERE source_file=?", (source_file,))
             placeholders = ",".join("?" for _ in existing_ids)
             connection.execute(
                 f"DELETE FROM legal_embeddings WHERE source_id IN ({placeholders})",
                 existing_ids,
             )
-            connection.execute(
-                f"DELETE FROM legal_chunks_fts WHERE source_id IN ({placeholders})",
-                existing_ids,
-            )
+            if not is_postgres(connection):
+                connection.execute(
+                    f"DELETE FROM legal_chunks_fts WHERE source_id IN ({placeholders})",
+                    existing_ids,
+                )
             connection.execute(
                 f"DELETE FROM legal_chunks WHERE source_id IN ({placeholders})",
                 existing_ids,
             )
-        connection.executemany("INSERT INTO document_records(source_file,title) VALUES (?,?) ON CONFLICT(source_file) DO UPDATE SET title=excluded.title", [(c.source_file,c.law) for c in chunks])
         connection.executemany(
-            "INSERT INTO legal_chunks VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            "INSERT INTO document_records(source_file,title) VALUES (?,?) ON CONFLICT(source_file) DO UPDATE SET title=excluded.title",
+            [(c.source_file, c.law) for c in chunks]
+        )
+        connection.executemany(
+            """
+            INSERT INTO legal_chunks VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """,
             [
                 (
                     item.source_id,
@@ -187,17 +194,19 @@ def replace_document_chunks(
                 for item in chunks
             ],
         )
-        connection.executemany(
-            "INSERT INTO legal_chunks_fts VALUES (?, ?, ?, ?, ?)",
-            [
-                (item.source_id, item.law, item.section, item.heading, item.text)
-                for item in chunks
-            ],
-        )
+        if not is_postgres(connection):
+            connection.executemany(
+                "INSERT INTO legal_chunks_fts VALUES (?, ?, ?, ?, ?)",
+                [
+                    (item.source_id, item.law, item.section, item.heading, item.text)
+                    for item in chunks
+                ],
+            )
 
 
 def _keyword_search(database: Path, query: str, limit: int, as_of: str | None = None) -> list[LegalSource]:
-    if not database.exists():
+    settings = get_settings()
+    if not settings.database_url and not database.exists():
         return []
     original_terms = [
         token.lower()
@@ -210,27 +219,51 @@ def _keyword_search(database: Path, query: str, limit: int, as_of: str | None = 
     terms = sorted(expanded_terms)
     if not terms:
         return []
-    fts_query = " OR ".join(f'"{term}"' for term in terms[:24])
+
     with connect(database) as connection:
-        rows = connection.execute(
-            """
-            SELECT c.*, v.edition_year, v.valid_from, v.valid_to, v.instrument_id, m.publication_date, m.effective_date, bm25(legal_chunks_fts, 0, 3, 2, 1, 1) AS rank
-            FROM legal_chunks_fts
-            JOIN legal_chunks c USING (source_id)
-            LEFT JOIN document_metadata m USING (source_file)
-            LEFT JOIN document_versions v USING (source_file)
-            WHERE legal_chunks_fts MATCH ?
-              AND m.status = 'verified'
-              AND (? = 0 OR (v.source_file IS NOT NULL AND m.official_source_url IS NOT NULL
-                   AND m.publication_date IS NOT NULL AND m.effective_date IS NOT NULL))
-              AND ((v.source_file IS NULL AND ? IS NULL) OR
-                   (v.valid_from <= COALESCE(?, date('now')) AND
-                    (v.valid_to IS NULL OR v.valid_to > COALESCE(?, date('now')))))
-            ORDER BY rank
-            LIMIT ?
-            """,
-            (fts_query, int(get_settings().environment == "production"), as_of, as_of, as_of, limit),
-        ).fetchall()
+        if is_postgres(connection):
+            search_query = " ".join(terms[:24])
+            rows = connection.execute(
+                """
+                SELECT c.*, v.edition_year, v.valid_from, v.valid_to, v.instrument_id, m.publication_date, m.effective_date,
+                       ts_rank(c.search_vector, plainto_tsquery('simple', ?)) AS rank
+                FROM legal_chunks c
+                LEFT JOIN document_metadata m USING (source_file)
+                LEFT JOIN document_versions v USING (source_file)
+                WHERE c.search_vector @@ plainto_tsquery('simple', ?)
+                  AND m.status = 'verified'
+                  AND (? = 0 OR (v.source_file IS NOT NULL AND m.official_source_url IS NOT NULL
+                       AND m.publication_date IS NOT NULL AND m.effective_date IS NOT NULL))
+                  AND ((v.source_file IS NULL AND ?::text IS NULL) OR
+                       (v.valid_from <= COALESCE(?::text, CURRENT_DATE::text) AND
+                        (v.valid_to IS NULL OR v.valid_to > COALESCE(?::text, CURRENT_DATE::text))))
+                ORDER BY rank DESC
+                LIMIT ?
+                """,
+                (search_query, search_query, int(settings.environment == "production"), as_of, as_of, as_of, limit),
+            ).fetchall()
+        else:
+            fts_query = " OR ".join(f'"{term}"' for term in terms[:24])
+            rows = connection.execute(
+                """
+                SELECT c.*, v.edition_year, v.valid_from, v.valid_to, v.instrument_id, m.publication_date, m.effective_date, bm25(legal_chunks_fts, 0, 3, 2, 1, 1) AS rank
+                FROM legal_chunks_fts
+                JOIN legal_chunks c USING (source_id)
+                LEFT JOIN document_metadata m USING (source_file)
+                LEFT JOIN document_versions v USING (source_file)
+                WHERE legal_chunks_fts MATCH ?
+                  AND m.status = 'verified'
+                  AND (? = 0 OR (v.source_file IS NOT NULL AND m.official_source_url IS NOT NULL
+                       AND m.publication_date IS NOT NULL AND m.effective_date IS NOT NULL))
+                  AND ((v.source_file IS NULL AND ? IS NULL) OR
+                       (v.valid_from <= COALESCE(?, date('now')) AND
+                        (v.valid_to IS NULL OR v.valid_to > COALESCE(?, date('now')))))
+                ORDER BY rank
+                LIMIT ?
+                """,
+                (fts_query, int(settings.environment == "production"), as_of, as_of, as_of, limit),
+            ).fetchall()
+
     if not rows:
         return []
     return [
@@ -346,16 +379,20 @@ def reciprocal_rank_fusion(
 
 
 def has_semantic_index(database: Path) -> bool:
-    if not database.exists():
+    settings = get_settings()
+    if not settings.database_url and not database.exists():
         return False
     initialize(database)
-    model = get_settings().legal_ai_embedding_model
-    with connect(database) as connection:
-        count = connection.execute(
-            "SELECT COUNT(*) FROM legal_embeddings WHERE model = ?",
-            (model,),
-        ).fetchone()[0]
-    return count > 0
+    model = settings.legal_ai_embedding_model
+    try:
+        with connect(database) as connection:
+            count = connection.execute(
+                "SELECT COUNT(*) FROM legal_embeddings WHERE model = ?",
+                (model,),
+            ).fetchone()[0]
+        return count > 0
+    except Exception:
+        return False
 
 
 def retrieval_mode(database: Path) -> str:

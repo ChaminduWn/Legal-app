@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     environment: Literal["development", "production"] = "development"
     app_name: str = "Sri Lankan Legal AI"
     gemini_api_key: str | None = None
+    database_url: str | None = None
     gemini_chat_model: str = "gemini-flash-latest"
     gemini_embedding_model: str = "gemini-embedding-001"
     legal_ai_database: Path = Path("data/legal_index.sqlite3")
@@ -31,11 +32,12 @@ class Settings(BaseSettings):
                 raise ValueError("Production requires an admin password of at least 16 characters.")
             if self.admin_session_secret == "change-this-session-secret" or len(self.admin_session_secret) < 32:
                 raise ValueError("Production requires a random session secret of at least 32 characters.")
-            if not self.legal_ai_storage_root.is_absolute() or not self.legal_ai_database.is_absolute():
-                raise ValueError("Production requires absolute database and private storage paths on persistent volumes.")
-            project_root = Path(__file__).resolve().parent.parent
-            if self.legal_ai_storage_root.resolve().is_relative_to(project_root) or self.legal_ai_database.resolve().is_relative_to(project_root):
-                raise ValueError("Production database and originals must be outside the code checkout.")
+            if not self.database_url:
+                if not self.legal_ai_storage_root.is_absolute() or not self.legal_ai_database.is_absolute():
+                    raise ValueError("Production requires absolute database and private storage paths on persistent volumes.")
+                project_root = Path(__file__).resolve().parent.parent
+                if self.legal_ai_storage_root.resolve().is_relative_to(project_root) or self.legal_ai_database.resolve().is_relative_to(project_root):
+                    raise ValueError("Production database and originals must be outside the code checkout.")
         return self
 
 

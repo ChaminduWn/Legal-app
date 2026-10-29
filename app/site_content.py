@@ -1,7 +1,7 @@
 import json
-import sqlite3
 from datetime import UTC, datetime
 from pathlib import Path
+from app.db import connect, is_postgres
 
 DEFAULT_SITE_CONTENT = {
     "en": {
@@ -79,7 +79,9 @@ DEFAULT_SITE_CONTENT = {
 }
 
 
-def initialize_site_content(connection: sqlite3.Connection) -> None:
+def initialize_site_content(connection) -> None:
+    if is_postgres(connection):
+        return
     connection.execute(
         """
         CREATE TABLE IF NOT EXISTS site_content (
@@ -99,14 +101,13 @@ def initialize_site_content(connection: sqlite3.Connection) -> None:
 
 
 def get_site_content(database: Path) -> dict:
-    from app.rag.store import connect
-
     try:
         with connect(database) as connection:
             initialize_site_content(connection)
             row = connection.execute("SELECT content_json FROM site_content WHERE id = 'active'").fetchone()
             if row:
-                stored = json.loads(row[0])
+                raw_val = row[0]
+                stored = json.loads(raw_val) if isinstance(raw_val, str) else raw_val
                 # Ensure structure integrity with defaults
                 merged = {
                     "en": {**DEFAULT_SITE_CONTENT["en"], **stored.get("en", {})},
@@ -119,8 +120,6 @@ def get_site_content(database: Path) -> dict:
 
 
 def save_site_content(database: Path, content: dict) -> dict:
-    from app.rag.store import connect
-
     now = datetime.now(UTC).isoformat()
     json_data = json.dumps(content, ensure_ascii=False)
     with connect(database) as connection:

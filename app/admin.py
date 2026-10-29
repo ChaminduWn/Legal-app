@@ -2,6 +2,7 @@ from contextlib import nullcontext
 from datetime import UTC, datetime, date
 from urllib.parse import urlsplit
 from pathlib import Path
+import json
 
 from app.models import (
     AdminSection,
@@ -11,7 +12,8 @@ from app.models import (
     LegalRelationship,
     AuditEvent,
 )
-from app.rag.store import connect, initialize
+from app.db import connect, is_postgres
+from app.rag.store import initialize
 from app.catalog import save_version
 from app.auth import initialize_auth_table
 from app.site_content import initialize_site_content
@@ -22,57 +24,58 @@ def initialize_admin(database: Path) -> None:
     with connect(database) as connection:
         initialize_auth_table(connection)
         initialize_site_content(connection)
-        connection.executescript(
-            """
-            CREATE TABLE IF NOT EXISTS document_metadata (
-                source_file TEXT PRIMARY KEY,
-                official_source_url TEXT,
-                publication_date TEXT,
-                effective_date TEXT,
-                status TEXT NOT NULL DEFAULT 'unreviewed',
-                notes TEXT,
-                updated_at TEXT NOT NULL,
-                document_type TEXT NOT NULL DEFAULT 'other',
-                extraction_method TEXT NOT NULL DEFAULT 'text',
-                extraction_confidence REAL,
-                extraction_warnings TEXT NOT NULL DEFAULT '[]'
-            );
-            CREATE TABLE IF NOT EXISTS section_reviews (
-                source_id TEXT PRIMARY KEY,
-                original_heading TEXT,
-                original_text TEXT NOT NULL,
-                status TEXT NOT NULL DEFAULT 'unreviewed',
-                notes TEXT,
-                updated_at TEXT NOT NULL,
-                FOREIGN KEY(source_id) REFERENCES legal_chunks(source_id)
-            );
-            CREATE TABLE IF NOT EXISTS legal_relationships (
-                id INTEGER PRIMARY KEY AUTOINCREMENT, source_file TEXT NOT NULL,
-                relation_type TEXT NOT NULL, target_law TEXT NOT NULL,
-                target_section TEXT, evidence TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'proposed'
-            );
-            CREATE TABLE IF NOT EXISTS audit_log (
-                id INTEGER PRIMARY KEY AUTOINCREMENT, source_file TEXT NOT NULL,
-                action TEXT NOT NULL, actor TEXT NOT NULL DEFAULT 'admin',
-                details TEXT, created_at TEXT NOT NULL
-            );
-            """
-        )
-        columns = {row[1] for row in connection.execute("PRAGMA table_info(document_metadata)")}
-        migrations = {
-            "official_source_url": "TEXT",
-            "publication_date": "TEXT",
-            "effective_date": "TEXT",
-            "notes": "TEXT",
-            "updated_at": "TEXT NOT NULL DEFAULT ''",
-            "document_type": "TEXT NOT NULL DEFAULT 'other'",
-            "extraction_method": "TEXT NOT NULL DEFAULT 'text'",
-            "extraction_confidence": "REAL",
-            "extraction_warnings": "TEXT NOT NULL DEFAULT '[]'",
-        }
-        for name, definition in migrations.items():
-            if name not in columns:
-                connection.execute(f"ALTER TABLE document_metadata ADD COLUMN {name} {definition}")
+        if not is_postgres(connection):
+            connection.executescript(
+                """
+                CREATE TABLE IF NOT EXISTS document_metadata (
+                    source_file TEXT PRIMARY KEY,
+                    official_source_url TEXT,
+                    publication_date TEXT,
+                    effective_date TEXT,
+                    status TEXT NOT NULL DEFAULT 'unreviewed',
+                    notes TEXT,
+                    updated_at TEXT NOT NULL,
+                    document_type TEXT NOT NULL DEFAULT 'other',
+                    extraction_method TEXT NOT NULL DEFAULT 'text',
+                    extraction_confidence REAL,
+                    extraction_warnings TEXT NOT NULL DEFAULT '[]'
+                );
+                CREATE TABLE IF NOT EXISTS section_reviews (
+                    source_id TEXT PRIMARY KEY,
+                    original_heading TEXT,
+                    original_text TEXT NOT NULL,
+                    status TEXT NOT NULL DEFAULT 'unreviewed',
+                    notes TEXT,
+                    updated_at TEXT NOT NULL,
+                    FOREIGN KEY(source_id) REFERENCES legal_chunks(source_id)
+                );
+                CREATE TABLE IF NOT EXISTS legal_relationships (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT, source_file TEXT NOT NULL,
+                    relation_type TEXT NOT NULL, target_law TEXT NOT NULL,
+                    target_section TEXT, evidence TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'proposed'
+                );
+                CREATE TABLE IF NOT EXISTS audit_log (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT, source_file TEXT NOT NULL,
+                    action TEXT NOT NULL, actor TEXT NOT NULL DEFAULT 'admin',
+                    details TEXT, created_at TEXT NOT NULL
+                );
+                """
+            )
+            columns = {row[1] for row in connection.execute("PRAGMA table_info(document_metadata)")}
+            migrations = {
+                "official_source_url": "TEXT",
+                "publication_date": "TEXT",
+                "effective_date": "TEXT",
+                "notes": "TEXT",
+                "updated_at": "TEXT NOT NULL DEFAULT ''",
+                "document_type": "TEXT NOT NULL DEFAULT 'other'",
+                "extraction_method": "TEXT NOT NULL DEFAULT 'text'",
+                "extraction_confidence": "REAL",
+                "extraction_warnings": "TEXT NOT NULL DEFAULT '[]'",
+            }
+            for name, definition in migrations.items():
+                if name not in columns:
+                    connection.execute(f"ALTER TABLE document_metadata ADD COLUMN {name} {definition}")
 
 
 def list_documents(database: Path) -> list[DocumentSummary]:
@@ -95,7 +98,7 @@ def list_documents(database: Path) -> list[DocumentSummary]:
                 vr.target_instrument_id, vr.relation_type, vr.evidence AS relationship_evidence
                 ,COALESCE(m.document_type, 'other') AS document_type
                 ,COALESCE(m.extraction_method, 'text') AS extraction_method
-                ,m.extraction_confidence, COALESCE(m.extraction_warnings, '[]') AS extraction_warnings
+                ,m.extraction_confidence, COALESCE(m.extraction_warnings::text, '[]') AS extraction_warnings
                 ,(SELECT COUNT(*) FROM legal_relationships lr WHERE lr.source_file=d.source_file) AS relationship_count
             FROM document_records d
             LEFT JOIN legal_chunks c USING (source_file)
@@ -104,18 +107,33 @@ def list_documents(database: Path) -> list[DocumentSummary]:
             LEFT JOIN document_versions v USING (source_file)
             LEFT JOIN legal_instruments i ON i.instrument_id=v.instrument_id
             LEFT JOIN version_relationships vr USING (source_file)
-            GROUP BY d.source_file
+            GROUP BY 
+                d.source_file, d.title, m.status, m.official_source_url, 
+                m.publication_date, m.effective_date, m.notes, v.instrument_id, 
+                i.title, v.edition_year, v.version_kind, v.valid_from, v.valid_to, 
+                v.supersedes_source, vr.target_instrument_id, vr.relation_type, 
+                vr.evidence, m.document_type, m.extraction_method, 
+                m.extraction_confidence, m.extraction_warnings
             ORDER BY law, d.source_file
             """
         ).fetchall()
         topics = {}
         for topic in connection.execute("SELECT source_file,topic_id FROM document_topics"):
             topics.setdefault(topic[0],[]).append(topic[1])
-    import json
-    result=[]
+
+    result = []
     for row in rows:
-        data=dict(row); data["extraction_warnings"]=json.loads(data["extraction_warnings"])
-        data["topic_ids"] = topics.get(data["source_file"],[])
+        data = dict(row)
+        raw_warn = data.get("extraction_warnings")
+        if isinstance(raw_warn, str):
+            try:
+                data["extraction_warnings"] = json.loads(raw_warn)
+            except Exception:
+                data["extraction_warnings"] = []
+        elif not isinstance(raw_warn, list):
+            data["extraction_warnings"] = []
+
+        data["topic_ids"] = topics.get(data["source_file"], [])
         result.append(DocumentSummary.model_validate(data))
     return result
 
@@ -233,14 +251,15 @@ def save_section_review(
             "UPDATE legal_chunks SET heading = ?, text = ? WHERE source_id = ?",
             (update.heading, update.text, source_id),
         )
-        connection.execute(
-            """
-            UPDATE legal_chunks_fts
-            SET heading = ?, text = ?
-            WHERE source_id = ?
-            """,
-            (update.heading, update.text, source_id),
-        )
+        if not is_postgres(connection):
+            connection.execute(
+                """
+                UPDATE legal_chunks_fts
+                SET heading = ?, text = ?
+                WHERE source_id = ?
+                """,
+                (update.heading, update.text, source_id),
+            )
         connection.execute(
             "DELETE FROM legal_embeddings WHERE source_id = ?",
             (source_id,),
@@ -251,13 +270,13 @@ def save_section_review(
 
 def register_import(database: Path, source_file: str, document_type: str, method: str,
                     confidence: float | None, warnings: list[str], chunks: list, *, connection=None) -> None:
-    import json
     now = datetime.now(UTC).isoformat()
     with (nullcontext(connection) if connection is not None else connect(database)) as connection:
+        warn_val = json.dumps(warnings) if not is_postgres(connection) else warnings
         connection.execute("""INSERT INTO document_metadata
             (source_file,status,updated_at,document_type,extraction_method,extraction_confidence,extraction_warnings)
             VALUES (?, 'in_review', ?, ?, ?, ?, ?) ON CONFLICT(source_file) DO UPDATE SET status='in_review', updated_at=excluded.updated_at, document_type=excluded.document_type, extraction_method=excluded.extraction_method, extraction_confidence=excluded.extraction_confidence, extraction_warnings=excluded.extraction_warnings""",
-            (source_file, now, document_type, method, confidence, json.dumps(warnings)))
+            (source_file, now, document_type, method, confidence, warn_val))
         _detect_relationships(connection, source_file, chunks)
         _audit(connection, source_file, "document_imported", f"{method}; {len(chunks)} sections")
 
@@ -308,14 +327,14 @@ def approve_document(database: Path, source_file: str, *, extraction_complete: b
 def relationships(database: Path, source_file: str) -> list[LegalRelationship]:
     initialize_admin(database)
     with connect(database) as connection:
-        rows=connection.execute("SELECT * FROM legal_relationships WHERE source_file=?",(source_file,)).fetchall()
+        rows = connection.execute("SELECT * FROM legal_relationships WHERE source_file=?", (source_file,)).fetchall()
     return [LegalRelationship.model_validate(dict(row)) for row in rows]
 
 
 def audit_events(database: Path, source_file: str) -> list[AuditEvent]:
     initialize_admin(database)
     with connect(database) as connection:
-        rows=connection.execute("SELECT id,action,actor,details,created_at FROM audit_log WHERE source_file=? ORDER BY id DESC",(source_file,)).fetchall()
+        rows = connection.execute("SELECT id,action,actor,details,created_at FROM audit_log WHERE source_file=? ORDER BY id DESC", (source_file,)).fetchall()
     return [AuditEvent.model_validate(dict(row)) for row in rows]
 
 
@@ -326,7 +345,7 @@ def _audit(connection, source_file: str, action: str, details: str) -> None:
 
 def _detect_relationships(connection, source_file: str, chunks: list) -> None:
     import re
-    pattern=re.compile(r"(?i)(amend(?:s|ed|ment)?|repeal(?:s|ed)?|substitut(?:e|es|ed))[^.\n]{0,100}?(?:section\s+([0-9A-Za-z()]+)\s+of\s+)?(?:the\s+)?([A-Z][A-Za-z ()'-]{3,80}?(?:Act|Ordinance|Code))")
+    pattern = re.compile(r"(?i)(amend(?:s|ed|ment)?|repeal(?:s|ed)?|substitut(?:e|es|ed))[^.\n]{0,100}?(?:section\s+([0-9A-Za-z()]+)\s+of\s+)?(?:the\s+)?([A-Z][A-Za-z ()'-]{3,80}?(?:Act|Ordinance|Code))")
     for chunk in chunks:
         for match in pattern.finditer(chunk.text):
             connection.execute("INSERT INTO legal_relationships(source_file,relation_type,target_law,target_section,evidence) VALUES(?,?,?,?,?)",

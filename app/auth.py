@@ -1,12 +1,12 @@
 import hashlib
 import hmac
 import secrets
-import sqlite3
 import time
 from datetime import UTC, datetime
 from pathlib import Path
 
 from app.config import Settings
+from app.db import connect, is_postgres
 
 COOKIE_NAME = "neethi_admin_session"
 
@@ -27,7 +27,9 @@ def valid_session(token: str | None, settings: Settings) -> bool:
     except (ValueError, TypeError):
         return False
 
-def initialize_auth_table(connection: sqlite3.Connection) -> None:
+def initialize_auth_table(connection) -> None:
+    if is_postgres(connection):
+        return
     connection.execute(
         """
         CREATE TABLE IF NOT EXISTS admin_credentials (
@@ -45,9 +47,8 @@ def hash_password(password: str, salt: str) -> str:
 def valid_credentials(username: str, password: str, settings: Settings, database: Path | None = None) -> bool:
     if not hmac.compare_digest(username, settings.admin_username):
         return False
-    if database is not None and database.exists():
+    if settings.database_url or (database is not None and database.exists()):
         try:
-            from app.rag.store import connect
             with connect(database) as conn:
                 initialize_auth_table(conn)
                 row = conn.execute("SELECT password_hash, salt FROM admin_credentials WHERE username = ?", (username,)).fetchone()
@@ -73,7 +74,6 @@ def update_admin_password(database: Path, username: str, current_password: str, 
     salt = secrets.token_hex(16)
     hashed = hash_password(new_password, salt)
     now = datetime.now(UTC).isoformat()
-    from app.rag.store import connect
     with connect(database) as conn:
         initialize_auth_table(conn)
         conn.execute(
@@ -87,4 +87,3 @@ def update_admin_password(database: Path, username: str, current_password: str, 
             """,
             (username, hashed, salt, now),
         )
-

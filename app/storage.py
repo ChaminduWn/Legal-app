@@ -6,7 +6,7 @@ import shutil
 import tempfile
 from pathlib import Path
 
-from app.rag.store import connect
+from app.db import connect
 
 
 def store_file(root: Path, path: Path) -> dict:

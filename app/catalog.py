@@ -3,12 +3,15 @@
 An amendment is a separate instrument, not a replacement consolidated edition.
 No dates or supersession relationships are inferred from filenames.
 """
-import sqlite3
 from datetime import date
 from pathlib import Path
+from app.db import connect, is_postgres
 
 
-def initialize_catalog(connection: sqlite3.Connection) -> None:
+def initialize_catalog(connection) -> None:
+    if is_postgres(connection):
+        return
+
     connection.executescript("""
         CREATE TABLE IF NOT EXISTS document_records (
             source_file TEXT PRIMARY KEY,
@@ -128,6 +131,12 @@ def save_version(connection, source_file: str, version) -> None:
 
 def migrate_chunk_foreign_key(database: Path) -> None:
     """Preserve IDs and dependent reviews while adding the missing document FK."""
+    conn = connect(database)
+    if is_postgres(conn):
+        conn.close()
+        return
+
+    import sqlite3
     connection = sqlite3.connect(database)
     try:
         if connection.execute('PRAGMA foreign_key_list(legal_chunks)').fetchall():
